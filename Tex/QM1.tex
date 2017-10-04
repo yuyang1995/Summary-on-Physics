@@ -423,12 +423,13 @@ is independent of $t$ for such a state. By considering functions of $R$ we can f
 \chapter{Coordinate and Momentum Representation}
 \section{Coordinate representation}
 To form a representation of an abstract linear vector space, one chooses a complete orthonormal set of basis vectors $\{|u_i\rangle\}$ and represents an arbitrary vector $|\psi\rangle$ by its expansion coefficients $\{c_i\}$, where $|\psi\rangle = \sum c_i |u_i\rangle$. 
-The array of coefficients $\langle u_i | \psi \rangle$ can be regarded as a column vector (possibly of infinite dimension), provided the basis set is discrete.\\
-Coordinate representation is obtained by choosing as the basis set the eigenvectors $\{|\bm{x}\rangle\}$ of the position operator . Since this is a continuous set, the expansion coefficients define a function of a continuous variable,
+The array of coefficients $\langle u_i | \psi \rangle$ can be regarded as a column vector (possibly of infinite dimension), provided the basis set is discrete.
+Coordinate representation is obtained by choosing as the basis set the eigenvectors $\{|\bm{x}\rangle\}$ of the position operator. 
+Since this is a continuous set, the expansion coefficients define a function of a continuous variable,
 \[\psi(\bm{x})  \equiv \langle \bm{x} | \psi \rangle.\]
 We can show that the inner product of the state vector in coordinate representation is
 \[\langle \phi | \psi \rangle = \int \phi^{*}(\bm{x})\psi(\bm{x}) d^3\bm{x} .\]
-It is a matter of taste whether one says that the set of functions forms a representation of the vector space, or that the vector space consists of the functions $\psi(\bm{x})$.\\
+It is a matter of taste whether one says that the set of functions forms a representation of the vector space, or that the vector space consists of the functions $\psi(\bm{x})$.
 The action of an operator $A$ on the function space is related to its action on the abstract vector space by the rule
 \[A \psi(\bm{x}) \equiv  \langle \bm{x} |A| \psi \rangle.\]
 The action of an position operator in coordinate representation is
@@ -436,7 +437,7 @@ The action of an position operator in coordinate representation is
 The action of an momentum operator in coordinate representation is
 \[\bm{P}\psi(\bm{x}) = -i \bm{\nabla}\psi(\bm{x}).\]
 For a spin-less particle in the scalar potential $W(\bm{x})$,
-$H = \frac{\bm{P}^2}{2m} + W(\bm{X})$. 
+$H = {\bm{P}^2}/2m + W(\bm{X})$. 
 The equation of motion in the coordinate representation is
 \[ \left[- \frac{1}{2m} \bm{\nabla}^2 + W(\bm{x}) \right] \psi(\bm{x},t) = i\frac{\partial}{\partial t}\psi(\bm{x},t).\]
 
@@ -460,7 +461,7 @@ apart from an irrelevant constant term.
 \section{Probability flux and conditions on wave functions}
 \noindent
 Define the probability flux vector
-\[\bm{J}(\bm{x},t) = \frac{1}{m} \mathrm{Im}(\psi^*\bm{\nabla}\psi).\]
+\[\bm{J}(\bm{x},t) \equiv \frac{1}{m} \mathrm{Im}(\psi^*\bm{\nabla}\psi).\]
 We can get a continuity equation
 \[\frac{d}{dt} |\psi(\bm{x},t)|^2 + \bm{\nabla} \cdot \bm{J}(\bm{x},t) = 0.\]
 Applying the divergence theorem, we obtain
@@ -469,13 +470,12 @@ The equations of continuity require that the probability
 flux $\bm{J}(\bm{x},t)$ be continuous across any surface, since otherwise the surface would contain sources or sinks. Although this condition applies to all surfaces, implying that $\bm{J}(\bm{x},t)$ must be everywhere continuous, its practical applications are mainly to surfaces separating regions in which the potential has different analytic forms.
 Usually, we have the following conditions,
 \begin{enumerate}
-\item \[\psi(x)|_{x+0} = \psi(x)|_{x-0} , \quad \frac{d\psi}{dx}|_{x+0} = \frac{d\psi}{dx}|_{x-0}.\]
-\item \[\psi(x)|_{x+0} = \psi(x)|_{x-0} = 0 , \quad \frac{d\psi}{dx}|_{x+0} - \frac{d\psi}{dx}|_{x-0} \mbox{ is finite }.\]
+\item \[\psi(x)|_{x+0} = \psi(x)|_{x-0} , \quad \left. \frac{d\psi}{dx}\right|_{x+0} = \left. \frac{d\psi}{dx} \right|_{x-0}.\]
+\item \[\psi(x)|_{x+0} = \psi(x)|_{x-0} = 0 , \quad \left. \frac{d\psi}{dx}\right|_{x+0} - \left. \frac{d\psi}{dx} \right|_{x-0} \mbox{ is finite }.\]
 \end{enumerate}
 \noindent
 Consider next the behavior at a singular point, assumed for convenience to be the origin of coordinates. Let $S$ be a small sphere of radius $r$ surrounding the singularity. The probability that the particle is inside $S$ must be finite.
-Suppose that $\psi = {u}/{r^{\alpha}}$, where $u$ is a smooth function that does not vanish at $r=0$. Then we must have $|\psi|^2 r^3$ convergent at the origin, which implies that $\alpha < \frac{3}{2}$.
-\\ \\
+Suppose that $\psi = {u}/{r^{\alpha}}$, where $u$ is a smooth function that does not vanish at $r=0$. Then we must have $|\psi|^2 r^3$ convergent at the origin, which implies that $\alpha < 3/2$.
 The net outward flow through the surface $S$ is $F = \oint_{S} J \cdot dS$. It must vanish in the limit $r \to 0$, since otherwise the origin would be a point source or sink.
 One has ${\partial \psi}/{\partial r} = r^{-\alpha} {\partial u}/{\partial r} - \alpha u r^{-\alpha-1}$. The second term does not contribute to the flux, so we obtain
 \[F = r^{2-2\alpha} \left( \frac{-i}{2m} \right) \oint \left( u^* \frac{\partial u}{\partial r} - u\frac{\partial u^*}{\partial r} \right) d\Omega.\]
@@ -492,7 +492,7 @@ The conditions that we have discussed apply to wave functions $\psi(x)$ which re
 The time evolution of a quantum state vector, $|\psi(t)\rangle = U(t,t_0)| \psi(t_0)\rangle$, can be regarded as the propagation of an amplitude in configuration space,
 \[\psi(x,t) = \int G(x,t;x',t_0) \psi(x',t_0)dx',\]
 where
-\[G(x,t;x',t_0) = \langle x | U(t,t_0) | x' \rangle.\]
+\[G(x,t;x',t_0) = \langle x | U(t,t_0) | x' \rangle\]
 is often called the propagator.
 Making use of the multiplicative property of the time development operator, it follows that the propagator can be written as
 \[G(x,t;x_0,t_0) = \int \cdots \int G(x,t;x_N,t_N) \cdots G(x_1,t_1;x_0,t_0) dx_N \cdots dx_1.\]
@@ -542,7 +542,7 @@ Therefore, in coordinate representation, we have
 \[\psi(\bm{x} - \bm{R}_n) = U(\bm{R}_n) \psi(\bm{x}) = \exp(-i\bm{k}\cdot\bm{R}_n) \psi(\bm{x}).\]
 The vector $\bm{k}$ is called the Bloch wave vector of the state. If we expand a function of the Bloch form in a series of plane waves, 
 \[\psi(\bm{x}) = \sum_{\bm{k}'} a(\bm{k}') e^{i\bm{k}'\cdot \bm{x}}.\]
-We can show that for all $\bm{R}_n$
+We can show that for all $\bm{R}_n$,
 \[\exp(i(\bm{k}' - \bm{k})\cdot \bm{R}_n) = 1 .\]
 Thus $\bm{G}_n \equiv \bm{k}' - \bm{k}$ is a vector of the reciprocal lattice. 
 The expansion can be written as
@@ -658,14 +658,14 @@ We can verify that
 \[\bm{\nabla}\cdot\bm{j} + \frac{\partial \rho}{\partial t} = 0.\]
 Transformation
 \[\phi \to \phi - \frac{\partial \Lambda}{\partial t} , \quad \bm{A} \to \bm{A} + \bm{\nabla}\Lambda\]
-will leave $\bm{E}$ and $\bm{B}$ unchanged. The transformation is called gauged transformation. In classical electrodynamics, gauge transformation will not change the trajectory of particles, (which is the only thing we can observed in experiment). In quantum theory, suppose the state vector $|\psi\rangle$ will transform as 
+will leave $\bm{E}$ and $\bm{B}$ unchanged. The transformation is called gauged transformation. In classical electrodynamics, gauge transformation will not change the trajectory of particles, (which is the only thing we can observe in experiment). In quantum theory, suppose the state vector $|\psi\rangle$ will transform as 
 \[|\psi(t)\rangle \to O(t)|\psi(t)\rangle.\]
 where $O(t)$ is an unitary operator. If the Schrödinger equation is always satisfied, we can derive that
 \[H'O - OH = i\frac{\partial O}{\partial t},\]
 where $H'$ is the Hamiltonian operator after gauge transformation. 
 Generally, we have
 \[O(t) = \exp \left[ ie\Lambda(\bm{X},t)\right].\]
-And so
+Therefore,
 \[O^{-1} \bm{X} O = \bm{X} , \quad O^{-1} \bm{P} O = \bm{P} + e\bm{\nabla}\Lambda , \quad O^{-1}(\bm{P}-e\bm{A}')O = \bm{P} - e\bm{A}.\]
 The expectation value of $\bm{X}$ and $\bm{K}$ is invariant under gauge transformation. 
 We can also verify that $\bm{j}$ is also invariant under gauge transformation.
@@ -684,7 +684,7 @@ Define
 \[Q' \equiv \frac{K_x}{\gamma} , \quad P' \equiv \frac{K_y}{\gamma} , \quad \gamma \equiv \sqrt{|eB|} .\]
 Then we have
 \[H_{xy} = \frac{1}{2} \frac{|eB|}{m}(Q'^2+P'^2) \mbox{  with  } [Q',P'] = i \mbox{  or  }-i.\]
-Therefore the eigenvalues of $H_{xy}$ must be equal to $(n+\frac{1}{2})\frac{|eB|}{m}$, where $n$ is any non-negative integer.
+Therefore the eigenvalues of $H_{xy}$ must be equal to $(n+1/2)|eB|/m$, where $n$ is any non-negative integer.
 \\ \\
 The spectrum of $K_z$ can be shown to be gauge-invariant.
 Because the magnetic field is uniform and in the $z$ direction, it is possible to choose the vector potential such that $A_z = 0$. Therefore the spectrum of $K_z$ is
@@ -694,7 +694,7 @@ Thus the energy eigenvalues for a charged particle in a uniform static magnetic 
 The motion parallel to the magnetic field is not coupled to the transverse motion, and is unaffected by the field. The classical motion in the plane perpendicular to the field is
 in a circular orbit with angular frequency $\omega_{\mathrm{c}} = {eB}/{m}$, and it is well known that periodic motions correspond to discrete energy levels whose separation is $\omega_{\mathrm{c}}$.
 \\ \\
-Now let us choose the vector potential to be $A_x=-yB$,$A_y=A_z=0$. The Hamiltonian now becomes
+Now let us choose the vector potential to be $A_x=-yB$, $A_y=A_z=0$. The Hamiltonian now becomes
 \[H = \frac{(P_x+yeB)^2 + P_y^2 + P_z^2}{2m}.\]
 $P_x$ and $P_z$ commute with $H$, so it is possible to construct a complete set of common eigenvectors of $H$, $P_x$ and $P_z$. In coordinate representation, the eigenvalue equation now takes the form
 \[-\frac{1}{2m}\nabla^2 \psi - \frac{ieB}{m}y\frac{\partial}{\partial x}\psi + \frac{e^2B^2}{2m}y^2\psi = E\psi.\]
@@ -738,14 +738,15 @@ At last, we conclude that in quantum theory, the potentials themselves are physi
 \section{Eigenvalues of angular momentum operator}
 Commutation relations among the angular momentum operators are
 \[[J_i,J_j] = \epsilon_{ijk} J_k.\]
-And these three operators are self-adjoint. We first introduce the operator $J^2 \equiv J_x^2 + J_y^2 + J_z^2$. We can verify that $[J^2,\bm{J}] = 0$. Thus there exists a complete set of common eigenvectors of $J^2$ and any one component of $\bm{J}$. Particularly, we have the pair of eigenvalue equations
+Angular momentum operators operators are self-adjoint. 
+We first introduce the operator $J^2 \equiv J_x^2 + J_y^2 + J_z^2$. We can verify that $[J^2,\bm{J}] = 0$. Thus there exists a complete set of common eigenvectors of $J^2$ and any one component of $\bm{J}$. Particularly, we have the pair of eigenvalue equations
 \[J^2 | \beta,m\rangle = \beta | \beta,m\rangle , \quad J_z | \beta,m\rangle = m | \beta,m\rangle.\]
 Since
 \[\langle \beta,m | J^2 | \beta,m \rangle = \langle \beta,m | J_x^2 | \beta,m \rangle + \langle \beta,m | J_y^2 | \beta,m \rangle + \langle \beta,m | J_z^2 | \beta,m \rangle,\]
 we have $m^2 \leq \beta$. Thus for a fixed value of $\beta$ there must be maximum and minimum values for $m$.
 Define
 \[J_+ \equiv J_x + iJ_y , \quad J_- \equiv J_x - iJ_y.\]
-we have commutation relations
+We have commutation relations
 \[[J_z,J_+] = J_+ , \quad [J_z,J_-] = -J_- , \quad [J_+,J_-] = 2J_z.\]
 Thus
 \[J_z J_+ | \beta,m\rangle = J_+(J_z + 1)| \beta,m\rangle = (m+1)J_+| \beta,m\rangle.\]
@@ -774,15 +775,15 @@ where $\bm{R}$ is the rotation operator generated by $\bm{R} = \exp(-i\bm{J}\cdo
 \[\bm{R}_z(\epsilon) \psi(x,y,z) = \psi(x+\epsilon y,y-\epsilon x,z) = \psi(x,y,x) + \epsilon (y \frac{\partial \psi}{\partial x} - x \frac{\partial \psi}{\partial y}).\]
 On the other hand, 
 \[\bm{R}_z(\epsilon) = I - i\epsilon J_z.\]
-Thus we have $J_z = -i(x \frac{\partial}{\partial y} - y \frac{\partial}{\partial x})$. 
+Thus we have $J_z = -i(x \partial_{y} - y \partial_{x})$.
 This is just the $z$ component of the orbital angular momentum operator $L = \bm{X} \times \bm{P}$.
 \\ \\
 For a multicomponent state function, we have
 \[\bm{R} \left( \begin{matrix} \psi_1(\bm{x}) \\ \psi_2(\bm{x}) \\  \vdots \end{matrix} \right) = D \left( \begin{matrix} \psi_1(R^{-1}\bm{x}) \\ \psi_2(R^{-1}\bm{x}) \\  \vdots \end{matrix} \right).\]
 Thus the general form of the rotation operator will be
-\[\bm{R}_{n}(\theta) = e^{-i\bm{L}\cdot\bm{n}\theta}D_n(\theta).\]
+\[\bm{R}_{\bm{n}}(\theta) = e^{-i\bm{L}\cdot\bm{n}\theta}D_{\bm{n}}(\theta).\]
 The two factors commute because the first acts only on the coordinate and the second acts only on the components of the column vector. The matrix $D$ must be unitary, and so it can be written as
-\[D_n(\theta) = e^{-i\bm{S}\cdot\bm{n}\theta}.\]
+\[D_{\bm{n}}(\theta) = e^{-i\bm{S}\cdot\bm{n}\theta}.\]
 The angular momentum operator $\bm{J}$ has the form
 \[\bm{J} = \bm{L} + \bm{S}\]
 with $\bm{L} = \bm{X} \times \bm{P}$ and $[L_{\alpha},S_{\beta}] = 0$. In the particular representation used in this section, we have $\bm{L} = -i\bm{x}\times\bm{\nabla}$, and the components of $S$ are
@@ -798,20 +799,19 @@ Therefore, we have
 \[L^2 = \bm{L}\cdot\bm{L} = - \left [ \frac{1}{\sin\theta} \frac{\partial }{\partial \theta} (\sin\theta \frac{\partial }{\partial \theta}) + \frac{1}{\sin^2\theta} \frac{\partial^2}{\partial \phi^2}  \right ].\]
 We must now solve the two coupled differential equations,
 \[L_z Y(\theta,\phi) = m Y(\theta,\phi) , \quad L^2 Y(\theta,\phi) = l(l+1) Y(\theta,\phi).\]
-Apart from normalization, we have $Y(\theta,\phi) = e^{im\phi}P_l^m(\cos\theta)$. Here, $P_l^m$ is the \href{https://en.wikipedia.org/wiki/Associated_Legendre_polynomials}{associated Legendre polynomials}. If we assume that the solution must be single-valued under rotation, then it will follow that $m$ must be an integer. If we further assume that it must be nonsingular at $\theta = 0$ and $\theta = \pi$, then from the standard theory of the Legendre equation it will follow that $l$ must be a nonnegative integer in the range $l \geq |m|$. The normalized solutions that result from these assumptions are the well-known \href{https://en.wikipedia.org/wiki/Spherical_harmonics}{spherical harmonics}
+Apart from normalization, we have $Y(\theta,\phi) = e^{im\phi}P_l^m(\cos\theta)$, where $P_l^m$ is the \href{https://en.wikipedia.org/wiki/Associated_Legendre_polynomials}{associated Legendre polynomials}. If we assume that the solution must be single-valued under rotation, then it will follow that $m$ must be an integer. If we further assume that it must be nonsingular at $\theta = 0$ and $\theta = \pi$, then from the standard theory of the Legendre equation it will follow that $l$ must be a nonnegative integer in the range $l \geq |m|$. The normalized solutions that result from these assumptions are the well-known \href{https://en.wikipedia.org/wiki/Spherical_harmonics}{spherical harmonics}
 \[Y_l^m(\theta,\phi) = (-1)^{(m+|m|)/2} \left [\frac{(2l+1)(l-|m|)!}{4\pi(l+|m|)!}  \right ]^{1/2}e^{im\phi} P_l^{|m|}(\cos\theta).\]
 
 \subsubsection{Spin}
 A particular species of particle is characterized by a set of quantum numbers that includes the value of its spin $s$, it is often sufficient to treat the spin operators $\bm{S}$ as acting on the space of dimension
 $2s+1$ that is spanned by the eigenvectors of for a fixed value of $s$. 
-\\ \\
-If $s= \frac{1}{2}$, we have
+If $s= 1/2$, we have
 \[S_x = \frac{1}{2} \left[ \begin{matrix} 0& 1\\ 1& 0\end{matrix} \right] , \quad S_y = \frac{1}{2} \left[ \begin{matrix} 0& -i\\ i& 0\end{matrix} \right] , \quad S_z = \frac{1}{2} \left[ \begin{matrix} 1& 0\\ 0& -1\end{matrix} \right].\]
 The spin operator in direction $\bm{n} = (\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)$ is
 \[\bm{S}_{n} = \frac{1}{2} \left[ \begin{matrix} \cos\theta& e^{-i\phi}\sin\theta\\ e^{i\phi}\sin\theta& -\cos\theta\end{matrix} \right].\]
 The eigenvectors are
 \[\left[ \begin{matrix} e^{-i\phi/2}\cos\frac{\theta}{2}\\ e^{i\phi/2}\sin\frac{\theta}{2} \end{matrix} \right] , \quad \left[ \begin{matrix} -e^{-i\phi/2}\sin\frac{\theta}{2}\\ e^{i\phi/2}\cos\frac{\theta}{2} \end{matrix} \right],\]
-corresponding to eigenvalues $\frac{1}{2}$ and $-\frac{1}{2}$.
+corresponding to eigenvalues $1/2$ and $-1/2$.
 \\ \\
 If $s= 1$, we have
 \[S_x = \sqrt{\frac{1}{2}} \left[ \begin{matrix} 0& 1& 0\\ 1& 0& 1\\ 0& 1& 0\end{matrix} \right]  , \quad S_y = \sqrt{\frac{1}{2}} \left[ \begin{matrix} 0& -i& 0\\ i& 0& -i\\ 0& i& 0\end{matrix} \right] , \quad S_z = \sqrt{\frac{1}{2}} \left[ \begin{matrix} 1& 0& 0\\ 0& 0& 0\\ 0& 0& -1\end{matrix} \right].\]
@@ -843,8 +843,8 @@ gives rise to the rotation matrices,
 \[D_{m'm}^{(j)}(\alpha,\beta,\gamma) \equiv \langle j,m' | e^{-i\alpha J_{z}} e^{-i\beta J_{y}} e^{-i\gamma J_{z}} | j,m \rangle = e^{-i(\alpha m' + \gamma m)} d_{mm'}^{(j)}(\beta),\]
 where
 \[ d_{m'm}^{(j)}(\beta) \equiv \langle j,m' | e^{-i\beta J_{y}} | j,m \rangle.\]
-For the case of $j = \frac{1}{2}$, we have $J_y = \frac{1}{2}\sigma_y$ and $\sigma_y^2 = I$. We can obtain
-\[d^{(1/2)}(\beta) = \left[ \begin{matrix} \cos \frac{\beta}{2} & -\sin \frac{\beta}{2} \\ \cos \frac{\beta}{2}& \sin \frac{\beta}{2}\end{matrix} \right] .\]
+For the case of $j = 1/2$, we have $J_y = \sigma_y/2$ and $\sigma_y^2 = I$. We can obtain
+\[d^{(1/2)}(\beta) = \left[ \begin{matrix} \cos {\beta}/{2} & -\sin {\beta}/{2} \\ \cos {\beta}/{2}& \sin {\beta}/{2}\end{matrix} \right] .\]
 Notice that this matrix is periodic in $\beta$ with period $4\pi$, but it changes sign when $2\pi$ is added to $\beta$. This double-valuedness under rotation by $2\pi$ is a characteristic of the full rotation matrix whenever $j$ is a half odd-integer. The matrix is single-valued under rotation by $2\pi$ whenever $j$ is an integer.
 \\ \\
 Rotation of angular momentum eigenvectors now can be written as
@@ -863,8 +863,8 @@ Then we have
 for arbitrary $\gamma$, thus obtaining a simple relation between the spherical harmonics and the rotation matrices. Conventional normalization is obtained if we put
 \[c_l = \left( \frac{2l+1}{4\pi} \right) ^{1/2}.\]
 The operator for a rotation through $2\pi$ about an axis
-along the unit vector $\bm{n}$ is $\bm{R}_n(2\pi) = e^{-2\pi i\bm{n}\cdot\bm{J}}$. Its effect on the standard angular momentum eigenvectors is
-\[\bm{R}_n(2\pi) = (-1)^{2j}|j,m\rangle .\]
+along the unit vector $\bm{n}$ is $\bm{R}_{\bm{n}}(2\pi) = e^{-2\pi i\bm{n}\cdot\bm{J}}$. Its effect on the standard angular momentum eigenvectors is
+\[\bm{R}_{\bm{n}}(2\pi) = (-1)^{2j}|j,m\rangle .\]
 We assume a rotation through $2\pi$ as a trivial operation that leaves everything unchanged, i.e. all dynamical variables are invariant under $2\pi$ rotation:
 \[\bm{R}(2\pi) A \bm{R}^{-1}(2\pi) = A,\]
 where $A$ may represent any physical observable. 
@@ -920,20 +920,21 @@ We can also prove that CG coefficients vanishe unless following conditions are s
 \end{itemize}
 It is possible to work out the values of the CG coefficients by successive application of the raising or lowering operator to
 \[|j_1,j_2,J,M\rangle = \sum_{m_1,m_2} |j_1,j_2,m_1,m_2\rangle (j_1,j_2,m_1,m_2|J,M).\]
-The details of the calculation can be found in section 7.7 of \emph{Quantum mechanics - a modern development(Leslie E. Ballentine)}.And we have \href{https://en.wikipedia.org/wiki/Table_of_Clebsch-Gordan_coefficients}{Table of CG coefficients} and \href{http://www.wolframalpha.com/input/?i=CG+coefficient}{Calculator of CG coefficients} on the internet. A special case of angular momentum addition is spin–orbit coupling of spin $\frac{1}{2}$ particles, and we list the corresponding CG coefficients $(l,\frac{1}{2}, M-m_s, m_s|J,M)$ in the table 17.1.
+The details of the calculation can be found in section 7.7 of \emph{Quantum mechanics - a modern development(Leslie E. Ballentine)}. And we have \href{https://en.wikipedia.org/wiki/Table_of_Clebsch-Gordan_coefficients}{Table of CG coefficients} and \href{http://www.wolframalpha.com/input/?i=CG+coefficient}{Calculator of CG coefficients} on the internet. A special case of angular momentum addition is spin–orbit coupling of spin $1/2$ particles, and we list the corresponding CG coefficients $(l, 1/2, M-m_s, m_s|J,M)$ in the table 18.1.
 \begin{table}[!th]
 \centering
 \begin{tabular}{|c|c|c|}
 \hline
- & $J=l+\frac{1}{2}$ & $J=l-\frac{1}{2}$ \\
+ & $J=l+1/2$ & $J=l-1/2$ \\
  \hline
- $m_s = \frac{1}{2}$ & $\left[ \frac{l+M+\frac{1}{2}}{2l+1}\right ]^{\frac{1}{2}} $ & $-\left[ \frac{l-M+\frac{1}{2}}{2l+1}\right ]^{\frac{1}{2}} $ \\
+ $m_s = 1/2$ & $\left[ \frac{l+M+1/2}{2l+1}\right ]^{1/2} $ & $-\left[ \frac{l-M+1/2}{2l+1}\right ]^{1/2} $ \\
  \hline
- $m_s = -\frac{1}{2}$ & $\left[ \frac{l-M+\frac{1}{2}}{2l+1}\right ]^{\frac{1}{2}} $ & $\left[ \frac{l+M+\frac{1}{2}}{2l+1}\right ]^{\frac{1}{2}} $ \\
+ $m_s = -1/2$ & $\left[ \frac{l-M+1/2}{2l+1}\right ]^{1/2} $ & $\left[ \frac{l+M+1/2}{2l+1}\right ]^{1/2} $ \\
 \hline
 \end{tabular}
 \caption{Spin-Orbit coupling}
-\end{table}\\
+\end{table}
+\\ \\
 Now let us consider the relation between CG coefficients and rotation matrices. On the one hand, we have
 \[\langle j_1,j_2,m_1,m_2 | \bm{R} | j_1,j_2,m'_1,m'_2\rangle = D_{m_1m'_1}^{(j_1)}(R) D_{m_2m'_2}^{(j_2)}(R).\]
 On the other hand, we have
@@ -1057,7 +1058,7 @@ We can verify that
 \[[Q_{\mathrm{c}\alpha},P_{\mathrm{c}\beta}] = [Q_{\mathrm{r}\alpha},P_{\mathrm{r}\beta}] = i\delta_{\alpha\beta} , \quad [Q_{\mathrm{c}\alpha},P_{\mathrm{r}\beta}] = [Q_{\mathrm{r}\alpha},P_{\mathrm{c}\beta}] = 0.\]
 The Hamiltonian becomes
 \[H = \frac{P_{\mathrm{c}}^2}{2(m_{\mathrm{e}}+m_{\mathrm{p}})} + \frac{P_{\mathrm{r}}^2}{2\mu} - \frac{e^2}{4\pi|\bm{Q}_{\mathrm{r}}|},\]
-where $\mu$ is called the reduced mass, and is defined by $\mu \equiv \frac{m_{\mathrm{e}}m_{\mathrm{p}}}{m_{\mathrm{e}}+m_{\mathrm{p}}}$.
+where $\mu$ is called the reduced mass, and is defined by $\mu \equiv {m_{\mathrm{e}}m_{\mathrm{p}}}/({m_{\mathrm{e}}+m_{\mathrm{p}}})$.
 The center of mass behaves as a free particle, and its
 motion is not coupled to the relative coordinate. We shall confine our attention to the internal degrees of freedom described by the relative coordinate $\bm{Q}_{\mathrm{r}}$. The energy eigenvalue equation in coordinate representation is
 \[-\frac{1}{2\mu}\nabla^2 \Psi(\bm{r})  -\frac{e^2}{4\pi r} \Psi(\bm{r}) = E\Psi(\bm{r}).\]

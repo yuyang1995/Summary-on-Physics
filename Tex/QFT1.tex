@@ -141,10 +141,10 @@ We can also get the commutation relations in terms of $a$ and $a^{\dagger}$,
 \subsubsection{Particles}
 \[[H,a(\bm{k})] = -\omega a(\bm{k}) , \quad [H,a^{\dagger}(\bm{k})] = \omega a^{\dagger}(\bm{k}).\]
 \[[P^i,a(\bm{k})] = -k^i a(\bm{k}) , \quad [P^i,a^{\dagger}(\bm{k})] = k^i a^{\dagger}(\bm{k}).\]
-Let $|p\rangle = a^{\dagger}(\bm{p})|0\rangle $, we have
-\[H |p\rangle = \omega_p|p\rangle , \quad P^i |p\rangle = p^i|p\rangle.\]
-Therefore, we interpret the state $|\bm{p}\rangle$ as the momentum eigenstate of a single particle of mass $m$. We can also show that 
-$J_i|\bm{p} = 0\rangle = 0$, so the particle carries no internal angular momentum.
+Let $|k\rangle = a^{\dagger}(\bm{k})|0\rangle $, we have
+\[H |k\rangle = \omega_k|k\rangle , \quad P^i |k\rangle = k^i|k\rangle.\]
+Therefore, we interpret the state $|\bm{k}\rangle$ as the momentum eigenstate of a single particle of mass $m$. We can also show that 
+$J_i|\bm{k} = 0\rangle = 0$, so the particle carries no internal angular momentum.
 
 \subsubsection{Causality}
 The amplitude for a particle to propagate from $y$ to $x$ is $\langle 0 | \phi(x) \phi(y) | 0 \rangle$, denoted by $D(x-y)$.
@@ -426,7 +426,7 @@ $Z = |\langle \Omega | \phi(0) | \lambda_0 \rangle|^2$ is called field-strength 
 \subsection{LSZ reduction formula}
 \begin{newthem}[LSZ reduction formula]
 \begin{eqnarray}
-&& , \quad \prod_1^n \int d^4 x_i e^{-ip_ix_i} \prod_1^m d^4 y_j e^{ik_jy_j} \langle \Omega | T \{\phi(x_1) \cdots \phi(x_n) \phi(y_1) \cdots \phi(y_m)\} | \Omega \rangle \nonumber \\
+&& \quad \prod_1^n \int d^4 x_i e^{-ip_ix_i} \prod_1^m d^4 y_j e^{ik_jy_j} \langle \Omega | T \{\phi(x_1) \cdots \phi(x_n) \phi(y_1) \cdots \phi(y_m)\} | \Omega \rangle \nonumber \\
 && \underset{ p_i^0 \to E_{\bm{p}_i}\, k_i^0 \to E_{\bm{k}_i}}{\sim}  \left( \prod_1^n \frac{-\sqrt{Z} i}{p_i^2 + m^2 -i\epsilon} \right) \left( \prod_1^m \frac{-\sqrt{Z} i}{k_i^2 + m^2 -i\epsilon} \right) \langle \bm{p}_1 \cdots \bm{p}_n | S | \bm{k}_1 \cdots \bm{k}_m \rangle .\nonumber
 \end{eqnarray}
 \end{newthem}
@@ -581,7 +581,7 @@ A generalization of Feynman's formula is
 \end{figure}
 
 \subsubsection{Wick rotation}
-For an integral $\int d^d q f(q^2-i\epsilon)$, if the integrand vanishes fast enough as $|q_0| \to \infty$, we can rotate this contour clockwise by $\frac{\pi}{2}$, so that it runs from $-i\infty$ to $i\infty$. In making this Wick rotation, the contour does not pass over any poles. (The $i\epsilon$ are needed to make this statement unambiguous.) Thus the value of the integral is unchanged. It is now convenient to define a Euclidean d-dimensional vector $\bar{q}$ via $q^0 = i \bar{q}_d$ and $q_j = \bar{q}_j$; then $q^2 = \bar{q}^2$, where
+For an integral $\int d^d q f(q^2-i\epsilon)$, if the integrand vanishes fast enough as $|q_0| \to \infty$, we can rotate this contour clockwise by ${\pi}/{2}$, so that it runs from $-i\infty$ to $i\infty$. In making this Wick rotation, the contour does not pass over any poles. (The $i\epsilon$ are needed to make this statement unambiguous.) Thus the value of the integral is unchanged. It is now convenient to define a Euclidean $d$-dimensional vector $\bar{q}$ via $q^0 = i \bar{q}_d$ and $q_j = \bar{q}_j$; then $q^2 = \bar{q}^2$, where
 \[\bar{q}^2 = \bar{q}_1^2 + \cdots + \bar{q}_d^2.\]
 Also, $d^dq = id^d \bar{q}$. Therefore, in general,
 \[\int d^d q f(q^2-i\epsilon) = i \int d^d\bar{q} f(\bar{q}^2).\]
@@ -609,29 +609,29 @@ If we define $p = p_1 + p_2$, then the second diagram in the perturbation series
 Thus the entire amplitude is therefore
 \[i\mathcal{M} = -i\lambda + (-i\lambda)^2 [iV(s) + iV(t) + iV(u)] -i\delta_{\lambda} + \mathcal{O}(\lambda^3).\] 
 To keep $\lambda$ dimensionless in dimensional regularization, we can make the transformation $\lambda \to \lambda \tilde{\mu}^{\epsilon}$. Here, $\tilde{\mu}$ is an arbitrary number with mass dimension 1 and $\epsilon \equiv 4-d$. We have
-\[V(-p^2) = -\frac{1}{32\pi^2} \int_0^1 (\frac{2}{\epsilon} + \ln(\frac{\mu^2}{D(-p^2)})),\]
+\[V(-p^2) = -\frac{1}{32\pi^2} \int_0^1 dx \left(\frac{2}{\epsilon} + \ln\left(\frac{\mu^2}{D(-p^2)}\right)\right),\]
 where $\mu \equiv  \sqrt{4\pi} e^{-\gamma/2} \tilde{\mu}$, $D(-p^2) = x(1-x)p^2+m^2$.
 The OS renormalization conditions imply that
 \[\delta_{\lambda} = -\lambda^2[V(4m^2)+2V(0)] + \mathcal{O}(\lambda^3).\]
 Thus
-\[i\mathcal{M} = -i\lambda -\frac{i\lambda^2}{32\pi^2} \int_0^1 dx \left[\ln(\frac{D(s)}{D(4m^2)}) +\ln(\frac{D(t)}{D(0)})+\ln(\frac{D(u)}{D(0)})\right] + \mathcal{O}(\lambda^3).\]
+\[i\mathcal{M} = -i\lambda -\frac{i\lambda^2}{32\pi^2} \int_0^1 dx \left[\ln\left(\frac{D(s)}{D(4m^2)}\right) +\ln\left(\frac{D(t)}{D(0)}\right)+\ln\left(\frac{D(u)}{D(0)}\right)\right] + \mathcal{O}(\lambda^3).\]
 To determine $\delta_Z$ and $\delta_m$ we must compute the two-point function. Define $-iM(p^2)$ as the sum of all one-particle-irreducible insertions into the propagator.The full two-point function is given by
 \[\frac{-i}{p^2 + m^2 + M^2}.\]
 The renormalization conditions require that the pole in this full propagator occur at $p^2=-m^2$ and have residue $1$. These two conditions are equivalent, respectively, to
 \[M^2(p^2)|_{p^2=-m^2} = 0 , \quad \left. \frac{d}{dp^2} M^2(p^2)\right|_{p^2=-m^2} =0.\]
 We can work out that
-\[-iM^2(p^2) = \frac{i\lambda}{32\pi^2}(\frac{2}{\epsilon} + \ln(\frac{\mu^2}{m^2})+1)m^2 -i(p^2\delta_Z + \delta_m).\]
+\[-iM^2(p^2) = \frac{i\lambda}{32\pi^2}\left(\frac{2}{\epsilon} + \ln\left(\frac{\mu^2}{m^2}\right)+1\right)m^2 -i(p^2\delta_Z + \delta_m).\]
 Therefore, to the order of $\lambda$, 
-\[\delta_Z=\mathcal{O}(\lambda^2) , \quad \delta_m = \frac{\lambda}{32\pi^2}(\frac{2}{\epsilon} + \ln(\frac{\mu^2}{m^2})+1)m^2 + \mathcal{O}(\lambda^2) , \quad M^2(p^2) =\mathcal{O}(\lambda^2).\]
+\[\delta_Z=\mathcal{O}(\lambda^2) , \quad \delta_m = \frac{\lambda}{32\pi^2}\left(\frac{2}{\epsilon} + \ln\left(\frac{\mu^2}{m^2}\right)+1\right)m^2 + \mathcal{O}(\lambda^2) , \quad M^2(p^2) =\mathcal{O}(\lambda^2).\]
 The detailed calculation can be found in chapter 10.2 of \emph{An introduction to quantum field theory (M.E.Peskin \& D.V.Schroeder)} and will be eliminated here.
 
 \subsubsection{Perturbation theory to all orders}
-We begin by summing all one-particle irreducible diagrams with two external lines; this gives us the self-energy $M^2$. We next sum all amputated diagrams with four external lines; this gives us the four-point vertex function $V_4(k_1, k_2, k_3, k_4)$. (We can prove that amputated diagrams with four external lines must be one-particle irreducible). Order by order in $\lambda$, we must adjust the value of the Lagrangian coefficients $\delta_Z$, $\delta_m$, and $\delta_{\lambda}$ to maintain the conditions $M^2(-m^2) = 0$, $\frac{dM^2}{dp^2}(-m^2) = 0$, and $V_4(s=4m^2) =0$. 
-\\
-Next we will construct the $n$-point vertex functions $V_n$ with $4 < n \leq E$, where $E$ is the number of external lines in the process of interest. We compute these using a skeleton expansion. This means that we draw all the contributing 1PI diagrams, but omit diagrams that include either propagator or four-point vertex corrections. That is, we include only diagrams that are not only 1PI, but also 2PI and 4PI: they remain connected when any one, two, or four lines are cut. (Cutting four lines may isolate a single tree-level vertex, but nothing more complicated.) Then we take the propagators and vertices in these diagrams to be given by the exact propagator $\frac{-i}{p^2+m^2+M^2(p^2)}$ and vertex $V_4(k_1,k_2,k_3,k_4)$, rather than by the tree-level propagator and vertex. We then sum these skeleton diagrams to get $V_n$ for $4 < n \leq E$. Order by order in $\lambda$, this procedure is
+We begin by summing all one-particle irreducible diagrams with two external lines; this gives us the self-energy $M^2$. We next sum all amputated diagrams with four external lines; this gives us the four-point vertex function $V_4(k_1, k_2, k_3, k_4)$. (We can prove that amputated diagrams with four external lines must be one-particle irreducible). Order by order in $\lambda$, we must adjust the value of the Lagrangian coefficients $\delta_Z$, $\delta_m$, and $\delta_{\lambda}$ to maintain the conditions $M^2(-m^2) = 0$, ${dM^2}/{dp^2}(-m^2) = 0$, and $V_4(s=4m^2) =0$. 
+\\ \\
+Next we will construct the $n$-point vertex functions $V_n$ with $4 < n \leq E$, where $E$ is the number of external lines in the process of interest. We compute these using a skeleton expansion. This means that we draw all the contributing 1PI diagrams, but omit diagrams that include either propagator or four-point vertex corrections. That is, we include only diagrams that are not only 1PI, but also 2PI and 4PI: they remain connected when any one, two, or four lines are cut. (Cutting four lines may isolate a single tree-level vertex, but nothing more complicated.) Then we take the propagators and vertices in these diagrams to be given by the exact propagator $-i / [(p^2+m^2+M^2(p^2)]$ and vertex $V_4(k_1,k_2,k_3,k_4)$, rather than by the tree-level propagator and vertex. We then sum these skeleton diagrams to get $V_n$ for $4 < n \leq E$. Order by order in $\lambda$, this procedure is
 equivalent to computing $V_n$ by summing the usual set of contributing 1PI diagrams.
 \\ \\
-Next we draw all tree-level diagrams that contribute to the process of interest (which has $E$ external lines), including not only four-point vertices, but also n-point vertices. Then we evaluate these diagrams using the exact propagator for internal lines, and the exact 1PI vertices $V_n$; external lines are assigned a factor of one. We sum these tree diagrams to get the scattering amplitude. Order by order in $\lambda$, this procedure is equivalent to computing the scattering amplitude by summing the usual set of contributing diagrams.
+Next we draw all tree-level diagrams that contribute to the process of interest (which has $E$ external lines), including not only four-point vertices, but also $n$-point vertices. Then we evaluate these diagrams using the exact propagator for internal lines, and the exact 1PI vertices $V_n$; external lines are assigned a factor of one. We sum these tree diagrams to get the scattering amplitude. Order by order in $\lambda$, this procedure is equivalent to computing the scattering amplitude by summing the usual set of contributing diagrams.
 Thus we now know how to compute an arbitrary scattering amplitude
 to arbitrarily high order. The procedure is the same in any quantum field theory; only the form of the propagators and vertices change, depending on the spins of the fields.
 
@@ -705,7 +705,7 @@ Firstly, in the $\mathrm{\overline{MS}}$ scheme, the propagator will no longer h
 \[m_{\rm ph}^2 = M^2(-m_{\rm ph}^2) + m^2.\]
 To the lowest order, 
 \[m_{\rm ph}^2 = \left[1+\frac{\lambda}{32\pi^2}( \ln(\frac{m^2}{\mu^2})-1)\right] m^2.\]
-Because $m_{\rm ph}$ is a independent of $\mu$, according to $\frac{d}{d\mu} m_{\rm ph} = 0$, it can be derived that
+Because $m_{\rm ph}$ is a independent of $\mu$, according to $d m_{\rm ph} / d\mu = 0$, it can be derived that
 \[\frac{dm}{d\ln \mu} = \left[\frac{\lambda}{32\pi^2}+\mathcal{O}(\lambda^2)\right] m.\]
 Furthermore, the residue of this pole is no longer one. Let us call the residue $R$. Therefore, in the LSZ formula, we get a net factor of $\sqrt{R}$ for each external line when using the $\mathrm{\overline{MS}}$ scheme. And in $\phi^4$ theory,
 \[R = 1 + \mathcal{O}(\lambda^2).\]
@@ -736,11 +736,11 @@ Z_{\phi} = 1 + \sum_{n=1}^{\infty} \frac{a_n(\lambda)}{\epsilon^n} ,\nonumber \\
 Z_{m} = 1 + \sum_{n=1}^{\infty} \frac{b_n(\lambda)}{\epsilon^n} ,\nonumber \\
 Z_{\lambda} = 1 + \sum_{n=1}^{\infty} \frac{c_n(\lambda)}{\epsilon^n} .\nonumber 
 \end{eqnarray}
-In $\phi^4$ theory, $a_1 = \mathcal{O}(\lambda^2)$, $b_1 = \frac{\lambda}{16\pi^2} +  \mathcal{O}(\lambda^2)$,$c_1 = \frac{3\lambda}{16\pi^2} + \mathcal{O}(\lambda^2)$.
+In $\phi^4$ theory, $a_1 = \mathcal{O}(\lambda^2)$, $b_1 = {\lambda}/{16\pi^2} +  \mathcal{O}(\lambda^2)$, $c_1 = {3\lambda}/{16\pi^2} + \mathcal{O}(\lambda^2)$.
 Remember that bare fields and parameters must be independent of $\mu$. 
 Define
 \[G(\lambda,\epsilon) \equiv \ln(Z_{\phi}^{-2} Z_{\lambda}) = \sum_{n=1}^{\infty} \frac{G_n(\lambda)}{\epsilon^n}.\]
-We can work out $G_1 = c_1 - 2a_1 = \frac{3\lambda}{16\pi^2} + \mathcal{O}(\lambda^2)$.
+We can work out $G_1 = c_1 - 2a_1 = {3\lambda}/{16\pi^2} + \mathcal{O}(\lambda^2)$.
 As $\ln \lambda_0 = G + \ln \lambda + \epsilon \ln \tilde{\mu} $. 
 From the independence of $\lambda_0$, we can derive
 \[\left ( 1 + \frac{\lambda G'_1}{\epsilon} + \cdots \right) \frac{d\lambda}{d\ln \mu} + \epsilon \lambda = 0.\]
@@ -754,7 +754,7 @@ In $\phi^4$ theory, we have
 \[\beta(\lambda) = \frac{3\lambda^2}{16\pi^2} + \mathcal{O}(\lambda^3).\]
 Define
 \[M(\lambda,\epsilon) \equiv \ln(Z_{m}^{1/2} Z_{\phi}^{-1/2}) = \sum_{n=1}^{\infty} \frac{M_n(\lambda)}{\epsilon^n}.\]
-We can work out that $M_1 = \frac{1}{2}b_1 - \frac{1}{2}a_1 = \frac{\lambda}{32\pi^2} + \mathcal{O}(\lambda^2)$.
+We can work out that $M_1 = b_1/2 - a_1/2 = {\lambda}/{32\pi^2} + \mathcal{O}(\lambda^2)$.
 As $\ln m_0 = M + \ln m $, define the anomalous dimension of the mass
 \[\gamma_m(\lambda) \equiv \frac{1}{m} \frac{dm}{d \ln \mu}.\]
 From the independence of $m_0$, we can derive that
@@ -1101,6 +1101,7 @@ We can verify that
 Thus the function determinant method is valid.
 
 \section{Optical theorem and unstable particles}
+\subsection{Optical theorem}
 The optical theorem is a straightforward consequence of the unitarity of the $S$ -matrix: $S^{\dagger}S = 1$. 
 Inserting $S = 1 + iT$, we have
 \[-i(T - T^{\dagger}) = T^{\dagger}T.\]
@@ -1113,42 +1114,43 @@ Then we have
 Let us abbreviate this identity as
 \[-i[\mathcal{M}(i \to f) - \mathcal{M}^{*}(f \to i)] = \sum_m \int d\Pi_{m} \mathcal{M}(i \to m) \mathcal{M}^{*}(f \to m),\]
 where the sum runs over all possible sets of particles and $i$ and $f$ could be one-particle or multi-particle asymptotic states.
-If $i$ and $f$ are the same state, we have
-\[\mathrm{Im} \mathcal{M}(i \to i) = \sum_m \int d\Pi_{m} |\mathcal{M}(i \to \mbox{ anything })|^2.\]
-Particularly, if $i$ is a two particle state, we have
+For the important special case of forward scattering, we can set $i = f$ to obtain a simpler identity,
+\[\mathrm{Im} \mathcal{M}(i \to i) = \frac{1}{2} \sum_m \int d\Pi_{m} |\mathcal{M}(i \to \mbox{ anything })|^2.\]
+Supplying the kinematic factors required to build a cross section, we obtain the standard form of the optical theorem,
 \[\mathrm{Im} \mathcal{M}(k_1k_2 \to k_1k_2) = 2E_{\mathrm{cm}}p_{\mathrm{cm}}\sigma_{\mathrm{tot}}(k_1k_2 \to \mbox{ anything }).\]
-If $i$ is a one particle state, we have
-\[\mathrm{Im} \mathcal{M}(k \to k) = 2E_{k}\Gamma_{\mathrm{tot}}(k \to \mbox{ anything }).\]
-It can be represented in terms of 1PI propagator as
-\[\mathrm{Im} M^2(k^2) = -2E_{k}\Gamma_{\mathrm{tot}}(k \to \mbox{ anything }).\]
-Consider a theory of two real scalar fields, $\phi$ and $\chi$, with Lagrangian
-\[\mathcal{L} = -\frac{1}{2}\partial_{\mu}\phi \partial^{\mu}\phi - \frac{1}{2}m_{\phi}^2\phi^2 -\frac{1}{2}\partial_{\mu}\chi \partial^{\mu}\chi - \frac{1}{2}m_{\chi}^2\chi^2 + \frac{1}{2}g\phi\chi^2 + \frac{1}{6}h\phi^3.\]
-This theory is renormalizable in six dimensions, where $g$ and $h$ are dimensionless coupling constants. Let us assume that $m_{\phi} > 2m_{\chi}$. 
-Then it is kinematically possible for a $\phi$ particle at rest to decay into two $\chi$ particles.
-The amplitude for this process is given at one loop level as
-\[\Gamma = \frac{1}{2} \frac{1}{2m_{\phi}} \int d\Pi_m |\mathcal{M}|^2 = \frac{1}{12} \pi \alpha (1 - 4m_{\chi}^2/m_{\phi}^2)^{3/2}m_{\phi},\]
-where $\alpha = g^2/(4\pi)^3$.
-Note that the extra factor $1/2$ is due to the presence of two identical particles in the final state.
-Let us, then, compute the correction to the $\phi$ propagator from a loop of $\chi$ particles. (There is also a contribution from a loop of $\phi$ particles, but we can ignore it if we assume that $h \ll g$.) 
-We have
-\[M^2(k^2) = -\frac{1}{2}\alpha \int_0^1 dx D\ln D + A'k^2 + B'm_{\phi}^2,\]
-where
-\[D = x(1-x)k^2 + m_{\chi}^2 - i\epsilon \]
-and $A'$ and $B'$ are the finite counterterm coefficients that remain after the infinities have been absorbed. 
-We now try to fix $A'$ and $B'$ by imposing the usual on-shell conditions $M^2(-m_{\phi}^2) = 0$ and $d M^2 / d(k^2)|_{k^2=-m_{\phi}^2} = 0$.
-But, we have a problem. 
-For $k^2 = -m_{\phi}^2$ and $m_{\phi} > 2m_{\chi}$, $D$ is negative for part of the range of $x$. Therefore $\ln D$ has an imaginary part. 
-This imaginary part cannot be cancelled by $A'$ and $B'$, since $A'$ and $B'$ must be real: they are coefficients of hermitian operators in the Lagrangian. 
-The best we can do is $\mathrm{Re}[M^2(-m_{\phi}^2)] = 0$ and $\mathrm{Re}[(M^2)'(-m_{\phi}^2)] = 0$. 
-Imposing these gives
-\[M^2(k^2) = -\frac{1}{12}\alpha \int_0^1 dx \ln(D/|D_0|) + \frac{1}{12}\alpha(m_{\phi}^2 + k^2),\]
-where
-\[D_0 = -x(1-x)m_{\phi}^2 + m_{\chi}^2.\]
-Now let us compute the imaginary part of $M^2$. 
-This arises from the integration range $x_- < x < x_+$, where $x_{\pm}$ are the roots of $D = 0$ when $k^2 < -4m_{\chi}^2$. 
-In this range, $\mathrm{Im} \ln D = -i \pi$; the minus sign arises because $D$ has a small negative imaginary part. 
-Finally, we have
-\[\mathrm{Im} M^2(-m_{\phi}^2) = -m_{\phi} \Gamma.\]
+where $E_{\rm cm}$ is the total center-of-mass energy and $E_{\rm cm}$ is the momentum of either particle in the center-of-mass frame. 
+This equation relates the forward scattering amplitude to the total cross section for production of all nal states. 
+Since the imaginary part of the forward scattering amplitude gives the attenuation of the forward-going wave as the beam passes through the target, it is natural that this quantity should be proportional to the probability of scattering.
+
+\subsection{Unstable Particles}
+The generalized optical theorem is true not only for S-matrix elements, but for any amplitudes $\mathcal{M}$ that we can define in terms of Feynman diagrams. It has been proved to all orders in perturbation theory using cutting rules by Cutkosky. An brief introduction can be found in section 7.3 of \emph{An introduction to quantum field theory (M.E.Peskin \& D.V.Schroeder)}.
+This fact is extremely useful for dealing with unstable particles, which never appear in asymptotic states.
+\\ \\
+The exact two-point function for a scalar particle has the form
+\[ \frac{-i}{p^2+m^2+M^2(p^2)}.\]
+We defined the quantity $-iM(p^2)$ as the sum of all 1PI insertions into the boson propagator, but we can equally well think of it as the sum of all amputated diagrams for 1-particle $\to$ 1-particle scattering. 
+The LSZ formula then implies
+\[ \mathcal{M} = -M^2(p^2).\]
+First consider the familiar case where the scalar boson is stable. 
+In this case, there is no possible final state that can contribute to the right-hand side of optical theorem equation.
+Thus $M^2(p^2)$ is real. Renormalization condition $M^2(p^2 = -m^2) = 0$ can be realised by a real-valued $m$, which is the physical mass of the stable particle. The pole of the propagator lies on the real $p^2$ axis, below the multiparticle branch cut.
+\\ \\
+Often, however, a particle can decay into two or more lighter particles. In this case $M^2(p^2)$ will acquire an imaginary part, the renormalization condition must by modified as ${\rm Re} M^2(p^2 = -m^2) = 0$. Then the pole in the propagator is displaced from the real axis.
+If this propagator appears in the $s$ channel of a Feynman diagram, the cross section one computes, in the vicinity of the pole, will have the form
+\[ \sigma \propto \left| \frac{1}{s-m^2 - iM^2(-s)} \right|^2. \]
+If ${\rm Im}M^2(-m^2)$ is small, so that the resonance is narrow, we can approximate ${\rm Im}M^2(-s)$ as ${\rm Im}M^2(-m^2)$ over the width of the resonance. 
+In this case, we can figure out the FWHM of the resonance curve
+\[ \Delta E = -\frac{{\rm Im}M^2(-m^2)}{E_{\bm{p}}}.\]
+${\rm Im} M^2$ can be computed using the optical theorem
+\[{\rm Im}M^2(p^2) = -{\rm Im} \mathcal{M} = -\frac{1}{2} \sum_m \int d\Pi_{m} |\mathcal{M}(p \to \mbox{ anything })|^2. \]
+If $p^2$ is on-shell, we further have
+\[\mathrm{Im} M^2(p^2 = -m^2) = -E_{\bm{p}}\Gamma_{\mathrm{tot}},\]
+where $\Gamma_{\rm tot}$ is the total decay rates of the particle.
+In the case of a long-lived unstable particle, $\Gamma \ll m$, we have
+\[\Delta E \Delta \tau = 1,\]
+where $\Delta \tau = 1/\Gamma$ is the average lifetime of the particle.  
+For a broad resonance, the full energy dependence of $M^2(p^2)$ must be taken into account.
+\\ \\
 To get a more physical understanding of this result, recall that in non-relativistic quantum mechanics, a metastable state with energy $E_0$ and angular momentum quantum number $l$ shows up as a resonance in the partial-wave scattering amplitude,
 \[f_l \sim \frac{1}{E - E_0 + i\Gamma/2}.\]
 If we imagine convolving this amplitude with a wave packet $\tilde{\psi}(E)e^{-iEt}$ will find a time dependence

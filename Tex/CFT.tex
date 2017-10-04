@@ -1,9 +1,9 @@
 \chapter{Special Relativity}
 \section{The principle of relativity}
-First, we assume there is an upper limit of velocity of propagation of interaction $c$. Second, we assume that inertial reference frame are all the same in describing the law of physics. Then, we can find the invariant intervals when transforming from one inertial reference frame to another, $ds^2 = -c^2 dt^2 + dx^2 + dy^2 + dz^2$. 
+First, we assume there is an upper limit $c$ for the velocity of propagation of interaction. Second, we assume that all inertial reference frames are the same in describing the law of physics. Then, we can find the invariant intervals when transforming from one inertial reference frame to another, $ds^2 = -c^2 dt^2 + dx^2 + dy^2 + dz^2$. 
 (In the following, we adopt the unit system in which $c$ equals $1$.) The transformation between different inertial frame preserving the intervals is called Lorentz transformation, which can be written as
 \[\overline{x}^{\mu} = \Lambda^{\mu}_{\phantom{\mu}\nu} x^{\nu}.\]
-The invariant symbol of the vector representation of Lorentz transformation is $\eta^{\mu \nu}$
+The invariant symbol of the vector representation of Lorentz transformation is $\eta^{\mu \nu}$,
 \[\Lambda^{\mu}_{\phantom{\mu}\rho}  \Lambda^{\nu}_{\phantom{\nu}\sigma}  \eta^{\rho \sigma} = \eta^{\mu \nu},\]
 where,
 \[\eta^{\mu \nu} \equiv \left[ 
@@ -30,26 +30,26 @@ And we can verify the following identities,
 \[x^{\mu} = \eta^{\mu \nu} x_{\nu};\]
 \[\overline{x}_{\mu} = \Lambda_{\mu}^{\phantom{\mu}\nu} x_{\nu};\]
 \[\Lambda_{\mu}^{\phantom{\mu}\rho} \Lambda_{\nu} ^{\phantom{\nu}\sigma}  \eta_{\rho \sigma} = \eta_{\mu \nu}.\]
-In a special case where the new reference frame move along $\hat{1}$ direction with velocity $\beta$, we have
+In a special case where the new reference frame moves along $\hat{1}$ direction with velocity $\beta$, we have
 \[\overline{x}^{0} = \gamma x^0 - \gamma \beta x^1,\]
 \[\overline{x}^{1} = -\gamma \beta x^0 + \gamma x^1,\]
 where $\gamma \equiv (1-\beta^2)^{-1/2}$.
 \\ \\
-Some physical quantity will behave like a tensor (vector,scalar) when transforming form one inertial frame to another. For example,
-\paragraph{scalar} proper time: $d \tau$, mass: $m$, electrical charge $e$.
-\paragraph{vector} four velocity: $u^{\mu} \equiv {dx^{\mu}}/{d \tau}$, four momentum: $p^{\mu} \equiv m u^{\mu}$, four acceleration: $a^{\mu} \equiv {du^{\mu}}/{d \tau}$, four force: $f^{\mu} \equiv m a^{\mu}$.
+Some physical quantities will behave like a tensor (vector, scalar) when transforming form one inertial frame to another. For example,
+\paragraph{scalar} proper time $d \tau$, mass $m$, electrical charge $e$.
+\paragraph{vector} four velocity $u^{\mu} \equiv {dx^{\mu}}/{d \tau}$, four momentum $p^{\mu} \equiv m u^{\mu}$, four acceleration $a^{\mu} \equiv {du^{\mu}}/{d \tau}$, four force $f^{\mu} \equiv m a^{\mu}$.
 \\ \\
 We can also define the corresponding three vector.
-\paragraph{three velocity}: $\hat{v}^{i} \equiv {dx^i}/{dt}$.
-\[u^0 = \gamma_v, u^i = \gamma \hat{v}^i.\]
+\paragraph{three velocity} $\hat{v}^{i} \equiv {dx^i}/{dt}$.
+\[u^0 = \gamma, u^i = \gamma \hat{v}^i.\]
 If the new reference frame move along $\hat{1}$ direction with velocity $\beta$, we have
 \[\overline{\hat{v}}^1 = \frac{\hat{v}^1 - \beta}{1-\hat{v}^1 \beta};\]
 \[\overline{\hat{v}}^2 = \frac{\hat{v}^2}{\gamma(1-\hat{v}^2 \beta)};\]
 \[\overline{\hat{v}}^3 = \frac{\hat{v}^3}{\gamma(1-\hat{v}^3 \beta)}.\]
-\paragraph{three momentum}: $\hat{p}^{i} \equiv p^i$
-\paragraph{three acceleration}: $\hat{a}^{i} \equiv {dv^i}/{dt}$
-\paragraph{three force}: $\hat{f}^i \equiv {d\hat{p}^i}/{dt}$
-\[f^i = \gamma_v \hat{f}^i.\]
+\paragraph{three momentum} $\hat{p}^{i} \equiv p^i$
+\paragraph{three acceleration} $\hat{a}^{i} \equiv {dv^i}/{dt}$
+\paragraph{three force} $\hat{f}^i \equiv {d\hat{p}^i}/{dt}$
+\[f^i = \gamma \hat{f}^i.\]
 
 \section{Relativistic Mechanics}
 For a free particle, we have following equations of motion:
@@ -66,13 +66,13 @@ Therefore, the Hamiltonian equations are
 \[\dot{\pi}^i = 0, \ \ \ \ \dot{x_i} = \eta_{ij}\frac{\pi^j}{\sqrt{m^2 + \pi^k \pi_k}}.\]
 \subsubsection{Hamiltonian-Jacobi equation}
 \[H = -\frac{\partial S}{\partial t}, \ \ \ \ \pi^i = \frac{\partial S}{\partial x_i}.\]
-Note that $p^0 = H$, $p^i = \pi^i$, we have $p^{\mu} = \frac{\partial S}{\partial x_{\mu}}$. Therefore, we can see that $p^{\mu}$ is a vector under Lorentz transformation. The Hamiltonian-Jacobi equation can be written as
+Note that $p^0 = H$, $p^i = \pi^i$, we have $p^{\mu} = \partial^{\mu} S$. Therefore, we can see that $p^{\mu}$ is a vector under Lorentz transformation. The Hamiltonian-Jacobi equation can be written as
 \[(\frac{\partial S}{\partial t})^2 = m^2 + (\frac{\partial S}{\partial x})^2 + (\frac{\partial S}{\partial y})^2 + (\frac{\partial S}{\partial z})^2.\]
 \\ \\
 For a non-free particle, we have the revised newton's second law:
 \[f^{\mu} = \frac{dp^{\mu}}{d\tau}.\]
 The formula is the definition of the four force. It can also be written in three vector as
-\[\hat{f}^i = \gamma_v m \hat{a}^i + \gamma_v^3 (\hat{a}^j \hat{v}_j) m \hat{v}^i.\]
+\[\hat{f}^i = \gamma m \hat{a}^i + \gamma^3 (\hat{a}^j \hat{v}_j) m \hat{v}^i.\]
 \\ \\
 If the system consists of more than one particles interacting with each other. We have the conservation laws from the symmetry.
 \subsubsection{Translational symmetry and conservation of momentum}
@@ -82,7 +82,7 @@ $\sum p^{\mu}$ is conserved.
 \subsubsection{Rotational symmetry and conservation of angular momentum}
 \[\overline{x}^{\mu} = x^{\mu} + x_{\nu}\delta \omega^{\mu \nu}.\]
 where $I+\delta \omega$ is the infinitesimal Lorentz transformation.
-\[\delta S = \sum p^{\mu} x^{\nu} \delta \Omega_{\mu \nu}|_a^b = 0 .\]
+\[\delta S = \sum p^{\mu} x^{\nu} \delta \omega_{\mu \nu}|_a^b = 0 .\]
 Since $\delta \omega$ is anti symmetric, $\sum M^{\mu \nu} $ is conserved, where $M^{\mu \nu} \equiv x^{\mu}p^{\nu} - x^{\nu}p^{\mu}$.
 
 \section{Relativistic Scattering}
@@ -143,11 +143,11 @@ where $V \equiv p_1 / {E_1 + m_2}$ is the velocity of particle 2 before scatteri
 And it is easy to see that $a + c = p_1$.
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=0.3]{CFT/scattering.png}
+	\includegraphics[scale=0.6]{CFT/scattering.eps}
 	\caption{Relativistic scattering}
 \end{figure}
 \noindent
-Next, suppose in the center of mass frame (C frame), the scattering angle is $\chi$,then we can derive that
+Next, suppose in the center of mass frame (C frame), the scattering angle is $\chi$, we can derive that
 \[E_1' = E_1 - \Delta E , \quad E_2' = m_2 + \Delta E,\]
 where
 \[\Delta E \equiv \frac{m_2(E_1^2-m_1^2)}{m_1^2 + m_2^2 + 2m_2E_1}(1-\cos\chi).\]
@@ -179,10 +179,10 @@ Lagrangian must be a scalar, or more loosely, action must be invariant under Lor
 \end{newthem}
 
 \subsubsection{space-time translation}
-$\overline{x} = x - a$ 
-\[j^{\mu} = a_{\nu} T^{\mu \nu},\]
+$\overline{x}^{\mu} = x^{\mu} + a^{\mu}$ 
+\[j^{\mu} = -a_{\nu} T^{\mu \nu},\]
 \[T^{\mu \nu} \equiv -\frac{\partial \mathcal{L}}{\partial(\partial_{\mu}\phi_a)} \partial^{\nu} \phi_a + \eta^{\mu \nu} \mathcal{L}.\]
-If we define $P^{\mu} \equiv \int T^{0 \mu} d^3 x$,then we have the law of momentum conservation:
+If we define $P^{\mu} \equiv \int T^{0 \mu} d^3 x$, then we have the law of momentum conservation:
 \[\frac{d P^{\mu}}{dt} = 0.\]
 
 \subsubsection{Lorentz Transformation}
@@ -202,7 +202,7 @@ We assume that
 In the limit of infinitesimal Lorentz transformation, we have
 \[\mathscr{S}_{a}^{\phantom{a}b} = \delta_{a}^{\phantom{a}b}+\frac{1}{2} \delta \omega_{\alpha \beta} (\Sigma^{\alpha \beta})_{a}^{\phantom{a}b} .\]
 Therefore,
-\[j^{\mu} = \frac{1}{2} M^{\mu \nu \rho}  \delta \omega_{\nu \rho}.\]
+\[j^{\mu} = \frac{1}{2} M^{\mu \nu \rho}  \delta \omega_{\nu \rho},\]
 \[M^{\mu \nu \rho} \equiv x^{\nu}T^{\mu \rho} - x^{\rho} T^{\mu \nu} - \frac{\partial \mathcal{L}}{\partial (\partial_{\mu}\phi_a)}(\Sigma^{\nu \rho})_{a}^{\phantom{a}b}\phi_b.\]
 If we define $M^{\nu \rho} \equiv \int M^{0 \nu \rho} d^3 x$, then we have the law of angular momentum conservation:
 \[\frac{dM^{\nu \rho}}{dt} = 0.\]
@@ -217,22 +217,22 @@ If we define $M^{\nu \rho} \equiv \int M^{0 \nu \rho} d^3 x$, then we have the l
 \end{newdef}
 \noindent
 Like the derivative of a function, the functional derivative satisfies the following properties, where $F[\rho]$ and $G[\rho]$ are functionals:\\
-Linearity:
+{\bf Linearity}:
 \[{\frac {\delta (\lambda F+\mu G)[\rho ]}{\delta \rho (x)}}=\lambda {\frac {\delta F[\rho ]}{\delta \rho (x)}}+\mu {\frac {\delta G[\rho ]}{\delta \rho (x)}}，\]
 where $\lambda$, $\mu$ are constants.\\
-Product rule:
+{\bf Product rule}:
 \[{\frac {\delta (FG)[\rho ]}{\delta \rho (x)}}={\frac {\delta F[\rho ]}{\delta \rho (x)}}G[\rho ]+F[\rho ]{\frac {\delta G[\rho ]}{\delta \rho (x)}},\]
-Chain rules:\\
+{\bf Chain rules}:\\
 If $F$ is a functional and $G$ an operator, then
 \[{\displaystyle \displaystyle {\frac {\delta F[G[\rho ]]}{\delta \rho }(y)}=\int dx{\frac {\delta F[G[\rho]]}{\delta G[\rho]}}(x)\cdot {\frac {\delta G[\rho ]}{\delta \rho}(x,y)}\ }.\]
 If $G$ is an ordinary differentiable function $g$, then this reduces to
 \[{\displaystyle \displaystyle {\frac {\delta F[g(\rho )]}{\delta \rho}(y)}={\frac {\delta F[g(\rho )]}{\delta g[\rho ]}(y)}\ {\frac {dg(\rho )}{d\rho }(y)}\ } .\]
 \begin{newprop}[Properties of functional derivatives]
-	\[\frac{\delta F}{\delta \rho} (y) = \lim_{\epsilon \to \infty} \frac{1}{\epsilon} \{ F[\rho(x) + \epsilon \delta(x-y)] - F[\rho(x)] \}.\]
+	\[\frac{\delta F}{\delta \rho} (y) = \lim_{\epsilon \to \infty} \frac{1}{\epsilon} \{ F[\rho + \epsilon \delta_y] - F[\rho] \}, \mbox{ where }\delta_y(x) \equiv \delta(x-y).\]
 	\[\frac{\delta f(x)}{\delta f(y)} = \delta(x-y).\]
-	\[\frac{\delta}{\delta f(y)} \int g\left( f(x)\right) dx =  g'(f(y)).\]
+	\[\frac{\delta}{\delta f(y)} \int g\left( f(t)\right) dt =  g'(f(y)).\]
 	\[\frac{\delta f'(x)}{\delta f(y)} = \frac{d}{dx}\delta(x-y).\]
-	\[\frac{\delta}{\delta f(y)} \int g\left( f'(x)\right) dx = -\frac{d}{dy} g'(f'(y)).\]
+	\[\frac{\delta}{\delta f(y)} \int g\left( f'(t)\right) dt = -\frac{d}{dy} g'(f'(y)).\]
 \end{newprop}
 
 \section{Hamiltonian formulation}
@@ -573,9 +573,9 @@ Therefore,
 \[\bm{E} = -\frac{\partial \bm{A}}{\partial t} , \quad \bm{B} = \bm{\nabla} \times \bm{A}.\]
 From Maxwell equations we can derive that
 \[\nabla^2 \bm{A} - \frac{\partial^2 \bm{A}}{\partial t^2} = 0.\]
-This is the equation which determines the potentials of electromagnetic waves. It is called the d'Alembert equation, or the wave equation. We can verify that the electric and magnetic fields $\bm{E}$ and $\bm{H}$ satisfy the same wave equation.
+This is the equation which determines the potentials of electromagnetic waves. It is called the d'Alembert equation, or the wave equation. We can verify that the electric and magnetic fields $\bm{E}$ and $\bm{B}$ satisfy the same wave equation.
 \\ \\
-We consider the special case of electromagnetic waves in which the fields depends only on one coordinates,say $x$. Such waves are said to be plane. In this case the equation of the field becomes
+We consider the special case of electromagnetic waves in which the fields depends only on one coordinates, say $x$. Such waves are said to be plane. In this case the equation of the field becomes
 \[\frac{\partial^2 f}{\partial t^2}  - \frac{\partial^2 f}{\partial x^2} = 0.\]
 The solution is
 \[f(t,x) = f_1(t-x) + f_2(t+x).\]
@@ -650,7 +650,7 @@ The $\rho$ can be expressed as
 \[\frac{1}{2} (1-P) I + \frac{1}{2} P(I + \bm{n} \cdot \bm{\sigma}),\]
 where
 \[P \equiv \sqrt{p_1^2 + p_2^2 + p_3^2} , \quad \bm{n} \equiv (\frac{p_1}{P},\frac{p_2}{P},\frac{p_3}{P}).\]
-For a totally polarized light with polarization state$ | E\rangle = (\cos {\theta}/{2} e^{-i{\phi}/{2}} , \sin {\theta}/{2} e^{i{\phi}/{2}})$, the polarization tensor $\rho = |E\rangle \langle E|$. We can verify that
+For a totally polarized light with polarization state$ | E\rangle = (\cos {\theta}/{2} e^{-i{\phi}/{2}} , \sin {\theta}/{2} e^{i{\phi}/{2}})$, the polarization tensor $\rho$ is $|E\rangle \langle E|$. We can verify that
 \[P = 1 , \quad \bm{n} = (\sin\theta \cos\phi, \sin\theta \sin\phi, \cos \theta).\]
 Therefore, for an arbitrary light,
 \[\rho = (1-P)\rho_{\mathrm{n}} + P \rho_{\mathrm{p}} , \quad \rho_{\mathrm{n}} = \frac{1}{2}I , \quad \rho_{\mathrm{p}} = \frac{1}{2}(I + \bm{n} \cdot \bm{\sigma}).\]
@@ -849,7 +849,7 @@ Since
 we have
 \[\bm{F}_{\mathrm{rad}} = \frac{e^2}{6\pi} \dot{\bm{a}}.\]
 This is known as the Abraham-Lorentz formula for radiation reaction. This equation can only be applied when the frequency and intensity of the EM field is not very big, i.e.
-\[\lambda \gg \frac{e^2}{m} , \quad H \ll \frac{m^2}{e^3}.\]
+\[\lambda \gg \frac{e^2}{m} , \quad B \ll \frac{m^2}{e^3}.\]
 The details can be found in section 75 of \emph{The classical theory of fields (L.D.Landau \& E.M.Lifshitz)}.
 \\ \\
 We derive the relativistic expression for the radiation damping for a single charge, which is applicable also to motion with velocity comparable to that of light. This force is now a four-vector $g^{\mu}$, which must be included in the equation of motion of the charge, written in four-dimensional form:
@@ -858,12 +858,12 @@ To determine $g^{\mu}$ we note that for $v \ll 1$, its three space components mu
 It is easy to see that the vector ${e^2}/{6\pi} \; {d^2u^{\mu}}/{d\tau^2}$ has this property. However, it does not satisfy the identity $g^{\mu}u_{\mu} = 0$, which is valid for any force four-vector. 
 In order to satisfy this condition, we must add to the expression given a certain auxiliary four-vector, made up from the four-velocity $u^{\mu}$ and its derivatives. 
 The three space components of this vector must become zero in the limiting case $v = 0$. As a result we find
-\[g^{\mu} = \frac{e^2}{6\pi} \left( \frac{d^2u^{\mu}}{d\tau^2} -u^{\mu}u^{\nu}\frac{d^2u^{\nu}}{d\tau^2} \right).\]
+\[g^{\mu} = \frac{e^2}{6\pi} \left( \frac{d^2u^{\mu}}{d\tau^2} + u^{\mu}u^{\nu}\frac{d^2u^{\nu}}{d\tau^2} \right).\]
 It is called Abraham–Lorentz–Dirac force.
 \\ \\
 The integral of the four-force $g^{\mu}$ over the world line of the motion of a charge, passing through a given field, must coincide (except for opposite sign) with the total four-momentum $\Delta P^{\mu}$ of the radiation from the charge. 
 The first term in equation above goes to zero on performing the integration, since at infinity the particle has no acceleration. We integrate the second term by parts and get:
-\[-\int g^{\mu} d\tau = -\frac{e^2}{6\pi} \int \frac{du^{\nu}}{d\tau} \frac{du_{\nu}}{d\tau} u^{\mu}d\tau = \Delta P^{\mu}.\]
+\[-\int g^{\mu} d\tau = \frac{e^2}{6\pi} \int \frac{du^{\nu}}{d\tau} \frac{du_{\nu}}{d\tau} u^{\mu}d\tau = \Delta P^{\mu}.\]
 
 \subsection{Scattering by free charges}
 If an electromagnetic wave falls on a system of charges, then under its action the charges are set in motion. This motion in turn produces radiation in all directions; there occurs, we say, a scattering of the original wave. 

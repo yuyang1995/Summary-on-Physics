@@ -121,7 +121,7 @@ $\forall X,Y \in \mathcal{H}(M),[X,Y]=X \circ Y -Y \circ X \in \mathcal{H}(M)$.
 (1) $[aX+bY,Z]=a[X,Z]+b[Y,Z]$;$[Z,aX+bY]=a[Z,X]+b[Z,Y]$;\\
 (2) $[X,Y]=-[Y,X]$;\\
 (3) $[X,[Y,Z]] + [Y,[Z,X]] +[Z,[X,Y]]=0$;\\
-(4) $[X,Y]|_{U} = [X|_{U},Y|_{U}] = (X_i \frac{\partial Y^j}{\partial u^i} - Y^i \frac{\partial X^j}{\partial u^i}) \frac{\partial}{\partial u^j}$;\\
+(4) $[X,Y]|_{U} = [X|_{U},Y|_{U}] = (X^i \tensor{Y}{^j_{,i}} - Y^i \tensor{X}{^j_{,i}}) \partial_{j}$;\\
 (5) $f_{*}[X,Y] = [f_{*}X,f_{*}Y]$;
 \end{newprop}
 
@@ -153,7 +153,7 @@ Vector field induced by $\phi$: $X_p(f) = \langle \gamma_p , f \rangle$.
 \end{newprop}
 
 \begin{newthem}
-Let $M$ be a n-dimensional smooth manifold and $X \in \mathcal{H}(M)$. If $p \in M$ and $X_p \neq 0$, $\exists (V,x^i)$ and $p \in V$ that $X|_V = \frac{\partial}{\partial y^1 }$
+Let $M$ be a $n$-dimensional smooth manifold and $X \in \mathcal{H}(M)$. If $p \in M$ and $X_p \neq 0$, $\exists (V,x^i)$ and $p \in V$ that $X|_V = \partial_{1}$.
 \end{newthem}
 
 \begin{newdef}[Distribution]
@@ -167,7 +167,7 @@ A related idea occurs in Hamiltonian mechanics: two functions f and g on a sympl
 \end{newdef}
 
 \begin{newthem}[Frobenius Theorem]
- If distribution $\Delta$ on $M$ is involutive, then $\forall p \in M$, $\exists (V,x^i)$ and $p \in V$ that $\Delta|_{V} = \mathrm{Span} \{ \frac{\partial}{\partial y^1} , \cdots, \frac{\partial}{\partial y^h}\}$.
+ If distribution $\Delta$ on $M$ is involutive, then $\forall p \in M$, $\exists (V,x^i)$ and $p \in V$ that $\Delta|_{V} = \mathrm{Span} \{ \partial_{1} , \cdots, \partial_{h}\}$.
 \end{newthem}
 
 \begin{newdef}[Integrable manifold]
@@ -396,9 +396,9 @@ $D_{X}s = \langle X, Ds \rangle$, called absolute derivative of $s$ along $X$.
 
 \begin{newprop}
 Local representation of connection is: 
-\[Ds_{\alpha} = \sum_{1 \leq i \leq m,1 \leq \beta \leq q} \Gamma^{\beta}_{\alpha i} du^i \otimes s_{\beta}.\]
-\[\omega^{\beta}_{\alpha} = \sum_{1 \leq i \leq m} \Gamma^{\beta}_{\alpha i} du^i.\]
-\[Ds_{\alpha} = \sum_{\beta=1}^{q} \omega^{\beta}_{\alpha} \otimes s_{\beta}.\]
+\[Ds_{\alpha} = \sum_{1 \leq i \leq m,1 \leq \beta \leq q} \tensor{\Gamma}{_\alpha^\beta_i} du^i \otimes s_{\beta}.\]
+\[\tensor{\omega}{_\alpha^\beta} = \sum_{1 \leq i \leq m} \tensor{\Gamma}{_\alpha^\beta_i} du^i.\]
+\[Ds_{\alpha} = \sum_{\beta=1}^{q} \tensor{\omega}{_\alpha^\beta} \otimes s_{\beta}.\]
 \[DS = \omega \otimes S.\]
 Transformation law of connection is:
 \[S' = A \cdot S.\] 
@@ -428,7 +428,7 @@ Let $D$ be a connection of vector bundle $E$. $\forall p \in M$, there exists a 
 
 \begin{newdef}[Curvature operator]
 \[s = \sum_{\alpha=1}^{q} \lambda^{\alpha} s_{\alpha|p}.\]
-\[R(X,Y)s = \sum_{\alpha,\beta=1}^{q} \lambda^{\alpha} \Omega^{\beta}_{\alpha}(X,Y)s_{\beta|p}.\]
+\[R(X,Y)s = \sum_{\alpha,\beta=1}^{q} \lambda^{\alpha} \tensor{\Omega}{_\alpha^\beta}(X,Y)s_{\beta|p}.\]
 \[(R(X,Y)s)(p) = R(X_p,Y_p)s_p.\]
 \end{newdef}
 
@@ -442,56 +442,54 @@ Let $D$ be a connection of vector bundle $E$. $\forall p \in M$, there exists a 
 
 \begin{newdef}[Induced connection]
 \[d\langle s,s^* \rangle = \langle Ds,s^* \rangle + \langle s,Ds^* \rangle.\]
-\[\langle s_{\alpha},s^{*\beta} \rangle  = \delta^{\beta}_{\alpha}  \Rightarrow Ds^{*\beta} = -\sum_{\alpha=1}^{q} \omega^{\beta}_{\alpha} \otimes s^{*\alpha}.\]
+\[\langle s_{\alpha},s^{*\beta} \rangle  = \delta^{\beta}_{\alpha}  \Rightarrow Ds^{*\beta} = -\sum_{\alpha=1}^{q} \tensor{\omega}{_\alpha^\beta} \otimes s^{*\alpha}.\]
 \[D(s_1 \oplus s_2) \equiv Ds_1 \oplus Ds_2.\]
 \[D(s_1 \otimes s_2) \equiv Ds_1 \otimes s_2 + s_1 \otimes Ds_2.\]
 \end{newdef}
 
 \begin{newdef}[Affine connection]
-\[D\frac{\partial}{\partial u^i} \equiv \omega^j_i \otimes \frac{\partial}{\partial u^j} \equiv \Gamma^{j}_{ik} du^k \otimes \frac{\partial}{\partial u^j}.\]
+\[D\frac{\partial}{\partial u^i} \equiv \tensor{\omega}{_i^j} \otimes \frac{\partial}{\partial u^j} \equiv \tensor{\Gamma}{_i^j_k} du^k \otimes \frac{\partial}{\partial u^j}.\]
 \end{newdef}
 
 \begin{newprop}
-\[\Gamma'^{j}_{ik} = \Gamma^{q}_{pr} \frac{\partial w^j}{\partial u^q} \frac{\partial u^p}{\partial w^i} \frac{\partial u^r}{\partial w^k} + \frac{\partial^2 u^p}{\partial w^i \partial w^k} \frac{\partial w^j}{\partial u^p}.\]
-\[DX = (dX^i + x^j \omega^i_j)\otimes \frac{\partial}{\partial u^i} = (X^i_{,j} + X^k \Gamma^{i}_{kj}) du^j \otimes \frac{\partial}{\partial u^i} = X^i_{;j}du^j \otimes \frac{\partial}{\partial u^i} .\]
-\[D \alpha = (d\alpha_i - \alpha_j \omega^j_i)\otimes du^i = (\alpha_{i,j} -\alpha_k \Gamma^k_{ij})du^j \otimes du^i = \alpha_{i;j} du^j \otimes du^i .\]
+\[\tensor{\Gamma}{^'_i^j_k} = \tensor{\Gamma}{_p^q_r} \frac{\partial w^j}{\partial u^q} \frac{\partial u^p}{\partial w^i} \frac{\partial u^r}{\partial w^k} + \frac{\partial^2 u^p}{\partial w^i \partial w^k} \frac{\partial w^j}{\partial u^p}.\]
+\[DX = (dX^i + x^j \tensor{\omega}{_j^i})\otimes \frac{\partial}{\partial u^i} = (\tensor{X}{^i_{,j}} + X^k \tensor{\Gamma}{_k^i_j}) du^j \otimes \frac{\partial}{\partial u^i} = \tensor{X}{^i_{;j}}du^j \otimes \frac{\partial}{\partial u^i} .\]
+\[D \alpha = (d\alpha_i - \alpha_j \tensor{\omega}{_i^j})\otimes du^i = (\alpha_{i,j} -\alpha_k \tensor{\Gamma}{_i^k_j})du^j \otimes du^i = \alpha_{i;j} du^j \otimes du^i .\]
 \end{newprop}
 
 \begin{newdef}[Geodesic equation]
-\[\frac{D(\frac{du^i(t)}{dt} \frac{\partial}{\partial u^i})}{dt} = 0 .\]
-\[\frac{d^2 u^i}{dt^2} + \Gamma^i_{jk} \frac{du^j}{dt} \frac{du^k}{dt} = 0.\]
+\[\frac{d^2 u^i}{dt^2} + \tensor{\Gamma}{_j^i_k} \frac{du^j}{dt} \frac{du^k}{dt} = 0.\]
 \end{newdef}
 
 \begin{newdef}[Curvature tensor]
-\[\Omega^j_i = \frac{1}{2}R^j_{ikl} du^k \wedge du^l .\]
-\[R \equiv R^{j}_{ikl} du^{i} \otimes \frac{\partial}{\partial u^j} \otimes du^{k} \otimes du^{l}.\]
+\[\tensor{\Omega}{_i^j} = \frac{1}{2}\tensor{R}{_i^j_{kl}} du^k \wedge du^l .\]
+\[R \equiv \tensor{R}{_i^j_{kl}} du^{i} \otimes \frac{\partial}{\partial u^j} \otimes du^{k} \otimes du^{l}.\]
 \end{newdef}
 
 \begin{newprop}
-\[R^j_{ikl} = \frac{\partial \Gamma^j_{il}}{\partial u^k} - \frac{\partial \Gamma^j_{ik}}{\partial u^l} + \Gamma^h_{il} \Gamma^j_{hk} - \Gamma^h_{ik} \Gamma^j_{hl}.\]
-\[R'^j_{ikl} = R^q_{prs} \frac{\partial w^j}{\partial u^q} \frac{\partial u^p}{\partial w^i} \frac{\partial u^r}{\partial w^k}\frac{\partial u^s}{\partial w^l}.\]
+\[\tensor{R}{_i^j_{kl}} = \frac{\partial \tensor{\Gamma}{_i^j_l}}{\partial u^k} - \frac{\partial \tensor{\Gamma}{_i^j_k}}{\partial u^l} + \tensor{\Gamma}{_i^h_l} \tensor{\Gamma}{_h^j_k} - \tensor{\Gamma}{_i^h_k} \tensor{\Gamma}{_h^j_l}.\]
+\[\tensor{R}{_i^j_{kl}} =\tensor{R}{_p^q_{rs}} \frac{\partial w^j}{\partial u^q} \frac{\partial u^p}{\partial w^i} \frac{\partial u^r}{\partial w^k}\frac{\partial u^s}{\partial w^l}.\]
 \[R(X,\alpha_Y,Z,W)= \langle \alpha_Y,R(Z,W)X \rangle.\]
-\[R^{j}_{ikl} = \langle R(\frac{\partial}{\partial u^k} \frac{\partial}{\partial u^l})\frac{\partial}{\partial u^i},du^j \rangle.\]
+\[\tensor{R}{_i^j_{kl}} = \langle R\left(\frac{\partial}{\partial u^k} \frac{\partial}{\partial u^l}\right)\frac{\partial}{\partial u^i},du^j \rangle.\]
 \end{newprop}
 
-
 \begin{newdef}[Torsion tensor]
-\[T^j_{ik} = \Gamma^j_{ki} - \Gamma^j_{ik}.\]
-\[T = T^j_{ik} \frac{\partial}{\partial u^j} \otimes du^i \otimes du^k.\]
+\[\tensor{T}{^j_{ik}} = \tensor{\Gamma}{_k^j_i} -\tensor{\Gamma}{_i^j_k}.\]
+\[T = \tensor{T}{^j_{ik}} \frac{\partial}{\partial u^j} \otimes du^i \otimes du^k.\]
 \end{newdef}
 
 \begin{newprop}
-\[T(X,Y) = T^k_{ij}X^i Y^j \frac{\partial}{\partial u^k}.\]
+\[T(X,Y) = \tensor{T}{^k_{ij}} X^i Y^j \frac{\partial}{\partial u^k}.\]
 \[T(X,Y) = D_X Y - D_Y X - [X,Y].\]
 \end{newprop}
 
 \begin{newthem}
-Let $D$ be an affine connection without torsion on $M$. $\forall p \in M$, there is a local coordinate system that $\Gamma^j_{ik}(p)$ vanishes.
+Let $D$ be an affine connection without torsion on $M$. $\forall p \in M$, there is a local coordinate system that $\tensor{\Gamma}{_i^j_k}(p)$ vanishes.
 \end{newthem}
 
 \begin{newthem}
 Let $D$ be an affine connection without torsion on $M$. Then we have Bianchi equation
-\[R^j_{ikl;h} + R^j_{ihk;l} + R^j_{ilh;k} = 0.\]
+\[\tensor{R}{_i^j_{kl,h}} +  \tensor{R}{_i^j_{hk,l}} + \tensor{R}{_i^j_{lh,k}} = 0.\]
 \end{newthem}
 
 \section{Riemann manifold}
@@ -522,15 +520,15 @@ Let $(M,G)$ be a general Riemann manifold and $D$ a connection on $M$. If $DG=0$
 
 \begin{newprop}[Christoffel-Levi-Civita connection] 
 Let $M$ be a general Riemann manifold, then there is a unique adapted connection without torsion on $M$, called Christoffel-Levi-Civita connection. \\
-As $\omega^{j}_{i} = \Gamma^{j}_{ik}du^k$, $dg_{ij} = g_{ik}\omega^{k}_{j} + g_{kj}\omega^{k}_{i}$.
-If we denote that $\omega_{ij} = \omega_{i}^{j}g_{jk}$ and $\Gamma_{ijk} = \Gamma_{ik}^{l}g_{lj}$, we have $\omega_{ij}=\Gamma_{ijk}du^k$ and $dg_{ij} = \omega_{ji}+ \omega_{ij}$.
+As $\tensor{\omega}{_i^j} = \tensor{\Gamma}{_i^j_k} du^k$, $dg_{ij} = g_{ik} \tensor{\omega}{_j^k}   + g_{kj}\tensor{\omega}{_i^k}$.
+If we denote that $\omega_{ij} = \tensor{\omega}{_i^k}g_{kj}$ and $\Gamma_{ijk} =\tensor{\Gamma}{_i^l_k} g_{lj}$, we have $\omega_{ij}=\Gamma_{ijk}du^k$ and $dg_{ij} = \omega_{ji}+ \omega_{ij}$.
 At last, we have
-\[\Gamma^{k}_{ij} = \frac{1}{2} g^{kl}(\frac{\partial g_{il}}{\partial u^j} + \frac{\partial g_{jl}}{\partial u^i} - \frac{\partial g_{ij}}{\partial u^l}).\]
+\[\tensor{\Gamma}{_i^k_j} = \frac{1}{2} g^{kl}(\frac{\partial g_{il}}{\partial u^j} + \frac{\partial g_{jl}}{\partial u^i} - \frac{\partial g_{ij}}{\partial u^l}).\]
 \end{newprop}
 
 \begin{newprop}[Curvature tensor]
-If we denote that $\Omega_{ij} = \Omega_{i}^{k}g_{kj}$ and $R_{ijkl} = R^{h}_{ikl}g_{hj}$, we will have that
-\[\Omega_{ij} + \Omega_{ji} = 0,\ \ \Omega_{ij} = d\omega_{ij} + \omega_{i}^{l} \wedge \omega_{jl},\ \ \Omega_{ij} = \frac{1}{2}R_{ijkl}du^k \wedge du^l.\]
+If we denote that $\Omega_{ij} = \tensor{\Omega}{_i^k}g_{kj}$ and $R_{ijkl} = \tensor{R}{_i^h_{kl}} g_{hj}$, we will have that
+\[\Omega_{ij} + \Omega_{ji} = 0,\ \ \Omega_{ij} = d\omega_{ij} + \tensor{\omega}{_i^l} \wedge \omega_{jl},\ \ \Omega_{ij} = \frac{1}{2}R_{ijkl}du^k \wedge du^l.\]
 The properties of curvature tensor:
 \[R_{ijkl} = -R_{jikl} = -R_{ijlk}.\]
 \[R_{ijkl}+R_{iklj}+R_{iljk}=0.\]
@@ -544,11 +542,11 @@ It is easy to show that the parameter for a geodesic curve in a Riemannian manif
 \end{newdef}
 
 \begin{newdef}[\href{https://en.wikipedia.org/wiki/Normal_coordinates}{\textbf{Normal coordinates}}]
-In differential geometry, normal coordinates at a point $p$ in a differentiable manifold equipped with a symmetric affine connection are a local coordinate system in a neighbourhood of $p$ obtained by applying the exponential map to the tangent space at $p$. In a normal coordinate system, the Christoffel symbols of the connection vanish at the point $p$, thus often simplifying local calculations. In normal coordinates associated to the Levi-Civita connection of a Riemann manifold, one can additionally arrange that the metric tensor is the Kronecker delta at the point $p$, and that the first partial derivatives of the metric at $p$ vanish.\\
-The properties of normal coordinates often simplify computations. In the following, assume that $U$ is a normal neighbourhood centred at $p$ in $M$ and ($x_i$) are normal coordinates on $U$.\\
-Let $V$ be some vector from $T_pM$ with components $V^i$ in local coordinates, and $\gamma_V$ be the geodesic with starting point $p$ and velocity vector $V$, then $\gamma_V$ is represented in normal coordinates by $\gamma _{V}(t)=(tV^{1},...,tV^{n})$ as long as it is in $U$.\\
-The coordinates of $p$ are $(0, \cdots, 0)$\\
-In Riemann normal coordinates at p the components of the Riemann metric $g$ simplify to $\delta _{ij}$.\\
+In differential geometry, normal coordinates at a point $p$ in a differentiable manifold equipped with a symmetric affine connection are a local coordinate system in a neighbourhood of $p$ obtained by applying the exponential map to the tangent space at $p$. In a normal coordinate system, the Christoffel symbols of the connection vanish at the point $p$, thus often simplifying local calculations. In normal coordinates associated to the Levi-Civita connection of a Riemann manifold, one can additionally arrange that the metric tensor is the Kronecker delta at the point $p$, and that the first partial derivatives of the metric at $p$ vanish.
+The properties of normal coordinates often simplify computations. In the following, assume that $U$ is a normal neighbourhood centred at $p$ in $M$ and ($x_i$) are normal coordinates on $U$.
+Let $V$ be some vector from $T_pM$ with components $V^i$ in local coordinates, and $\gamma_V$ be the geodesic with starting point $p$ and velocity vector $V$, then $\gamma_V$ is represented in normal coordinates by $\gamma _{V}(t)=(tV^{1},...,tV^{n})$ as long as it is in $U$.
+The coordinates of $p$ are $(0, \cdots, 0)$.
+In Riemann normal coordinates at p the components of the Riemann metric $g$ simplify to $\delta _{ij}$.
 The Christoffel symbols vanish at $p$. In the Riemann case, so do the first partial derivatives of $g_{ij}$.
 \end{newdef}
 
@@ -557,7 +555,7 @@ Let $M$ be a differentiable manifold equipped with a symmetric affine connection
 \end{newthem}
 
 \begin{newthem}
-Let $M$ be a Riemann manifold. $\forall O \in M$,there is a neighbourhood with normal coordinates $W$ that:\\
+Let $M$ be a Riemann manifold. $\forall O \in M$, there is a neighbourhood with normal coordinates $W$ that:\\
 (1) For every point in $W$, there is a neighbourhood equipped with a normal coordinates which contains $W$.\\
 (2) The geodesic connecting $O$ and $p \in W$ is the only shortest path connecting these two points in $W$.
 \end{newthem}
@@ -602,7 +600,7 @@ Let $M$ be a $m$-dimensional connected Riemann manifold that is isotropic every 
 We choose Euclidean coordinates for our absolute space and an absolute time $t$, than the equation of motion can be written as
 \[\frac{d^2 t}{d\lambda^2} = 0,\]
 \[\frac{d^2 x^i}{d\lambda^2} + \frac{\partial \Phi}{\partial x^i} (\frac{d\lambda}{dt})^2=0.\]
-It is convenient to define that $\Gamma^i_{00} = \frac{\partial \Phi}{\partial x^i}$, and all other $\Gamma^{\alpha}_{\beta \gamma}$ vanish. Then we can write the equation of motion as
+It is convenient to define that $\Gamma^i_{00} = \Phi_{,i}$, and all other $\Gamma^{\alpha}_{\beta \gamma}$ vanish. Then we can write the equation of motion as
 \[\frac{d^2 x^{\alpha}}{d\lambda^2} + \Gamma^{\alpha}_{\beta \gamma} \frac{dx^{\beta}}{d \lambda} \frac{dx^{\gamma}}{d \lambda}=0.\]
 Next, we can get the Riemann tensor given the connection above\[
 R^i_{0j0} = -R^i_{00j} = \frac{\partial \Phi}{\partial x^i \partial x^j}, \]
@@ -618,7 +616,7 @@ Therefore, newton gravity law can be written as
 Regard absolute time $t$ as a scalar field defined once and for all in Newtonian space-time $t=t(\mathcal{P})$. The layers of space-time are the slices of constant $t$ -- the ``space slices'' -- each of which has an identical geometric structure: the old ``absolute space''.
 
 \subsubsection{Flat Euclidean space}
-A given space slice is endowed with basis vectors $\bm{e}_i = \frac{\partial}{\partial x^i}$; and this basis has vanishing connection coefficients, $\Gamma^i_{jk} = 0$. Consequently,the geometry of each space slice is completely flat. Absolute space is Euclidean in its geometry. 
+A given space slice is endowed with basis vectors $\bm{e}_i =\partial_i$; and this basis has vanishing connection coefficients, $\Gamma^i_{jk} = 0$. Consequently,the geometry of each space slice is completely flat. Absolute space is Euclidean in its geometry. 
 Each space slice is endowed with a three-dimensional metric, and its Galilean coordinate basis is orthonormal,$\bm{e}_i \cdot \bm{e}_j = \delta_{ij}$.
 
 \subsubsection{Curvature of space-time}
@@ -715,19 +713,19 @@ for any decomposable $k$-vectors $\alpha =\alpha _{1}\wedge \dots \wedge \alpha 
 \noindent
 Given an orthonormal basis $(e_{1},\cdots ,e_{n})$ ordered such that $\omega =e_{1}\wedge \cdots \wedge e_{n}$, we see that
 \[\star (e_{i_{1}}\wedge e_{i_{2}}\wedge \cdots \wedge e_{i_{k}})=e_{i_{k+1}}\wedge e_{i_{k+2}}\wedge \cdots \wedge e_{i_{n}},\]
-where $(i_{1},i_{2},\cdots ,i_{n})$ is an even permutation of $\{1,2,\cdots,n\}$.Of these $\frac{n!}{2}$, only $n \choose k$ are independent. The first one in the usual lexicographical order reads
+where $(i_{1},i_{2},\cdots ,i_{n})$ is an even permutation of $\{1,2,\cdots,n\}$.Of these $n!/2$, only $n \choose k$ are independent. The first one in the usual lexicographical order reads
 \[\star (e_{1}\wedge e_{2}\wedge \cdots \wedge e_{k})=e_{k+1}\wedge e_{k+2}\wedge \cdots \wedge e_{n}.\]
 
 \begin{newdef}[Levi-Civita tensor]
 \[\epsilon_{i_1,\cdots,i_n} \equiv |g|^{\frac{1}{2}} \tilde{\epsilon}_{i_1,\cdots,i_n} .\]
-where $\epsilon$ is Levi-Civita symbol.
-\end{newdef} 
+where $\tilde{\epsilon}$ is Levi-Civita symbol.
+\end{newdef}
 \begin{newprop}
 \[\epsilon^{i_1,\cdots,i_n} = g^{i_1j_1} \cdots g^{i_nj_n} \epsilon_{j_1,\cdots,j_n} = \frac{|g|^{\frac{1}{2}}}{g} \tilde{\epsilon}^{i_1,\cdots,i_n} = {\rm sgn}(g) \frac{1}{|g|^{\frac{1}{2}}} \tilde{\epsilon}^{i_1,\cdots,i_n}.\]
 \end{newprop}
 
 \noindent
-Using tensor index notation, the Hodge dual is obtained by contracting the indices of a k-form with the n-dimensional completely antisymmetric Levi-Civita tensor.\\
+Using tensor index notation, the Hodge dual is obtained by contracting the indices of a $k$-form with the $n$-dimensional completely antisymmetric Levi-Civita tensor.\\
 
 \begin{newprop}
 \[(\star \eta )_{i_{1},i_{2},\ldots ,i_{n-k}}={\frac {1}{(n-k)!}}\eta ^{j_{1},\ldots ,j_{k}} \epsilon _{j_{1},\ldots ,j_{k},i_{1},\ldots ,i_{n-k}},\]
@@ -929,9 +927,9 @@ where the connection $\Gamma^c_{ab}$ is compatible with $h_{ab}$.
 \begin{newthem}[Gauss-Codazzi theorem]
 \begin{enumerate}
 \item \[R^{\mu}_{\alpha \beta \gamma} e_a^{\alpha} e_b^{\beta} e_c^{\gamma} = R^m_{abc} e_m^{\mu} + \epsilon (K_{ab|c} - K_{ac|b})n^{\mu} + \epsilon K_{ab} n^{\mu}_{;\gamma}e_c^{\gamma} - \epsilon K_{ac} n^{\mu}_{;\beta}e_b^{\beta}.\]
-\item \[-2\epsilon G_{\alpha \beta} n^{\alpha} n^{\beta} = \phantom{R}^3R + \epsilon(K^{ab}K_{ab}-K^2).\]
+\item \[-2\epsilon G_{\alpha \beta} n^{\alpha} n^{\beta} = \tensor[^3]{R}{} + \epsilon(K^{ab}K_{ab}-K^2).\]
 \[G_{\alpha \beta} e_a^{\alpha}n^{\beta} = K^b_{a|b} - K_{,a}.\]
-\item \[R = \phantom{R}^3R + \epsilon(K^2-K^{ab}K_{ab}) + 2\epsilon(n^{\alpha}_{;\beta}n^{\beta}-n^{\alpha}n^{\beta}_{;\beta})_{;\alpha}.\]
+\item \[R = \tensor[^3]{R}{} + \epsilon(K^2-K^{ab}K_{ab}) + 2\epsilon(n^{\alpha}_{;\beta}n^{\beta}-n^{\alpha}n^{\beta}_{;\beta})_{;\alpha}.\]
 \end{enumerate}
 \end{newthem}
 
@@ -993,19 +991,20 @@ $K_0 = $ extrinsic curvature of $\partial \mathcal{V}$ embedded in flat space-ti
 \begin{figure}[!h]
 \begin{minipage}[t]{0.5\linewidth}
 \centering
-\includegraphics[scale=0.3]{GR/Foliation1.png}
-\caption{Foliation of space-time by spacelike hypersurfaces}
+\includegraphics[scale=0.28]{GR/Foliation1.png}
+\caption{Foliation of space-time}
 \label{fig:side:a}
 \end{minipage}%
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[scale=0.3]{GR/Foliation2.png}
-\caption{Decomposition of $t^{\alpha}$ into lapse and shift}
+\caption{Decomposition of $t^{\alpha}$}
 \label{fig:side:b}
 \end{minipage}
 \end{figure}
 \noindent
-The space-time is foliated by spacelike hypersurfaces $\Sigma_t$ that is described by scalar function $t(x^{\alpha})$. $t$ is a single valued function and the unit normal to the hypersurfaces $n_{\alpha} \propto \partial_{\alpha} t$ is a future directed timelike vector field.\\
+The space-time is foliated by spacelike hypersurfaces $\Sigma_t$ that is described by scalar function $t(x^{\alpha})$. $t$ is a single valued function and the unit normal to the hypersurfaces $n_{\alpha} \propto \partial_{\alpha} t$ is a future directed timelike vector field.
+\\ \\
 Consider a congruence of curves $\gamma$ intersecting $\Sigma_t$. We use $t$ as a parameter on the curves and the vector $t^{\alpha}$ is tangent to the congruence (so, $t^{\alpha} \partial_{\alpha}t = 1$).Install coordinates $y^a$ on $\Sigma_t$ and impose $y^a(P'') = y^a(P') = y^a(P)$, so $y^a$ is held constant on each member of the congruence. This construction defines a coordinate system $(t,y^a)$ in $\mathcal{V}$.\\
 \subsubsection{base vector}
 \[t^{\alpha} = \left( \frac{\partial x^{\alpha}}{\partial t}\right)_{y^a}, \ \ \ \ e_a^{\alpha} = \left(\frac{\partial x^{\alpha}}{\partial y^a} \right)_t, \ \ \ \ \mathcal{L}_t e_a^{\alpha} = 0.\]
@@ -1030,10 +1029,8 @@ ds^2 &=& g_{\alpha \beta} dx^{\alpha} dx^{\beta} \nonumber \\
 \begin{example}
 For electromagnetic field in 3+1 decomposition form, we define the electrical field by $E_a = F_{\alpha \beta} n^{\beta} e_a^{\alpha}$, the magnetic field by $\epsilon_{abc} B^c = F_{\alpha \beta} e_a^{\alpha} e_b^{\beta}$. 
 In this definition, the equation of motion of particles in electromagnetic field can be written as
-\[m A_a = \gamma e (E_a + \epsilon_{abc} v^b B^c).\]
-where $A_a \equiv u_{\alpha;\beta} u^{\beta} e_a^{\alpha}$, $u^{\nu} = \gamma (n^{\nu} + v^b e_{b}^{\nu})$. 
-It can be written in the form of three vector as
-\[\frac{d\bm {p}}{dt} = e(\bm {E} + \bm {v} \times \bm {B}).\]
+\[m A_a = \gamma e [NE_a + \epsilon_{abc} (v^b+N^b) B^c].\]
+where $A_a \equiv u_{\alpha;\beta} u^{\beta} e_a^{\alpha}$, $u^{\nu} = \gamma [Nn^{\nu} + (v^b + N^b) e_{b}^{\nu}]$, and $\gamma \equiv [N^2-(N^b+v^b)(N_b+v_b)]^{-1/2}$.
 If we adopt the coordinates $(t,y^a)$, it is easy to verify that
 \[E^a = N F^{0a}, \ \ \ \ B^a = \frac{1}{2} \epsilon^{abc} F_{bc}.\]
 We further define
@@ -1059,7 +1056,7 @@ After simplification, the Maxwell equations are
 
 
 \subsection{General relativity}
-\[S_G = \frac{1}{16 \pi} \int_{t_1}^{t_2} dt \left\{ \int_{\Sigma_t} \left(\phantom{R}^3R + K^{ab}K_{ab} -K^2 \right) N \sqrt{h} d^3 y + 2\oint_{\Sigma_t}(k-k_0)N \sqrt{\sigma}d^2 \theta \right\} ,\]
+\[S_G = \frac{1}{16 \pi} \int_{t_1}^{t_2} dt \left\{ \int_{\Sigma_t} \left(\tensor[^3]{R}{} + K^{ab}K_{ab} -K^2 \right) N \sqrt{h} d^3 y + 2\oint_{\Sigma_t}(k-k_0)N \sqrt{\sigma}d^2 \theta \right\} ,\]
 where $k_0 =$ extrinsic curvature of $S_t$ embedded in flat space. 
 
 \subsubsection{Gravitational Hamiltonian}
@@ -1069,7 +1066,7 @@ where $k_0 =$ extrinsic curvature of $S_t$ embedded in flat space.
 \[\sqrt{h}K^{ab} = 16\pi (p^{ab} - \frac{1}{2}ph^{ab}).\]
 \[\mathcal{H}_G = p^{ab}\dot{h}_{ab} - \sqrt{-g} \mathcal{L}_G.\]
 \begin{eqnarray}
-16\pi H_G &=& \int_{\Sigma_t} \left[ N(K^{ab}K_{ab} - K^2 - \phantom{R}^3R) - 2N_a(K^{ab} - Kh^{ab})_{|b} \right] \sqrt{h} d^3 y 
+16\pi H_G &=& \int_{\Sigma_t} \left[ N(K^{ab}K_{ab} - K^2 - \tensor[^3]{R}{}) - 2N_a(K^{ab} - Kh^{ab})_{|b} \right] \sqrt{h} d^3 y 
 \nonumber \\
 &\phantom{=}& -2\oint_{S_t} \left[ N(k-k_0) - N_a(K^{ab}-Kh^{ab})r_b \right] \sqrt{\sigma} d^2 \theta .\nonumber
 \end{eqnarray}
@@ -1082,7 +1079,7 @@ where $k_0 =$ extrinsic curvature of $S_t$ embedded in flat space.
 &\phantom{=}& +(16\pi)[2p^{c(a}N^{b)}_{\phantom{b)}|c} - \sqrt{h}(\frac{1}{\sqrt{h}}p^{ab}N^c)_{|c}] \nonumber \\
 &\phantom{=}& + (16\pi)^2 [\frac{2N}{\sqrt{h}} (p^a_c p^{bc} - \frac{1}{2} p p^{ab}) - \frac{N}{2\sqrt{h}}(p^{cd}p_{cd} - \frac{1}{2} p^2)h^{ab}]. \nonumber \\
 \mathcal{H}_{ab} &=& (16\pi) \frac{2N}{\sqrt{h}} (p_{ab} - \frac{1}{2}p h_{ab}) + 2N_{(a|b)} .\nonumber \\
-\mathcal{C} &=& \frac{\sqrt{h}}{16\pi} (\phantom{R}^3R + K^2 - K^{ab}K_{ab}) .\nonumber \\
+\mathcal{C} &=& \frac{\sqrt{h}}{16\pi} (\tensor[^3]{R}{} + K^2 - K^{ab}K_{ab}) .\nonumber \\
 \mathcal{C}^a &=& \frac{\sqrt{h}}{16\pi} (K_a^{\phantom{a}b} - K \delta_a^{\phantom{a}b})_{|b}. \nonumber 
 \end{eqnarray}
 
@@ -1096,5 +1093,5 @@ s_a &=& \epsilon_{abc} E^b B^c .\nonumber
 
 \subsubsection{Hamilton's equations}
 \[\dot{h}_{ab} = \mathcal{H}_{ab}, \ \ \ \ \dot{p}^{ab} = -\mathcal{P}^{ab}+\frac{1}{2}N\sqrt{h}\mathcal{I}^{ab}.\]
-\[\phantom{R}^3R + K^2 - K^{ab}K_{ab} = 16 \pi \rho.\]
+\[\tensor[^3]{R}{} + K^2 - K^{ab}K_{ab} = 16 \pi \rho.\]
 \[(K_a^{\phantom{a}b} - K \delta_a^{\phantom{a}b})_{|b} = -8\pi s_a.\]

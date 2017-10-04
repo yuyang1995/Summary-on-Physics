@@ -20,7 +20,7 @@ where
 \\
 Two different types of coordinate transformations connect nearly globally Lorentz systems to each other: global Lorentz transformations, and infinitesimal coordinate
 transformations.
-\\
+\\ \\
 Global Lorentz Transformations:
 \\
 \[x^{\mu} = \Lambda^{\mu}_{\phantom{*}\alpha'}x^{\alpha'} , \quad \Lambda^{\mu}_{\phantom{*}\alpha'} \Lambda^{\nu}_{\phantom{*}\beta'} \eta_{\mu\nu} = \eta_{\alpha'\beta'} .\]
@@ -40,7 +40,7 @@ called Lorentz gauge.
 The Lorentz gauge is not fixed uniquely. The gauge condition is left unaffected by any gauge transformation for which
 \[\Box \xi \equiv \xi^{\alpha,\beta}_{\phantom{**}\beta} = 0.\]
 The field equations then become
-\[\Box h_{\mu\nu} = -16\pi T_{\mu\nu}.\]
+\[\Box \overline{h}_{\mu\nu} = -16\pi T_{\mu\nu}.\]
 Once the gauge has been fixed by fiat for a given system, one can regard $h_{\mu\nu}$ as components of tensors in flat spacetime; and one can regard the field equations and the chosen gauge conditions as geometric, coordinate-independent equations in flat spacetime.
 This viewpoint allows one to use curvilinear coordinates, if one wishes. But in doing so, one must everywhere replace the Lorentz components of the metric $\eta_{\mu\nu}$ by the metric's components $g_{\mu\nu_{\mathrm{flat}}}$ in the flat-spacetime curvilinear coordinate system; and one must replace all ordinary derivatives in the field equations and gauge conditions by covariant derivatives whose connection coefficients come from $g_{\mu\nu_{\mathrm{flat}}}$.
 
@@ -109,7 +109,7 @@ The tensor modes are therefore gauge invariant since they do not depend on the c
 However, we can define a combination of these modes that are gauge invariant. For the scalar modes, we define
 \[\Phi = A + \dot{B} - \ddot{E} , \quad \Psi = -C, \]
 and for the vector modes
-\[\bar{\Phi}_i = \dot{\bar{E}}_i - \bar{B}_i.\]
+\[\bar{\Psi}_i = \dot{\bar{E}}_i - \bar{B}_i.\]
 We therefore have defined 2 scalar quantities and 1 vector quantity (2 degrees of freedom) which are gauge invariant. All together , we therefore have $6$ degrees of freedom, once the $4$ arbitrary degrees of freedom related to the gauge choice have been absorbed.
 \\ \\
 In terms of gauge invariant quantities, the Einstein tensor can be written as
@@ -128,14 +128,14 @@ The only regular solutions are
 which means that no scalar mode can propagate.
 \\ \\
 For the vector modes, we have
-\[\nabla^2 \bar{\Phi}_i = 0.\]
-The only regular solution is $\bar{\Phi}_i = 0$. Just as for scalar modes, no vector modes can propagate.
+\[\nabla^2 \bar{\Psi}_i = 0.\]
+The only regular solution is $\bar{\Psi}_i = 0$. Just as for scalar modes, no vector modes can propagate.
 \\ \\
 For tensor modes, we have
 \[\Box \tilde{E}_{ij} = 0.\]
 Therefore, the only perturbations that can propagate in a Minkowski space-time are the gravitational waves and they satisfy
 \[\Box \tilde{E}_{ij} = 0 , \quad \partial_i \tilde{E}_{ij} = 0 , \quad \tilde{E}^i_i = 0.\]
-The three conditions $\Phi = \Psi = \bar{\Phi}_i = 0$ define a gauge equivalence class. We can choose a gauge in this family by imposing some conditions on the perturbations. For instance, setting $E = B = 0$ and $\bar{E}_i = 0$, we define what is called a transverse and traceless (TT) gauge in which the metric is completely determined. In this case, the only non-vanishing component of $h_{\mu\nu}^{\mathrm{TT}}$ is $\tilde{E}_{ij}$.
+The three conditions $\Phi = \Psi = \bar{\Psi}_i = 0$ define a gauge equivalence class. We can choose a gauge in this family by imposing some conditions on the perturbations. For instance, setting $E = B = 0$ and $\bar{E}_i = 0$, we define what is called a transverse and traceless (TT) gauge in which the metric is completely determined. In this case, the only non-vanishing component of $h_{\mu\nu}^{\mathrm{TT}}$ is $\tilde{E}_{ij}$.
 A particularly useful set of solutions to this wave 
 equation are the plane waves, given by
 \[h^{\rm TT}_{\mu\nu} C_{\mu\nu}e^{ik^{\sigma}x_{\sigma}},\]
@@ -159,7 +159,7 @@ with the two polarization tensors being defined by
 Consider the geodesic equation of a test particle in the gravitational field of a gravitational wave in the TT gauge. Since to leading order in perturbation we have $\Gamma^i_{00} = 0$, a particle initially at rest will remain at rest.
 Of course, this does not mean that nothing happens , but rather that the frame of reference is co moving with the test particle. To see if anything happens , we should look at the relative motion of two neighbouring particles, which can be done using the geodesic deviation equation. The relative acceleration is given by
 \[\nabla_{\bm{u}} \nabla_{\bm{u}} \bm{n} = -R(\bm{n},\bm{u}) \bm{u}.\]
-To leading order in $v$, we have $u^{\mu} = (1,0)$ and $n^{\mu} = (0,n^i)$, $R{i00j} = \frac{1}{2}\ddot{h}_{ij}^{\mathrm{TT}}$. Thus that
+To leading order in $v$, we have $u^{\mu} = (1,0)$ and $n^{\mu} = (0,n^i)$, $R_{i00j} = \frac{1}{2}\ddot{h}_{ij}^{\mathrm{TT}}$. Thus that
 \[\frac{d^2n^i}{dt^2} = \frac{1}{2} \ddot{h}_{ij} ^{\mathrm{TT}} n^j.\]
 For $+$ modes, we have
 \[\frac{d^2n^x}{dt^2} = - \frac{1}{2}\omega^2 C_{+}n^x e^{-i\omega(t-z)}, \quad \frac{d^2n^y}{dt^2} = \frac{1}{2}\omega^2 C_{+}n^y e^{-i\omega(t-z)}.\]
@@ -170,8 +170,8 @@ For $\times$ modes, we have
 Define the Fourier transform of metric perturbation, by
 \[\widetilde{\bar{h}}_{\mu\nu}(\omega, \bm{x}) \equiv \int dt e^{i\omega t} \bar{h}_{\mu\nu}(t,x).\]
 In Lorentz gauge, we have
-\[\widetilde{\bar{h}}_{\mu\nu}(\omega, \bm{x}) = \int d^3x' e^{i\omega R} \frac{\widetilde{T}_{\mu\nu}(\omega,\bm{x}')}{r},\]
-where $r = |\bm{x} - \bm{x}'|$.
+\[\widetilde{\bar{h}}_{\mu\nu}(\omega, \bm{x}) = \int d^3x' e^{i\omega R} \frac{\widetilde{T}_{\mu\nu}(\omega,\bm{x}')}{R},\]
+where $R \equiv |\bm{x} - \bm{x}'|$.
 We now make the approximations that our source is isolated, far away, and slowly moving. This leaves us with
 \[\widetilde{\bar{h}}_{\mu\nu}(\omega, \bm{x}) = \frac{4e^{i\omega r}}{r} \int d^3x' \tilde{T}_{\mu\nu}(\omega, \bm{x}').\]
 The Lorenz gauge condition $\partial_{\mu}\bar{h}^{\mu\nu}(t,\bm{x}) = 0$ in Fourier space implies $i\omega \widetilde{\bar{h}}^{0\nu} = \partial_{i} \widetilde{\bar{h}}^{i\nu}$. 
@@ -186,7 +186,7 @@ One case of special interest is the gravitational radiation emitted by a binary 
 For simplicity let us consider two stars of mass $M$ in a circular orbit in the $x-y$ plane, at distance $R$ from their common center of mass. 
 We will treat the motion of the stars in the Newtonian approximation. The angular frequency of the orbit is $\Omega = (M/4R^3)^{1/2}$. 
 The corresponding energy density is
-\[T^{00}(t,\bm{x}) = M\delta(\bm{x}) [\delta(x-R\cos\Omega t)\delta(y-R\sin\Omega) + \delta(x+R\cos\Omega t)\delta(y+R\sin\Omega)].\]
+\[T^{00}(t,\bm{x}) = M\delta(z) [\delta(x-R\cos\Omega t)\delta(y-R\sin\Omega) + \delta(x+R\cos\Omega t)\delta(y+R\sin\Omega)].\]
 The quadrupole moment in $x-y$ plane if the system is
 \[I = MR^2 \begin{pmatrix}
 1 + \cos 2\Omega t & \sin 2\Omega t \\
@@ -281,7 +281,7 @@ For coordinate changes in the distant, asymptotically
 flat regions, linearized theory guarantees that under Lorentz transformations the integrals for $P^{\mu}$ and $J^{\mu\nu}$ will transform like special relativistic tensors, and that under infinitesimal coordinate transformations (gauge changes) they will be invariant.
 \\ \\
 It is clear that any quantities $H^{\alpha\mu\nu\beta}_{\mathrm{new}}$  which agree with the original $H^{\alpha\mu\nu\beta}$ in the asymptotic weak-field region will give the same values as $H^{\alpha\mu\nu\beta}$ does for the $P^{\mu}$ and $J^{\mu\nu}$ surface integrals. One especially convenient
-choice is Landau-Lifshitz pseudotensor. The details can be found in section 96 of \emph{The Classical Theory of Fields (L.D.Landau \& E.M.Lifshitz)}
+choice is Landau-Lifshitz pseudotensor. The details can be found in section 96 of \emph{The Classical Theory of Fields (L.D.Landau \& E.M.Lifshitz)}.
 For a system of gravitating bodies, we have
 \[\frac{dP^{\mu}}{dt} = -\oint T^{\mu j}_{\mathrm{eff}}d^2S_j ;\]
 \[\frac{dJ^{\mu\nu}}{dt} = -\oint(x^{\mu}T^{\nu j}_{\mathrm{eff}} - x^{\nu}T^{\mu j}_{\mathrm{eff}}) d^2 S_j.\]
@@ -293,7 +293,7 @@ One way of circumventing this difficulty is to average the energy-momentum tenso
 Since any terms that are derivatives (as opposed to products of derivatives) will average to zero, we are therefore empowered to integrate by parts under the averaging brackets,
 \[\langle A(\partial_{\mu} B) \rangle = - \langle (\partial_{\mu} A)B \rangle.\]
 After a lot of messy intermediate steps, we will arrive at
-\[t_{\mu\mu} = \frac{1}{32\pi} \left\langle (\partial_{\mu}h_{\rho\sigma})(\partial_{\nu}h^{\rho\sigma}) - \frac{1}{2} \partial_{\mu} h \partial_{\nu} h - (\partial_{\rho}h^{\rho\sigma})(\partial_{\mu}h_{\nu\sigma}) - (\partial_{\rho}h^{\rho\sigma})(\partial_{\nu}h_{\mu\sigma})\right\rangle + O(h^3).\]
+\[t_{\mu\nu} = \frac{1}{32\pi} \left\langle (\partial_{\mu}h_{\rho\sigma})(\partial_{\nu}h^{\rho\sigma}) - \frac{1}{2} \partial_{\mu} h \partial_{\nu} h - (\partial_{\rho}h^{\rho\sigma})(\partial_{\mu}h_{\nu\sigma}) - (\partial_{\rho}h^{\rho\sigma})(\partial_{\nu}h_{\mu\sigma})\right\rangle + O(h^3).\]
 Since we only care about $t_{\mu\nu}$ in vacuum far from the source, we can adopt TT gauge and neglect higher order terms. 
 For a ``monochromatic'' plane gravitational wave $h^{\rm TT}_{\mu\nu} = C_{\mu\nu} \sin(k^{\sigma}x_{\sigma})$, the energy- momentum tensor is
 \[t_{\mu\nu} = \frac{1}{64\pi} k_{\mu}k_{\nu} {\rm Tr}(C^2).\]
@@ -339,7 +339,8 @@ As for $r = 2M$, the Schwarzschild radius. We can check that none of the curvatu
 There are four Killing vectors in Schwarzschild Space-time: three for the spherical symmetry, and one for time translations.
 Each of these will lead to a constant of the motion for a free particle.
 If $K_{\mu}$ is a Killing vector, we know that
-\[K_{\mu} \frac{dx^{\mu}}{d\lambda}.\]
+\[K_{\mu} \frac{dx^{\mu}}{d\lambda} \]
+is a constant along the geodesic.
 Here, we choose the affine parameter $\lambda$ of geodesics to make $dx^{\mu}/d\lambda$ four velocity for massive particles and four momentum for massless particles. Thus the quantity
 \[\epsilon = -g_{\mu\nu} \frac{dx^{\mu}}{d\lambda} \frac{dx^{\mu}}{d\lambda}\]
 is constant along the path. For massive particles $\epsilon = 1$ while for massless particles, $\epsilon = 0$.
@@ -515,7 +516,7 @@ where
 The EM filed is given by
 \[A_{t} = -\frac{Q}{4\pi r}.\]
 The RN metric has a true curvature singularity at $r = 0$, as could be checked by computing the curvature invariant scalar $R^{\mu\nu\rho\sigma}R_{\mu\nu\rho\sigma}$. 
-The horizon of RN metric is given by $g^{r}{r} = 0$, i.e.
+The horizon of RN metric is given by $g^{rr} = 0$, i.e.
 \[1 - \frac{2M}{r} + \frac{Q^2}{4 \pi r^2} = 0.\]
 \\
 If $M^2 > Q^2 / 4 \pi$, the metric coefficient $\Delta$ is positive at large $r$ and small $r$, and negative inside the two vanishing points $r_{\pm} = M \pm \sqrt{M^2 - Q^2 / 4 \pi}$. 
@@ -526,7 +527,7 @@ If you are an observer falling into the black hole from far away, $r_{+}$ is jus
 Witnesses outside the black hole also see the same phenomena that they would outside an uncharged hole --- the infalling observer is seen to move more and more slowly, and is increasingly redshifted.
 \\ \\
 But the inevitable fall from $r_{+}$ to ever-decreasing radii only lasts until you reach the null surface $r = r_{-}$, where $r$ switches back to being a spacelike 
-coordinate and the motion in the direction of decreasing r can be arrested. 
+coordinate and the motion in the direction of decreasing $r$ can be arrested. 
 You can choose either to continue on to $г = 0$, or begin to move in the direction of increasing $r$ back through the null surface at $r = r_{-}$.
 Then $r$ will once again be a timelike coordinate, but with reversed orientation; you are forced to move in the
 direction of increasing $r$. 
@@ -534,7 +535,7 @@ You will eventually be spit out past $r = r_{+}$ once more, which is like emergi
 From here you can choose to go back into the black hole --- this time, a different hole than the one you entered in the first place --- and repeat the voyage as many times as you like.
 \\ \\
 If $M^2 = Q^2 / 4 \pi$, the extremal black holes have $\Delta = 0$ at a single radius, $r = M$. 
-This represents an event horizon, but the $r$ coordinate is never timelike; it becomes null at $г = M$, but is spacelike on either side. 
+This represents an event horizon, but the $r$ coordinate is never timelike; it becomes null at $r = M$, but is spacelike on either side. 
 The singularity at $r = 0$ is a timelike line, as in the other cases.
  Thus for this black hole you can again avoid the singularity and continue to move to the future to extra copies of the asymptotically flat region, but the singularity is always ``to the left''. 
 \\ \\
@@ -556,7 +557,12 @@ The conformal diagram will therefore be just like that of Minkowski space, excep
 \section{Kerr black hole}
 \subsection{Geometry of Kerr black hole}
 The metric of Kerr black hole is
-\[ds^2 = -\left(1 - \frac{2Mr}{\rho^2}\right)dt^2 - \frac{2Mar\sin^2\theta}{\rho^2}(dt d\phi + d\phi dt) + \frac{\rho^2}{\Delta} dr^2 + \rho^2d\theta^2 + \frac{\sin^2\theta}{\rho^2} \left[(r^2+a^2)^2 - a^2 \Delta \sin^2\theta\right]d\phi^2,\]
+\begin{eqnarray}
+    ds^2 &=& -\left(1 - \frac{2Mr}{\rho^2}\right)dt^2 - \frac{2Mar\sin^2\theta}{\rho^2}(dt d\phi + d\phi dt) + \frac{\rho^2}{\Delta} dr^2
+    \nonumber \\
+    &+& \rho^2d\theta^2 + \frac{\sin^2\theta}{\rho^2} \left[(r^2+a^2)^2 - a^2 \Delta \sin^2\theta\right]d\phi^2,
+    \nonumber 
+\end{eqnarray}
 where
 \[\Delta(r) = r^2 - 2Mr + a^2, \quad \rho^2(r,\theta) = r^2 + a^2 \cos^2\theta.\]
 We can show that $a$ is the the angular momentum per unit mass of the black hole.
@@ -658,7 +664,7 @@ When the particle C goes back to infinity, it will have more energy than the ori
 Thus, using the existence of negative energy orbits in the ergosphere and the local conservation of energy for processes taking place in the ergo region, one can extract energy from the black hole.
 \\ \\
 The Penrose process decreases both the mass and the angular momentum of the Kerr black hole by an amount equal to the (negative of) the energy and the angular momentum of the particle B that falls into the black hole. 
-Consider the dot product of $P^{\mu}$ with the Killing vector $K'$. 
+Consider the dot product of $p^{\mu}$ with the Killing vector $K'$. 
 Since $K'$ is timelike outside the horizon and we want particle B to fall into the horizon, it is necessary that this dot product is negative. 
 Using $p^{\mu}K_{\mu} = -E$, $p^{\mu}R_{\mu} = L$,
 where $E$ and $L$ are the conserved energy and angular momentum of particle B, we get the condition $-E + \Omega_{\rm H} L < 0$. 
@@ -689,7 +695,7 @@ disks around astrophysical black holes will be able to move towards the black ho
 In that case, the radius of the stable circular orbit closest to the black hole and its energy are
 of interest in the astrophysics of accretion disks. 
 For the motion in the equatorial plane one can introduce an effective potential as in the case of the Schwarzschild
-metric along the following lines. Setting $\theta = \frac{\pi}{2}$ into equations of motion will give equation for the radial motion,
+metric along the following lines. Setting $\theta = \pi / 2$ into equations of motion will give equation for the radial motion,
 \[m^2 \left(\frac{dr}{d\tau} \right)^2 = \frac{[(r^2+a^2)E-aL]^2}{r^4} - \frac{\Delta[(aE-L)^2+m^2 r^2]}{r^4}.\]
 We can now define an effective $U(r)$ such that the right hand side of the above equation vanishes when $E=U$. 
 Hence the effective potential is the solution to the
@@ -703,7 +709,7 @@ where the upper (lower) sign corresponds to the counter-rotating (co-rotating) o
 When $a = 0$ we get the standard result that $r = 6M$; as the rotation parameter increases, the radius of the circular orbit decreases for the co-rotating orbit which is the one that is probably the relevant one for the accretion disk. 
 This shows that one can have stable circular orbits very
 close to the black hole in the case of rotating black holes. 
-The quantity $(m − E)/m$ represents the fraction of the rest energy that can be released when a particle falls from the innermost stable circular orbit into the black hole. 
+The quantity $(m-E)/m$ represents the fraction of the rest energy that can be released when a particle falls from the innermost stable circular orbit into the black hole. 
 In the extreme case of $a = M$, this fraction is $1 - 1 / \sqrt{3}$ which is about $42$ percent, while the corresponding value for orbits in the Schwarzschild metric is only about $5.7$ percent. 
 This higher efficiency could be of use in certain astrophysical scenarios.
 

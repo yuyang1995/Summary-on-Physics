@@ -172,7 +172,7 @@ The free energy designation is derived from the following property. If a system 
 
 \subsection{Gibbs Free Energy and Enthalpy}
 Transforming $F$ according to Legendre with respect to $V$, we obtain a new thermodynamic potential, called the Gibbs free energy:
-\[G(T,P,X_2,\cdots,X_r) = F + PV = U - TS - PV.\]
+\[G(T,P,X_2,\cdots,X_r) = F + PV = U - TS + PV.\]
 The variational principle satisfied by the Gibbs free
 energy is the following:
 \textbf{Among all states that have the same temperature and pressure values, the state of equilibrium is that in which the Gibbs free energy assumes the minimum value.}
@@ -697,7 +697,7 @@ The internal energy of the system is
 The summation can be approximated by an integral. Note the spin of a photon can take two distinct values, we have
 \[U = \frac{VT^4}{\pi^2} \int_0^{\infty} \frac{x^3dx}{e^x - 1} = \frac{VT^4}{\pi^2} \Gamma(4)\zeta(4) = \frac{\pi^2VT^4}{15}.\]
 If there is a small opening in the walls of the cavity, the photons will ``effuse'' through it. The net rate of flow of the radiation, per unit area of the opening, will be
-\[I = \frac{1}{2} \int \frac{U}{V} \cos^2\theta d\theta = \frac{U}{4V} = \frac{\pi^2}{60}T^4.\]
+\[I = \frac{1}{2} \int_{0}^{\pi/2} \frac{U}{V} \cos\theta \sin\theta d\theta = \frac{U}{4V} = \frac{\pi^2}{60}T^4.\]
 It is the so-called Stefan-Boltzmann law of blackbody radiation.
 \\ \\
 For further study of thermodynamics, we evaluate the grand partition function of the photon gas:

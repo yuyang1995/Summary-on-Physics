@@ -9,7 +9,7 @@ where $R$ is an orthogonal matrix with a positive determinant: $R^T = R^{-1}$ an
 \\
 Consider an infinitesimal $\mathrm{SO}(N)$ transformation
 \[R_{ij} = \delta_{ij} + \theta_{ij} + O(\theta^2).\]
-Orthogonality of $R_{ij}$ implies that $\theta_{ij}$ is real and antisymmetric. It is convenient to express $\theta_{ij}$ in terms of a basis set of hermitian matrices $T^a_{ij}$. The index $a$ runs from $1$ to $\frac{1}{2}N(N-1)$, the number of linearly independent, hermitian, antisymmetric, $N \times N$ matrices. Commonly, for $\mathrm{SO}(N)$ group, we demand these matrices obey the normalization condition
+Orthogonality of $R_{ij}$ implies that $\theta_{ij}$ is real and antisymmetric. It is convenient to express $\theta_{ij}$ in terms of a basis set of hermitian matrices $T^a_{ij}$. The index $a$ runs from $1$ to $N(N-1)/2$, the number of linearly independent, hermitian, antisymmetric, $N \times N$ matrices. Commonly, for $\mathrm{SO}(N)$ group, we demand these matrices obey the normalization condition
 \[\mathrm{Tr}(T^a T^b) = 2\delta^{ab}.\]
 In terms of them, we can write
 \[\theta_{ij} = -i\theta^a T^a_{ij}.\]
@@ -40,7 +40,7 @@ The index a runs from $1$ to $N^2 - 1$, the number of linearly independent, herm
 \[\mathrm{Tr}(T^a T^b) =\frac{1}{2}\delta^{ab}.\]
 
 \begin{example}
-For $\mathrm{SU}(2)$, we can choose $T^a_{ij} = \frac{1}{2}\sigma^a_{ij}$. The commutation relations become
+For $\mathrm{SU}(2)$, we can choose $T^a_{ij} = \sigma^a_{ij}/2$. The commutation relations become
 \[[T^a,T^b] = i\epsilon^{abc}T^c.\]
 \end{example}
 
@@ -57,7 +57,7 @@ As a result, the gauge field must transform as
 \[A_{\mu}(x) \to U(x)A_{\mu}(x)U^{\dagger}(x) + \frac{i}{g}U(x)\partial_{\mu}U^{\dagger}(x).\]
 Replacing all ordinary derivatives in $\mathcal{L}$ with covariant derivatives renders $\mathcal{L}$ gauge invariant (assuming, of course, that $\mathcal{L}$ originally had a global $\mathrm{SU}(N)$ symmetry).
 We can write $U(x)$ in terms of the generator matrices as
-$\exp[-ig\Gamma(x)T^a]$. If the structure constant $f^{abc} \neq 0$, we have a nonabelian gauge theory.
+$\exp[-ig\Gamma^a(x)T^a]$. If the structure constant $f^{abc} \neq 0$, we have a nonabelian gauge theory.
 \\ \\
 We still need a kinetic term for $A_{\mu}(x)$. Let us define the field strength
 \[F_{\mu\nu}(x) \equiv \frac{i}{g}[D_{\mu},D_{\nu}] = \partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu} - ig[A_{\mu},A_{\nu}].\]
@@ -73,7 +73,7 @@ We can get
 \[F^{c}_{\mu\nu} = \partial_{\mu}A^c_{\nu} - \partial_{\nu}A^c_{\mu} + gf^{abc}A^a_{\mu}A^b_{\nu},\]
 \[\mathcal{L}_{\mathrm{kin}} = -\frac{1}{4}F^{c\mu\nu}F_{c\mu\nu}.\]
 \\
-Everything we have just said about $\mathrm{SU}(N)$ also goes through for $\mathrm{SO}(N)$, with unitary replaced by orthogonal, and traceless replaced by antisymmetric. There is also another class of compact nonabelian groups called $Sp(2N)$,
+Everything we have just said about $\mathrm{SU}(N)$ also goes through for $\mathrm{SO}(N)$, with unitary replaced by orthogonal, and traceless replaced by antisymmetric. There is also another class of compact nonabelian groups called ${\rm Sp}(2N)$,
 and five exceptional compact groups: $G(2)$, $F(4)$, $E(6)$, $E(7)$ and $E(8)$. Compact means that $\mathrm{Tr}(T^aT^b)$ is a positive definite matrix. Nonabelian gauge theory must be based on a compact group, because otherwise some of the
 terms in $\mathcal{L}_{\mathrm{kin}}$ would have the wrong sign, leading to a Hamiltonian that is unbounded below.
 \\ \\
@@ -122,7 +122,7 @@ Define
 \[(T^a_{\rm A})^{bc} \equiv -if^{abc}.\]
 We can get a new representation of the group. It is called adjoint representation. The dimension of adjoint representation is equal to the number of the generators. And it is easy to show that adjoint representation is real.
 \\ \\
-It can be demonstrated that once the fundamental representation is normalized so that $\mathrm{Tr}T^aT^b$ is proportion to the $\delta^{ab}$, so is it with any irreducible representation of the group. Then we can define the index of a representation $T(R)$ as
+It can be demonstrated that once the fundamental representation is normalized, $\mathrm{Tr}T^aT^b$ will be proportion to the $\delta^{ab}$, so is it with any irreducible representation of the group. Then we can define the index of a representation $T(R)$ as
 \[\mathrm{Tr}(T^a_{\rm R} T^b_{\rm R}) = T(R)\delta^{ab}.\]
 We can verify that the matrix $T^a_{\rm R} T^a_{\rm R}$ commutes with
 every generator, and so must be a number times the identity matrix. We define quadratic Casimir $C(R)$ by
@@ -291,7 +291,7 @@ We now rescale the fields to the renormalized field strengths by extracting the 
 &+& g\delta_1 A^a_{\mu}\overline{\Psi}\gamma^{\mu}T^a\Psi -g\delta_{1}^{3g} f^{abe}A^{a\mu}A^{b\nu}\partial_{\mu}A^e_{\nu} - \frac{1}{4}g^2\delta_1^{4g} f^{abe}f^{cde}A^{a\mu}A^{b\nu}A^c_{\mu}A^d_{\nu} \nonumber \\
 &+& g\delta_1^c f^{abc}A^a_{\mu}\partial^{\mu}\overline{c}^b c^c ,\nonumber
 \end{eqnarray}
-with the counterterms de ned by
+with the counterterms determined by
 \[\delta_2 = Z_2 - 1 , \quad \delta_3 = Z_3 - 1 , \quad \delta_2^c = Z_2^c - 1 , \quad \delta_m = Z_2m_0-m,\]
 \[\delta_1 = \frac{g_0}{g}Z_2(Z_3)^{1/2} - 1 , \quad \delta_1^{3g} = \frac{g_0}{g}(Z_3)^{3/2} - 1 , \quad \delta_1^{4g} = \frac{g_0^2}{g^2}(Z_3)^2 - 1 , \quad \delta_1^c = \frac{g_0}{g}Z_2^c(Z_3)^{1/2} - 1.\]
 Notice that these eight counterterms depend on five underlying parameters; thus, there are three relations among them. The situation is very similar to that for the scalar theories with spontaneously broken symmetry that we studied before. 
@@ -397,7 +397,7 @@ pairs with equal and opposite charges. But there are other possibilities as well
 \\ \\
 All of this has a straightforward generalization to nonabelian gauge theories. 
 Suppose we have a single Weyl field in a (possibly reducible) representation $R$ of the gauge group. Then we must attach an extra factor of $\mathrm{Tr}(T^a_{\rm R} T^b_{\rm R} T^c_{\rm R})$ to the first diagram, and a factor of $\mathrm{Tr}(T^a_{\rm R} T^c_{\rm R} T^b_{\rm R})$ to the second; here the group indices $a,b,c$ go along with the momenta $p,q,r$, respectively.
-Repeating our analysis shows that the diagrams with $P_{\mathrm{L}} \to \frac{1}{2}$ come with an extra factor of $\frac{1}{2}\mathrm{Tr}([T^a_{\rm R}, T^b_{\rm R}] T^c_{\rm R})$; these contribute to the renormalization of the tree-level three-gluon vertex. Diagrams with $P_{\mathrm{L}} \to - \frac{1}{2}\gamma_5$ come with an extra factor of
+Repeating our analysis shows that the diagrams with $P_{\mathrm{L}} \to 1/2$ come with an extra factor of $\mathrm{Tr}([T^a_{\rm R}, T^b_{\rm R}] T^c_{\rm R})/2$; these contribute to the renormalization of the tree-level three-gluon vertex. Diagrams with $P_{\mathrm{L}} \to - \gamma_5/2$ come with an extra factor of
 \[\frac{1}{2}\mathrm{Tr}(\{T^a_{\rm R}, T^b_{\rm R}\} T^c_{\rm R}) = A(R)d^{abc},\]
 where $d^{abc}$ is a completely symmetric tensor that is independent of the representation, and $A(R)$ is the anomaly coefficient of $R$. In order for this theory to exist, we must have $A(R) = 0$. 
 Since $A(R) + A(\overline{R}) = 0$; thus a theory whose left-handed Weyl fields come in $R \oplus \overline{R}$ pairs is automatically anomaly free (as is one whose Weyl fields are all in real representations). Otherwise, we must arrange the cancellation by hand. 
@@ -469,7 +469,7 @@ Using $\log \det J = \mathrm{Tr} \log J$, we can write
 where the explicit trace is over spin and group indices. We regularize the delta function by
 \[\delta(x-y) \to e^{(i\slashed{D}_x)^2/M^2} \delta(x-y).\]
 The following calculation can be found in section 77 of \emph{Quantum Field Theory (Mark Srednichi)}. Here, we list the final result
-\[\mathrm{Tr} \delta(x-y)\gamma_5 \to - \frac{g^2}{32\pi^2} \epsilon^{\mu\nu\rho\sigma} \mathrm{Tr} F_{\mu\nu}F_{\rho\sigma}.\]
+\[\mathrm{Tr} \delta(x-x)\gamma_5 \to - \frac{g^2}{32\pi^2} \epsilon^{\mu\nu\rho\sigma} \mathrm{Tr} F_{\mu\nu}F_{\rho\sigma}.\]
 We then have
 \[Z(A) = \int \mathcal{D}\Psi \mathcal{D}\overline{\Psi} e^{iS(A)} e^{-i \int d^4x \alpha(x)[ \frac{g^2}{16\pi^2} \epsilon^{\mu\nu\rho\sigma} \mathrm{Tr} F_{\mu\nu}F_{\rho\sigma} +  \partial_{\mu}j^{\mu}_A(x)] }.\]
 As a result,
@@ -511,11 +511,11 @@ If the field $\phi$ is real rather than complex (which is possible only if $R$ i
 We say a generator $T^a$ is spontaneously broken if $(T^a_{\rm R})_{ij}v_j \neq 0$. We see that gauge fields corresponding to broken generators get a mass, while those corresponding to unbroken generators do not. The unbroken generators (if any) form a gauge group with massless gauge fields. The massive gauge fields (and all other fields) form representations of this unbroken group.
 \\ \\
 Consider the gauge group $\mathrm{SU}(N)$, with a complex scalar field $\phi$ in the fundamental representation. We can make a global $\mathrm{SU}(N)$ transformation to bring the VEV entirely into the last component, and furthermore make it real. 
-Any generator $(T^a)_{i}^{\phantom{j}}$ that does not have a nonzero entry in the last column will remain unbroken. These generators form an unbroken $\mathrm{SU}(N-1)$ gauge group. There are three classes of broken generators: those with $(T^a)_{i}^{\phantom{N}} = {1}/{2}$  for $i \neq N$ (there are $N-1$ of these); those with
-$(T^a)_{i}^{\phantom{N}} = -{i}/{2}$  for $i \neq N$ (there are also $N - 1$ of these), and finally the single
-generator $T^{N^2 - 1} = [2N(N-1)]^{-1/2} \mathrm{diag}(1,1,\cdots,-N-1)$. 
+Any generator $(T^a)_{i}^{\phantom{j}j}$ that does not have a nonzero entry in the last column will remain unbroken. These generators form an unbroken $\mathrm{SU}(N-1)$ gauge group. There are three classes of broken generators: those with $(T^a)_{i}^{\phantom{j}N} = {1}/{2}$  for $i \neq N$ (there are $N-1$ of these); those with
+$(T^a)_{i}^{\phantom{j}N} = -{i}/{2}$  for $i \neq N$ (there are also $N - 1$ of these), and finally the single
+generator $T^{N^2 - 1} = [2N(N-1)]^{-1/2} \mathrm{diag}(1,1,\cdots,-N+1)$. 
 The gauge fields corresponding to the generators in the first two classes get a mass $M = {gv}/{2}$.
-we can group them into a complex vector field that transforms in the fundamental representation of the unbroken $\mathrm{SU}(N-1)$ subgroup. The gauge field corresponding to $T^{N^2-1}$ gets a mass $M = [2N(N-1)]^{1/2}gv$; it is a singlet of $\mathrm{SU}(N-1)$.
+we can group them into a complex vector field that transforms in the fundamental representation of the unbroken $\mathrm{SU}(N-1)$ subgroup. The gauge field corresponding to $T^{N^2-1}$ gets a mass $M = [(N-1)/2N]^{1/2}gv$; it is a singlet of $\mathrm{SU}(N-1)$.
 \\ \\
 Consider the gauge group $\mathrm{SO}(N)$, with a real scalar field in the fundamental representation. We can make a global $\mathrm{SO}(N)$ transformation to bring the VEV entirely into the last component. Any generator $(T^a)_{i}^{\phantom{j}}$ that does not have a nonzero entry in the last column will remain unbroken. These generators form an unbroken $\mathrm{SO}(N-1)$ subgroup. There are $N - 1$ broken generators, those with $(T^a)_{i}^{\phantom{N}} = -i$  for $i \neq N$. 
 The corresponding gauge fields get a mass $M = gv$; they form a fundamental representation of the unbroken $\mathrm{SO}(N-1)$ subgroup.

@@ -45,7 +45,7 @@ Then we can get
 E &=& \epsilon_n + \lambda \langle n | H_1 | n\rangle + \lambda^2 \langle n | H_1RH_1 | n\rangle + \lambda^3 \langle n | H_1RH_1RH_1 | n\rangle + \cdots \nonumber \\
 &=& \epsilon_n 
 + \lambda \langle n | H_1|n\rangle 
-+ \lambda^2 \sum_{k\neq n,\alpha}  \frac{\lambda \langle n | H_1|k\alpha\rangle \langle k\alpha | H_1 | n \rangle}{E-\epsilon_k} \nonumber \\
++ \lambda^2 \sum_{k\neq n,\alpha}  \frac{ \langle n | H_1|k\alpha\rangle \langle k\alpha | H_1 | n \rangle}{E-\epsilon_k} \nonumber \\
 &+& \lambda^3 \sum_{k\neq n,\alpha} \sum_{k'\neq n,\alpha'} \frac{\langle n | H_1 |k\alpha\rangle \langle k\alpha | H_1 | k'\alpha' \rangle \langle k'\alpha' | H_1 | n \rangle}{(E-\epsilon_k)(E-\epsilon_{k'})} + \cdots \nonumber
 \end{eqnarray}
 It is easy to get $E$ up to $O(\lambda^3)$,
@@ -182,7 +182,7 @@ In the previous section, we have derived that
 In the usual experimental condition, we have
 \[E_{\mathrm{B}} \ll E_z \ll E_a.\]
 In the following discussion, we will neglect $E_{\mathrm{B}}$ term.
-But whether $\frac{E_{\mathrm{FS}}}{E_{\mathrm{Z}}}$ is much larger than $1$, much smaller than $1$ or close to $1$ depends on the $B$ and $n$.
+But whether ${E_{\mathrm{FS}}} / {E_{\mathrm{Z}}}$ is much larger than $1$, much smaller than $1$ or close to $1$ depends on the $B$ and $n$.
 \\ \\
 If $H_{\mathrm{FS}}$ is much smaller than $H_{\mathrm{Z}}$ and can be neglected, then we have
 \[H = H_a + \frac{e}{2m}(L_z + 2S_z)B.\]
@@ -370,15 +370,45 @@ Specifically, we work with a linear polarized monochromatic field of the plane w
 \[\bm{A} = 2A_0\bm{\epsilon}\cos(\bm{k}\cdot\bm{x}-\omega t) = A_0\bm{\epsilon} [e^{i\bm{k}\cdot\bm{x}}e^{-i\omega t}  + e^{-i\bm{k}\cdot\bm{x}}e^{i\omega t} ].\]
 Therefore, ${e}\bm{A}\cdot\bm{P} / m$ is a Harmonic perturbation with $K = {eA_0} e^{i\bm{k}\cdot\bm{x}} (\bm{\epsilon}\cdot\bm{P})/m$.
 For example, take the case of absorption, the transition rate is
-\[\Gamma(i \to f) = 2\pi \frac{e^2|A_0|^2}{m^2} |\langle f |e^{i\bm{k}\cdot\bm{x}} (\bm{\epsilon}\cdot\bm{P}) |i \rangle|^2 \delta(E_{\mathrm{f}}-E_{\mathrm{i}}-\omega).\]
-The cross section can be worked out by the transition rate of absorption.
+\[\Gamma_{\rm abs}(1 \to 2) = 2\pi \frac{e^2|A_0|^2}{m^2} |\langle 2 |e^{i\bm{k}\cdot\bm{x}} (\bm{\epsilon}\cdot\bm{P}) |1 \rangle|^2 \delta(E_{\mathrm{f}}-E_{\mathrm{i}}-\omega).\] 
+Since the amplitude $|A_0|$ is associated with the average energy density of the EM field through
+\begin{equation}
+	\rho = \frac{1}{2}\overline{(\bm{E}^2 + \bm{B}^2)} = 2\omega^2|A_0|^2,
+\end{equation}
+the transition rate can be rewritten as
+\[\Gamma_{\rm abs}(1 \to 2) = \pi \frac{e^2}{m^2\omega^2} |\langle 2 |e^{i\bm{k}\cdot\bm{x}} (\bm{\epsilon}\cdot\bm{P}) |1 \rangle|^2 \rho \delta(E_{2}-E_{1}-\omega) = \pi \frac{e^2}{m^2\omega^2} |\langle 2 |e^{i\bm{k}\cdot\bm{x}} (\bm{\epsilon}\cdot\bm{P}) |1 \rangle|^2 \rho(\omega_{\rm 21}),\]
+where $\rho(\omega)$ is the average energy density of the EM field per unit angular frequency.
 \\ \\
 The electrical dipole approximation is based on the fact that the wavelength of radiation field is far longer than the atomic dimension, so that the series
 \[e^{i\bm{k}\cdot\bm{x}} = 1+ i\bm{k}\cdot\bm{x}+\cdots\]
-can be approximated by its leading term, $1$. Suppose the direction of the EM is wave is $z$, we now have
-\[\langle f |e^{i\bm{k}\cdot\bm{x}} (\bm{\epsilon}\cdot\bm{P}) |i \rangle = \langle f | P_z |i \rangle = \frac{m}{i} \langle f |  [z,H_0] |i \rangle = im(E_n-E_{\mathrm{i}})\langle f | z |i \rangle  .\]
+can be approximated by its leading term, $1$. We now have
+\[\langle 2 |e^{i\bm{k}\cdot\bm{x}} (\bm{\epsilon}\cdot\bm{P}) |1 \rangle = \bm{\epsilon} \cdot \frac{m}{i} \langle 2 |  [\bm{x},H_0] |1 \rangle = im(E_2-E_{1})\langle 2 | \bm{\epsilon} \cdot \bm{x} |1 \rangle  .\]
 where $H_0 = {p^2}/{2m} - e\phi(\bm{x})$.
-Recall the Wigner-Eckart theorem, we have the selection rules: The matrix element would vanish unless $\Delta m = 0$ and $\Delta l = \pm 1$ ($\Delta l $ can not be $0$ because parity consideration). Further more, if the EM wave is circular polarized, we would have $\Delta m = \pm 1$. If the fine structure is taken into account, we would have $\Delta j = 0,\pm 1$ and $\Delta l = \pm 1$. If the hyperfine structure is taken into account, we would have $\Delta f = 0,\pm 1$, $\Delta j = 0,\pm 1$ and $\Delta l = \pm 1$.
+Recall the Wigner-Eckart theorem, we have the selection rules: 
+If the EM wave is linear polarized in $z$ direction, the matrix element would vanish unless $\Delta m = 0$ and $\Delta l = \pm 1$ ($\Delta l $ can not be $0$ because parity consideration). 
+If the EM wave is circular polarized, we would have $\Delta m = \pm 1$. If the fine structure is taken into account, we would have $\Delta j = 0,\pm 1$ and $\Delta l = \pm 1$. If the hyperfine structure is taken into account, we would have $\Delta f = 0,\pm 1$, $\Delta j = 0,\pm 1$ and $\Delta l = \pm 1$. 
+In this case, the absorption rate can be simplified to
+\begin{equation}
+	\Gamma_{\rm abs}(1 \to 2) = \pi |\langle 2 | \bm{\epsilon}\cdot\bm{d} | 1 \rangle |^2 \rho(\omega_{21}),
+\end{equation}
+where $\bm{d} \equiv e\bm{x}$ is the electrical dipole operator. 
+If we assume the direction and polarization of the incident light is totally random, we have
+\begin{equation}
+	|\langle 2 | \bm{\epsilon}\cdot\bm{d} | 1 \rangle |^2 = \frac{1}{3}d_{21}^2,
+\end{equation}
+where $d_{21}^2 \equiv |\langle 2 | \bm{d} | 1 \rangle |^2$.
+If we take the degeneracy of state $|2\rangle$ into account, we have
+\begin{equation}
+	\Gamma_{\rm abs}(1 \to 2) = B_{1 \to 2}\rho(\omega_{21}),
+\end{equation}
+where $B_{1 \to 2} \equiv {\pi g_2 d_{21}^2}/{3}$.
+Similarly, we can also get the rate of stimulated emission,
+\begin{equation}
+	\Gamma_{\rm emm}(2 \to 1) = B_{2 \to 1}\rho(\omega_{21}),
+\end{equation}
+where $B_{2\to 1} \equiv {\pi g_1 d_{12}^2}/{3}$. 
+We can see that $B_{1\to 2}$ and $B_{1\to 2}$ are exactly the Einstein coefficients of absorption and stimulated emission. And the relation $g_{2}B_{2\to 1} = g_{1}B_{1\to 2}$ is obvious. 
+However, spontaneous emission can not be explained unless we quantize the EM field as well. A complete treatment of atomic radiation by quantum field theory can be found in section 4.5 of \emph{Theoretical astrophysics, Volume 1（T. Padmanabhan)}.
 
 \section{Variational method}
 \subsection{The formulation of variational method}
@@ -643,7 +673,7 @@ In coordinate representation, it can be expressed as
 In three dimension space, the value of $e^{i\theta}$ can only be $\pm 1$. If the spin of the particle is integer, then the phase factor must be $1$ and the particle is called boson. If the spin of the particle is half-integer, then the phase factor must be $-1$ and the particle is called fermion. This is called spin-statistics theorem and can only be proved by relativistic quantum field theory. Here, we will take it for granted.
 \begin{note}
 In two dimension space, the phase $e^{i\theta}$ can be anything, and the particles that obey quantum statistics of this sort are called anyons. There is a brief introduction in chapter 12.1 and
-12.2 of the book \emph{Quantum Field Theory and the Standard Model (Matthew D. Schwartz)}.
+12.2 of the book Quantum Field Theory and the Standard Model (Matthew D. Schwartz).
 \end{note}
 \noindent
 Thus not all vectors in the space $\mathcal{H}_1\otimes\cdots\otimes\mathcal{H}_n$ are physical state. The physical states must be the eigenvectors of all $E_{ij}$ with eigenvalue $1$ ($-1$) for bosons (fermions). The space composed of physical states is the so-called Fock space. For example, suppose there are three particles with different state $a,b,c$. $|abc\rangle$ is not a physical state. The physical state for bosons is
@@ -678,7 +708,7 @@ In other words, the path integral sums over all possible paths allowing the posi
 
 \section{Non-relativistic quantum field theory}
 \subsection{Motivation and formulation of quantum field theory}
-There are some limitations of of multi-body Schr\"{o}dinger wave function. Firstly, when the number of particles is large, multi-body Schr\"{o}dinger wave function would be cumbersome. Secondly, it is incapable of describing processes where the number of particles changes.
+There are some limitations of multi-body Schr\"{o}dinger wave function. Firstly, when the number of particles is large, multi-body Schr\"{o}dinger wave function would be cumbersome. Secondly, it is incapable of describing processes where the number of particles changes.
 The aim of the quantum field theory is to come up with a formalism which is completely equivalent to multi-body Schr\"{o}dinger equations but just better:
 it allows you to consider a variable number of particles all within the same framework and can even describe the change in the number of particles. 
 It also gives totally symmetric or anti-symmetric multi-body wave function automatically. 
@@ -715,18 +745,18 @@ We define the ``vacuum'' $|0\rangle$ which is annihilated by the annihilation op
 \[\psi(\bm{x})|0\rangle = 0\]
 and construct the Fock space by
 \[|\bm{x}_1\cdots\bm{x}_N\rangle = \frac{1}{\sqrt{N!}}\psi^{\dagger}(\bm{x}_1)\cdots\psi^{\dagger}(\bm{x}_N)|0\rangle .\]
-The state $|\bm{x}_1\cdots\bm{x}_N\rangle$ is an n-particle state of identical bosons in the position eigenstate
+The state $|\bm{x}_1\cdots\bm{x}_N\rangle$ is an $n$-particle state of identical bosons in the position eigenstate
 at $\bm{x}_1\cdots\bm{x}_N$. We will verify this interpretation below explicitly.
 \\ \\
 Let us look at the one-particle state
-\[|x\rangle = \psi^{\dagger}(\bm{x})|0\rangle.\]
+\[|\bm{x}\rangle = \psi^{\dagger}(\bm{x})|0\rangle.\]
 We can derive that
 \[\langle \bm{y}| \bm{x}\rangle = \delta(\bm{x}-\bm{y}).\]
 Therefore, this state is normalized in the same way as the one-particle position eigenstate in quantum mechanics.
 We define a general one-particle state in the quantum field theory as
 \[|\Psi(t)\rangle \equiv \int d\bm{x} \Psi(\bm{x},t)\psi^{\dagger}(\bm{x})|0\rangle.\]
 $\psi(\bm{x})$ corresponds to the Schr\"{o}dinger wave function in the particle quantum mechanics. The Schr\"{o}dinger equation in quantum field theory is
-\[i\frac{\partial |\Psi(t)\rangle}{\partial t} = H|\psi(t)\rangle.\]
+\[i\frac{\partial |\Psi(t)\rangle}{\partial t} = H|\Psi(t)\rangle.\]
 Since we can derive that
 \begin{eqnarray}
 H|\Psi(t)\rangle &=& \int d\bm{x} \Psi(\bm{x},t) H\psi^{\dagger}(\bm{x})|0\rangle \nonumber \\
@@ -765,7 +795,7 @@ Similarly, we can derive the equation
 \\
 Generally, for the $n$-particle state, we have
 \[i\frac{\partial \Psi(\bm{x}_1,\cdots,\bm{x}_n,t)}{\partial t} = \left( \sum_{i} -\frac{\nabla^2_i}{2m} +  \sum_{i < j}V(\bm{x}_i-\bm{x}_j)\right)\Psi(\bm{x}_1,\cdots,\bm{x}_n,t).\]
-Thus it is reasonable that  an n-particle state can be constructed as
+Thus it is reasonable that  an $n$-particle state can be constructed as
 \[|\Psi(t)\rangle = \frac{1}{\sqrt{n!}} \int d\bm{x}_1 \cdots d\bm{x}_n \Psi(\bm{x}_1,\cdots,\bm{x}_n) \psi^{\dagger}(\bm{x}_1)\cdots\psi^{\dagger}(\bm{x}_n)|0\rangle.\]
 \\
 If we are interested in a system in a background potential.  
@@ -802,7 +832,7 @@ $V(\bm{p}-\bm{q})$.
 \subsection{Fermions}
 We have seen that the quantized Schr\"{o}dinger field gives multi-body states of identical bosons. For fermions, we should use anti-commutation relations rather than commutation relations.
 \[\{\psi(\bm{x}),\psi^{\dagger}(\bm{y})\} = \delta(\bm{x}-\bm{y}) , \quad \{\psi(\bm{x}),\psi(\bm{y})\} = \{\psi^{\dagger}(\bm{x}),\psi^{\dagger}(\bm{y})\} = 0.\]
-One noteworthy point is that $\psi^{\dagger}(\bm{x}) = \frac{1}{2}\{\psi^{\dagger}(\bm{x}),\psi^{\dagger}(\bm{x})\} = 0$. 
+One noteworthy point is that $\psi^{\dagger}(\bm{x}) = \{\psi^{\dagger}(\bm{x}),\psi^{\dagger}(\bm{x})\} / 2 = 0$. 
 What this means is that one cannot create two particles at the same position, an expression of Pauli's exclusion principle for fermions.
 Here are a few useful identities. Similarly to the identity of commutators $[A,BC] = A[B,C] + [A,B]C$, we find
 \[[A,BC] = \{A,B\}C - B\{A,C\} , \quad [AB,C] = A\{B,C\} - \{A,C\}B.\]
@@ -832,7 +862,7 @@ In particular, bound states have $E < 0$. Indeed, it is this property which ensu
 Bound states are rather special. In the absence of a potential, a solution which decays exponentially to the left will grow exponentially to the far right. 
 But, for the state to be normalisable, the potential has to turn this behaviour around, so the the wave function decreases at both $x \to -\infty$ and $x \to +\infty$. 
 This will only happen for specific values of $\lambda$. Ultimately, this is why the spectrum of bound states is discrete.
-\item Scattering States are not localised in space and the wave functions are not normalisable. 
+\item Scattering states are not localised in space and the wave functions are not normalisable. 
 Instead, asymptotically, far from the potential, scattering states take the form of plane waves. In one dimension, there are two possibilities,
 \[\mbox{Right moving:} , \quad \psi \sim e^{ikx},\]
 \[\mbox{Left moving:} , \quad \psi \sim e^{-ikx},\]
@@ -892,8 +922,8 @@ For symmetric potentials, with $V (x) = V (-x)$, we have $[P, H] = 0$ which mean
 be chosen to be either even functions or odd functions.
 Scattering eigenstates $\psi_{\rm R}$ and $\psi_{\rm L}$. These are neither odd nor even. Instead, for a symmetric potential, they are related by $\psi_{\rm L} (x) = \psi_{\rm R} (-x)$. If we want to work with the parity
 eigenstates, we take
-\[\psi_{+}(x) = \psi_{\rm R}(x) + \psi_{\rm L}(x),\]
-\[\psi_{-}(x) = \psi_{\rm R}(x) - \psi_{\rm L}(x),\]
+\[\psi_{+}(x) = \psi_{\rm L}(x) + \psi_{\rm R}(x),\]
+\[\psi_{-}(x) = \psi_{\rm L}(x) - \psi_{\rm R}(x),\]
 which obey $P\psi_{\pm}(x) = \pm \psi_{\pm}(x)$.
 \\ \\
 We can also think about the S-matrix using our new basis of states. The asymptotic ingoing modes are even and odd functions, given at $|x| \to \infty$ by
@@ -976,7 +1006,7 @@ Suppose that the S-matrix $S_{++}$ has a pole that lies on the complex momentum 
 Recall that the time dependence of the wave function is given by
 \[e^{-iEt} = e^{-iE_0t}e^{-\Gamma t/2}.\]
 For $\gamma > 0$, the overall form of the wave function decays exponentially with time. This is the characteristic behaviour of unstable states. 
-A wave function that is initially supported inside the trap will be very small there at time much larger than $\tau = \frac{1}{\Gamma}$. Here $\tau$ is called the half-life of the state, while $\Gamma$ is usually referred to as the width of the state.
+A wave function that is initially supported inside the trap will be very small there at time much larger than $\tau = {1}/{\Gamma}$. Here $\tau$ is called the half-life of the state, while $\Gamma$ is usually referred to as the width of the state.
 Including the time dependence, when $S_{++}\ \to \infty$, the solution takes the asymptotic form
 \[\psi_+(x,t) = \begin{cases} e^{-iE_0t}e^{-ik_0x}e^{-\gamma x - \Gamma t/2} , \quad x\to -\infty \\  e^{-iE_0t}e^{ik_0x}e^{\gamma x - \Gamma t/2} , \quad x\to \infty \end{cases}.\]
 The final factor varies as
@@ -1030,7 +1060,7 @@ The setting of $\bm{k} \equiv \bm{k}'$ imposes scattering in the forward directi
 \end{newthem}
 \noindent
 \\
-The meaning of this theorem is clear. Because the scattered wave takes the probability away to different directions, the total probability for the particle to go to the forward direction (unscattered) should decrease. This decrease is caused by the interference between the unscattered and scattered waves and hence is proportional to $f(0)$. On the other hand, the amount of decrease in the forward direction should equal the total probability at other directions, which is proportional to the total cross section. The proof can be found in the section 4 of the lecture notes \href{http://hitoshi.berkeley.edu/221B/index.html}{\emph{Scattering Theory I (Hitoshi Murayama)}}.
+The meaning of this theorem is clear. Because the scattered wave takes the probability away to different directions, the total probability for the particle to go to the forward direction (unscattered) should decrease. This decrease is caused by the interference between the unscattered and scattered waves and hence is proportional to ${\rm Im} f(0)$. On the other hand, the amount of decrease in the forward direction should equal the total probability at other directions, which is proportional to the total cross section. The proof can be found in the section 4 of the lecture notes \href{http://hitoshi.berkeley.edu/221B/index.html}{\emph{Scattering Theory I (Hitoshi Murayama)}}.
 
 \section{Born approximation}
 If $|\psi\rangle = |\phi\rangle + O(V)$ is close to $|\phi\rangle$, we can solve the Lippmanmn-Schwinger equation by perturbation theory. The lowest order approximation in $V$ is
@@ -1044,7 +1074,7 @@ where $\bm{q} \equiv \bm{k} - \bm{k}'$. If the potential is central, we can deri
 \[V = \frac{\alpha}{r}  e^{-\mu r}.\]
 We can derive
 \[f(\theta) = - \frac{2m\alpha}{q^2 + \mu^2}.\]
-Different cross section is therefore given by
+Differential cross section is therefore given by
 \[\frac{d\sigma}{d\Omega} = (2m\alpha)^2 \frac{1}{[2k^2(1-\cos\theta) + \mu^2]^2}.\]
 The total cross section is obtained by integrating over $d\Omega$,
 \[\sigma = (2m\alpha)^2 \frac{4\pi}{4k^2\mu^2 + \mu^4}.\]
@@ -1213,7 +1243,7 @@ In the large $\gamma$ limit, $\sin ka \sim O(\gamma^{-1})$ is small. Therefore t
 Outside the shell, the wave function oscillates at the small amplitude $\sin(ka)$, which however starts growing again due to the $e^{ik(r-a)}$ factor exponentially.
 \\ \\
 We now put the time dependence in. The energy eigenvalue
-is $E = \frac{k^2}{2m}$, where $k$ is at the pole. If the pole is at
+is $E = {k^2}/{2m}$, where $k$ is at the pole. If the pole is at
 \[k = k_0 - i\kappa,\]
 the energy eigenvalue is at
 \[E = E_0 - i\frac{\Gamma}{2} = \frac{k_0^2}{2m} - i \frac{k_0\kappa}{m} + O(\kappa^2).\]
@@ -1222,9 +1252,9 @@ For instance in the large $\gamma$ limit
 The time dependence of the wave function is simply
 \[rR_0(r,t) = rR_0(r) e^{-iE_0t} e^{-\frac{\Gamma t}{2}} = \begin{cases} \sin kr \, e^{-iE_0t} e^{-\frac{\Gamma t}{2}} , \quad (r<a) \\\sin ka \,  e^{ik(r-a)} e^{-iE_0t} e^{-\frac{\Gamma t}{2}} , \quad (r > a) \end{cases}.\]
 Inside the shell, it shows an exponentially decaying probability density uniformly over space.
-Outside the shell, the probability density is $|rR_0|^2 \propto e^{2\kappa r-\Gamma t}$ , which shows the probability flowing out to infinity with speed $\Gamma/2\kappa = \frac{k_0}{m}$,
+Outside the shell, the probability density is $|rR_0|^2 \propto e^{2\kappa r-\Gamma t}$ , which shows the probability flowing out to infinity with speed $\Gamma/2\kappa = {k_0}/{m}$,
 nothing but the velocity of the particle itself. In other words, the wave function describes a ``bound state'' inside shell decaying into a continuum state outside the shell moving away at the expected velocity. The resonances can be viewed as
-quasi-bound states which decay into continuum states. The lifetime of the quasi-bound states is $\tau = \frac{1}{\Gamma}$.
+quasi-bound states which decay into continuum states. The lifetime of the quasi-bound states is $\tau = {1}/{\Gamma}$.
 A more rigorous treatment of resonance using wave packets can be found in the section 5 of the lecture notes 
 \href{http://hitoshi.berkeley.edu/221B/index.html}{\emph{Scattering Theory III (Hitoshi Murayama)}}.
 
