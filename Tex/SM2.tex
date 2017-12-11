@@ -34,7 +34,7 @@ and
 \[\tilde{V}(\bm{q}) = \int d\bm{x} V(\bm{x}) e^{-i\bm{q}\cdot\bm{x}}.\]
 Here we adopt box normalization to make momentum of the particle discrete. It is easy to verify that
 \[[a_{\bm{p}},a_{\bm{q}}^{\dagger}] = \delta_{\bm{p},\bm{q}} , \quad [a_{\bm{p}},a_{\bm{q}}] = 0 , \quad [a^{\dagger}_{\bm{p}},a^{\dagger}_{\bm{q}}] = 0.\]
-The partition canonical partition function is
+The canonical partition function is
 \[Z = \mathrm{Tr}[e^{-\beta H}].\]
 At low temperature, states with low energy value become dominant. These are expected to be states with low values of momentum. 
 Let us consider the system close to $T \approx 0$. 
@@ -62,7 +62,7 @@ and the total Hamiltonian can be approximated by the Bogoliubov Hamiltonian $H_B
 We turn next to the problem of determining the energy eigenvalues of this Hamiltonian. This we do by using the method of the Bogoliubov–Valatin transform. 
 The idea is this: $H^{\rm B}$ is a quadratic function of the operators $a_{\bm{k}}$ and $a^{\dagger}_{\bm{k}}$. 
 By taking appropriate linear combinations of these operators we can form new operators $b_{\bm{k}}$ and $b^{\dagger}_{\bm{k}}$ which ``diagonalize'' $H^{\rm B}$, i.e. which lead to
-\[H^{\rm B} = \sum_{\bm{q} \neq 0} \mathcal{E}(\bm{k})b^{\dagger}_{\bm{k}} b_{\bm{k}} .\]
+\[H^{\rm B} = \sum_{\bm{k} \neq 0} \mathcal{E}(\bm{k})b^{\dagger}_{\bm{k}} b_{\bm{k}} .\]
 The function $\mathcal{E}(\bm{k})$  will then determine the different excitations of the system while $b_{\bm{k}}$ and $b^{\dagger}_{\bm{k}}$ will be destruction and creation operators for these excitations or ``quasi-particles'', provided they satisfy the commutation rules
 \[[b_{\bm{p}},b_{\bm{q}}^{\dagger}] = \delta_{\bm{p},\bm{q}}.\]
 We write
@@ -73,9 +73,9 @@ Substituting $a$ and $a^{\dagger}$ with $b$ and $b^{\dagger}$ in $H^{\rm B}$ and
 \[\mathcal{E}(\bm{k}) = \sqrt{\frac{\bm{k}^2}{2m} \left(\frac{\bm{k}^2}{2m} + \frac{2N_0\tilde{V}(0)}{V} \right) }.\]
 The energy $\mathcal{E}(\bm{k})$ is called the quasi-particle energy and the operators $b_{\bm{k}}$ and $b^{\dagger}_{\bm{k}}$ are quasi-particle destruction and creation operators. 
 For small values of $\bm{k}$ we have
-\[\mathcal{E}(\bm{k}) = \frac{|\bm{p}|}{m} \sqrt{\frac{N_0}{V}\tilde{V}(0)m}.\]
+\[\mathcal{E}(\bm{k}) = \frac{|\bm{k}|}{m} \sqrt{\frac{N_0}{V}\tilde{V}(0)m}.\]
 Observe that for $\mathcal{E}(\bm{k})$ to be real we must have $\tilde{V}(0) > 0$. This implies there is a repulsive region for $V(x)$ which must dominate the integral $\int dx V(x)$. Observe also that $|\bm{k}|/m = \bm{v}$ is a velocity, and $N_0m/V = \rho$, is the density of the superfluid helium so that the quasi-particle energy can be written as 
-\[\mathcal{E}(\bm{p} = m\bm{v}) \approx |\bm{v}|\sqrt{\rho\tilde{V}(0)}.\]
+\[\mathcal{E}(\bm{k} = m\bm{v}) \approx |\bm{v}|\sqrt{\rho\tilde{V}(0)}.\]
 We now show that a system with such an energy spectrum represents a superfluid, i.e. a system with no friction.
 Friction in a system represents dissipation of energy.
 Consider a molecule of mass $M_{\rm A}$ moving in a medium. If this molecule can change its energy through collisions with the excitations of the medium, then the system has friction. 
@@ -155,8 +155,7 @@ The value of $\psi(\bm{x},t)$ is Grassmann number rather than $c$ number, which 
 \section{Basic problem}
 A given equilibrium state of a macroscopic system can be described by an order parameter field. For a ferromagnet the order parameter field is the magnetization density. 
 The order parameter field can be regarded as a mapping from the system (with coordinate $\bm{x}$) to an order parameter space. In a model where the magnetization density is given by a scalar function $M_z(\bm{x})$ this is the space of real numbers. In general the order parameter space can be more complicated and the order parameter field need not be a scalar function.
-A phase transition corresponds to the order parameter field
-changing qualitatively together with the emergence of singular behaviour in the system.
+\textcolor{red}{ A phase transition corresponds to the order parameter field changing qualitatively together with the emergence of singular behaviour in the system.}
 \\ \\
 For instance the order parameter field in the case of a ferromagnet is non-zero in the ferromagnetic phase, is zero in the paramagnetic phase, and the susceptibility of the system diverges at the phase transition temperature. 
 Determining a suitable order parameter field to characterize a phase is part of the task of a theory of phase transitions. If the order parameter field changes continuously from one phase to another, as in the case of a ferromagnet, the transition is said to be a continuous or second-order phase transition. If it is discontinuous the transition is said to be first order. 
@@ -257,7 +256,7 @@ The approach also predicts that the relation between different macroscopic param
 \[\chi \sim \frac{1}{(T_{\rm c}-T)^{\gamma}} , \quad T \to T_{\rm c},\]
 with $\beta = {1}/{2}$, $\gamma = 1$, and $\delta = 3$. The parameters $\beta$, $\delta$ and $\gamma$ are called critical exponents and are measured experimentally. 
 The experimental values for these parameters
-$\beta \approx 1.33$, $\delta \approx 4.5$, and $\gamma \approx 1.2$ are found for different ferromagnet with different lattice structures and widely differing values for the Curie temperature $T_{\rm c}$. 
+$\beta \approx 0.33$, $\delta \approx 4.5$, and $\gamma \approx 1.2$ are found for different ferromagnet with different lattice structures and widely differing values for the Curie temperature $T_{\rm c}$. 
 These parameters thus are a universal property of the ferromagnetic phase transition. This is also a feature of Landau's theory. Thus Landau's theory is in qualitative
 agreement with experiment.
 
@@ -280,7 +279,7 @@ e^{K+h} & e^{-K} \\ e^{-K} & e^{K-h}
 Following the program outlined by Kadanoff's seminal work on the foundations of the RG, we will follow a strategy whereby this renormalization step may be effected by subdividing the spin chain into regular clusters of $b$ neighbouring spins. We may then proceed to sum over the $2b$ sub-configurations of each cluster, thereby generating an effective functional describing the inter-cluster energy balance. 
 While it is clear that this energy functional exists, a far less obvious question to ask is whether it will again have the form of an effective Ising spin system. Remarkably, the answer is affirmative: the Ising model is said to be ``renormalizable.'' 
 The structural reproduction of the model implies that we can think of each cluster as some kind of meta-Ising spin, or block spin. More importantly, it guarantees that the renormalization step qualifies for iteration: in a second RG step, $b$ block spins are grouped to form a new cluster (now comprising $b^2$ of the microscopic spins) which are then traced out, etc. We have
-\[Z_{N}(K,h) = \mathrm{Tr} T^N = \mathrm{Tr} (T^b)^{N/b} =\mathrm{Tr} (T')^{N/b} = Z_{N/b}(K',b').\]
+\[Z_{N}(K,h) = \mathrm{Tr} T^N = \mathrm{Tr} (T^b)^{N/b} =\mathrm{Tr} (T')^{N/b} = Z_{N/b}(K',h').\]
 Define $u \equiv e^{-K}$ and $v \equiv e^{-h}$. We can work out
 \[u' = \frac{\sqrt{v+v^{-1}}}{(u^4 + u^{-4} + v^2 + v^{-2})^{1/4}} , \quad v' = \frac{\sqrt{u^4 + v^2}}{\sqrt{u^4 + v^{-2}}}.\]
 The possibility of representing the new transfer matrix in the same algebraic structure as the old one implies that the transformed model again describes an Ising spin system. However, the Hamiltonian $\beta H$ of the new block spin system is defined at a different temperature, magnetic field and exchange constant and describes fluctuations on length scales that are twice as large as in the original system.
@@ -299,7 +298,7 @@ On the other hand, we noticed above that an RG step is tantamount to doubling th
 Consistency requires that either $\xi = 0$ or $\xi = \infty$. 
 In the present case, the line of fixed points $(1,v)$ is identified with $u = \exp[-\beta J] = 1$, i.e. $\beta = 0$.
 This is the limit of infinitely large temperatures, at which we expect the model to be in a state of maximal thermal disorder, that is $\xi = 0$.
-Besides the high-temperature fixed line, there is a zero-temperature fixed point $(u, v) = (\exp[−\beta J], \exp[−\beta h]) = (0, 1)$ implying $T \to 0$ and $h \to 0$. 
+Besides the high-temperature fixed line, there is a zero-temperature fixed point $(u, v) = (\exp[−\beta J], \exp[−h]) = (0, 1)$ implying $T \to 0$ and $h \to 0$. 
 Upon approaching zero temperature, the system is expected to order and to build up long-range correlations, $\xi \to \infty$. And we can say critical point corresponds to a fixed point of RG group with infinity correlation length.
 \\ \\
 Notice, however, an important difference between the high- and the low-temperature set of fixed points: while the former is an attractive fixed point in the sense that the RG trajectories approach it asymptotically, the latter is a repulsive fixed point. No matter how low the temperature at which we start, the RG flow will drive us into a regime of effectively higher temperature or lower ordering. 
@@ -349,9 +348,9 @@ where the right-hand side is defined through the relation
 \\
 Actually Gell-Mann-Low equation here is the same equation as the one in relativistic quantum field theory which describe the flow of coupling coefficient with the energy scale of the experiment. Suppose the cutoff of the theory is $\Lambda_0$, the energy scale of the experiment is $\mu$, and $\lambda_i$ is the coupling coefficient in the theory with dimension $[\mbox{energy}] ^{d_{i}}$. If the dimension of the physical quantity we want to measure is $d_Q$, then generally, we have
 \[\frac{Q}{\Lambda_0^{d_O}} = F(\frac{\mu}{\Lambda_0},\frac{\lambda_i}{\Lambda_0^{d_i}}).\]
-Then, we can integrate out the high frequency mode between $\mu$ and $\Gamma_0$ of the theory and rescale the energy and momentum to get the new coupling coefficient $\lambda(b)$, where $b = \Lambda_0 / \mu$. Therefore, in the new effective theory, we have
+Then, we can integrate out the high frequency mode between $\mu$ and $\Lambda_0$ of the theory and rescale the energy and momentum to get the new coupling coefficient $\lambda(b)$, where $b = \Lambda_0 / \mu$. Therefore, in the new effective theory, we have
 \[\frac{Q}{\mu^{d_O}} = F(1,\frac{\lambda_i(\Lambda_0 / \mu)}{\mu^{d_i}}).\]
-The flow of coupling coefficient given by
+The flow of coupling coefficient is given by
 \[\frac{d\lambda}{d\ln \mu} = - \frac{d\lambda}{d\ln b}.\]
 
 \subsection{Analysis of the Gell-Mann-Low equation}
@@ -483,7 +482,7 @@ The reason why it it possible to neglect both higher powers and gradients of the
 Anticipating that the ``real'' dimensions carried by the operators in the action will be not too far from their
 engineering dimensions, we begin by exploring the latter. 
 It is straightforward to attribute engineering dimensions to all operators:
-\[\left[\phi^2 \right] = L^2 , \quad \left[\phi^4 \right] = L^{4-d} , \quad \left[\phi^{2n} \right] = L^{d + (2-d)n/2} , \quad  \left[(\nabla^m \phi)^2 \right] = L^{2(1-m)}.\]
+\[\left[\int \phi^2 \right] = L^{2} , \quad \left[\int \phi^4 \right] = L^{4-d} , \quad \left[\int \phi^{n} \right] = L^{d + (2-d)n/2}, \quad  \left[\int (\nabla^m \phi)^2 \right] = L^{2(1-m)}.\]
 These relations convey much about the potential significance of all structurally allowed operators:
 \begin{itemize}
 \item The engineering dimension of the non-gradient operator $\sim \phi^2$ is positive in all dimensions, indicating general relevance.
@@ -491,7 +490,7 @@ These relations convey much about the potential significance of all structurally
 It also gives us a preliminary clue as to how we might want to approach the $\phi^4$-model on a technical level: 
 while for dimensions ``much'' smaller than $d = 4$ the interaction operator $\sim \phi^4$ is strongly relevant, the dimension $d = 4$ itself is borderline. 
 This suggests that we analyze the model at $d = 4$, or maybe ``close''  to $d = 4$ where the $\phi^4$ operator is not yet that virulent, and then try to extrapolate to infer what happens at the ``physical dimensions'' of $d = 2$ and $3$.
-\item Operators $\phi^{n > 4}$ become relevant only in dimensions $d < \frac{2}{1-2/n} < 4$. 
+\item Operators $\phi^{n > 4}$ become relevant only in dimensions $d < 2/(1-2/n) < 4$. 
 However, even below these threshold dimensions, operators of high powers in the field variable are much less relevant than the dominant non-harmonic operator $\phi^4$. This is the a posteriori justification for the neglect of $\phi^{n>4}$ operators in the derivation of the model.
 \item Similarly, operators with more than two gradients are generally irrelevant and can be neglected in all dimensions.
 \item In contrast, the operator $\phi$ coupling to the magnetic field carries dimension $(1+d/2)$ and is therefore always strongly relevant.
@@ -536,7 +535,7 @@ The detailed calculation of flow equation in statistical field theory by the met
 where $\epsilon = 4-d$.
 These equations clearly illustrate the meaning of the $\epsilon$-expansion. According to the second equation, a perturbation away from the Gaussian fixed point will initially grow at a rate set by the engineering dimension $\epsilon$. While, on the level of the classical, zero-loop theory, $\lambda$ would grow indefinitely, the one-loop contribution $\sim \lambda^2$ stops the flow at a value $\lambda \sim \epsilon$.
 \\ \\
-Equating the right-hand sides of Gell-Mann-Low equations to zero (and temporarily ignoring the magnetic field), we indeed find that besides the Gaussian fixed point a non-trivial fixed point $(r_2^*, \lambda_2^*) = (-\frac{1}{6}\epsilon, \frac{16\pi^2}{3}\epsilon)$ has appeared.
+Equating the right-hand sides of Gell-Mann-Low equations to zero (and temporarily ignoring the magnetic field), we indeed find that besides the Gaussian fixed point a non-trivial fixed point $(r_2^*, \lambda_2^*) = (-{\epsilon}/{6},{16\pi^2\epsilon}/{3})$ has appeared.
 Notice that the second fixed point is $\mathcal{O}(\epsilon)$ and coalesces with the Gaussian fixed point as $\epsilon$ is sent to zero. Plotting the $\beta$-function for the coupling constant $\lambda$, we further find that, for $\epsilon > 0$, $\lambda$ is relevant around the Gaussian fixed point but irrelevant at the non-trivial fixed point.
 \begin{figure}[!h]
 \centering

@@ -336,7 +336,7 @@ Let $G(A)$ be some function that we wish to set equal zero as a gauge-fixing con
 \[ 1 = \int \mathcal{D}\alpha(x) \delta(G(A(\alpha))) \det \left( \frac{\delta G}{\delta \alpha} \right),\]
 where
 \[A_{\mu}(\alpha(x)) = A_{\mu}(x) + \frac{1}{e_0}\partial_{\mu}\alpha(x).\]
-We set the gauge fixing function as $G(A) = \partial^{\mu} A_{\mu} -\omega(x)$, so $G(A(\alpha)) = \partial^{\mu} A_{\mu} + \frac{1}{e_0}\partial^2 \alpha - \omega(x)$. It is obvious that $\det \left( \frac{\delta G}{\delta \alpha} \right)$ is equivalent to $\det(\partial^2)/e_0$, which is independent of $A$. Thus
+We set the gauge fixing function as $G(A) = \partial^{\mu} A_{\mu} -\omega(x)$, so $G(A(\alpha)) = \partial^{\mu} A_{\mu} + \partial^2 \alpha/e_0 - \omega(x)$. It is obvious that $\det \left( {\delta G}/{\delta \alpha} \right)$ is equivalent to $\det(\partial^2)/e_0$, which is independent of $A$. Thus
 \[Z[0] = \det \left( \frac{\delta G}{\delta \alpha} \right) \int \mathcal{D}\alpha \int \mathcal{D}A e^{iS[A]} \delta(G(A(\alpha))).\]
 Now change variables from $A$ to $A(\alpha)$. This is a simple shift, so $\mathcal{D}A = \mathcal{D}A(\alpha)$. Also, by gauge invariance, $S[A] = S[A(\alpha)]$. Since $A(\alpha)$ is now just a dummy integration variable, we can rename it bake to $A$. Then we have
 \[Z[0] = \det \left( \frac{\delta G}{\delta \alpha} \right) \int \mathcal{D}\alpha \int \mathcal{D}A e^{iS[A]} \delta(\partial^{\mu}A_{\mu} - \omega(x)).\]
@@ -842,7 +842,7 @@ The correction term indicates that the electromagnetic force becomes much strong
 The wave function is non-zero at the origin only for s -wave states. For the 2S state, the shift is about $-1.123 \times 10^{-7}$ eV. Note that the energy level of fine structure is $E_{nj}$. This modified potential causes a split for degenerate levels of different $l$. This is a (small) part of the Lamb shift splitting.
 A more precise correction is given by Uehling potential
 \[\delta V(r) = -\frac{\alpha^2}{4\sqrt{\pi}r} \frac{e^{-2mr}}{(mr)^{3/2}}.\]
-Thus the range of the correction term is roughly the electron Compton wavelength, $\frac{1}{m}$. 
+Thus the range of the correction term is roughly the electron Compton wavelength, $m^{-1}$. 
 Since hydrogen wave functions are nearly constant on this scale, the delta function was a good approximation.
-We can interpret the correction as being due to screening. At $r > \frac{1}{m}$, virtual $e^+e^-$ pairs make the vacuum a dielectric medium in which the apparent charge is less than the true charge. 
+We can interpret the correction as being due to screening. At $r > m^{-1}$, virtual $e^+e^-$ pairs make the vacuum a dielectric medium in which the apparent charge is less than the true charge. 
 At smaller distances we begin to penetrate the polarization cloud and see the bare charge. This phenomenon is known as vacuum polarization.

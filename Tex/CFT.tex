@@ -179,14 +179,14 @@ Lagrangian must be a scalar, or more loosely, action must be invariant under Lor
 \end{newthem}
 
 \subsubsection{space-time translation}
-$\overline{x}^{\mu} = x^{\mu} + a^{\mu}$ 
+$\phi_{a}(x^{\mu}) \to \phi_{a}(x^{\mu}-a^{\mu})$.
 \[j^{\mu} = -a_{\nu} T^{\mu \nu},\]
 \[T^{\mu \nu} \equiv -\frac{\partial \mathcal{L}}{\partial(\partial_{\mu}\phi_a)} \partial^{\nu} \phi_a + \eta^{\mu \nu} \mathcal{L}.\]
 If we define $P^{\mu} \equiv \int T^{0 \mu} d^3 x$, then we have the law of momentum conservation:
 \[\frac{d P^{\mu}}{dt} = 0.\]
 
 \subsubsection{Lorentz Transformation}
-$\overline{x}^{\mu} = x^{\mu} + \delta \omega^{\mu}_{\phantom{\mu}\nu} x^{\nu}$.
+$\phi_{a}(x^{\mu}) \to \tensor{\mathscr{S}}{_a^b} \phi_{b}(x^{\mu}-\tensor{\delta \omega}{^{\mu}_{\nu}}x^{\nu})$.
 \\ \\
 The infinitesimal Lorentz transformation can be written as $I+\delta \omega^{\mu}_{\phantom{\mu}\nu}$ and
 \[\delta \omega^{\mu}_{\phantom{\mu}\nu} = \left[ 
@@ -594,7 +594,7 @@ The vector potential of such a wave is most conveniently written as the real par
 The time average of the product of field intensity can be worked out as
 \[\overline{\bm{A}\bm{B}} = \frac{1}{2}\mathrm{Re}\left\{ \bm{A}_0 \bm{B}_0^*\right\}.\]
 The electric and magnetic field are
-\[\bm{E} = ik\bm{A} , \quad \bm{B} = i\bm{k}\times\bm{A}.\]
+\[\bm{E} = i\omega \bm{A} , \quad \bm{B} = i\bm{k}\times\bm{A}.\]
 And we can verify that $(\omega,\bm{k})$ transforms like a four-vector.
 \\ \\
 Generally, the electric field can be  written as
@@ -603,7 +603,7 @@ The end of the vector $\bm{E}$ in $y-z$ plane will form an ellipse. The magnitud
 \[|\sqrt{A^2+B^2+2AB\sin\delta} \pm \sqrt{A^2+B^2-2AB\sin\delta}|.\]
 The angle $\theta$ between the major axis and $y$ axis satisfies the equation
 \[\tan 2\theta = \frac{2AB\cos\delta}{A^2-B^2}.\]
-If $-{\pi}/{2} < \delta < {\pi}/{2}$, major axis is in the second and forth quadrant. If $\delta > {\pi}/{2}$ or $\delta < -{\pi}/{2}$, major axis is in the first and third quadrant. If $\delta = \pm {\pi}/{2}$ and $A>B$, the major axis is $y$ axis. If $\delta = \pm {\pi}/{2}$ and $A<B$, the major axis is $z$ axis. If $\delta = \pm {\pi}/{2}$ and $A=B$, the ellipse becomes a circle.
+If $-{\pi}/{2} < \delta < {\pi}/{2}$, major axis is in the first and third quadrant. If $\delta > {\pi}/{2}$ or $\delta < -{\pi}/{2}$, major axis is in the second and forth quadrant. If $\delta = \pm {\pi}/{2}$ and $A>B$, the major axis is $y$ axis. If $\delta = \pm {\pi}/{2}$ and $A<B$, the major axis is $z$ axis. If $\delta = \pm {\pi}/{2}$ and $A=B$, the ellipse becomes a circle.
 If $0 < \delta < \pi$, the rotation is positive in the direction of $x$ axis (left handed). If $-\pi < \delta < 0$, the rotation is negative in the direction of $x$ axis(right handed). If $\delta = 0,\pi$, the ellipse becomes a line.
 \\ \\
 Any field is expandable in a Fourier integral containing a continuous or discrete distribution of different frequencies. Such an expansion has the form
@@ -650,7 +650,7 @@ The $\rho$ can be expressed as
 \[\frac{1}{2} (1-P) I + \frac{1}{2} P(I + \bm{n} \cdot \bm{\sigma}),\]
 where
 \[P \equiv \sqrt{p_1^2 + p_2^2 + p_3^2} , \quad \bm{n} \equiv (\frac{p_1}{P},\frac{p_2}{P},\frac{p_3}{P}).\]
-For a totally polarized light with polarization state$ | E\rangle = (\cos {\theta}/{2} e^{-i{\phi}/{2}} , \sin {\theta}/{2} e^{i{\phi}/{2}})$, the polarization tensor $\rho$ is $|E\rangle \langle E|$. We can verify that
+For a totally polarized light with polarization state$ | E\rangle = (\cos ({\theta}/{2}) e^{-i{\phi}/{2}} , \sin ({\theta}/{2}) e^{i{\phi}/{2}})$, the polarization tensor $\rho$ is $|E\rangle \langle E|$. We can verify that
 \[P = 1 , \quad \bm{n} = (\sin\theta \cos\phi, \sin\theta \sin\phi, \cos \theta).\]
 Therefore, for an arbitrary light,
 \[\rho = (1-P)\rho_{\mathrm{n}} + P \rho_{\mathrm{p}} , \quad \rho_{\mathrm{n}} = \frac{1}{2}I , \quad \rho_{\mathrm{p}} = \frac{1}{2}(I + \bm{n} \cdot \bm{\sigma}).\]
@@ -758,7 +758,7 @@ Suppose $d\mathcal{E}_{\omega\bm{n}}$ is the energy radiated into the element of
 For the radiation produced by a single arbitrarily moving point charge,we have
 \[\bm{A}_{\omega}(\bm{R}_0) = \frac{e e^{i\omega
 R_0}}{4\pi R_0}  \int_{-\infty}^{\infty} e^{i\omega[
-t-\bm{n}\cdot\bm{r}]} \bm{v}_0 dt,\]
+t-\bm{n}\cdot\bm{r}]} \bm{v} dt,\]
 \[\bm{B}_{\omega}(\bm{R}_0) = \frac{ie\omega e^{i\omega
 R_0}}{4\pi R_0}  \int_{-\infty}^{\infty} e^{i\omega[
 t-\bm{n}\cdot\bm{r}]}  \bm{n} \times d\bm{r}.\]
@@ -880,17 +880,17 @@ Therefore, we have
 and
 \[\ddot{\bm{d}} = \frac{e^2}{m} \bm{E}_0(t) e^{-i\omega t}.\]
 Now we assume the incident direction of the EM wave is $\hat{x}$, the scattered direction of the EM wave is $\bm{n}' =(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)$. The dipole radiation is
-\[\overline{dI} = \frac{e^4}{16\pi^2 m^2}\overline{(\bm{E}\times\bm{n}')^2} do.\]
+\[\overline{dI} = \frac{e^4}{16\pi^2 m^2}\overline{{[\rm Re}(\bm{E}\times\bm{n}')]^2} do = \frac{e^4}{32\pi^2 m^2}\overline{|\bm{E}\times\bm{n}'|^2} do.\]
 Since
-\[(\bm{E}\times\bm{n}')^2 = -2 \, {E_y} {E_z} \cos\left({\theta}\right) \sin\left({\phi}\right)
-\sin\left({\theta}\right) - {\left({E_y}^{2} \sin\left({\phi}\right)^{2}
-- {E_z}^{2}\right)} \sin\left({\theta}\right)^{2} + {E_y}^{2},\]
+\[|\bm{E}\times\bm{n}'|^2 = - ({E_y} {E_z}^* + {E_y}^* {E_z}) \cos\left({\theta}\right) \sin\left({\phi}\right)
+\sin\left({\theta}\right) - {\left(|E_y|^{2} \sin\left({\phi}\right)^{2}
+- |E_z|^{2}\right)} \sin\left({\theta}\right)^{2} + |E_y|^{2},\]
 we have
 \[\overline{dI} = \frac{e^4 \bar{S}}{16\pi^2 m^2}[-(\rho_{12}+\rho_{21})\cos\left({\theta}\right)\sin\left({\phi}\right)
 \sin\left({\theta}\right) - {\left(\rho_{11} \sin\left({\phi}\right)^{2}
 - \rho_{22}\right)} \sin\left({\theta}\right)^{2} + \rho_{11} ],\]
 where
-\[\bar{S} = \overline{\mathrm{Re}(\bm{E})\cdot \mathrm{Re}(\bm{E})} = \frac{1}{2}\mathrm{Re}\overline{\bm{E}_0 \cdot \bm{E}^*_0}.\]
+\[\bar{S} = \overline{\mathrm{Re}(\bm{E})\cdot \mathrm{Re}(\bm{E})} = \frac{1}{2}\overline{\bm{E}_0 \cdot \bm{E}^*_0}.\]
 The effective cross-section for scattering is
 \[d\sigma = \frac{e^4}{16\pi^2 m^2}[-(\rho_{12}+\rho_{21})\cos\left({\theta}\right)\sin\left({\phi}\right)
 \sin\left({\theta}\right) - {\left(\rho_{11} \sin\left({\phi}\right)^{2}

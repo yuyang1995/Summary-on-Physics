@@ -31,6 +31,30 @@ Vector fields:
 \[U^{-1}(\Lambda) A^{\mu}(x) U(\Lambda) = \Lambda^{\mu}_{\phantom{\mu}\nu} A^{\nu}(\Lambda^{-1}x).\]
 Lorentz invariance means Lagrangian must be a scalar, or more loosely, action must be invariant under Lorentz transformation.
 
+\section{Symmetry and conservation law}
+Thanks to canonical quantization, equations in classical field theory will hold antomatically in quantum field theory as long as we interpret the field in equations as operators in Heisenberg picture. As a result, Noether's theorem holds in quantum field theory as well. 
+If the infinitesimal transformation of the field
+\begin{equation}
+    \phi_a \to \phi_a + \delta \phi_a, \quad  \mathcal{L} \to \mathcal{L} + \delta \mathcal{L},
+\end{equation}
+satisfy the condition $\delta L = \partial_{\mu} K^{\mu}$, we have the conserved current
+\begin{equation}
+    j^{\mu} = - \frac{\partial \mathcal{L}}{\partial (\partial_{\mu} \phi_a)}\delta \phi_a + K^{\mu},
+\end{equation}
+which satisfies the continuity equation $\partial _{\mu} j^{\mu} = 0$. 
+Integrating the continuity equation over a volume $V$, large enough to have no net currents through its surface, leads to the conservation law
+\begin{equation}
+    \frac{d Q}{dt} = 0,
+\end{equation}
+where $Q = \int_{V} j^0 dV$. 
+Furthermore, we can prove that $Q$ is the generator of the infinitesimal transformation. i.e.
+\begin{equation}
+    U^{\dagger} \phi_a U = \phi_{a} + \delta_{a},
+\end{equation}
+where $U \equiv e^{iQ} = I + iQ$.
+\\ \\
+However, in some cases, classical conservation laws would break in quantum field theory, called anomalies. It will be introduced in section 27.4.
+
 \section{Momentum}
 \noindent
 The definition and conservation of momentum is the same as that in classical theory:

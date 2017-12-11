@@ -3,7 +3,7 @@
 In a weak-field situation
 \[g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu} , \quad |h_{\mu\nu}| \ll 1 ,\]
 one can expand the field equations in powers of $h_{\mu\nu}$ using a coordinate frame where $|h_{\mu\nu}| \ll 1$ holds; and without much loss of accuracy, one can keep only linear terms. The resulting formalism is often called ``the linearized theory of gravity''. The resulting connection coefficients, when linearized in the metric perturbation $h_{\mu\nu}$, read 
-\[\Gamma^{\mu}_{\alpha \beta} = \frac{1}{2}\eta^{\mu\nu} (h_{\alpha\nu,\beta} + (h_{\beta\nu,\alpha} - h_{\alpha\beta,\nu}) \equiv \frac{1}{2}(h_{\alpha \phantom{*},\beta}^{\phantom{*} \mu} + h_{\beta \phantom{*},\alpha}^{\phantom{*} \mu} + h_{\alpha\beta}^{\phantom{**} ,\mu} ).\]
+\[\Gamma^{\mu}_{\alpha \beta} = \frac{1}{2}\eta^{\mu\nu} [h_{\alpha\nu,\beta} + (h_{\beta\nu,\alpha} - h_{\alpha\beta,\nu})] \equiv \frac{1}{2}(h_{\alpha \phantom{*},\beta}^{\phantom{*} \mu} + h_{\beta \phantom{*},\alpha}^{\phantom{*} \mu} + h_{\alpha\beta}^{\phantom{**} ,\mu} ).\]
 Whenever one expands in powers of $h_{\mu\nu}$, indices of $h_{\mu\nu}$ are raised and lowered using $\eta^{\mu\nu}$ and $\eta_{\mu\nu}$, not $g^{\mu\nu}$ and $g_{\mu\nu}$. A similar linearization of the Ricci tensor yields
 \[R_{\mu\nu} = \Gamma^{\alpha}_{\phantom{*}\mu\nu,\alpha} - \Gamma^{\alpha}_{\phantom{*}\mu\alpha,\nu} = \frac{1}{2}(h_{\mu \phantom{*},\nu\alpha}^{\phantom{*} \alpha} + h_{\nu \phantom{*},\mu\alpha}^{\phantom{*} \alpha} - h_{\mu\nu,\alpha}^{\phantom{***}\alpha} - h_{,\mu\nu}),\]
 where
@@ -67,7 +67,7 @@ We then evaluate all quantities along the background path, to solve for $x^{(1)\
 For this procedure to make sense, we need to assume that the potential $\Phi$ is not appreciably different along the background and true geodesies;
 this condition amounts to requiring that $x^{(1)i}\partial_{i}\Phi \ll \Phi$. 
 For convenience we denote the wave vector of the background path as $k^{\mu}$ and the derivative of the deviation vector as $l^{\mu}$. The condition that a path be null is of course
-\[(\eta_{\mu\nu} + h_{\mu\nu})(l^{\mu}+k^{\mu})(l_{\nu} + k_{\nu}) = 0.\]
+\[(\eta_{\mu\nu} + h_{\mu\nu})(l^{\mu}+k^{\mu})(l^{\nu} + k^{\nu}) = 0.\]
 At zeroth order we simply have
 \[\eta_{\mu\nu} k^{\mu} k^{\nu} = 0.\]
 i.e.
@@ -80,7 +80,7 @@ We now turn to the perturbed geodesic equation. The zeroth-order geodesic equati
 \[\frac{dl^{\mu}}{d\lambda} = -\Gamma^{\mu}_{\rho\sigma}k^{\rho}k^{\sigma},\]
 i.e.
 \[\frac{dl^0}{d\lambda} = -2k(\vec{k}\cdot\vec{\nabla}\Phi), \quad \frac{d\vec{l}}{d\lambda} = -2k^2\vec{\nabla}_{\bot}\Phi,\]
-where $\vec{\nabla}_{\bot} \equiv k^{-2}\vec{k}(\vec{\nabla} - \vec{k}\cdot\vec{\nabla})$.
+where $\vec{\nabla}_{\bot} \equiv \vec{\nabla} - k^{-2}(\vec{k}\cdot\vec{\nabla})\vec{k}$.
 Putting all equations together, we have
 \[l^0 = -2k \Phi, \quad \vec{l} \cdot \vec{k} = 0, \quad \vec{l} = -2k^2 \int \vec{\nabla}_{\bot}\Phi d\lambda.\] 
 The redshift due to gravitation is
@@ -138,7 +138,7 @@ Therefore, the only perturbations that can propagate in a Minkowski space-time a
 The three conditions $\Phi = \Psi = \bar{\Psi}_i = 0$ define a gauge equivalence class. We can choose a gauge in this family by imposing some conditions on the perturbations. For instance, setting $E = B = 0$ and $\bar{E}_i = 0$, we define what is called a transverse and traceless (TT) gauge in which the metric is completely determined. In this case, the only non-vanishing component of $h_{\mu\nu}^{\mathrm{TT}}$ is $\tilde{E}_{ij}$.
 A particularly useful set of solutions to this wave 
 equation are the plane waves, given by
-\[h^{\rm TT}_{\mu\nu} C_{\mu\nu}e^{ik^{\sigma}x_{\sigma}},\]
+\[h^{\rm TT}_{\mu\nu} = C_{\mu\nu}e^{ik^{\sigma}x_{\sigma}},\]
 where $C_{\mu\nu}$ is a constant, symmetric, traceless
 and purely spatial tensor. The Einstein equation  now becomes
 \[k^{\sigma}k_{\sigma} = 0, \quad k^{\mu} C_{\mu\nu} = 0.\]
@@ -170,7 +170,7 @@ For $\times$ modes, we have
 Define the Fourier transform of metric perturbation, by
 \[\widetilde{\bar{h}}_{\mu\nu}(\omega, \bm{x}) \equiv \int dt e^{i\omega t} \bar{h}_{\mu\nu}(t,x).\]
 In Lorentz gauge, we have
-\[\widetilde{\bar{h}}_{\mu\nu}(\omega, \bm{x}) = \int d^3x' e^{i\omega R} \frac{\widetilde{T}_{\mu\nu}(\omega,\bm{x}')}{R},\]
+\[\widetilde{\bar{h}}_{\mu\nu}(\omega, \bm{x}) = 4\int d^3x' e^{i\omega R} \frac{\widetilde{T}_{\mu\nu}(\omega,\bm{x}')}{R},\]
 where $R \equiv |\bm{x} - \bm{x}'|$.
 We now make the approximations that our source is isolated, far away, and slowly moving. This leaves us with
 \[\widetilde{\bar{h}}_{\mu\nu}(\omega, \bm{x}) = \frac{4e^{i\omega r}}{r} \int d^3x' \tilde{T}_{\mu\nu}(\omega, \bm{x}').\]
@@ -218,7 +218,7 @@ Hence, the particle moves in an elliptical Keplerian orbit. To determine the sou
 Angular momentum can be probed by a gyroscope.
 Place a gyroscope at rest in the source's gravitational field.
 By a force applied to its center of mass, prevent it from falling. 
-As time passes, the $g_{0j}$ term in the metric will force the gyroscope to precess relative to the basis vectors $\frac{\partial}{\partial x^j}$; and since these basis vectors are ``tied'' to the coordinate system, which
+As time passes, the $g_{0j}$ term in the metric will force the gyroscope to precess relative to the basis vectors $\partial_{i}$; and since these basis vectors are ``tied'' to the coordinate system, which
 in turn is tied to the Lorentz frames at infinity, which in turn are tied to the ``fixed stars'' , the precession is relative to the ``fixed stars.'' 
 The angular velocity of precession is
 \[\bm{\Omega} = \frac{1}{r^3} \left[ -\bm{S} + \frac{3(\bm{S}\cdot \bm{x})\bm{x}}{r^3} \right] .\]
@@ -252,7 +252,7 @@ integrals), one need utilize only the gravitational field far outside the source
 \end{note}
 
 \noindent
-Knowing $P^{\mu}$ and $J^{\mu\nu}$, one can figure out the source's total mass-energy $M$ intrinsic angular momentum $S_{rho}$ by
+Knowing $P^{\mu}$ and $J^{\mu\nu}$, one can figure out the source's total mass-energy $M$ intrinsic angular momentum $S_{\rho}$ by
 \[M = (-P^{\mu}P_{\mu})^{-1/2};\]
 \[Y^{\mu} = -J^{\mu\nu}P_{\nu}/M^2;\]
 \[S_{\rho} = \frac{1}{2}\epsilon_{\mu\nu\sigma\rho}(J^{\mu\nu} - Y^{\mu}P^{\nu} + Y^{\nu}P^{\mu})P^{\sigma}/M.\]
@@ -375,7 +375,7 @@ For massless particles there is always a barrier (except for $L = 0$, for which 
 \\ \\
 For massive particles, the circular orbits are at
 \[r_{\rm c} = \frac{L^2 \pm \sqrt{L^4-12M^2L^2}}{2M}.\]
-For large $L$ there will be two circular orbits, one stable and one unstable. In the $L \to \infty$ limit their radii are given by $r_{\rm c} = \left(L^2/M, 3GM \right)$.
+For large $L$ there will be two circular orbits, one stable and one unstable. In the $L \to \infty$ limit their radii are given by $r_{\rm c} = \left(L^2/M, 3M \right)$.
 In this limit the stable circular orbit becomes farther away, while the unstable one approaches $3M$, behaviour that parallels the massless case. As we decrease $L$,
 the two circular orbits come closer together; they coincide when $L = \sqrt{12}M$ for which $r_{\rm c} = 6M$. We have therefore found that the Schwarzschild solution possesses stable circular orbits for $r > 6M$ and unstable circular orbits for $3M < r < 6M$. 
 It's important to remember that these are only the geodesies; there is nothing to stop an accelerating particle from dipping below $r = 3M$ and emerging, as long as it stays beyond $r = 2M$.
@@ -635,7 +635,7 @@ where
 \[\Omega_{\rm min} = \omega - \sqrt{\omega^2 - (g_{tt}/g_{\phi\phi})}, \quad \Omega_{\rm max} = \omega + \sqrt{\omega^2 - (g_{tt}/g_{\phi\phi})},\]
 with
 \[\omega = -\frac{g_{\phi t}}{g_{\phi\phi}} = \frac{2Mar}{(r^2+a^2)^2-\Delta a^2\sin^2\theta}.\]
-First, far away from the black hole, we have $r\Omega_{\rm min} = −1$ and $r\Omega_{\rm max} = +1$, which correspond to the standard result that motion should be at a speed less than that of light. 
+First, far away from the black hole, we have $r\Omega_{\rm min} = -1$ and $r\Omega_{\rm max} = +1$, which correspond to the standard result that motion should be at a speed less than that of light. 
 Second, as one moves closer to the black hole, $\Omega_{\rm min}$ increases due to the dragging of the
 inertial frames. 
 Eventually, $\Omega_{\rm min}$ reaches zero at the surface on which $g_{tt} = 0$, which is the ergosurface. 

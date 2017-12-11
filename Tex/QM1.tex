@@ -324,7 +324,7 @@ It describes a particle posited in $\bm{x}$ with internal state $s$. And we will
 
 \section{Momentum operators and canonical quantization}
 \noindent
-Since $\bm{X}$ plus some other observables $S$s form a complete commuting set of operators. Therefore, the momentum operators can not be independent of them. Numerous experiments shows that the position and momentum of particles can not be measured simultaneously. Therefore, we expect $[X,P] \neq 0$.
+Since $\bm{X}$ plus some other observables $S$s form a complete commuting set of operators. Therefore, the momentum operators can not be independent of them. Numerous experiments show that the position and momentum of particles can not be measured simultaneously. Therefore, we expect $[X,P] \neq 0$.
 \paragraph{Guess} 
 For a system which has a classical correspondence, the classical equation of motion of a particle is
 \begin{eqnarray}
@@ -337,7 +337,7 @@ $[, \quad]_{\mathrm{C}}$ is the Poisson bracket in classical mechanics. In quant
 \frac{d\langle P \rangle}{dt} &=& -i \langle [P,H] \rangle. \nonumber
 \end{eqnarray}
 If we assume that the classical equation of motion of a particle is an approximation of quantum mechanics, we may expect
-\[[, \quad] = i [, \quad]_{\mathrm{C}} .\]
+\[[ \quad] = i [ \quad]_{\mathrm{C}} .\]
 Since the Poisson bracket in classical mechanics and commutation bracket in quantum mechanics have the same algebra structure, we only need to demand that
 \[[X_i,X_j] = 0 , \quad [X_i,X_j] = 0 , \quad [X_i,P_j] = i \delta_{ij},\]
 and
@@ -798,7 +798,7 @@ Therefore, we have
 \[L_z = \bm{L}\cdot\bm{e}_z = -i\frac{\partial}{\partial \phi},\]
 \[L^2 = \bm{L}\cdot\bm{L} = - \left [ \frac{1}{\sin\theta} \frac{\partial }{\partial \theta} (\sin\theta \frac{\partial }{\partial \theta}) + \frac{1}{\sin^2\theta} \frac{\partial^2}{\partial \phi^2}  \right ].\]
 We must now solve the two coupled differential equations,
-\[L_z Y(\theta,\phi) = m Y(\theta,\phi) , \quad L^2 Y(\theta,\phi) = l(l+1) Y(\theta,\phi).\]
+\[L_z Y_l^m(\theta,\phi) = m Y_l^m(\theta,\phi) , \quad L^2 Y_l^m(\theta,\phi) = l(l+1) Y_l^m(\theta,\phi).\]
 Apart from normalization, we have $Y(\theta,\phi) = e^{im\phi}P_l^m(\cos\theta)$, where $P_l^m$ is the \href{https://en.wikipedia.org/wiki/Associated_Legendre_polynomials}{associated Legendre polynomials}. If we assume that the solution must be single-valued under rotation, then it will follow that $m$ must be an integer. If we further assume that it must be nonsingular at $\theta = 0$ and $\theta = \pi$, then from the standard theory of the Legendre equation it will follow that $l$ must be a nonnegative integer in the range $l \geq |m|$. The normalized solutions that result from these assumptions are the well-known \href{https://en.wikipedia.org/wiki/Spherical_harmonics}{spherical harmonics}
 \[Y_l^m(\theta,\phi) = (-1)^{(m+|m|)/2} \left [\frac{(2l+1)(l-|m|)!}{4\pi(l+|m|)!}  \right ]^{1/2}e^{im\phi} P_l^{|m|}(\cos\theta).\]
 
@@ -1039,7 +1039,7 @@ The stationary states of a particle in the spherical potential well are determin
 In spherical coordinates, 
 \[\nabla^2 = \frac{1}{r^2} \frac{\partial}{\partial r} \left [ r^2\frac{\partial}{\partial r} \right ] + \frac{1}{r^2\sin\theta} \frac{\partial}{\partial \theta} \left [\sin\theta \frac{\partial}{\partial \theta} \right ] + \frac{1}{r^2\sin^2\theta} \frac{\partial^2}{\partial\phi^2}.\]
 Therefore, the eigenvalue equation becomes
-\[-\frac{1}{2m} \frac{1}{r^2} \frac{\partial}{\partial r} \left [ r^2\frac{\partial \Psi}{\partial r}\right ]  + \frac{L^2}{2Mr^2} \Psi + W(r)\Psi = E\Psi.\]
+\[-\frac{1}{2m} \frac{1}{r^2} \frac{\partial}{\partial r} \left [ r^2\frac{\partial \Psi}{\partial r}\right ]  + \frac{L^2}{2mr^2} \Psi + W(r)\Psi = E\Psi.\]
 Suppose the eigenfunctions have the factored form
 \[\Psi(r,\theta,\phi) = Y_l^m(\theta,\phi) \frac{u(r)}{r}.\]
 The radial function then satisfies the equation
@@ -1152,7 +1152,7 @@ In coordinate representation the Schrödinger equation takes the form
 \[ \left[ -\frac{1}{2m}\nabla^2 + W(\bm{x}) \right] \psi(\bm{x},t) = i\frac{\partial \psi(\bm{x},t)}{\partial t}.\]
 Its complex conjugate is
 \[ \left[ -\frac{1}{2m}\nabla^2 + W^*(\bm{x}) \right] \psi^*(\bm{x},t) = -i\frac{\partial \psi^*(\bm{x},t)}{\partial t}.\]
-The condition for the Hamiltonian to be invariant under complex conjugation is that the potential be real: $W=W^*$. In that case it is apparent that if $\psi(\bm{x},t)$ is a solution then so is  $\psi^*(\bm{x},t)$. This suggests that we may identify the time reversal operator with the complex conjugation operator in this representation,
+The condition for the Hamiltonian to be invariant under complex conjugation is that the potential be real: $W=W^*$. In that case it is apparent that if $\psi(\bm{x},-t)$ is a solution then so is  $\psi^*(\bm{x},t)$. This suggests that we may identify the time reversal operator with the complex conjugation operator in this representation,
 \[T = K_0,\]
 where, by definition, $K_0\psi(\bm{x},t) = \psi^*(\bm{x},t)$. In this case $T$ is its own inverse. 
 The formal expression for an arbitrary vector in coordinate representation is $|\psi\rangle = \int \psi(\bm{x})|\bm{x}\rangle d^3 \bm{x}$, where the basis vector $|\bm{x}\rangle$ is an eigenvector of the position operator. Since $T$ is equal to the complex conjugation operator, its effect is simply $T|\psi\rangle = \int \psi^*(\bm{x})|\bm{x}\rangle d^3 \bm{x}$, with $T|\bm{x}\rangle = |\bm{x}\rangle$.
