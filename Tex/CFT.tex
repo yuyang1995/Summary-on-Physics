@@ -66,8 +66,8 @@ Therefore, the Hamiltonian equations are
 \[\dot{\pi}^i = 0, \ \ \ \ \dot{x_i} = \eta_{ij}\frac{\pi^j}{\sqrt{m^2 + \pi^k \pi_k}}.\]
 \subsubsection{Hamiltonian-Jacobi equation}
 \[H = -\frac{\partial S}{\partial t}, \ \ \ \ \pi^i = \frac{\partial S}{\partial x_i}.\]
-Note that $p^0 = H$, $p^i = \pi^i$, we have $p^{\mu} = \partial^{\mu} S$. Therefore, we can see that $p^{\mu}$ is a vector under Lorentz transformation. The Hamiltonian-Jacobi equation can be written as
-\[(\frac{\partial S}{\partial t})^2 = m^2 + (\frac{\partial S}{\partial x})^2 + (\frac{\partial S}{\partial y})^2 + (\frac{\partial S}{\partial z})^2.\]
+Note that $p^0 = H$, $p^i = \pi^i$, we have $p^{\mu} = \partial^{\mu} S$. The Hamiltonian-Jacobi equation can be written as
+\[\left(\frac{\partial S}{\partial t}\right)^2 = m^2 + \left(\frac{\partial S}{\partial x}\right)^2 + \left(\frac{\partial S}{\partial y}\right)^2 + \left(\frac{\partial S}{\partial z}\right)^2.\]
 \\ \\
 For a non-free particle, we have the revised newton's second law:
 \[f^{\mu} = \frac{dp^{\mu}}{d\tau}.\]
@@ -110,7 +110,7 @@ where $v_{\mathrm{rel}}$ is the velocity of particle 1 in the rest system of par
 \\ \\
 The number $dN$ is by its very nature an invariant quantity. We would like to express it in a form which is applicable in any reference system: 
 \[dN = A n_1 n_2 dV dt,\] 
-where $A$ is a number to be determined, for which we know that its value in the rest frame of one of the particles is $v_{\mathrm{rel}} \sigma$. We shall always mean by $\sigma$ precisely the cross-section in the rest frame of one of the particles, i.e. by definition, an invariant quantity. From its definition, the relative velocity $v_{\mathrm{rel}}$ is also invariant. The product dVdt is an invariant. Therefore the product $A n_1 n_2$ must also be an invariant. The law of transformation of the particle density $n$ is
+where $A$ is a number to be determined, for which we know that its value in the rest frame of one of the particles is $v_{\mathrm{rel}} \sigma$. We shall always mean by $\sigma$ precisely the cross-section in the rest frame of one of the particles, i.e. by definition, an invariant quantity. From its definition, the relative velocity $v_{\mathrm{rel}}$ is also invariant. The product $dVdt$ is an invariant. Therefore the product $A n_1 n_2$ must also be an invariant. The law of transformation of the particle density $n$ is
 \[n = \frac{n_0}{\sqrt{1-v^2}} = n_0 E/m.\]
 Thus we can construct $A$ in an arbitrary frame as
 \[A = -\sigma v_{\mathrm{rel}} \frac{p_1^{\mu}p_{2\mu}}{E_1 E_2}.\]
@@ -130,8 +130,10 @@ If we have only one target, then
 In lab frame (L frame),
 \[E_2 = m_2 , \quad \bm{p}_2 = 0.\]
 By the conservation of momentum, we can derive that
-\[\cos \theta_1 = \frac{E_1'(E_1+m_2)-E_1 m_2 - m_1^2}{p_1 p_1'},\]
-\[\cos \theta_2 = \frac{(E_1+m_2)(E_2'-m_2)}{p_1 p_2'}.\]
+\begin{eqnarray}
+	\cos \theta_1 &=& \frac{E_1'(E_1+m_2)-E_1 m_2 - m_1^2}{p_1 p_1'}, \nonumber \\
+	\cos \theta_2 &=& \frac{(E_1+m_2)(E_2'-m_2)}{p_1 p_2'}, \nonumber
+\end{eqnarray}
 where $\theta_1(\theta_2)$ is the angle between $\bm{p}_1'(\bm{p}_2')$ with $\bm{p}_1$.
 In a special case where $m_1 =0$, we have
 \[E_1' = \frac{m_2}{1-\cos\theta_1 + \frac{m_2}{E_1}}.\]
@@ -372,7 +374,7 @@ the field equations can then be written as so-called Maxwell equations:
 The equations of motion of the charged particle can be written as so-called Lorentz force equations:
 \[\frac{d\bm{p}}{dt} = e(\bm{E} + \bm{v} \times \bm{B}) , \quad \frac{d \mathcal{E}}{dt} = e \bm{E} \cdot \bm{v}.\]
 \\
-We also note that the Field $A$ cannot be completely determined by Maxwell and Lorentz equation. If we make the transformation $A_{\mu} \to A_{\mu} + \partial_{\mu} \xi(x)$, $\mathcal{L}$ and $F^{\mu\nu}$ would be invariant, and the Maxwell and Lorentz equation is still valid. This arbitrariness of $\xi$ is called gauge invariance. The topic will be discussed in detail in QED.
+We also note that $A_{\mu}$ cannot be completely determined by Maxwell and Lorentz equation. If we make the transformation $A_{\mu} \to A_{\mu} + \partial_{\mu} \xi(x)$, $\mathcal{L}$ and $F^{\mu\nu}$ would be invariant, and the Maxwell and Lorentz equation is still valid. This arbitrariness of $\xi$ is called gauge invariance. The topic will be discussed in detail in QED.
 
 \subsection{Lorentz transformation of fields}
 Suppose the new coordinates satisfy that $\overline{x}^{\mu} = \Lambda^{\mu}_{\phantom{\mu}\nu}x^{\nu}$ after Lorentz transformation, then we have
@@ -462,7 +464,7 @@ Suppose the direction of electric field is  $\hat{x}$, the orbit is in the $x-y$
 \[\dot{p}_x = eE , \quad \dot{p}_y = 0.\]
 The final solution is
 \[x = \frac{1}{eE}\sqrt{\mathcal{E}_0^2 + (eEt)^2} , \quad y = \frac{p_0}{eE} \mathrm{arcsinh} \frac{eEt}{\mathcal{E}_0}.\]
-Here, we assume $p_x = 0$, $p_y=p_0$ at $t = 0$.
+Here, we assume $p_x = 0$, $p_y=p_0$ at $t = 0$ and $\mathcal{E}_0 \equiv \sqrt{p_0^2+m^2}$.
 The trajectory of the particle is
 \[x = \frac{\mathcal{E}_0}{eE}\cosh \frac{eEy}{p_0}.\]
 
@@ -498,7 +500,8 @@ Here, $\phi_a$ is the electric potential at the point where $e_a$ is located, pr
 \[U = \frac{1}{2}\int E^2 dV - U_{\mathrm{self}} = \frac{1}{2}\sum_{a \ne b} \frac{e_a e_b}{4\pi R_{ab}}.\]
 If the charged particle is moving with a constant velocity, we can derive the electric field it produced by Lorentz transformation, the final result is that
 \[\bm{E} = \frac{e\bm{R}}{4\pi R^3} \frac{1-V^2}{(1-V^2\sin^2\theta)^{3/2}} , \quad \bm{B} = \bm{V} \times \bm{E},\]
-where $\bm{R}$ is the vector point from the particle to the point we measure the electric field, and $\theta$ is the angle between $\bm{V}$ and $\bm{R}$.If $V \sim 1$, the electric field will be concentrated in the direction perpendicular to the $\bm{V}$. If $\bm{V} \ll 1$, we have
+where $\bm{R}$ is the vector point from the particle to the point we measure the electric field, and $\theta$ is the angle between $\bm{V}$ and $\bm{R}$.
+If $V \sim 1$, the electric field will be concentrated in the direction perpendicular to the $\bm{V}$. If $\bm{V} \ll 1$, we have
 \[\bm{E} = \frac{e\bm{R}}{4\pi R^3} , \quad \bm{B} = \frac{e\bm{V} \times\bm{R}}{4\pi R^3}.\]
 
 \subsection{Multipole moments}
@@ -604,7 +607,9 @@ The end of the vector $\bm{E}$ in $y-z$ plane will form an ellipse. The magnitud
 The angle $\theta$ between the major axis and $y$ axis satisfies the equation
 \[\tan 2\theta = \frac{2AB\cos\delta}{A^2-B^2}.\]
 If $-{\pi}/{2} < \delta < {\pi}/{2}$, major axis is in the first and third quadrant. If $\delta > {\pi}/{2}$ or $\delta < -{\pi}/{2}$, major axis is in the second and forth quadrant. If $\delta = \pm {\pi}/{2}$ and $A>B$, the major axis is $y$ axis. If $\delta = \pm {\pi}/{2}$ and $A<B$, the major axis is $z$ axis. If $\delta = \pm {\pi}/{2}$ and $A=B$, the ellipse becomes a circle.
-If $0 < \delta < \pi$, the rotation is positive in the direction of $x$ axis (left handed). If $-\pi < \delta < 0$, the rotation is negative in the direction of $x$ axis(right handed). If $\delta = 0,\pi$, the ellipse becomes a line.
+If $0 < \delta < \pi$, the rotation is positive in the direction of $x$ axis (right handed, or left rotating). 
+If $-\pi < \delta < 0$, the rotation is negative in the direction of $x$ axis(left handed, or right rotating). 
+If $\delta = 0,\pi$, the ellipse becomes a line.
 \\ \\
 Any field is expandable in a Fourier integral containing a continuous or discrete distribution of different frequencies. Such an expansion has the form
 \[f(t) = \int_{-\infty}^{\infty} f_{\omega}e^{-i\omega t} \frac{d\omega}{2\pi},\]
@@ -615,9 +620,9 @@ Because $f(t)$ must be real, so
 The total intensity of the wave is
 \[\int_{-\infty}^{\infty} f^2 dt = \int_{-\infty}^{\infty} |f_{\omega}|^2 \frac{d\omega}{2\pi} = 2\int_{0}^{\infty} |f_{\omega}|^2 \frac{d\omega}{2\pi} .\]
 There is a special case that $f(t)$ is a periotic function with angular frequency $\omega_0$, then $f(t)$ can be expanded as
-\[f(t) = \sum_{-\infty}^{\infty} f_n e^{-in\omega_0},\]
+\[f(t) = \sum_{-\infty}^{\infty} f_n e^{-in\omega_0t},\]
 where
-\[f_n \equiv \frac{1}{T} \int_{0}^{T} f(t)e^{in\omega_0} dt.\]
+\[f_n \equiv \frac{1}{T} \int_{0}^{T} f(t)e^{in\omega_0t} dt.\]
 The average intensity of the wave is
 \[\frac{1}{T}\int_{0}^{T} f^2 dt = \sum_{-\infty}^{\infty} |f_n|^2.\]
 And we can verify that
@@ -645,7 +650,7 @@ called polarization tensor.
 Generally, the polarization tensor is expressed as
 \[\rho = \frac{1}{2} \left[ \begin{matrix} 1+p_{3}& p_1-ip_2\\ p_1+ip_2& 1-p_{3}\end{matrix} \right] .\]
 If we introduce the Pauli matrix, i.e.
-\[\sigma_1 = \left[ \begin{matrix} 0& 1\\ 1& 0\end{matrix} \right] , \quad \sigma_2 = \left[ \begin{matrix} 0& - i\\ i& 0\end{matrix} \right] , \quad \sigma_3 = \left[ \begin{matrix} 1& 0\\ 0& -1\end{matrix} \right] .\]
+\[\sigma_1 \equiv \left[ \begin{matrix} 0& 1\\ 1& 0\end{matrix} \right] , \quad \sigma_2 \equiv \left[ \begin{matrix} 0& - i\\ i& 0\end{matrix} \right] , \quad \sigma_3 \equiv \left[ \begin{matrix} 1& 0\\ 0& -1\end{matrix} \right] .\]
 The $\rho$ can be expressed as
 \[\frac{1}{2} (1-P) I + \frac{1}{2} P(I + \bm{n} \cdot \bm{\sigma}),\]
 where
@@ -656,7 +661,7 @@ Therefore, for an arbitrary light,
 \[\rho = (1-P)\rho_{\mathrm{n}} + P \rho_{\mathrm{p}} , \quad \rho_{\mathrm{n}} = \frac{1}{2}I , \quad \rho_{\mathrm{p}} = \frac{1}{2}(I + \bm{n} \cdot \bm{\sigma}).\]
 Thus, we call $P$ the Polarization degree. \\ \\
 Suppose there is a polarizing filter,  which allow the light with polarization state
-\[| D \rangle = (\cos \frac{\theta}{2} e^{-i\frac{\phi}{2}} , \sin \frac{\theta}{2} e^{i\frac{\phi}{2}})\]
+\[| D \rangle = \left(\cos \frac{\theta}{2} e^{-i\frac{\phi}{2}} , \sin \frac{\theta}{2} e^{i\frac{\phi}{2}}\right)\]
 to pass totally. If a light with polarization tensor $\rho$ pass through the device, the relative intensity will become
 \[\langle D | \rho | D \rangle = \frac{1}{2} + \frac{1}{2} \bm{p} \cdot \bm{m},\]
 where $\bm{p} \equiv (p_1,p_2,p_3)$, $\bm{m} \equiv (\sin\theta \cos\phi, \sin\theta \sin\phi, \cos \theta)$.
@@ -693,17 +698,17 @@ The particular solution above is called retarded potential solution.
 \\ \\
 Now we consider a charged particle with equation of motion $\bm{r} = \bm{r}_0(t)$, so we have
 \[\rho(\bm{r},t) = e\delta(\bm{r}-\bm{r}_0(t)),\]
-\[\phi(\bm{r},t) = \int \frac{e \delta (\bm{r}'-\bm{r}_0(t-|\bm{r}-\bm{r}'|))}{4\pi |\bm{r}-\bm{r}'|} dV' = \frac{e}{4\pi R^* (1 - \frac{\bm{R}^* \cdot \bm{v}^*}{R^*})},\]
+\[\phi(\bm{r},t) = \int \frac{e \delta (\bm{r}'-\bm{r}_0(t-|\bm{r}-\bm{r}'|))}{4\pi |\bm{r}-\bm{r}'|} dV' = \frac{e}{4\pi R^* (1 - \bm{n}^{*}\cdot\bm{v}^{*})},\]
 where 
-\[\bm{R}^* = \bm{r} - \bm{r}_0(t^*) , \quad \bm{v}^* = \bm{v}_0(t^*) , \quad t^* = t - R^*.\]
+\[\bm{n}^* = \frac{\bm{R}^*}{R}, \quad \bm{R}^* = \bm{r} - \bm{r}_0(t^*) , \quad \bm{v}^* = \bm{v}_0(t^*) , \quad t^* = t - R^*.\]
 Similarly, we have
-\[\bm{A}(\bm{r},t) = \frac{e\bm{v}^*}{4\pi R^* (1 - \frac{\bm{R}^* \cdot \bm{v}^*}{R^*})}.\]
+\[\bm{A}(\bm{r},t) = \frac{e\bm{v}^*}{4\pi R^* (1 - \bm{n}^{*}\cdot\bm{v}^{*})}.\]
 The potential is called Lienard-Wiechert potentials.
 We can derive that
-\[\frac{\partial t^*}{\partial t} = \frac{1}{1- \frac{\bm{R}^* \cdot \bm{v}^*}{R^*}} , \quad \bm{\nabla} t^* = \frac{\bm{R}^*}{R^* - \bm{R}^* \cdot \bm{v}^*}.\]
+\[\frac{\partial t^*}{\partial t} = \frac{1}{1- \bm{n}^{*}\cdot\bm{v}^{*}}, \quad \bm{\nabla} t^* = -\frac{\bm{n}^*}{1 - \bm{n}^* \cdot \bm{v}^*}.\]
 With the help of the equation above, we can calculate the electric and magnetic field intensity.
-\[\bm{E} = \frac{e}{4\pi(R^* - \bm{R}^* \cdot \bm{v}^*)^3} \left\{ (1-v^{*2})(\bm{R}^* - R^*\bm{v}^*) + \bm{R}^* \times \left[(\bm{R}^* - R^*\bm{v}^*) \times \bm{a}^* \right] \right\};\]
-\[\bm{B} = \frac{\bm{R}^*}{R^*} \times \bm{E}.\]
+\[\bm{E} = \frac{e}{4\pi(1 - \bm{n}^* \cdot \bm{v}^*)^3} \left\{ \frac{(1-v^{*2})(\bm{n}^* - \bm{v}^*)}{R^{*2}} + \frac{\bm{n}^* \times \left[(\bm{n}^* - \bm{v}^*) \times \bm{a}^*\right]}{R^*} \right\};\]
+\[\bm{B} = \bm{n}^* \times \bm{E}.\]
 The electric field consists of two parts of different type. The first term depends only on the velocity of the particle (and not on its acceleration) and varies at large distances like ${1}/{R^2}$. The second term depends on the acceleration, and for large $R$ it varies like ${1}/{R}$. This latter term is related to the electromagnetic waves radiated by the particle.
 
 \subsection{Spectral resolution of the retarded potentials}
@@ -726,11 +731,12 @@ For electric and magnetic field, we have
 
 \section{Radiation}
 \subsection{Far field approximation}
-We consider the field produced by a system of moving charges at distances large compared with the dimensions of the system. We choose the origin of coordinates $O$ anywhere in the interior of the system of charges. The radius vector from $O$ to the point $P$, where we determine the field, we denote by $\bm{R_0}$, and the unit vector in this direction by $\bm{n}$. Let the radius vector of the charge element be $\bm{r}$, and the radius vector from charge to the point $P$ be $\bm{R}$. At large distances from the system of charges,$R_0 \gg r$, and we have approximately,
-\[R \approx R_0 - \bm{n}\cdot\bm{r}.\]
-We substitute this for the retarded potentials. In the denominator of the integrands we can neglect $\bm{n}\cdot\bm{r}$ compared with $R_0$. In $t-R$, whether it is possible to neglect these terms is determined by how much the quantities $e$ and $\bm{j}$ change during the time $\bm{n}\cdot\bm{r}$. The potentials of the field at large distances from the system of charges are
-\[\phi(\bm{R}_0,t) = \frac{1}{4\pi R_0} \int \rho(\bm{r},t-R_0+\bm{n}\cdot\bm{r}) dV,\]
-\[\bm{A}(\bm{R}_0,t) = \frac{1}{4\pi R_0} \int \bm{J}(\bm{r},t-R_0+\bm{n}\cdot\bm{r}) dV.\]
+We consider the field produced by a system of moving charges at distances large compared with the dimensions of the system. We choose the origin of coordinates $O$ anywhere in the interior of the system of charges. The radius vector from $O$ to the point $P$, where we determine the field, we denote by $\bm{r}$, and the unit vector in this direction by $\bm{n}$. Let the radius vector of the charge element be $\bm{r}'$, and the radius vector from charge to the point $P$ be $\bm{R}$. At large distances from the system of charges, $r \gg r'$, and we have approximately,
+\[R \approx r - \bm{n}\cdot\bm{r}'.\]
+We substitute this for the retarded potentials. In the denominator of the integrands we can neglect $\bm{n}\cdot\bm{r}'$ compared with $r$. In $t-r + \bm{n}\cdot\bm{r}'$, whether it is possible to neglect these terms is determined by how much the quantities $e$ and $\bm{j}$ change during the time $\bm{n}\cdot\bm{r}'$. 
+The potentials of the field at large distances from the system of charges are
+\[\phi(\bm{r},t) = \frac{1}{4\pi r} \int \rho(\bm{r}',t-r+\bm{n}\cdot\bm{r}') dV',\]
+\[\bm{A}(r,t) = \frac{1}{4\pi r} \int \bm{J}(\bm{r}',t-r+\bm{n}\cdot\bm{r}') dV'.\]
 At sufficiently large distances from the system of charges, the field over small regions of space can be considered to be a plane wave. 
 For this it is necessary that the distance be large
 compared not only with the dimensions of the system, but also with the wavelength of the electromagnetic waves radiated by the system. 
@@ -740,63 +746,61 @@ In wave zone, we have
 \[\bm{B} = \frac{\partial \bm{A}}{\partial t} \times \bm{n} , \quad \bm{E} = \left(\frac{\partial \bm{A}}{\partial t} \times \bm{n}\right) \times \bm{n}.\]
 The energy flux is given by the Poynting vector which, for a plane wave, is
 \[\bm{S} = B^2\bm{n}.\]
-The intensity of radiation into the element of solid angle do
-\[dI = B^2R_0^2 do.\]
-Since the field is inversely proportional to $R_0$, we see that the amount of energy radiated by the system in unit time into the element of solid angle do is the same for all distances.
+The power of radiation into the element of solid angle do
+\[dP = B^2r^2 do.\]
+Since the field is inversely proportional to $r$, we see that the amount of energy radiated by the system in unit time into the element of solid angle do is the same for all distances.
 For the radiation produced by a single arbitrarily moving point charge, it turns out to be convenient to use the Lienard-Wiechert potentials. At large distances, we have
-\[\bm{A}(\bm{R}_0,t) = \frac{e\bm{v}(t')}{4\pi R_0 (1 - \bm{n}\cdot\bm{v}_0(t'))},\]
+\[\bm{A}(r,t) = \frac{e\bm{v}(t')}{4\pi r (1 - \bm{n}\cdot\bm{v}(t'))},\]
 where
-\[ t'-\bm{n}\cdot\bm{r}_0(t') = t - R_0.\]
+\[ t'-\bm{n}\cdot\bm{r}_0(t') = t - r.\]
 \\
 For the spectral resolution of the field of the waves radiated by the system, we have
-\[\bm{A}_{\omega}(\bm{R_0}) =  \frac{e^{ikR_0}}{R_0} \int \bm{J}_{\omega} e^{-i\bm{k}\cdot\bm{r}} dV,\]
+\[\bm{A}_{\omega}(\bm{r}) =  \frac{e^{ikr}}{4\pi r} \int \bm{J}_{\omega} e^{-i\bm{k}\cdot\bm{r}'} dV',\]
 where $\bm{k} \equiv \omega\bm{n}$.
 In wave zone, we have
 \[\bm{B}_{\omega} = i\bm{k} \times \bm{A}_{\omega} , \quad \bm{E}_{\omega} = \frac{1}{\omega} \left( \bm{k} \times \bm{A}_{\omega}\right) \times \bm{k}.\]
 Suppose $d\mathcal{E}_{\omega\bm{n}}$ is the energy radiated into the element of solid angle do in the form of waves with frequencies in the interval $d\omega$. We have
-\[d\mathcal{E}_{\omega\bm{n}} = 2B_{\omega}^2 R_0^2 do \frac{d\omega}{2\pi}.\]
+\[d\mathcal{E}_{\omega\bm{n}} = 2B_{\omega}^2 r^2 do \frac{d\omega}{2\pi}.\]
 For the radiation produced by a single arbitrarily moving point charge,we have
-\[\bm{A}_{\omega}(\bm{R}_0) = \frac{e e^{i\omega
-R_0}}{4\pi R_0}  \int_{-\infty}^{\infty} e^{i\omega[
-t-\bm{n}\cdot\bm{r}]} \bm{v} dt,\]
-\[\bm{B}_{\omega}(\bm{R}_0) = \frac{ie\omega e^{i\omega
-R_0}}{4\pi R_0}  \int_{-\infty}^{\infty} e^{i\omega[
-t-\bm{n}\cdot\bm{r}]}  \bm{n} \times d\bm{r}.\]
+\[\bm{A}_{\omega}(\bm{r}) = \frac{e e^{i\omega
+r}}{4\pi r}  \int_{-\infty}^{\infty} e^{i\omega[
+t-\bm{n}\cdot\bm{r}_0]} \bm{v} dt,\]
+\[\bm{B}_{\omega}(\bm{r}) = \frac{ie\omega e^{i\omega
+r}}{4\pi r}  \int_{-\infty}^{\infty} e^{i\omega[
+t-\bm{n}\cdot\bm{r}_0]}  \bm{n} \times d\bm{r}_0.\]
 
 \subsection{Low velocity approximation}
-If the charge density (current density) distribution changes a little during time $\bm{r}\cdot\bm{n}$, then we can expand $f(r,t-R_0+\bm{r}\cdot\bm{n})$ in series of $(\bm{r}\cdot\bm{n})^2$. In this case, if the typical angular frequency of the motion is $\omega$, the typical scale of the motion is $a$, then we have
+If the charge density (current density) distribution changes a little during time $\bm{r}'\cdot\bm{n}$, then we can expand $f(\bm{r},t-r+\bm{r}'\cdot\bm{n})$ in series of $(\bm{r}'\cdot\bm{n})^2$. In this case, if the typical angular frequency of the motion is $\omega$, the typical scale of the motion is $a$, then we have
 \[a \ll T \sim \frac{2\pi}{\omega} \sim \lambda,\]
 or
 \[v \sim \frac{a}{T} \ll 1.\]
 which means that the velocity of the particles is much smaller then that of light, or the scale of the system is much smaller then the wavelength.
 \\ \\
-As for the zeroth order approximation, we just drop the $\bm{r}\cdot\bm{n}$ in the equation, so
-\[\bm{A}(\bm{R}_0,t) = \frac{1}{4\pi R_0} \int \bm{J}(\bm{r},t-R_0) dt.\]
+As for the zeroth order approximation, we just drop the $\bm{r}'\cdot\bm{n}$ in the equation, so
+\[\bm{A}(r,t) = \frac{1}{4\pi r} \int \bm{J}(\bm{r}',t-r) dV'.\]
 For the radiation produced by arbitrarily moving point charges, we have
-\[\bm{A}(\bm{R}_0,t) = \frac{1}{4\pi R_0} \sum e_a \bm{v}_a(\bm{r},t-R_0) = \frac{1}{4\pi R_0} \dot{\bm{d}}.\]
+\[\bm{A}(\bm{r},t) = \frac{1}{4\pi r} \sum e_a \bm{v}_a(t-r) = \frac{1}{4\pi r} \dot{\bm{d}}.\]
 Therefore,
-\[\bm{B} = \frac{1}{4\pi R_0} \ddot{\bm{d}} \times \bm{n} , \quad \bm{E} = \frac{1}{4\pi R_0} (\ddot{\bm{d}} \times \bm{n})\times \bm{n}.\]
+\[\bm{B} = \frac{1}{4\pi r} \ddot{\bm{d}} \times \bm{n} , \quad \bm{E} = \frac{1}{4\pi r} (\ddot{\bm{d}} \times \bm{n})\times \bm{n}.\]
 Radiation of this kind is called dipole radiation. 
-We note that a closed system of particles, for all of which the ratio of charge to mass is the same, cannot radiate (by dipole radiation).The intensity of the dipole radiation is
-\[dI = \frac{\ddot{\bm{d}}^2}{16\pi^2} \sin^2\theta do,\]
-where $\theta$ is the angle between $\ddot{\bm{d}}$ and $n$.
+We note that a closed system of particles, for all of which the ratio of charge to mass is the same, cannot radiate (by dipole radiation).The power of the dipole radiation is
+\[dP = \frac{\ddot{\bm{d}}^2}{16\pi^2} \sin^2\theta do,\]
+where $\theta$ is the angle between $\ddot{\bm{d}}$ and $\bm{n}$.
 Integrate over all over the direction, we have
-\[I = \frac{\ddot{\bm{d}}^2}{6\pi}.\]
+\[P = \frac{\ddot{\bm{d}}^2}{6\pi}.\]
 If we have just one charge moving in the external field, we have
-\[I = \frac{e^2 w^2}{6\pi},\]
+\[P = \frac{e^2 w^2}{6\pi},\]
 $\bm{w}$ is the acceleration of the charge.
 For the spectral resolution of the intensity of dipole radiation, we have
 \[d\mathcal{E}_{\omega} = \frac{|(\ddot{\bm{d}})_{\omega}|^2}{3\pi}\frac{d\omega}{2\pi} = \frac{\omega^4}{3\pi}|\bm{d}_{\omega}|^2 \frac{d\omega}{2\pi}.\]
 More details on dipole radiation during collisions and Coulomb interaction can be found in section 68,69 and 70 of \emph{The classical theory of fields (L.D.Landau \& E.M.Lifshitz)}.
 \\ \\
-If we keep the first order of $\bm{n}\cdot\bm{r}$, we have
-\[\bm{A} = \frac{\dot{\bm{d}}}{4\pi R_0} + \frac{\ddot{\bm{D}}}{24\pi R_0} + \frac{\dot{\bm{m}}\times \bm{n}}{4\pi R_0},\]
-where,
-\[\bm{D} = \sum e[3\bm{r}(\bm{n}\cdot\bm{r} - \bm{n}r^2)] , \quad \bm{m} = \frac{1}{2} \sum e\bm{r}\times\bm{v}.\]
+If we keep the first order of $\bm{n}\cdot\bm{r}'$, we have
+\[\bm{A} = \frac{\dot{\bm{d}}}{4\pi r} + \frac{\ddot{\bm{D}}\cdot\bm{n}}{24\pi r} + \frac{\dot{\bm{m}}\times \bm{n}}{4\pi r}.\]
 Thus
-\[\bm{B} = \frac{1}{4\pi R_0} \left[ \ddot{\bm{d}} \times \bm{n} + \frac{1}{6}\dddot{\bm{D}}\times\bm{n} + (\ddot{\bm{m}}\times\bm{n})\times\bm{n}\right];\]
-\[\bm{E} = \frac{1}{4\pi R_0} \left[ (\ddot{\bm{d}} \times \bm{n})\times \bm{n} + \frac{1}{6}(\dddot{\bm{D}}\times\bm{n})\times \bm{n} + \bm{n} \times \ddot{\bm{m}}\right];\]
-\[I = \frac{1}{6\pi}\ddot{\bm{d}}^2 + \frac{1}{720\pi} \dddot{D}_{ij}^2 + \frac{1}{6\pi} \ddot{\bm{m}}^2 , \quad D_{ij} = \sum e(3r_{i}r_{j}-r^2\delta_{ij}).\]
+\[\bm{B} = \frac{1}{4\pi r} \left[ \ddot{\bm{d}} \times \bm{n} + \frac{1}{6} (\dddot{\bm{D}} \cdot \bm{n}) \times\bm{n} + (\ddot{\bm{m}}\times\bm{n})\times\bm{n}\right];\]
+\[\bm{E} = \frac{1}{4\pi r} \left[ (\ddot{\bm{d}} \times \bm{n})\times \bm{n} + \frac{1}{6}((\dddot{\bm{D}} \cdot \bm{n})\times\bm{n})\times \bm{n} + \bm{n} \times \ddot{\bm{m}}\right];\]
+\[P = \frac{1}{6\pi}\ddot{\bm{d}}^2 + \frac{1}{720\pi} \dddot{\bm{D}}^2 + \frac{1}{6\pi} \ddot{\bm{m}}^2.\]
 The total radiation consists of three independent parts:
 dipole, quadrupole, and magnetic dipole radiation. The details of the derivation can be found in section 71 of \emph{The classical theory of fields (L.D.Landau \& E.M.Lifshitz)}.
 
@@ -814,16 +818,16 @@ It is clear from formula above that for velocity close to that of light, the tot
 Now we discuss the angular distribution of the radiation from a rapidly moving charge. The radiation field is
 \[\bm{E} = \frac{e}{4\pi R} \frac{\bm{n} \times \left[(\bm{n} - \bm{v}) \times \bm{w} \right]}{(1 - \bm{n} \cdot \bm{v})^3}  , \quad \bm{B} = \bm{n} \times \bm{E}.\]
 where all the quantities on the right sides of the equations refer to the retarded time $t' = t - R$. \\
-The intensity radiated into the solid angle $do$ is
-\[dI = \frac{e^2}{16\pi^2} \left\{ \frac{2(\bm{n}\cdot\bm{w})(\bm{v}\cdot\bm{w})}{(1-\bm{v}\cdot\bm{n})^5} + \frac{\bm{w}^2}{(1-\bm{v}\cdot\bm{n})^4} - \frac{(1-v^2)(\bm{n}\cdot\bm{w})^2}{(1-\bm{v}\cdot\bm{n})^6}\right\}do.\]
+The power radiated into the solid angle $do$ is
+\[dP = \frac{e^2}{16\pi^2} \left\{ \frac{2(\bm{n}\cdot\bm{w})(\bm{v}\cdot\bm{w})}{(1-\bm{n}\cdot\bm{v})^5} + \frac{\bm{w}^2}{(1-\bm{n}\cdot\bm{v})^4} - \frac{(1-v^2)(\bm{n}\cdot\bm{w})^2}{(1-\bm{n}\cdot\bm{v})^6}\right\}do.\]
 If we want to determine the angular distribution of the total radiation throughout the whole motion of the particle, we must integrate the intensity over the time. In doing this, it
 is important to remember that the integrand is a function of $t'$; therefore we must write
 \[dt = (1-\bm{n}\cdot\bm{v})dt'\]
 after which the integration over $t'$ is immediately done.\\ \\
-In the ultrarelativistic case, the intensity is large within the narrow range of angles in which $1-\bm{v}\cdot\bm{n}$ is small. Thus an ultrarelativistic particle radiates mainly along the direction of its own motion, within the small range  of angles around the direction of its velocity. We also point out that, for arbitrary velocity and acceleration of the particle, there are always two directions for which the radiated intensity is zero. These are the directions for
+In the ultrarelativistic case, the intensity is large within the narrow range of angles in which $1-\bm{n}\cdot\bm{v}$ is small. Thus an ultrarelativistic particle radiates mainly along the direction of its own motion, within the small range  of angles around the direction of its velocity. We also point out that, for arbitrary velocity and acceleration of the particle, there are always two directions for which the radiated intensity is zero. These are the directions for
 which the vector $\bm{n}-\bm{v}$ is parallel to the vector $\bm{w}$.\\ \\
 If the velocity and acceleration of the particle are parallel,
-\[\bm{B} = \frac{e}{4\pi R} \frac{\bm{w} \times \bm{n}}{(1-\bm{v}\cdot\bm{n})^3} \]
+\[\bm{B} = \frac{e}{4\pi R} \frac{\bm{w} \times \bm{n}}{(1-\bm{n}\cdot\bm{v})^3} \]
 and the intensity is
 \[dI = \frac{e^2}{16\pi^2} \frac{w^2 \sin^2 \theta}{(1-v\cos\theta)^6} do.\]
 It is naturally, symmetric around the common direction of $\bm{v}$ and $\bm{w}$, and vanishes along ($\theta=0$) and opposite to ($\theta = \pi$) the direction of the velocity. In the ultrarelativistic case, the intensity as a function of $\theta$ has a sharp double maximum near $\bm{v}$ , with a steep drop to zero for $\theta = 0$.
@@ -838,8 +842,7 @@ The discussion of synchrotron radiation (magnetic bremsstrahlung) can be found i
 \subsection{Radiation reaction}
 If a charged particle accelerates, it radiates away energy. This means that if an external force is applied to a charge, not all of the energy transferred to the charge by the force is converted to the kinetic energy of the charge; some of the energy is radiated away in the form of electromagnetic waves.  From Newton's law $\bm{F}=m\bm{a}$, the net force on the charge must be less than the applied external force. In effect, the fields surrounding the charge exert a recoil or reaction force on the charge.
 The fields of a moving point charge are
-\[\bm{E} = \frac{e}{4\pi(\bm{R}^*\cdot\bm{u}^*)^3}\left\{(1-v^{*2})R^*\bm{u} + \bm{R}^* \times [R^*\bm{u}^* \times \bm{a}^*]\right\} , \quad \bm{B} = \frac{\bm{R}^*}{R^*}\times E,\]
-where $\bm{u}^* = {\bm{R}^*}/{R^*}-v^*$.
+\[\bm{E} = \frac{e}{4\pi(1 - \bm{n}^* \cdot \bm{v}^*)^3} \left\{ \frac{(1-v^{*2})(\bm{n}^* - \bm{v}^*)}{R^{*2}} + \frac{\bm{n}^* \times \left[(\bm{n}^* - \bm{v}^*) \times \bm{a}^*\right]}{R^*} \right\}; \quad \bm{B} = \bm{n}^* \times \bm{E}.\]
 It is only those terms that go as ${1}/{R}$ that contribute to radiation energy. The other term falls off as ${1}/{R^2}$ so contributes nothing to the integral of the Poynting vector over a large sphere. This term is called the velocity field and, although it doesn't contribute to the energy radiated away by the EM field, it does store energy, so some of the energy imparted by the force that gets the charge moving must be siphoned off to create these velocity fields. These velocity fields are curious beasts, however, for they contain energy that is never actually lost to the charge. If a charge is accelerated to some velocity, the velocity fields are constructed around the moving charge, but if the charge is then decelerated to rest again, the velocity fields disappear without having radiated away any energy. It would seem to be reabsorbed by the charge as it slows down. 
 \\ \\
 If we look at a charged particle that starts off in some state, then goes through an acceleration followed by a deceleration, and finally ends up in the same state that it started from, what we can say is that the velocity fields are the same at the end as they were at the start, so over this period, the only energy that is truly lost from the particle is the energy that is radiated away. In non-relativistic case,
@@ -869,8 +872,8 @@ The first term in equation above goes to zero on performing the integration, sin
 If an electromagnetic wave falls on a system of charges, then under its action the charges are set in motion. This motion in turn produces radiation in all directions; there occurs, we say, a scattering of the original wave. 
 The scattering is most conveniently characterized by the ratio of the amount of energy emitted by the scattering system in a given direction per unit time, to the energy flux density of the incident radiation. This ratio clearly has dimensions of area, and is called the reflective
 scattering cross section. 
-Let $dI$ be the energy radiated by the system into solid angle $do$ per second for an incident wave with Poynting vector $\bm{S}$. Then the effective cross-section for scattering (into the solid angle $do$) is
-\[d\sigma = \frac{d\bar{I}}{\bar{S}} \]
+Let $dP$ be the energy radiated by the system into solid angle $do$ per second for an incident wave with Poynting vector $\bm{S}$. Then the effective cross-section for scattering (into the solid angle $do$) is
+\[d\sigma = \frac{d\bar{P}}{\bar{S}} \]
 (the dash over a symbol means a time average). 
 The integral $\sigma$ of $d\sigma$ over all directions is the total scattering cross-section.
 \\ \\
@@ -879,14 +882,15 @@ Therefore, we have
 \[m\ddot{\bm{r}} = e\bm{E}_0(t) e^{-i\omega t},\]
 and
 \[\ddot{\bm{d}} = \frac{e^2}{m} \bm{E}_0(t) e^{-i\omega t}.\]
-Now we assume the incident direction of the EM wave is $\hat{x}$, the scattered direction of the EM wave is $\bm{n}' =(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)$. The dipole radiation is
-\[\overline{dI} = \frac{e^4}{16\pi^2 m^2}\overline{{[\rm Re}(\bm{E}\times\bm{n}')]^2} do = \frac{e^4}{32\pi^2 m^2}\overline{|\bm{E}\times\bm{n}'|^2} do.\]
+Now we assume the incident direction of the EM wave is $\hat{x}$, the scattered direction of the EM wave is $\bm{n}' =(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)$.
+The dipole radiation is
+\[d\bar{P} = \frac{e^4}{16\pi^2 m^2}\overline{{[\rm Re}(\bm{E}\times\bm{n}')]^2} do = \frac{e^4}{32\pi^2 m^2}\overline{|\bm{E}_0\times\bm{n}'|^2} do.\]
 Since
-\[|\bm{E}\times\bm{n}'|^2 = - ({E_y} {E_z}^* + {E_y}^* {E_z}) \cos\left({\theta}\right) \sin\left({\phi}\right)
-\sin\left({\theta}\right) - {\left(|E_y|^{2} \sin\left({\phi}\right)^{2}
-- |E_z|^{2}\right)} \sin\left({\theta}\right)^{2} + |E_y|^{2},\]
+\[|\bm{E}_0\times\bm{n}'|^2 = - ({E_{0y}} {E_{0z}}^* + {E_{0y}}^* {E_{0z}}) \cos\left({\theta}\right) \sin\left({\phi}\right)
+\sin\left({\theta}\right) - {\left(|E_{0y}|^{2} \sin\left({\phi}\right)^{2}
+- |E_{0z}|^{2}\right)} \sin\left({\theta}\right)^{2} + |E_{0y}|^{2},\]
 we have
-\[\overline{dI} = \frac{e^4 \bar{S}}{16\pi^2 m^2}[-(\rho_{12}+\rho_{21})\cos\left({\theta}\right)\sin\left({\phi}\right)
+\[d\bar{P} = \frac{e^4 \bar{S}}{16\pi^2 m^2}[-(\rho_{12}+\rho_{21})\cos\left({\theta}\right)\sin\left({\phi}\right)
 \sin\left({\theta}\right) - {\left(\rho_{11} \sin\left({\phi}\right)^{2}
 - \rho_{22}\right)} \sin\left({\theta}\right)^{2} + \rho_{11} ],\]
 where

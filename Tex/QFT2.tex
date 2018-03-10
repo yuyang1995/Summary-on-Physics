@@ -5,7 +5,7 @@ Recall that
 For infinitesimal rotation,
 \[\mathscr{S}_{a}^{\phantom{a}b} = \delta_{a}^{\phantom{a}b}+\frac{i}{2} \delta \omega_{\alpha \beta} (\mathcal{S}^{\alpha \beta})_{a}^{\phantom{a}b} .\]
 Matrices $\mathcal{S}^{\alpha \beta}$ satisfy the following commutation relation
-\[[\mathcal{S}^{\mu \nu},\mathcal{S}^{\rho \sigma}]= -\eta^{\nu \rho}\mathcal{S}^{\mu \sigma} + \eta^{\sigma \mu}\mathcal{S}^{\rho \nu} + \eta^{\mu \rho}\mathcal{S}^{\nu \sigma} - \eta^{\sigma \nu}\mathcal{S}^{\rho \mu}.\]
+\[[\mathcal{S}^{\mu \nu},\mathcal{S}^{\rho \sigma}]= i(-\eta^{\nu \rho}\mathcal{S}^{\mu \sigma} + \eta^{\sigma \mu}\mathcal{S}^{\rho \nu} + \eta^{\mu \rho}\mathcal{S}^{\nu \sigma} - \eta^{\sigma \nu}\mathcal{S}^{\rho \mu}).\]
 Define $\mathcal{C}_i \equiv \frac{1}{2}\epsilon_{ijk}\mathcal{S}^{jk}$,$\mathcal{D}_i \equiv \mathcal{S}^{i0}$, we have
 \[[\mathcal{C}_i,\mathcal{C}_j] = i\epsilon_{ijk}\mathcal{C}_k , \quad [\mathcal{C}_i,\mathcal{D}_j] = i\epsilon_{ijk}\mathcal{D}_k , \quad [\mathcal{D}_i,\mathcal{D}_j] = -i\epsilon_{ijk}\mathcal{C}_k.\]
 We further define $\mathcal{N}_i \equiv \frac{1}{2}(\mathcal{C}_i-i\mathcal{D}_i)$ and $\mathcal{N}^{\dagger}_i \equiv \frac{1}{2}(\mathcal{C}_i + i \mathcal{D}_i)$, then the commutation relation will be
@@ -30,7 +30,7 @@ Consider a left-handed spinor field $\psi_a(x)$, also known as a left-handed Wey
 For an infinitesimal transformation, we can write
 \[L_a^{\phantom{a}b}(1+\delta \omega) = \delta_a^{\phantom{a}b} + \frac{i}{2} \delta \omega_{\mu \nu} (\mathcal{S}_{\rm L}^{\mu \nu})_a^{\phantom{a}b}.\]
 $n=1,\, n'=0$  implies that
-\[(\mathcal{S}_{\rm L}^{i j}) = \frac{1}{2}\epsilon^{ijk}\sigma_k , \quad  (\mathcal{S}_{\rm L}^{k 0}) = \frac{1}{2}i\sigma_k,\]
+\[(\mathcal{S}_{\rm L}^{i j}) =  \epsilon^{ijk}\mathcal{C}_k = \frac{1}{2}\epsilon^{ijk}\sigma_k, \quad  (\mathcal{S}_{\rm L}^{k 0}) = \mathcal{D}_{k} = \frac{1}{2}i\sigma_k,\]
 where $\sigma_k$ is Pauli matrix.
 Then the infinitesimal transformation can be written as
 \[L(1+\delta \omega) = I - \frac{i}{2} \theta_i \sigma_i -\frac{1}{2} \beta_i \sigma_i.\]
@@ -52,7 +52,7 @@ Group theory can show that
 which means that $\epsilon_{ab}$ is an invariant symbol of the Lorentz group: it does not change under a Lorentz transformation that acts on all of its indices. The inverse matrix of $\epsilon_{ab}$ is
 \[\epsilon^{ab} \equiv \left[ \begin{matrix} 0& 1\\ -1& 0\end{matrix} \right] .\]
 Thus
-\[\epsilon_{ab}\epsilon^{bc} = \delta_a^{\phantom{a}c} , \quad \epsilon^{ab}\epsilon_{bc} = \delta^a_{\phantom{a}c}.\]
+\[\epsilon_{ab}\epsilon^{bc} = \delta_a^{c} , \quad \epsilon^{ab}\epsilon_{bc} = \delta^a_{c}.\]
 We can use $\epsilon_{ab}$ and and its inverse $\epsilon^{ab}$ to raise and lower left-handed spinor indices, 
 \[\psi^a(x) \equiv \epsilon^{ab} \psi_b(x).\]
 We also notice the minus sign when we contract indices,
@@ -93,7 +93,7 @@ We adopt the following convention: a missing pair of contracted,
 undotted indices is understood to be written as $\phantom{1}^c_{\phantom{c}c}$, and a missing pair of
 contracted, dotted indices is understood to be written as $\phantom{1}_{\dot{c}}^{\phantom{c}\dot{c}}$. Thus, if $\chi$ and
 $\psi$ are two left-handed Weyl fields, we have
-\[\chi \psi = \chi^{a}\psi_{a} , \quad \chi^{\dagger} \psi_{\dagger} = \chi^{\dagger}_{\dot{a}} \psi^{\dagger \dot{a}}.\]
+\[\chi \psi = \chi^{a}\psi_{a} = \chi_2\psi_1 - \chi_1\psi_2, \quad \chi^{\dagger} \psi_{\dagger} = \chi^{\dagger}_{\dot{a}} \psi^{\dagger \dot{a}} = \chi_1^{\dagger}\psi_2^{\dagger} - \chi_2^{\dagger} \psi_1^{\dagger}.\]
 We expect Weyl fields to describe spin-one-half particles, and (by the spin--statistics theorem) these particles must be fermions. Therefore the corresponding fields must anticommute, rather than commute. That is, we should have
 \[\chi_a(x) \psi_b(y) = - \psi_b(x) \chi_a(x).\]
 Thus, we can get
@@ -141,11 +141,11 @@ Define a four-component Dirac field
 Thus we take the hermitian conjugate of $\Psi$ to get
 \[\Psi^{\dagger} = (\chi^{\dagger}_{\dot{a}}, \xi^{a}).\]
 Introduce the matrix
-\[\beta \equiv \left[ \begin{matrix} 0& \delta^{\dot{a}}_{\phantom{a}\dot{c}}\\ \delta_a^{\phantom{a}c}& 0\end{matrix} \right].\]
+\[\beta \equiv \left[ \begin{matrix} 0& \delta^{\dot{a}}_{\dot{c}}\\ \delta_a^{c}& 0\end{matrix} \right].\]
 Given $\beta$, we define
-\[\overline{\Psi} \equiv (\xi^{a},\chi^{\dagger}_{\dot{a}}).\]
+\[\overline{\Psi} \equiv \Psi^{\dagger}\beta = (\xi^{a},\chi^{\dagger}_{\dot{a}}).\]
 Detailed calculation shows that
-\[\overline{\Psi} \gamma^{\mu} \partial_{\mu} \Psi =  \chi^{\dagger} \overline{\sigma}^{\mu} \partial_{\mu} \chi +  \xi^{\dagger} \overline{\sigma}^{\mu} \partial_{\mu} \xi + \partial_{\mu}( \xi^{\dagger} \sigma^{\mu} \xi).\]
+\[\overline{\Psi} \gamma^{\mu} \partial_{\mu} \Psi =  \chi^{\dagger} \overline{\sigma}^{\mu} \partial_{\mu} \chi +  \xi^{\dagger} \overline{\sigma}^{\mu} \partial_{\mu} \xi + \partial_{\mu}( \xi \sigma^{\mu} \xi^{\dagger}).\]
 Therefore, the Lagrangian can be written as
 \[\mathcal{L} = i\overline{\Psi} \gamma^{\mu} \partial_{\mu} \Psi - m\overline{\Psi}\Psi.\]
 It is invariant under the $U(1)$ transformation
@@ -179,10 +179,10 @@ For a Majorana field, we have $\overline{\Psi} = \Psi^T \mathcal{C}$. Then the L
 
 \subsubsection{Projection matrix}
 We can also recover the Weyl components of a Dirac or Majorana field by means of a suitable projection matrix. Define
-\[\gamma^5 \equiv \left[ \begin{matrix} -\delta_a^{\phantom{a}c}& 0\\ 0& \delta^{\dot{a}}_{\phantom{a}\dot{c}}\end{matrix} \right].\]
+\[\gamma^5 \equiv \left[ \begin{matrix} -\delta_a^{c}& 0\\ 0& \delta^{\dot{a}}_{\dot{c}}\end{matrix} \right].\]
 Then we can define left and right projection matrices as
-\[P_L \equiv \frac{1}{2}(1-\gamma^5) = \left[ \begin{matrix} \delta_a^{\phantom{a}c}& 0\\ 0& 0\end{matrix} \right],\]
-\[P_R \equiv \frac{1}{2}(1+\gamma^5) = \left[ \begin{matrix} 0& 0\\ 0& \delta^{\dot{a}}_{\phantom{a}\dot{c}}\end{matrix} \right].\]
+\[P_L \equiv \frac{1}{2}(1-\gamma^5) = \left[ \begin{matrix} \delta_a^{c}& 0\\ 0& 0\end{matrix} \right],\]
+\[P_R \equiv \frac{1}{2}(1+\gamma^5) = \left[ \begin{matrix} 0& 0\\ 0& \delta^{\dot{a}}_{\dot{c}}\end{matrix} \right].\]
 The matrix $\gamma^5$ can also be expressed as
 \[\gamma^5 = i \gamma^0 \gamma^1 \gamma^2 \gamma^3 = \frac{i}{24} \epsilon_{\mu \nu \rho \sigma}\gamma^{\mu} \gamma^{\nu} \gamma^{\rho} \gamma^{\sigma}.\]
 The $\gamma^5$ has the following properties:
@@ -220,7 +220,7 @@ which means that
 \section{Canonical quantization of Dirac field}
 \subsubsection{Canonical momentum and Hamiltonian}
 \[\Pi \equiv \frac{\partial \mathcal{L}}{\partial(\partial_0 \Psi)} = i \overline{\Psi}\gamma^0 = i \Psi^{\dagger} , \quad (\overline{\Psi} = -i \Pi \gamma^0 , \quad \Psi^{\dagger} = -i \Pi).\]
-\[\mathcal{H} = -\Pi (\vec{\alpha} \cdot \vec{\nabla} + i \beta m)\Psi , \quad (\alpha_i = \gamma^0 \gamma^i , \quad \beta = -\gamma^0).\]
+\[\mathcal{H} = -\Pi (\vec{\alpha} \cdot \vec{\nabla} + i \beta m)\Psi , \quad (\alpha_i = \gamma^0 \gamma^i , \quad \beta = \gamma^0).\]
 \[H = \int \mathcal{H} d^3x.\]
 \subsubsection{Momentum and angular momentum}
 \[T^{\mu \nu} = i \overline{\Psi} \left[ \eta^{\mu \nu} \gamma^{\rho} \partial_{\rho} - \gamma^{\mu} \partial^{\nu} \right]\Psi -m \eta^{\mu \nu} \overline{\Psi}\Psi.\]

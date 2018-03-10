@@ -123,10 +123,10 @@ Define
 We can get a new representation of the group. It is called adjoint representation. The dimension of adjoint representation is equal to the number of the generators. And it is easy to show that adjoint representation is real.
 \\ \\
 It can be demonstrated that once the fundamental representation is normalized, $\mathrm{Tr}T^aT^b$ will be proportion to the $\delta^{ab}$, so is it with any irreducible representation of the group. Then we can define the index of a representation $T(R)$ as
-\[\mathrm{Tr}(T^a_{\rm R} T^b_{\rm R}) = T(R)\delta^{ab}.\]
+\[\mathrm{Tr}(T^a_{\rm R} T^b_{\rm R}) \equiv T(R)\delta^{ab}.\]
 We can verify that the matrix $T^a_{\rm R} T^a_{\rm R}$ commutes with
 every generator, and so must be a number times the identity matrix. We define quadratic Casimir $C(R)$ by
-\[T^a_{\rm R} T^a_{\rm R} = C(R)I.\]
+\[T^a_{\rm R} T^a_{\rm R} \equiv C(R)I.\]
 It is easy to show that
 \[T(R)D(A) = C(R)D(R).\]
 For $\mathrm{SU}(N)$, the standard normalization for fundamental representation is $T(N) = {1}/{2}$, so we have $C(N) = {(N^2-1)}/{2N}$. We will show later that $T(A) = C(A) = N$. 
@@ -164,7 +164,7 @@ where $\delta_i^{\phantom{i}j}$ is an invariant symbol of the group. This existe
 We can further verify that the generator matrix $(T_{\rm R}^a)_i^{\phantom{i}j}$, which carries one index for $R$, one for $\overline{R}$, and one for the adjoint representation $A$, is also an invariant symbol.
 This implies that
 \[R \otimes \overline{R} \otimes A = 1 \oplus \cdots\]
-If we now multiply both sides by $A$, and use $A \otimes A = 1 \oplus \cdots$ (note $A$ is real), we find $R \times \overline{R} = A \oplus \cdots$. Finally, we have
+If we now multiply both sides by $A$, and use $A \otimes A = 1 \oplus \cdots$ (note $A$ is real), we find $R \otimes \overline{R} = A \oplus \cdots$. Finally, we have
 \[R \otimes \overline{R} = 1 \oplus A \oplus \cdots\]
 Thus the product of a representation with its complex conjugate is always reducible into a sum that includes at least the singlet and adjoint representations. For the fundamental representation of $\mathrm{SU}(N)$, we have
 \[N \otimes \overline{N} = 1 \oplus A \]
@@ -177,10 +177,10 @@ The singlet on the right-hand side implies the existence of an invariant symbol 
 The term in square brackets vanishes by hermiticity and $(T^{a}_{\rm R})^{i}_{\phantom{i}j} = (-T^{a}_{\rm R})_{j}^{\phantom{i}i}$. 
 The fact that $\delta_{ij} = \delta_{ji}$ implies that the singlet on the right-hand side of the equation above appears in the symmetric part of this product of two identical representations.
 The fundamental representation of $\mathrm{SO}(N)$ is real, and we have
-\[N \times N = 1_{\rm S} \oplus A_{\rm A} \oplus S_{\rm S}.\]
+\[N \otimes N = 1_{\rm S} \oplus A_{\rm A} \oplus S_{\rm S}.\]
 The representation $S$ corresponds to a field with a symmetric traceless pair of fundamental indices.
 \\ \\
-Consider now a pseudoreal representation $R$. Since $R$ is equivalent to its complex conjugate, up to a change of basis, $R \times R \otimes A = 1 \oplus \cdots$  still holds. However, we cannot identify $\delta_{ij}$ as the corresponding invariant symbol, because then $R$ would have to be real, rather than pseudoreal. 
+Consider now a pseudoreal representation $R$. Since $R$ is equivalent to its complex conjugate, up to a change of basis, $R \otimes R \otimes A = 1 \oplus \cdots$  still holds. However, we cannot identify $\delta_{ij}$ as the corresponding invariant symbol, because then $R$ would have to be real, rather than pseudoreal. 
 From the perspective of the direct product, the only alternative is to have the singlet appear in the antisymmetric part of the product, rather than the symmetric part. The corresponding invariant symbol must then be antisymmetric on exchange of its two $R$ indices.
 An example is the fundamental representation of $\mathrm{SU}(2)$, which is discussed in spinor field theory.
 \\ \\
@@ -486,7 +486,7 @@ Let us consider $m^2 < 0$. Classically, the field has a nonzero vacuum expectati
 where we have made a global $U(1)$ transformation to set the phase of the VEV to zero, and
 \[v = \sqrt{\frac{4|m|^2}{\lambda}}.\]
 We therefore write
-\[\phi(x) = \frac{1}{\sqrt{2}} (v + \rho(x)) e^{-i\chi(x)/v},\]
+\[\phi(x) = \frac{1}{\sqrt{2}} (v + \rho(x)) e^{-i\chi(x)},\]
 where $\rho(x)$ and $\chi(x)$ are real scalar fields. The scalar potential depends only on $\rho$, and is given by
 \[V = \frac{1}{4}\lambda v^2\rho^2 + \frac{1}{4}\lambda v \rho^3 + \frac{1}{16}\lambda \rho^4.\]
 Since $\chi$ does not appear in the potential, it is massless; it is the Goldstone boson for the spontaneously broken $U(1)$ symmetry.
@@ -877,3 +877,9 @@ c_1 & +s_1c_3 & +s_1s_3 \\
 and $c_i = \cos\theta_i$ and $s_i = \sin\theta_i$. The measured values of these angles are $s_1=0.224$, $s_2 = 0.041$, $s_3 = 0.016$ , and $\delta = 40^{\circ}$. Note that the charged currents now have some terms with a phase factor $e^{i\delta}$, and some without. 
 Since the time-reversal operator $T$ is antiunitary, the charged currents do not transform in a simple way under time reversal. This implies that the charged current terms in $\mathcal{L}_{\mathrm{int}}$ are not time-reversal invariant; hence the electroweak interactions violate time-reversal symmetry.
 Since $CPT$ is always a good symmetry, time-reversal violation is equivalent to $CP$ violation; $\delta$ is therefore sometimes called the $CP$ violating phase.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.2]{QFT4/SM.png}
+	\caption{Standard Model of Particle Physics. The diagram shows the elementary particles of the Standard Model (the Higgs boson, the three generations of quarks and leptons, and the gauge bosons), including their names, masses, spins, charges, chiralities, and interactions with the strong, weak and electromagnetic forces. It also depicts the crucial role of the Higgs boson in electroweak symmetry breaking, and shows how the properties of the various particles differ in the (high-energy) symmetric phase (top) and the (low-energy) broken-symmetry phase (bottom).}
+\end{figure}

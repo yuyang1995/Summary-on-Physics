@@ -52,7 +52,7 @@ For $|C;N,N_0\rangle$, the particle number operator $\hat{N}$ can be written as
 \[\hat{N} = N_0 + \sum_{\bm{k}\neq 0}a_{\bm{k}}^{\dagger} a_{\bm{k}} .\]
 Neglecting terms of order $O(N_0^0)$, we have
 \[\hat{N}^2 \approx N_0^2 + 2N_0\sum_{\bm{k}\neq 0}a_{\bm{k}}^{\dagger} a_{\bm{k}} .\]
-We next examine the interaction part of $H$ when restricted to $|C\rangle$. When all four operators in H I have zero momentum, we have the term
+We next examine the interaction part of $H$ when restricted to $|C\rangle$. When all four operators in $H_{\rm I}$ have zero momentum, we have the term
 \[H_{\rm I}^0 = \frac{1}{2V} \tilde{V}(0) a^{\dagger}_{0} a^{\dagger}_{0} a_{0} a_{0} = \frac{1}{2V}\tilde{V}(0)N_0^2 \approx  \frac{1}{2V}\tilde{V}(0) \left[\hat{N}^2-2N_0\sum_{\bm{k}\neq 0}a_{\bm{k}}^{\dagger} a_{\bm{k}} \right].\]
 The next term is of order $N_0$ and is the part of $H_{\rm I}$ containing two operators (carrying zero momentum). There are six ways in which this can happen. If we make an additional assumption that, for $|\bm{k}|$ small, $\tilde{V}(\bm{k}) = \tilde{V}(0)$. 
 Since at low temperature we expect only small momenta excitations to be important we replace $\tilde{V}(\bm{k})$ by $\tilde{V}(0)$ in $H_{\rm I}$. Therefore, on the state , the interacting Hamiltonian, keeping terms of $O(N_0)$ is given by
@@ -106,7 +106,7 @@ The solution of the equation above can be represented by Dyson series
 \[W(\beta) = \sum_{n \geq 0} \frac{(-1)^n}{n!} \int_0^{\beta}d\tau_1 \cdots \int_0^{\beta} d\tau_n T[H_{\rm I}(\tau_1)\cdots H_{\rm I}(\tau_n)].\]
 Note that $T$ is now the ordering with respect to $\tau$ (or imaginary time). Finally, upon substitution of this last expression into the grand canonical partition sum
 \[Z_{\Omega} = \mathrm{Tr} e^{-\beta K_0}W(\beta),\]
-we obtain a perturbative expansion of the partition sum in analogy with that of the evolution operator. Before we can apply this formalism to the computation of $Z_{\Omega}$ we need to analyze the finite temperature versions of the time-ordered Green functions and Wick's theorem. The detailed discussion can be found in section 9.8 from \emph{Elements Of Statistical Mechanics (ivo Sachs, Siddhartha Sen, James Sexton)}.
+we obtain a perturbative expansion of the partition sum in analogy with that of the evolution operator. Before we can apply this formalism to the computation of $Z_{\Omega}$ we need to analyze the finite temperature versions of the time-ordered Green functions and Wick's theorem. The detailed discussion can be found in section 9.8 from \emph{Elements Of Statistical Mechanics (Ivo Sachs, Siddhartha Sen, James Sexton)}.
 
 \section{Path integrals}
 Similar to the time evolution operator in quantum mechanics, the partition function can be worked out through path integral. We firstly note that
@@ -121,7 +121,7 @@ At this point we are still working with operators, but we can now insert a compl
 \begin{eqnarray}
 &\phantom{=}& \mathrm{Tr}e^{-\beta H} \nonumber \\
 &=& \lim_{n \to \infty} \int [dpdq]^n  \mathrm{Tr} [ e^{-\epsilon V}|q_0\rangle \langle q_0 | e^{-\epsilon T} |p_0 \rangle\langle p_0| e^{-\epsilon V} \cdots e^{-\epsilon V} |q_{n-1}\rangle\langle q_{n-1}| e^{-\epsilon T} |p_{n-1}\rangle\langle p_{n-1} | ] \nonumber \\
-&=& \lim_{n \to \infty} \int [\frac{dpdq}{2\pi}]^n e^{\sum_{i=0}^{n-1}ip_i(x_{i+1}-x_i) - \epsilon H(q_i,p_i)} ,\nonumber
+&=& \lim_{n \to \infty} \int [\frac{dpdq}{2\pi}]^n e^{\sum_{i=0}^{n-1}ip_i(q_{i+1}-q_i) - \epsilon H(q_i,p_i)} ,\nonumber
 \end{eqnarray}
 where $q_{n} = q_0$. 
 Generally, we have $T(p) = p^2/2m$. The $p_k$ integral is just a Gaussian integral. The path integral can then be simplified to

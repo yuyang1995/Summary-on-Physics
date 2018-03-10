@@ -138,7 +138,7 @@ Derivation of the exact form of relativistic corrections of Hamiltonian in quant
 \[H_{FS} = H_{\mathrm{RKE}} + H_{D} + H_{\mathrm{SO}}.\]
 The term $H_{\mathrm{RKE}}$ is due to the second order term of the expansion series of $E = \sqrt{p^2+m^2}$. (The first order term is just the kinetic energy in non relativistic quantum mechanics). We have
 \[H_{\mathrm{RKE}} = - \frac{p^4}{8m^3}.\]
-The term $H_{D}$ comes out as a result of virtual process $e^{-} \to e^{-} + e^{-} + e^{+}$ in the region whose is scale is smaller than the Compton length $\lambda_C = \frac{1}{m} = \alpha a_0$ of electrons. Such virtual states appear in perturbation theory when one sums over intermediate states, which derive ultimately from a resolution of the identity. The effect is to smear out the position of the atomic electron
+The term $H_{D}$ comes out as a result of virtual process $e^{-} \to e^{-} + e^{-} + e^{+}$ in the region whose scale is smaller than the Compton length $\lambda_C = 1/m = \alpha a_0$ of electrons. Such virtual states appear in perturbation theory when one sums over intermediate states, which derive ultimately from a resolution of the identity. The effect is to smear out the position of the atomic electron
 over a distance of order $\lambda_C$. We have
 \[H_{\mathrm{D}} = \frac{1}{8m^2} \nabla^2 V.\]
 The term $H_{\mathrm{SO}}$ arises because the electric field of nuclei generates a magnetic field in the rest frame of electron. We have
@@ -254,18 +254,18 @@ and
 In the limit $a \to 0$, we have
 \[\lim_{a \to 0} \Delta(r) = \frac{4\pi}{3}\delta(\bm{r}) , \quad \lim_{a \to 0} f(r) = 1.\]
 The Hamiltonian of the system is
-\[H = \frac{(\bm{P}+e\bm{A})^2}{2m} - \frac{e^2}{4\pi r} + H_{\mathrm{FS}} + H_{\mathrm{Lamb}} + \frac{e}{m}\bm{S}\cdot\bm{B}.\]
-The expressions  for $\bm{A}$ and $\bm{B}$ are are given above and $\bm{\mu}$ in the expression are given by
-\[\bm{\mu} = g_{p} \mu_{\mathrm{p}} \bm{I},\]
-where $g_{\mathrm{p}}$ is g-factor of proton and $\mu_{\mathrm{p}} \equiv {e}/{2m_p}$. 
+\[H = \frac{(\bm{P}+e\bm{A})^2}{2m_{\rm e}} - \frac{e^2}{4\pi r} + H_{\mathrm{FS}} + H_{\mathrm{Lamb}} + \frac{e}{m_{\rm e}}\bm{S}\cdot\bm{B}.\]
+The expressions  for $\bm{A}$ and $\bm{B}$ are given above and $\bm{\mu}$ in the expression are given by
+\[\bm{\mu} = g_{\rm p} \mu_{\mathrm{p}} \bm{I},\]
+where $g_{\rm p}$ is g-factor of proton and $\mu_{\rm p} \equiv {e}/{2m_{\rm p}}$. 
 Thus, the Hamiltonian must be interpreted as an operator acting the total Hilbert space
 \[\mathcal{H} = \mathcal{H}_{\mathrm{elec}} \otimes \mathcal{H}_{\mathrm{nucl}}.\]
 For $\mathcal{H}_{\mathrm{elec}}$ the obvious basis is $|nljm_j\rangle$ with energies $E_{nlj}$ when there is no hyperfine terms. In hydrogen energies depend on $l$ because of the Lamb shift. The obvious basis in $\mathcal{H}_{\mathrm{nucl}}$ is $|im_i\rangle$. Thus we define the basis states in $\mathcal{H}$ as $|nljm_jm_i\rangle$ (we suppress the index $i$ since it is a constant).It is called uncoupled basis. Now we expand the Hamiltonian and neglect the term $A^2$, writing the result as $H = H_0 + H_1$ , where
-\[H_0 = \frac{p^2}{2m} - \frac{e^2}{4\pi r}  + H_{\mathrm{FS}} + H_{\mathrm{Lamb}}\]
+\[H_0 = \frac{p^2}{2m_{\rm e}} - \frac{e^2}{4\pi r}  + H_{\mathrm{FS}} + H_{\mathrm{Lamb}}\]
 and
 \[H_1 = 2\mu_{\mathrm{B}}(\bm{P}\cdot\bm{A} + \bm{S}\cdot\bm{B}).\]
 Since
-\[\bm{P}\cdot(\bm{I}\cdot\bm{r}) = \bm{I}\cdot(\bm{r}\cdot\bm{P}) = \bm{I}\cdot\bm{L},\]
+\[\bm{P}\cdot(\bm{I}\times\bm{r}) = \bm{I}\cdot(\bm{r}\times\bm{P}) = \bm{I}\cdot\bm{L},\]
 we have
 \[H_{1,\mathrm{orbi}} \equiv 2\mu_{\mathrm{B}}(\bm{P}\cdot\bm{A}) = k(\bm{I}\cdot\bm{L}) \left[\Delta(r) + \frac{f(r)}{r^3}\right ].\]
 where $k \equiv g_{\mathrm{e}}g_{\mathrm{p}}\mu_{\mathrm{B}}\mu_{\mathrm{p}}$.
