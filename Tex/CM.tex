@@ -148,7 +148,7 @@ Suppose $g$ is a function of $p$ and $q$. If the transformation of $q$ and $p$ c
 \[p \rightarrow p + \epsilon [p,g].\]
 We can prove that 
 \[H \rightarrow H + \epsilon[H,g].\]
-Thus if $H$ is invariant under the transformation, then $[H,g] = 0$, that means $\frac{dg}{dt} = 0$, i.e. $g$ is a conserved quantity of the motion.
+Thus if $H$ is invariant under the transformation, then $[H,g] = 0$, that means $dg/dt = 0$, i.e. $g$ is a conserved quantity of the motion.
 
 \section{Hamilton-Jacobi equation}
 We define
@@ -166,7 +166,7 @@ Let the new co-ordinates be $\beta_1,\cdots,\beta_2$, and we have
 \[p^i = \frac{\partial f}{\partial q_i} ,\quad \beta_s = \frac{\partial f}{\partial \alpha_s} ,\quad H' = H + \frac{\partial f}{\partial t} =0.\]
 Therefore,
 \[\alpha^s = \mbox{ constant }, \beta_s = \mbox{ constant }.\]
-By means of the $s$ equations $\beta_s = \frac{\partial f}{\partial \alpha^s}$, the $s$ coordinates $q$ can be expressed in terms of the time and the $2s$ constants. This gives the general integral of the equations of motion.
+By means of the $s$ equations $\beta_s = \partial f / \partial \alpha^s$, the $s$ coordinates $q$ can be expressed in terms of the time and the $2s$ constants. This gives the general integral of the equations of motion.
 
 \section{Symmetry and Conservation Laws(3)}
 If $S$ is invariant under transformation $q_i \rightarrow q_i + \delta q_i$, then 
@@ -510,15 +510,13 @@ where
 \[a = \frac{3\epsilon F_0^2}{4\omega_0^6}, \quad b = \frac{1}{\omega_0^2 Q^2}.\]
 We than can solve for $x$ in terms of $y$,
 \[x^2 = \frac{2 + 2ay-b \pm \sqrt{(b-2-2ay)^2-4(a^2y^2+2ay+1-\frac{1}{y})}}{2}.\]
-Thus the resonance curve has two branches, corresponding to the two roots of the equation above.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[height=6cm ,width=12cm]{CM/resonance.png}
 	\caption{Resonance curve}
 \end{figure}
 \\ 
-When the frequency of the drive force increase from left, the amplitude of oscillation will become larger and larger. But when it comes to the point of inflection, the amplitude will drop to the low-right part of the curve. 
-When the frequency of the drive force decrease from right, the amplitude of oscillation will also become larger and larger. When it comes to the point of inflection, the amplitude will jump to the hight-left part of the curve. 
+Thus the resonance curve has two branches, corresponding to the two roots of the equation above. When the frequency of the drive force increase from left, the amplitude of oscillation will become larger and larger. But when it comes to the point of inflection, the amplitude will drop to the low-right part of the curve. When the frequency of the drive force decrease from right, the amplitude of oscillation will also become larger and larger. When it comes to the point of inflection, the amplitude will jump to the hight-left part of the curve. 
 This effect is called hysteresis.
 
 \section{Oscillations of systems with more than one degree of freedom}

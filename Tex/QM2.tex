@@ -120,7 +120,7 @@ In addition, the two states $|2,1,-1\rangle$ and $|2,1,1\rangle$ do not shift th
 \[|+W\rangle = \frac{|2,0,0\rangle - |2,1,0\rangle}{\sqrt{2}} , \quad |-W\rangle = \frac{|2,0,0\rangle + |2,1,0\rangle}{\sqrt{2}}.\]
 This is zeroth order part of the exact eigenstates.
 \\ \\
-Now let us look at the exact symmetries of the full, perturbed Hamiltonian $ H = H_0 + H_1$, without doing perturbation theory at all. Since $[H,L_z]$ the exact eigenstates of $H$ can be chosen to be eigenstates of $L_z$ as well.
+Now let us look at the exact symmetries of the full, perturbed Hamiltonian $ H = H_0 + H_1$, without doing perturbation theory at all. Since $[H,L_z] = 0$ the exact eigenstates of $H$ can be chosen to be eigenstates of $L_z$ as well.
 Denote these by $|\gamma m \rangle$, where $\gamma$ is an additional index needed to specify an energy
 eigenstate. Thus, we have
 \[L_z |\gamma m \rangle = m |\gamma m \rangle , \quad H |\gamma m \rangle = E_{\gamma m} |\gamma m \rangle,\]
@@ -135,10 +135,10 @@ The splitting in particular means that spectral lines that appear a singlets und
 \\ \\
 Derivation of the exact form of relativistic corrections of Hamiltonian in quantum mechanics can be very rigorous and needs some reasonable guess. The details of derivation can be found in 
 \href{http://bohr.physics.berkeley.edu/classes/221/1112/notes/finestruc.pdf}{lecture notes on fine structure} by Robert G. Littlejohn. Here we just list the result.
-\[H_{FS} = H_{\mathrm{RKE}} + H_{D} + H_{\mathrm{SO}}.\]
+\[H_{\rm FS} = H_{\mathrm{RKE}} + H_{\rm D} + H_{\mathrm{SO}}.\]
 The term $H_{\mathrm{RKE}}$ is due to the second order term of the expansion series of $E = \sqrt{p^2+m^2}$. (The first order term is just the kinetic energy in non relativistic quantum mechanics). We have
 \[H_{\mathrm{RKE}} = - \frac{p^4}{8m^3}.\]
-The term $H_{D}$ comes out as a result of virtual process $e^{-} \to e^{-} + e^{-} + e^{+}$ in the region whose scale is smaller than the Compton length $\lambda_C = 1/m = \alpha a_0$ of electrons. Such virtual states appear in perturbation theory when one sums over intermediate states, which derive ultimately from a resolution of the identity. The effect is to smear out the position of the atomic electron
+The term $H_{\rm D}$ comes out as a result of virtual process $e^{-} \to e^{-} + e^{-} + e^{+}$ in the region whose scale is smaller than the Compton length $\lambda_C = 1/m = \alpha a_0$ of electrons. Such virtual states appear in perturbation theory when one sums over intermediate states, which derive ultimately from a resolution of the identity. The effect is to smear out the position of the atomic electron
 over a distance of order $\lambda_C$. We have
 \[H_{\mathrm{D}} = \frac{1}{8m^2} \nabla^2 V.\]
 The term $H_{\mathrm{SO}}$ arises because the electric field of nuclei generates a magnetic field in the rest frame of electron. We have
@@ -149,7 +149,7 @@ When spin of electron is taken into account,  these levels are $2n^2$ degenerate
 \[\langle n l' j' m'_j | H | n l j m_j\rangle\]
 vanishes unless $l'=l$, $j=j'$ and $m'_j = m_j$. The final results are
 \[\langle n l j m_j | H_{\mathrm{RKE}} | n l j m_j\rangle = -\alpha^2 E_n \frac{1}{n^2} \left(\frac{3}{4} - \frac{n}{l+\frac{1}{2}} \right),\]
-\[\langle n l j m_j | H_{D} | n l j m_j\rangle = -\alpha^2 E_n \frac{1}{n}\delta_{l0},\]
+\[\langle n l j m_j | H_{\rm D} | n l j m_j\rangle = -\alpha^2 E_n \frac{1}{n}\delta_{l0},\]
 \[\langle n l j m_j | H_{\mathrm{SO}} | n l j m_j\rangle = -\alpha^2 E_n \frac{1}{2n} \frac{j(j+1)-l(l+1)-\frac{3}{4}}{l(l+\frac{1}{2})(l+1)}.\]
 When we add them up to get the total energy shift due to the fine structure we find
 \[\Delta E_{\mathrm{FS}} = -\alpha^2 E_n \frac{1}{n^2} \left(\frac{3}{4} - \frac{n}{j+\frac{1}{2}} \right).\]
@@ -173,14 +173,14 @@ At last, we have
 \[H = H_a + H_{\mathrm{Z}} + H_{\mathrm{B}} + H_{\mathrm{FS}},\]
 where
 \[H_a = \frac{p^2}{2m} - \frac{e^2}{4\pi r} , \quad  H_{\mathrm{Z}} = \frac{e}{2m}(L_z + 2S_z)B , \quad H_{\mathrm{B}} = \frac{e^2}{8m}B^2(x^2+y^2).\]
-Suppose the typical energy of the term $H_{\mathrm{i}}$ is $E_{\mathrm{i}}$. Then we have $E_a \sim {me^4}/{32 n^2 \pi^2\hbar^2\epsilon_0^2}$, $E_z \sim {ne\hbar B}/{2m}$ and $E_{\mathrm{B}} \sim  {2n^4\pi^2 \epsilon_0^2 \hbar^4 B^2}/{m^3 e^2}$. 
-Thus
+Suppose the typical energy of the term $H_{\mathrm{i}}$ is $E_{\mathrm{i}}$. Then we have $E_a \sim {me^4}/{32 n^2 \pi^2\hbar^2\epsilon_0^2}$, $E_{\rm Z} \sim {ne\hbar B}/{2m}$ and $E_{\mathrm{B}} \sim  {2n^4\pi^2 \epsilon_0^2 \hbar^4 B^2}/{m^3 e^2}$,
+and so
 \[\frac{E_{\mathrm{Z}}}{E_a} \sim \frac{16\pi^2 n^3 \hbar^3 \epsilon_0^2}{m^2 e^3} B \sim \frac{n^3B}{2\times10^5 T},\]
 \[\frac{E_{\mathrm{B}}}{E_a} \sim \left[ \frac{8\pi^2 n^3 \hbar^3 \epsilon_0^2}{m^2 e^3} B\right]^2 \sim \left[ \frac{n^3B}{4\times10^5 T} \right]^2.\]
 In the previous section, we have derived that
 \[\frac{E_{\mathrm{FS}}}{E_a} \sim \frac{3\alpha^2}{4n^2} \sim \frac{1}{2.5\times10^4 n^2}.\]
 In the usual experimental condition, we have
-\[E_{\mathrm{B}} \ll E_z \ll E_a.\]
+\[E_{\mathrm{B}} \ll E_{\rm Z} \ll E_a.\]
 In the following discussion, we will neglect $E_{\mathrm{B}}$ term.
 But whether ${E_{\mathrm{FS}}} / {E_{\mathrm{Z}}}$ is much larger than $1$, much smaller than $1$ or close to $1$ depends on the $B$ and $n$.
 \\ \\
@@ -211,7 +211,8 @@ In the case of hydrogen, one should also consider the Lamb shift for a realistic
 \noindent
 The eigenvector of $H_a + H_{\mathrm{FS}}$ are $|nljm_j\rangle$ with eigenvalue $E_{nj}$. Up to the first order,the matrix elements we need have the form
 \[\langle n l' j m'_j | H_z | n l j m_j\rangle.\]
-Since $[H_{\mathrm{Z}},L^2] = 0$ and $[H_{\mathrm{Z}},J_z] = 0$, off-diagonal matrix element vanishes automatically.The energy shift is
+Since $[H_{\mathrm{Z}},L^2] = 0$ and $[H_{\mathrm{Z}},J_z] = 0$, off-diagonal matrix element vanishes automatically.
+The energy shift is
 \[\Delta E = \mu_{\mathrm{B}} B\langle n l j m_j | L_z + 2S_z | n l j m_j\rangle = g_{\mathrm{eff}} \mu_{\mathrm{B}} B m_j,\]
 where
 \[g_{\mathrm{eff}} = 1 + \frac{j(j+1)-l(l+1)+s(s+1)}{2j(j+1)}.\]
@@ -468,31 +469,31 @@ Consider the one-dimensional time independent Schrödinger equation
 We will look for solutions of the form
 \[\psi(x) = e^{iW(x)/\hbar}.\]
 Plugging this ansatz into the Schr\"{o}dinger equation leaves us with the differential equation
-\[i\hbar \frac{d^2W}{dx^2} - \left( \frac{dW}{dx} \right)^2 + p(x)^2 = 0,\]
-where $p(x)^2 = 2m(E-V(x))$.
+\[i\hbar \frac{d^2W}{dx^2} - \left( \frac{dW}{dx} \right)^2 + p^2(x) = 0,\]
+where $p^2 = 2m(E-V)$.
 Here we'll look for solutions where the second derivative is merely small, meaning
 \[\hbar \left| \frac{d^2W}{dx^2} \right| \ll \left| \frac{dW}{dx} \right|^2.\]
 We refer to this as the semi-classical limit. Roughly speaking, it can be thought of as the $\hbar \to 0$ limit. Indeed, mathematically, it makes sense to attempt to solve Schr\"{o}dinger using a power series in $\hbar$. 
 We treat $p(x)$ as the background potential which we will take to be $O(\hbar^0)$. We expand our solution as
 \[W(x) = W_0(x) + \hbar W_1(x) + \cdots\]
 Plugging this ansatz gives
-\[\left[-W'_0(x)^2 + p(x)^2 \right] + \hbar \left[ iW''_0(x) - 2W'_0(x)W'_1(x) \right] + O(\hbar^2) = 0.\]
+\[\left[-W'^2_0 + p^2 \right] + \hbar \left[ iW''_0 - 2W'_0W'_1 \right] + O(\hbar^2) = 0.\]
 We have the solution
 \[W_0(x) = \pm \int^x dx' p(x') , \quad W_1(x) = \frac{i}{2} \log p(x) + c.\]
 Putting these together gives us the WKB approximation to the wave function
 \[\psi(x) \approx \frac{A}{\sqrt{p(x)}} \exp \left( \pm \frac{i}{\hbar} \int^{x'} dx' p(x')\right).\]
 To leading order, our requirement reads
-\[\hbar \left| \frac{dp}{dx} \right| \ll |p(x)|^2  \Rightarrow \frac{d\lambda}{dx} \ll 2\pi,\]
+\[\hbar \left| \frac{dp}{dx} \right| \ll |p|^2  \Rightarrow \frac{d\lambda}{dx} \ll 2\pi,\]
 where $\lambda \equiv 2\pi \hbar / p$ is the de Broglie wavelength. This is the statement that the de Broglie wavelength of the particle does not change considerably over distances comparable to its wavelength.
 Alternatively, we can phrase this as a condition on the potential. We have
-\[\lambda(x) \left| \frac{dV}{dx} \right| \ll \frac{|p(x)|^2}{2m},\]
+\[\lambda \left| \frac{dV}{dx} \right| \ll \frac{|p|^2}{2m},\]
 which says that the change of the potential energy over a de Broglie wavelength should be much less than the kinetic energy.
 \\ \\
 The WKB approximation does provides a solution in regions where $E \gg V(x)$ and, correspondingly, $p(x)$ is real. This is the case in the middle of the potential, where
 the wave function oscillates. 
 The WKB approximation also provides a solutions when
 $E \ll V(x)$ , where $p(x)$ is imaginary. This is the case to the far left and far right, where the wave function suffers either exponential decay or growth
-\[\psi(x) \approx \frac{A}{2m(V(x)-E)^{1/4}} \exp \left( \pm \frac{1}{\hbar} \int^x dx' \sqrt{2m(V(x') - E)}\right) .\]
+\[\psi(x) \approx \frac{A}{2m(V-E)^{1/4}} \exp \left( \pm \frac{1}{\hbar} \int^x dx' \sqrt{2m(V - E)}\right) .\]
 The choice of $\pm$ is typically fixed by normalisability requirements.
 In the region near $E = V(x)$, the WKB approximation is never valid. 
 The point $x_0$ where $p(x_0) = 0$ is the classical turning point.
@@ -504,7 +505,7 @@ The Schr\"{o}dinger equation is then
 
 \subsection{A linear potential and the Airy function}
 To solve the equation above, we define the dimensionless position
-\[u \equiv (\frac{2mC}{\hbar^2})^{\frac{1}{3}} (x - x_0) \approx  (\frac{2m}{\hbar^2 C^2})^{\frac{1}{3}} (V - E).\]
+\[u \equiv \left(\frac{2mC}{\hbar^2}\right)^{\frac{1}{3}} (x - x_0) \approx  \left(\frac{2m}{\hbar^2 C^2}\right) ^{\frac{1}{3}} (V - E).\]
 Then the Schr\"{o}dinger equation becomes
 \[\frac{d^2\psi}{du^2} - u\psi = 0.\]
 This is known as the \href{http://mathworld.wolfram.com/AiryDifferentialEquation.html}{Airy equation}. The solution is the \href{http://mathworld.wolfram.com/AiryFunctions.html} {Airy function}, $\psi(u) = \mathrm{Ai}(u)$,
@@ -516,10 +517,10 @@ and
 \[\mathrm{Ai}(u) \sim \left( \frac{1}{\pi \sqrt{-u}} \right)^{1/2} \cos\left( \frac{2}{3} u\sqrt{-u} + \frac{\pi}{4}\right) , \quad u \ll 0.\]
 \\
 The main purpose in introducing the Airy function is to put it to work in the WKB approximation. The asymptotic behaviour is exactly what we need to match onto the WKB solution. First consider $u \ll 0$. Here $E > V (x)$ and we have the oscillatory solution. In this region, we have
-\[\mathrm{Ai}(x) \sim \left( \frac{(2mC\hbar)^{1/3}}{\pi \sqrt{2m(E-V(x))}} \right)^{1/2} \cos \left( \frac{1}{\hbar} \int_{x_0}^x dx' \mathop{\rm sgn}(C) \sqrt{2m(E-V(x'))} + \frac{\pi}{4} \right) .\]
+\[\mathrm{Ai}(x) \sim \left[ \frac{(2mC\hbar)^{1/3}}{\pi \sqrt{2m(E-V}} \right]^{1/2} \cos \left[ \frac{1}{\hbar} \int_{x_0}^x dx' \mathop{\rm sgn}(C) \sqrt{2m(E-V)} + \frac{\pi}{4} \right] .\]
 This takes the same oscillatory form as the WKB solution. The two solutions can be patched together simply by picking an appropriate normalisation factor and phase for the WKB solution.
 Similarly, in the region $u \gg 0$, the exponentially decaying form of the Airy function can be written as
-\[\mathrm{Ai}(x) \sim \frac{1}{2} \left( \frac{(2mC\hbar)^{1/3}}{\pi \sqrt{2m(V-E(x))}} \right)^{1/2} \exp \left( -\frac{1}{\hbar} \int_{x_0}^x dx' \mathop{\rm sgn}(C) \sqrt{2m(V(x') - E)} \right) .\]
+\[\mathrm{Ai}(x) \sim \frac{1}{2} \left[ \frac{(2mC\hbar)^{1/3}}{\pi \sqrt{2m(V-E)}} \right]^{1/2} \exp \left( -\frac{1}{\hbar} \int_{x_0}^x dx' \mathop{\rm sgn}(C) \sqrt{2m(V - E)} \right) .\]
 This too has the same form as the exponentially decaying WKB solution. This, then, is how we piece together solutions. In regions where $E > V(x)$, the WKB approximation gives oscillating solutions. 
 In regimes where $E < V(x)$, it gives exponentially decaying solutions. 
 The Airy function interpolates between these two regimes.
@@ -539,23 +540,23 @@ We first split the potential into three regions where the WKB approximation can 
 \end{itemize}
 We'll start in the left-most Region 1. Here the WKB
 approximation tells us that the solution dies exponentially as
-\[\psi_1(x) \approx \frac{A}{2m(V(x) - E)^{1/4}} \exp \left( -\frac{1}{\hbar} \int_{x}^a dx' \sqrt{2m(V(x')-E)} \right).\]
+\[\psi_1(x) \approx \frac{A}{2m(V - E)^{1/4}} \exp \left( -\frac{1}{\hbar} \int_{x}^a dx' \sqrt{2m(V-E)} \right).\]
 As we approach $x = a$, the potential takes the linear form and this coincides with the asymptotic form of the Airy function. We then follow this Airy function through to Region 2 where we have
-\[\psi_2(x) \approx \frac{2A}{2m(E - V(x))^{1/4}} \cos \left( \frac{1}{\hbar} \int_{a}^x dx' \sqrt{2m(V(x')-E)} - \frac{\pi}{4} \right).\]
+\[\psi_2(x) \approx \frac{2A}{2m(E - V)^{1/4}} \cos \left( \frac{1}{\hbar} \int_{a}^x dx' \sqrt{2m(V-E)} - \frac{\pi}{4} \right).\]
 The Airy function takes this form close to $x = a$ where $V(x)$ is linear. But we can extend this solution throughout Region 2 where it coincides with the WKB approximation.
 We now repeat this procedure to match Regions 2 an 3. When $x \gg b$, the WKB approximation tells us that the wave function is
-\[\psi_1(x) \approx \frac{A'}{2m(V(x) - E)^{1/4}} \exp \left( -\frac{1}{\hbar} \int_{b}^x dx' \sqrt{2m(V(x')-E)} \right).\]
+\[\psi_1(x) \approx \frac{A'}{2m(V - E)^{1/4}} \exp \left( -\frac{1}{\hbar} \int_{b}^x dx' \sqrt{2m(V-E)} \right).\]
 Matching to the Airy function across the turning point $x = b$, we have
-\[\psi_2(x) \approx \frac{2A'}{2m(E - V(x))^{1/4}} \cos \left( \frac{1}{\hbar} \int_{b}^x dx' \sqrt{2m(V(x')-E)} + \frac{\pi}{4} \right).\]
+\[\psi_2(x) \approx \frac{2A'}{2m(E - V)^{1/4}} \cos \left( \frac{1}{\hbar} \int_{b}^x dx' \sqrt{2m(V-E)} + \frac{\pi}{4} \right).\]
 We're left with two expressions for the wave function in Region 2.
 Clearly these must agree. Equating the two tells us that $|A| = |A'|$, but they may differ by a sign, since this can be compensated by the cos function. Insisting that the two cos functions agree, up to sign, gives us the condition
-\[\int_a^b dx' \sqrt{2m(E-V(x'))} = \left( n + \frac{1}{2} \right) \hbar \pi.\]
+\[\int_a^b dx' \sqrt{2m(E-V)} = \left( n + \frac{1}{2} \right) \hbar \pi.\]
 The WKB approximation underlies an important piece of history from the pre-Schr\"{o}dinger era of quantum mechanics. 
 We can rewrite the quantisation condition as
-\[\oint dx \; p(x) = \left( n + \frac{1}{2} \right) h , \quad h \equiv 2\pi \hbar ,\]
+\[\oint dx \; p = \left( n + \frac{1}{2} \right) h , \quad h \equiv 2\pi \hbar ,\]
 where $\oint$ means that we take a closed path in phase space which, in this one-dimensional example, is from $x_{\mathrm{min}}$ to $x_{\mathrm{max}}$ and back again.
 In the old days of quantum mechanics, Bohr and Sommerfeld introduced an ad-hoc method of quantisation. They suggested that one should impose the condition
-\[\oint dx \; p(x) = n h \]
+\[\oint dx \; p = n h \]
 with $n$ an integer. They didn't include the factor of $1/2$. They made this guess because it turns out to correctly describe the spectrum of the hydrogen atom.  The WKB approximation provides an a-posteriori justification of the Bohr-Sommerfeld quantisation rule.
 More generally, ``Bohr-Sommerfeld quantisation'' means packaging up a 2$d$-dimensional phase space of the system into small parcels of volume $h^d$ and assigning a quantum state to each. It is, at best, a crude approximation to the correct quantisation treatment.
 
@@ -623,7 +624,7 @@ A standard example of the Berry phase on the spin in a magnetic field can be fou
 
 \subsection{The Born-Oppenheimer approximation}
 The Born-Oppenhemier approximation is an approach to solving quantum mechanical problems in which there is a hierarchy of scales. 
-The standard example is the a bunch of nuclei, each with position $\bm{R}_{\alpha}$ mass $M_{\alpha}$ and charge $Z_{\alpha}$, interacting with a bunch of electrons, each with position $\bm{r}_i$ , mass $m$ and charge $-e$. 
+The standard example is a bunch of nuclei, each with position $\bm{R}_{\alpha}$ mass $M_{\alpha}$ and charge $Z_{\alpha}$, interacting with a bunch of electrons, each with position $\bm{r}_i$ , mass $m$ and charge $-e$. 
 The Hamiltonian is
 \[H = \sum_{\alpha} \frac{\nabla^2_{\alpha}}{2M_{\alpha}} + \sum_{i} \frac{\nabla^2_{i}}{2m} + \frac{e^2}{4\pi} \left(\sum_{ij} \frac{1}{|\bm{r}_i - \bm{r}_j|} + \sum_{\alpha \beta} \frac{Z_{\alpha} Z_{\beta}}{|\bm{R}_{\alpha} - \bm{R}_{\beta}|} - \sum_{i\alpha} \frac{Z_{\alpha}}{|\bm{r}_i - \bm{R}_{\alpha}|} \right).\]
 The hierarchy of scales in the Hamiltonian above arises because of the mass difference between the nuclei and the electrons. The nuclei are cumbersome and slow, while the

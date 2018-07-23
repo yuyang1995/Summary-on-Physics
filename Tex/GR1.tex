@@ -40,9 +40,9 @@ In mathematics, any vector space $V$ has a corresponding dual vector space (or j
 \[(\phi \otimes \psi)\otimes \xi = \phi \otimes (\psi \otimes \xi).\]
 \textbf{Tensor}
 \[V_s^r = V \otimes \cdots \otimes V \otimes V^* \otimes \cdots \otimes V^*;\]
-\[x=x^{i_1 \cdots i_r}_{\phantom{i_1 \cdots i_r} k_1 \cdots k_s} e_{i_1} \otimes \cdots \otimes e_{i_r} \otimes e^{*k_1} \otimes \cdots \otimes e^{*k_s};\]
-\[(x \otimes y)^{i_1 \cdots i_{r_1+r_2}}_{\phantom{i_1 \cdots i_{r_1+r_2}} k_1 \cdots k_{s_1+s_2}} = 
-x^{i_1 \cdots i_{r_1}}_{\phantom{i_1 \cdots i_{r_1}}k_1 \cdots k_{s_1}} \cdot y^{i_{r_1+1} \cdots i_{r_1+r_2}}_{\phantom{i_{r_1+1} \cdots i_{r_1+r_2}}k_{s_1+1} \cdots k_{s_1+s_2}}.\]
+\[x=\tensor{x}{^{i_1 \cdots i_r}_{k_1 \cdots k_s}} e_{i_1} \otimes \cdots \otimes e_{i_r} \otimes e^{*k_1} \otimes \cdots \otimes e^{*k_s};\]
+\[\tensor{(x \otimes y)}{^{i_1 \cdots i_{r_1+r_2}}_{k_1 \cdots k_{s_1+s_2}}} = 
+\tensor{x}{^{i_1 \cdots i_{r_1}}_{k_1 \cdots k_{s_1}}} \cdot \tensor{y}{^{i_{r_1+1} \cdots i_{r_1+r_2}}_{k_{s_1+1} \cdots k_{s_1+s_2}}}.\]
 \end{newdef}
 
 \begin{newdef}[Symmtric and antisymmetric tensor]
@@ -61,7 +61,7 @@ x^{i_1 \cdots i_{r_1}}_{\phantom{i_1 \cdots i_{r_1}}k_1 \cdots k_{s_1}} \cdot y^
 \begin{newdef}[Exterior vector space]
 \textbf{Exterior vector space}
 \[\Lambda^r(V) = A_r(T^r(V));\]
-\[\Lambda^0(V)=F \ \ \ \Lambda^1(V)=V.\]
+\[\Lambda^0(V)=F \quad \Lambda^1(V)=V.\]
 \textbf{Wedge product}
 \[\xi \wedge \eta \equiv \frac{(k+l)!}{k!l!}A_{k+l}(\xi \otimes \eta).\]
 \textbf{Pull-back mapping}
@@ -95,8 +95,8 @@ In differential geometry, the tangent bundle of a differentiable manifold $M$ is
 TM = \bigsqcup_{x \in M}T_xM = \bigcup_{x \in M} \{x\} \times T_xM = \bigcup_{x \in M}\{(x,y)| y \in T_xM \}
 .\]
 where $T_xM$ denotes the tangent space to $M$ at the point $x$. Therefore, an element of $TM$ can be thought of as a pair $(x,v)$ , where $x$ is a point in $M$ and $v$ is a tangent vector to $M$ at $x$. There is a natural projection $\pi : TM \to M$ defined by $\pi(x,v) = x$. This projection maps each tangent space $T_xM$ to the single point $x$. A section of $TM$ is a vector field on $M$, and the dual bundle to $TM$ is the cotangent bundle, which is the disjoint union of the cotangent spaces of $M$.\\
-\textbf{Cotangent bundle} $T^*M = \bigcup_{x \in M} T^*_{\phantom{*}x}M$\\
-\textbf{Tensor bundle} $T^r_sM = \bigcup_{x \in M} T^{r\phantom{x}}_{sx}M$\\
+\textbf{Cotangent bundle} $T^*M = \bigcup_{x \in M} T^*_xM$\\
+\textbf{Tensor bundle} $T^r_sM = \bigcup_{x \in M} T^{r}_{s\,x}M$\\
 \end{newdef}
 
 
@@ -142,14 +142,14 @@ Vector field induced by $\phi$: $X_p(f) = \langle \gamma_p , f \rangle$.
 \end{newprop}
 
 \begin{newdef}[Lie derivative]
-\[\mathcal{L}_{X}Y \equiv \lim_{t \to 0} \frac{(\phi_{-t})_*Y_{\phi_t(p)}- Y}{t} =[X,Y].\]
-\[\mathcal{L}_{X}f \equiv X(f).\]
+\[\mathscr{L}_{X}Y \equiv \lim_{t \to 0} \frac{(\phi_{-t})_*Y_{\phi_t(p)}- Y}{t} =[X,Y].\]
+\[\mathscr{L}_{X}f \equiv X(f).\]
 \end{newdef}
 
 \begin{newprop}
-\[\mathcal{L}_{X}(Y + \lambda Z) = \mathcal{L}_{X}Y + \lambda\mathcal{L}_{X}Z.\]
-\[\mathcal{L}_{X}(f \cdot Y) = \mathcal{L}_{X}(f) \cdot Y + f\mathcal{L}_{X}Y.\]
-\[\mathcal{L}_{X}([Y,Z]) = [\mathcal{L}_{X}Y,Z]+ [Y,\mathcal{L}_{X}Z].\]
+\[\mathscr{L}_{X}(Y + \lambda Z) = \mathscr{L}_{X}Y + \lambda\mathscr{L}_{X}Z.\]
+\[\mathscr{L}_{X}(f \cdot Y) = \mathscr{L}_{X}(f) \cdot Y + f\mathscr{L}_{X}Y.\]
+\[\mathscr{L}_{X}([Y,Z]) = [\mathscr{L}_{X}Y,Z]+ [Y,\mathscr{L}_{X}Z].\]
 \end{newprop}
 
 \begin{newthem}
@@ -197,20 +197,20 @@ If $S$ and $T$ are smooth tensor fields on $M$,\\
 (2)$\Phi_t(S \otimes T) = \Phi_tS \otimes \Phi_tT$.\\
 (3)$\Phi_t(C^a_b(S)) = C^a_b(\Phi_t(S))$, $C^a_b$ is a tag for contraction.\\
 Therefore, we can define the Lie derivative for smooth tensor field $\tau$ on $M$ as
-\[\mathcal{L}_{X}(\tau) = \lim_{t \to 0}\frac{\Phi_t(\tau)-\tau}{t}.\]
+\[\mathscr{L}_{X}(\tau) = \lim_{t \to 0}\frac{\Phi_t(\tau)-\tau}{t}.\]
 \end{newdef}
 
 \begin{newprop}
-\[\mathcal{L}_X(\tau_1+\lambda \tau_2) = \mathcal{L}_X \tau_1 + \lambda \mathcal{L}_X \tau_2.\]
-\[\mathcal{L}_X(\tau_1 \otimes \tau_2) = \mathcal{L}_X\tau_1 \otimes \tau_2 + \tau_1 \otimes \mathcal{L}_X \tau_2.\]
-\[C^r_s(\mathcal{L}_X \tau) = \mathcal{L}_X(C^r_s(\tau)).\]
-\[(\mathcal{L}_X \omega)(Y) = X(\omega(Y)) - \omega([X,Y]).\]
-\[\mathcal{L}_{[X,Y]} = \mathcal{L}_X \circ \mathcal{L}_Y - \mathcal{L}_Y \circ \mathcal{L}_X .\]
-\[\mathcal{L}_{X+Y} = \mathcal{L}_{X} + \mathcal{L}_{Y}.\]
+\[\mathscr{L}_X(\tau_1+\lambda \tau_2) = \mathscr{L}_X \tau_1 + \lambda \mathscr{L}_X \tau_2.\]
+\[\mathscr{L}_X(\tau_1 \otimes \tau_2) = \mathscr{L}_X\tau_1 \otimes \tau_2 + \tau_1 \otimes \mathscr{L}_X \tau_2.\]
+\[C^r_s(\mathscr{L}_X \tau) = \mathscr{L}_X(C^r_s(\tau)).\]
+\[(\mathscr{L}_X \omega)(Y) = X(\omega(Y)) - \omega([X,Y]).\]
+\[\mathscr{L}_{[X,Y]} = \mathscr{L}_X \circ \mathscr{L}_Y - \mathscr{L}_Y \circ \mathscr{L}_X .\]
+\[\mathscr{L}_{X+Y} = \mathscr{L}_{X} + \mathscr{L}_{Y}.\]
 \end{newprop}
 
 \begin{newprop}
-\[((\mathcal{L}_X \tau)|_U)^{\mu_1,\cdots,\mu_p}_{v_1,\cdots,v_q} = X^{\alpha} \partial_{\alpha} \tau^{\mu_1,\cdots,\mu_p}_{v_1,\cdots,v_q} - \sum_{i=1}^{p} \tau^{\mu_1,\cdots,\alpha,\cdots,\mu_p}_{v_1,\cdots,v_q} \partial_{\alpha} X^{\mu_i} + \sum_{j=1}^{q}\tau^{\mu_1,\cdots,\mu_p}_{v_1,\cdots,\alpha,\cdots,v_q} \partial_{v_j}X^{\alpha}.\]
+\[((\mathscr{L}_X \tau)|_U)^{\mu_1,\cdots,\mu_p}_{v_1,\cdots,v_q} = X^{\alpha} \partial_{\alpha} \tau^{\mu_1,\cdots,\mu_p}_{v_1,\cdots,v_q} - \sum_{i=1}^{p} \tau^{\mu_1,\cdots,\alpha,\cdots,\mu_p}_{v_1,\cdots,v_q} \partial_{\alpha} X^{\mu_i} + \sum_{j=1}^{q}\tau^{\mu_1,\cdots,\mu_p}_{v_1,\cdots,\alpha,\cdots,v_q} \partial_{v_j}X^{\alpha}.\]
 \end{newprop}
 
 \section{Exterior differential}
@@ -274,7 +274,7 @@ If there is an injective immersion submanifold $\phi:N \to U$ satisfying that $\
 
 \begin{newprop}[Partial differential equations and Pfaff equations]
 There is a set of first order partial differential equations
-\[\frac{\partial y^{\alpha}}{\partial x^i} = f^{\alpha}_{i}(x^1,\cdots,x^{m},y^1,\cdots,y^{n}) \ \ \ (1 \leq i \leq m,1 \leq \alpha \leq n).\]
+\[\frac{\partial y^{\alpha}}{\partial x^i} = f^{\alpha}_{i}(x^1,\cdots,x^{m},y^1,\cdots,y^{n}) \;\ (1 \leq i \leq m,1 \leq \alpha \leq n).\]
 $f^{\alpha}_{i}(x,y)$ is a smooth function on the open set $U \times V \subset R^m \times R^n$. The equations sets can be written as Pfaff equations on $U \times V$
 \[\omega^{\alpha} \equiv dy^{\alpha} - f^{\alpha}_{i}(x,y)dx^i = 0.\]
 If the partial differential equations have solution
@@ -528,7 +528,7 @@ At last, we have
 
 \begin{newprop}[Curvature tensor]
 If we denote that $\Omega_{ij} = \tensor{\Omega}{_i^k}g_{kj}$ and $R_{ijkl} = \tensor{R}{_i^h_{kl}} g_{hj}$, we will have that
-\[\Omega_{ij} + \Omega_{ji} = 0,\ \ \Omega_{ij} = d\omega_{ij} + \tensor{\omega}{_i^l} \wedge \omega_{jl},\ \ \Omega_{ij} = \frac{1}{2}R_{ijkl}du^k \wedge du^l.\]
+\[\Omega_{ij} + \Omega_{ji} = 0,\;\Omega_{ij} = d\omega_{ij} + \tensor{\omega}{_i^l} \wedge \omega_{jl},\;\Omega_{ij} = \frac{1}{2}R_{ijkl}du^k \wedge du^l.\]
 The properties of curvature tensor:
 \[R_{ijkl} = -R_{jikl} = -R_{ijlk}.\]
 \[R_{ijkl}+R_{iklj}+R_{iljk}=0.\]
@@ -700,7 +700,7 @@ and
 where $\bar{g}$ is the metric of the space in new coordinate system.
 
 \chapter{Geometry of Space-time}
-\section{Fundamentals}
+\section{Some basic concepts on spacetime}
 \subsection{Hodge dual operator}
 \begin{newdef}[Hodge dual operator]
 The Hodge star operator on a vector space $V$ with a non-degenerate symmetric bilinear form (herein referred to as the inner product) is a linear operator on the exterior algebra of $V$, mapping $k$-vectors to ($n-k$)-vectors where $n = \text{dim} \ V$, for $ 0 \leq k \leq n$. It has the following property, which defines it completely: given two $k$-vectors $\alpha,\beta$,
@@ -737,21 +737,21 @@ where $\eta$ is an arbitrary antisymmetric tensor in $k$ indices.
 \item In a $n$ dimensional manifold with torsion-free affine connection, the number of independent components of Riemann tensor is \[\frac{n^3(n-1)}{2} - \frac{n^2(n-1)(n-2)}{6} = \frac{(n^2-1)n^2}{3}.\]
 In a $n$ dimensional Riemann manifold,  the number of independent components of Riemann tensor is \[\left[\frac{n(n-1)}{2}\right]^2 -\frac{n^2(n-1)(n-2)}{6} = \frac{(n^2-1)n^2}{12} .\]
 \item  The double dual of Riemann tensor
-\[\bar{G}^{\alpha \beta}_{\phantom{\alpha \beta} \gamma \delta} = \frac{1}{2} \tilde{\epsilon}^{\alpha \beta \mu \nu} R_{\mu \nu}^{\phantom{\mu \nu} \rho \sigma} \frac{1}{2} \tilde{\epsilon}_{\rho \sigma \gamma \delta} = -\frac{1}{4} \delta^{\alpha \beta \mu \nu}_{\rho \sigma \gamma \delta} R_{\mu \nu}^{\phantom{\mu \nu} \rho \sigma} .\]
+\[\tensor{\bar{G}}{^{\alpha \beta}_{\gamma \delta}} = \frac{1}{2} \tilde{\epsilon}^{\alpha \beta \mu \nu} \tensor{R}{_{\mu \nu}^{\rho \sigma}} \frac{1}{2} \tilde{\epsilon}_{\rho \sigma \gamma \delta} = -\frac{1}{4} \delta^{\alpha \beta \mu \nu}_{\rho \sigma \gamma \delta} \tensor{R}{_{\mu \nu}^{ \rho \sigma}}.\]
 contains precisely the same amount of information as
 Riemann tensor, and satisfies precisely the same set of symmetries.
 \item The Einstein curvature tensor, which is symmetric
-\[G^{\beta}_{\phantom{\beta}\delta} = \bar{G}^{\mu \beta}_{\phantom{\mu \beta} \mu \delta} , \quad G_{\beta \delta}=G_{\delta \beta}.\]
+\[\tensor{G}{^{\beta}_{\delta}} = \tensor{\bar{G}}{^{\mu \beta}_{\mu \delta}}, \quad G_{\beta \delta}=G_{\delta \beta}.\]
 \item The Bianchi identity takes a particularly simple form when rewritten in Bianchi identities terms of the double dual $\bar{G}$:
-\[\bar{G}^{\alpha \beta \phantom{\gamma \delta};\delta}_{\phantom{\alpha \beta} \gamma \delta} = 0,\]
+\[\tensor{\bar{G}}{^{\alpha \beta }_{\gamma \delta}^{;\delta}} = 0,\]
 and it has the obvious consequence
-\[G_{\beta \delta}^{\phantom{\beta \delta};\delta} = 0.\]
+\[\tensor{G}{_{\beta \delta}^{;\delta}} = 0.\]
 \item The Ricci curvature tensor, which is symmetric, and the curvature scalar
-\[R^{\beta}_{\phantom{\beta}\delta} = R^{\mu \beta}_{\phantom{\mu \beta} \mu \delta} , \quad R_{\beta \delta}=R_{\delta \beta}, \quad R = R^{\beta}_{\phantom{\beta}\beta},\]
+\[\tensor{R}{^{\beta}_{\delta}} = \tensor{R}{^{\mu \beta}_{\mu \delta}} , \quad R_{\beta \delta}=R_{\delta \beta}, \quad R = \tensor{R}{^{\beta}_{\beta}},\]
 which are related to the Einstein tensor by 
-\[G^{\beta}_{\phantom{\beta}\delta} =  R^{\beta}_{\phantom{\beta}\delta} - \frac{1}{2} \delta^{\beta}_{\delta}R.\]
+\[\tensor{G}{^{\beta}_{\delta}} =  \tensor{R}{^{\beta}_{\delta}} - \frac{1}{2} \delta^{\beta}_{\delta}R.\]
 \item The Weyl conformal tensor
-\[C^{\alpha \beta}_{\phantom{\alpha \beta} \gamma \delta} = R^{\alpha \beta}_{\phantom{\alpha \beta} \gamma \delta} -2 \delta^{[\alpha}_{\phantom{[\alpha}[\gamma} R^{\beta]}_{\phantom{\beta]}\delta]} + \frac{1}{3} \delta^{[\alpha}_{\phantom{[\alpha}[\gamma} \delta^{\beta]}_{\phantom{\beta]}\delta]} R \]
+\[\tensor{C}{^{\alpha \beta}_{ \gamma \delta}} = \tensor{R}{^{\alpha \beta}_{\gamma \delta}} -2 \tensor{\delta}{^{[\alpha}_{[\gamma}} \tensor{R}{^{\beta]}_{\delta]}} + \frac{1}{3} \tensor{\delta}{^{[\alpha}_{[\gamma}} \tensor{\delta}{^{\beta]}_{\delta]}} R \]
 possesses the same symmetries as the Riemann tensor. 
 Weyl tensor is completely ``trace-free''; i.e., that
 contraction of $C_{\alpha \beta \gamma \delta}$ on any pair of slots vanishes. Thus, $C_{\alpha \beta \gamma \delta}$ can be regarded as the trace-free part of Riemann, and $R_{\alpha \beta}$ can be regarded as the trace of Riemann. Riemann is determined entirely by its trace-free part $C_{\alpha \beta \gamma \delta}$ and
@@ -760,7 +760,7 @@ its trace $R_{\alpha \beta}$.
 
 \subsection{Killing vector}
 A vector filed that satisfies the Killing equation
-\[\mathcal{L}_{\xi}g = 0.\]
+\[\mathscr{L}_{\xi}g = 0.\]
 is called a Killing vector field; it keeps the metric invariant and therefore corresponds to a space-time symmetry. A few lines of algebra can show that it is equivalent to define killing vector field by
 \[\xi_{\mu;\nu} + \xi_{\nu;\mu} = 0.\]
 Derivatives of killing vectors can be related to Riemann tensor by
@@ -769,7 +769,7 @@ This shows that from the value of $\xi^{\mu}$ and $\xi^{\mu}_{;\nu}$ at a given 
 this is at most $10$ Killing vectors, which is precisely the dimension of the Poincare group of Minkowski space.
 \\ \\
 A space-time enjoying the maximum number of Killing vector fields is called a maximally symmetric space-time. It can be shown from the Killing equations the Riemann tensor must then satisfy
-\[R^{\rho}_{\sigma\nu\nu} = \frac{R}{N(N-1)} (\delta^{\rho}_{\mu}g_{\sigma\nu} - \delta^{\rho}_{\nu}g_{\sigma\mu}).\]
+\[R^{\rho}_{\sigma\mu\nu} = \frac{R}{N(N-1)} (\delta^{\rho}_{\mu}g_{\sigma\nu} - \delta^{\rho}_{\nu}g_{\sigma\mu}).\]
 After contraction, we have
 \[R_{\sigma\nu} = \frac{R}{N}g_{\sigma\nu}.\]
 Also, the Ricci scalar must be a constant. Maximally symmetric spaces are thus spaces of constant curvature. 
@@ -779,7 +779,7 @@ Minkowski , de Sitter and anti-de Sitter.
 Now, consider a geodesic with tangent vector $u^{\mu}$. We have
 \[u^{\nu}(u^{\mu}\xi_{\mu})_{;\nu} = 0.\]
 Therefore, the quantity $u^{\mu}\xi_{\mu}$ is constant along the trajectory.
-Similarly, if $T^{\mu\nu}_{\phantom{xx} ;\nu} = 0$ and $T^{\mu\nu}=T^{\nu\mu}$, we have
+Similarly, if $\tensor{T}{^{\mu\nu}_{;\nu}} = 0$ and $T^{\mu\nu}=T^{\nu\mu}$, we have
 \[(T^{\mu\nu}\xi_{\nu})_{;\mu} = 0.\]
 This relation has an important implication. Define $I^{\mu} \equiv T^{\mu\nu}\xi_{\nu}$. Gauss-Stokes theorem implies that
 \[\oint_{\partial V} I^{\mu}n_{\mu} \sqrt{h}d^3y = 0.\]
@@ -814,7 +814,7 @@ are a natural way of identifying the event $\mathcal{P}$. These are the coordina
 \end{enumerate}
 \noindent
 Along the world line of observer:
-\[\frac{\partial}{\partial x^{\hat{\alpha}}} = \bm{e}_{\hat{\alpha}}, \ \ g_{\hat{\alpha} \hat{\beta}} = \bm{e}_{\hat{\alpha}} \cdot \bm{e}_{\hat{\beta}} = \eta_{\hat{\alpha}\hat{\beta}}.\]
+\[\frac{\partial}{\partial x^{\hat{\alpha}}} = \bm{e}_{\hat{\alpha}}, \;g_{\hat{\alpha} \hat{\beta}} = \bm{e}_{\hat{\alpha}} \cdot \bm{e}_{\hat{\beta}} = \eta_{\hat{\alpha}\hat{\beta}}.\]
 \[\Gamma^{\hat{0}}_{\hat{j} \hat{0}} = \Gamma^{\hat{j}}_{\hat{0} \hat{0}} = a^{\hat{j}}
 , \quad \Gamma^{\hat{j}}_{\hat{k} \hat{0}} = -\omega^{\hat{i}} \epsilon_{0 \hat{i} \hat{j} \hat{k}}, \quad \Gamma^{\hat{\alpha}}_{\hat{j} \hat{k}} = 0 .\]
 \[g_{\hat{\alpha} \hat{\beta},\hat{0}} = 0, \quad g_{\hat{j} \hat{k},\hat{l}} = 0, \quad
@@ -856,10 +856,10 @@ The completeness relation can be written as
 \subsection{Integration on hypersurfaces}
 \noindent
 The positive volume element of the whole space time is $dx^{0} \wedge \cdots \wedge dx^{m-1}$, the positive volume element of the hypersurfaces is $dy^{1} \wedge \cdots \wedge dy^{m-1}$.
-Suppose that the coordinate in hypersurfaces is compatible with the  coordinate of the whole space-time, which means that $-dy^{m} \wedge dy^1 \wedge \cdots \wedge dy^{m-1} $ has the same orientation as $dx^0 \wedge \cdots \wedge dx^{m-1}$. Then we have that
-\[\tilde{\epsilon}_{\alpha_{m} \alpha_{1} \cdots \alpha_{m-1}} \frac{\partial x^{\alpha_m}}{\partial y^m} e_1^{\alpha_1} \cdots e_{m-1}^{\alpha_{m-1}} < 0.\]
-If we demand that the direction of $n^{\alpha}$ is the opposite of $\frac{\partial x^{\alpha}}{\partial y^m}$, then we have
-\[\tilde{\epsilon}_{\alpha_{m} \alpha_{1} \cdots \alpha_{m-1}} n^{\alpha_m} e_1^{\alpha_1} \cdots e_{m-1}^{\alpha_{m-1}} > 0.\]
+Suppose that the coordinate in hypersurfaces is compatible with the  coordinate of the whole space-time, which means that $-dy^{\rm in} \wedge dy^1 \wedge \cdots \wedge dy^{m-1} $ has the same orientation as $dx^0 \wedge \cdots \wedge dx^{m-1}$. Then we have that
+\[\tilde{\epsilon}_{\alpha_{\rm in} \alpha_{1} \cdots \alpha_{m-1}} \frac{\partial x^{\alpha_{\rm in}}}{\partial y^{\rm in}} e_1^{\alpha_1} \cdots e_{m-1}^{\alpha_{m-1}} < 0.\]
+If we demand that the direction of $n^{\alpha}$ is the opposite of $\frac{\partial x^{\alpha}}{\partial y^{\rm in}}$, then we have
+\[\tilde{\epsilon}_{\alpha_{\rm in} \alpha_{1} \cdots \alpha_{m-1}} n^{\alpha_{\rm in}} e_1^{\alpha_1} \cdots e_{m-1}^{\alpha_{m-1}} > 0.\]
 
 \subsubsection{Surface element}
 \noindent
@@ -875,7 +875,7 @@ We can demonstrate that
 \subsubsection{Element of two-surface}
 \noindent
 Within the hypersurface $\Sigma$, we can define a two-surface $S$, which is parametrized with $y^a = y^a(\theta_A)$, then
-\[e_A^a = \frac{\partial y^a}{\partial \theta^A}, \ \ e_A^{\alpha} = \frac{\partial x^{\alpha}}{\partial \theta^{A}} = e_a^{\alpha} e_A^a ;\]
+\[e_A^a = \frac{\partial y^a}{\partial \theta^A}, \;e_A^{\alpha} = \frac{\partial x^{\alpha}}{\partial \theta^{A}} = e_a^{\alpha} e_A^a ;\]
 \[\sigma_{AB} = h_{AB}e_A^a e_B^b = g_{\alpha \beta} e_A^{\alpha} e_B^{\beta};\]
 \[h^{ab} = \epsilon_r r^a r^b + \sigma^{AB} e_A^a e_B^b;\]
 \[g^{\alpha \beta} = \epsilon_n n^{\alpha} n^{\beta} + \epsilon_r r^{\alpha} r^{\beta} + \sigma^{AB} e_A^{\alpha} e_B^{\beta}.\]
@@ -894,42 +894,56 @@ Linear algebra theory tells us that
 Then we can deduce that
 \[\frac{\partial g}{\partial x^{\mu}} = gg^{\alpha\beta} g_{\alpha\beta,\mu}.\]
 If $A^{\mu}$ is a vector, we have
-\[A^{\mu}_{;\mu}\sqrt{-g} = (A^{\mu}\sqrt{-g})_{,\mu}.\]
+\[ \tensor{A}{^{\mu}_{;\mu}}\sqrt{-g} = (A^{\mu}\sqrt{-g})_{,\mu}.\]
 If $B^{\mu\nu}$ is an antisymmetric tensor, we have
-\[B^{\mu\nu}_{;\nu}\sqrt{-g} = (B^{\nu\mu}\sqrt{-g})_{,\m\nu}.\]
+\[\tensor{B}{^{\mu\nu}_{;\nu}}\sqrt{-g} = (B^{\mu\nu}\sqrt{-g})_{,\m\nu}.\]
 Apply the general Stokes theorem in differential geometry,
 \[\int_{M} d\omega = \int_{\partial M} i^* \omega.\]
 and we can derive the following theorem:\\
 
 \begin{newthem}[Gauss-Stokes theorem]
 \begin{enumerate} 
-\item \[\int_{\mathcal{V}} A^{\alpha}_{;\alpha} \sqrt{-g} dx^4 = \oint_{\partial \mathcal{V}} A^{\alpha} d\Sigma_{\alpha} = \oint_{\partial \mathcal{V}} \epsilon A^{\alpha} n_{\alpha} \sqrt{h} dy^3.\]
-\item \[\int_{\Sigma} B^{\alpha \beta}_{\phantom{\alpha \beta};\beta} d\Sigma_{\alpha} = \frac{1}{2}\oint_{\partial \Sigma} B^{\alpha \beta} dS_{\alpha \beta} = \oint_{\partial \Sigma} \epsilon_n \epsilon_r B^{\alpha \beta} n_{\alpha} r_{\beta} \sqrt{\sigma} d\theta^2.\]
+\item \[\int_{\mathcal{V}} \tensor{A}{^{\alpha}_{;\alpha}} \sqrt{-g} dx^4 = \oint_{\partial \mathcal{V}} A^{\alpha} d\Sigma_{\alpha} = \oint_{\partial \mathcal{V}} \epsilon A^{\alpha} n_{\alpha} \sqrt{h} d^3y.\]
+\item \[\int_{\Sigma} \tensor{B}{^{\alpha \beta}_{;\beta}} d\Sigma_{\alpha} = \frac{1}{2}\oint_{\partial \Sigma} B^{\alpha \beta} dS_{\alpha \beta} = \oint_{\partial \Sigma} \epsilon_n \epsilon_r B^{\alpha \beta} n_{\alpha} r_{\beta} \sqrt{\sigma} d^2\theta.\]
 \end{enumerate}
 \end{newthem}
 
 \subsection{Differentiation of tangent vector fields}
 \subsubsection{Tangent tensor field}
+Given a hypersurface $\Sigma$, the tensor field $A^{\alpha\beta\cdots}$ that are defined only on $\Sigma$ and wich are purely tangent to the hypersurface admit the following decomposition:
 \[A^{\alpha \beta \cdots} = A^{ab\cdots} e_a^{\alpha} e_b^{\beta} \cdots\]
+We can show that
 \[A_{\alpha \beta \cdots} e_a^{\alpha} e_b^{\beta} \cdots = A_{ab\cdots} = h_{am} h_{bn} \cdots A^{mn\cdots}.\]
-\subsubsection{Projection tensor}
-\[h^{\alpha \beta} \equiv h^{ab}e_a^{\alpha} e_b^{\beta} = g^{\alpha \beta} - \epsilon n^{\alpha} n^{\beta}\]
+
 \subsubsection{Intrinsic covariant derivative}
-\[A_{a|b} \equiv A_{\alpha;\beta} e_a^{\alpha} e_b^{\beta} = A_{a,b} - \Gamma^c_{ab}A_c,\]
+Suppose $A_{a}$ is a vector field on the surface, then we define the covariant derivative of $A_{a}$ as
+\[A_{a|b} \equiv  \frac{D A_{\alpha}}{D y^b} e_a^{\alpha} = A_{\alpha;\beta}e_a^{\alpha} e_b^{\beta},\]
+where $A^{\alpha} = A^a e_a^{\alpha}$.
+We can demonstrate that
+\[A_{a|b} = A_{a,b} - \Gamma^c_{ab}A_c,\]
 where the connection $\Gamma^c_{ab}$ is compatible with $h_{ab}$.
+
 \subsubsection{Extrinsic curvature}
-\[K_{ab} \equiv n_{\alpha;\beta}e_a^{\alpha} e_b^{\beta}.\]
-\[A^{\alpha}_{;\beta} e_b^{\beta} = A^a_{|b} e_a^{\alpha} - \epsilon A^a K_{ab}n^{\alpha}.\]
+The extrinsic curvature of the hypersurface is defined as
+\[K_{ab} \equiv \frac{Dn_{\alpha}}{Dy^b}e_a^{\alpha} = \tensor{n}{_{\alpha;\beta}} e_a^{\alpha} e_b^{\beta}.\]
+In terms of this, we have
+\[\tensor{A}{^{\alpha}_{;\beta}} e_b^{\beta} = \tensor{A}{^a_{|b}} e_a^{\alpha} - \epsilon A^a K_{ab}n^{\alpha}.\]
+We note that if $e_a^{\alpha}$ is substituted is place of $A^{\alpha}$, then we can obtain
 \[e^{\alpha}_{a;\beta} e_b^{\beta} = \Gamma^c_{ab}e_c^{\alpha} - \epsilon K_{ab}n^{\alpha}.\]
-\[K_{ab} = \frac{1}{2}(\mathcal{L}_n g_{\alpha \beta})e_a^{\alpha} e_b^{\beta}.\]
-\[K \equiv h^{ab}K_{ab} = n^{\alpha}_{;\alpha}.\]
+This is know as Gauss-Weingarten equation. We can prove that $K_{ab}$ is a symmetric tensor. Thus, we have
+\[K_{ab} = \frac{1}{2}(\mathscr{L}_n g_{\alpha \beta})e_a^{\alpha} e_b^{\beta}.\]
+We also note the notation
+\[K \equiv h^{ab}K_{ab} = \tensor{n}{^{\alpha}_{;\alpha}}.\]
+Finally, we have the following Gauss-Codazzi theorem, uncovering the relation between intrinsic and extrinsic curvature of the hypersurface. The proof can be found in section 3.5 of \emph{The mathematics of black hole mechanics (Eric Poisson)}.
+
 
 \begin{newthem}[Gauss-Codazzi theorem]
 \begin{enumerate}
-\item \[R^{\mu}_{\alpha \beta \gamma} e_a^{\alpha} e_b^{\beta} e_c^{\gamma} = R^m_{abc} e_m^{\mu} + \epsilon (K_{ab|c} - K_{ac|b})n^{\mu} + \epsilon K_{ab} n^{\mu}_{;\gamma}e_c^{\gamma} - \epsilon K_{ac} n^{\mu}_{;\beta}e_b^{\beta}.\]
+\item \[\tensor{R}{^{\mu}_{\alpha \beta \gamma}} e_a^{\alpha} e_b^{\beta} e_c^{\gamma} 
+= \tensor[^{(3)}]{R}{^m_{abc}} e_m^{\mu} + \epsilon (K_{ab|c} - K_{ac|b})n^{\mu} + \epsilon K_{ab} \tensor{n}{^{\mu}_{;\gamma}} e_c^{\gamma} - \epsilon K_{ac} \tensor{n}{^{\mu}_{;\beta}} e_b^{\beta}.\]
 \item \[-2\epsilon G_{\alpha \beta} n^{\alpha} n^{\beta} = \tensor[^3]{R}{} + \epsilon(K^{ab}K_{ab}-K^2).\]
-\[G_{\alpha \beta} e_a^{\alpha}n^{\beta} = K^b_{a|b} - K_{,a}.\]
-\item \[R = \tensor[^3]{R}{} + \epsilon(K^2-K^{ab}K_{ab}) + 2\epsilon(n^{\alpha}_{;\beta}n^{\beta}-n^{\alpha}n^{\beta}_{;\beta})_{;\alpha}.\]
+\[G_{\alpha \beta} e_a^{\alpha}n^{\beta} = \tensor{K}{^b_{a|b}} - K_{,a}.\]
+\item \[R = \tensor[^3]{R}{} + \epsilon(K^2-K^{ab}K_{ab}) + 2\epsilon(\tensor{n}{^{\alpha}_{;\beta}} n^{\beta}-n^{\alpha} \tensor{n}{^{\beta}_{;\beta}})_{;\alpha}.\]
 \end{enumerate}
 \end{newthem}
 
@@ -946,8 +960,11 @@ where the connection $\Gamma^c_{ab}$ is compatible with $h_{ab}$.
 
 \section{Lagrangian formulation}
 \subsection{Mechanics}
-\[S[q] = \int_{\tau_1}^{\tau_2} L(x^{\alpha},\frac{dx^{\alpha}}{d\tau}) d\tau.\]
-\[\delta x^{\alpha}(\tau_1)=0, \delta x^{\alpha}(\tau_2)=0.\]
+Given the action
+\[S[q] = \int_{\tau_1}^{\tau_2} L(x^{\alpha},\frac{dx^{\alpha}}{d\tau}) d\tau\]
+and boundary conditions
+\[\delta x^{\alpha}(\tau_1)=0, \delta x^{\alpha}(\tau_2)=0,\]
+the variation principle gives
 \[\delta S = 0 \Rightarrow \frac{d}{d\tau} \frac{\partial L}{\partial u^{\alpha}} - \frac{\partial L}{\partial x^{\alpha}}=0.\]
 \begin{example}
 \[L = -m(-g_{\mu\nu} u^{\mu} u^{\nu})^{1/2} + e A_{\mu} u^{\mu}.\]
@@ -956,35 +973,45 @@ where the connection $\Gamma^c_{ab}$ is compatible with $h_{ab}$.
 \end{example}
 
 \subsection{Field Theory}
-\[S[q] = \int_{\mathcal{V}} \mathcal{L}(q,q_{\alpha})\sqrt{-g} d^4x.\]
-\[\delta q|_{\partial \mathcal{V}} = 0.\]
+Given the action
+\[S[q] = \int_{\mathcal{V}} \mathcal{L}(q,q_{\alpha})\sqrt{-g} d^4x\]
+and boundary conditions
+\[\delta q|_{\partial \mathcal{V}} = 0,\]
+the variation principle gives
 \[\delta S = 0 \Rightarrow \nabla_{\alpha} (\frac{\partial \mathcal{L}}{\partial q_{,\alpha}}) - \frac{\partial \mathcal{L}}{\partial q} = 0.\]
 \begin{example}
 \[\mathcal{L} = -\frac{1}{4} F^{\mu \nu} F_{\mu \nu} + A_{\mu} j^{\mu}.\]
 \[\Downarrow\]
-\[F^{\mu \nu}_{\phantom{\mu \nu} ;\nu} = j^{\mu}.\]
+\[\tensor{F}{^{\mu \nu}_{;\nu}} = j^{\mu}.\]
 \end{example}
 
 \subsection{General relativity}
-\[S_{H}[g] = \frac{1}{16\pi} \int_{\mathcal{V}} R \sqrt{-g} d^4 x.\]
-\[S_{B}[g] = \frac{1}{8 \pi} \oint_{\partial \mathcal{V}} \epsilon K |h|^{\frac{1}{2}} d^3 y.\]
-\[S_0 = \frac{1}{8\pi} \oint_{\partial \mathcal{V}} \epsilon K_0 |h|^{\frac{1}{2}} d^3 y.\]
-\[S_M[\phi;g] = \int_{\partial \mathcal{V}} \mathcal{L}(\phi,\phi_{,\alpha};g_{\alpha \beta}) \sqrt{-g} d^4 x.\]
-\subsubsection{Variation of Hilbert term}
+The action of general relativity is composed of Hilbert term, boundary term, nondynamical term and matter term.
+\begin{eqnarray}
+    S_{H}[g] &=& \frac{1}{16\pi} \int_{\mathcal{V}} R \sqrt{-g} d^4 x; \nonumber \\
+    S_{B}[g] &=& \frac{1}{8 \pi} \oint_{\partial \mathcal{V}} \epsilon K |h|^{\frac{1}{2}} d^3 y ; \nonumber \\
+    S_0 &=& \frac{1}{8\pi} \oint_{\partial \mathcal{V}} \epsilon K_0 |h|^{\frac{1}{2}} d^3 y ; \nonumber \\
+    S_M[\phi;g] &=& \int_{\partial \mathcal{V}} \mathcal{L}(\phi,\phi_{,\alpha};g_{\alpha \beta}) \sqrt{-g} d^4 x . \nonumber
+\end{eqnarray}
+Here $K_0$ is the extrinsic curvature of $\partial \mathcal{V}$ embedded in flat space-time.
+The variation of Hilbert term is
 \[(16 \pi) \delta S_H = \int_{\mathcal{V}} G_{\alpha \beta} \delta g^{\alpha \beta} \sqrt{-g} d^4 x - \oint_{\partial \mathcal{V}} \epsilon h^{\alpha \beta} \delta g_{\alpha \beta, \mu} n^{\mu} |h|^{\frac{1}{2}} d^3 y.\]
-\subsubsection{Variation of boundary term}
+The variation of boundary term is
 \[16\pi \delta S_B = \oint_{\partial \mathcal{V}} \epsilon h^{\alpha \beta} \delta g_{\alpha \beta, \mu} n^{\mu} |h|^{\frac{1}{2}} d^3 y .\]
-\subsubsection{Variation of matter action}
+The variation of nondynamical tern is zero. It is used to eliminate the infinity in the boundary term.
+The variation of matter term is
 \[\delta S_M = \int_{\mathcal{V}} \left( \frac{\partial \mathcal{L}}{\partial g^{\alpha \beta}} - \frac{1}{2} \mathcal{L} g_{\alpha \beta} \right) \delta g^{\alpha \beta} \sqrt{-g} d^4 x.\]
 Define
 \[T_{\alpha \beta} \equiv -2 \frac{\partial \mathcal{L}}{\partial g^{\alpha \beta}} + \mathcal{L} g_{\alpha \beta}.\]
+Now the variation principle gives the Einstein equation
+\begin{equation}
+    \bm{G} = 8\pi \bm{T}.
+\end{equation}
 \begin{example}
 \[\mathcal{L} = -\frac{1}{4} F^{\mu \nu}F_{\mu \nu}.\]
 \[\Downarrow\]
-\[T_{\alpha \beta} = F_{\mu \alpha} F^{\mu}_{\phantom{\mu} \beta} - \frac{1}{4} F^{\mu \nu} F_{\mu \nu} g_{\alpha \beta}.\]
+\[T_{\alpha \beta} = F_{\mu \alpha} \tensor{F}{^{\mu}_{ \beta}} - \frac{1}{4} F^{\mu \nu} F_{\mu \nu} g_{\alpha \beta}.\]
 \end{example}
-\subsubsection{Nondynamical term}
-$K_0 = $ extrinsic curvature of $\partial \mathcal{V}$ embedded in flat space-time.
 
 \section{Hamiltonian formulation}
 \subsection{3+1 decomposition}
@@ -1006,13 +1033,13 @@ $K_0 = $ extrinsic curvature of $\partial \mathcal{V}$ embedded in flat space-ti
 The space-time is foliated by spacelike hypersurfaces $\Sigma_t$ that is described by scalar function $t(x^{\alpha})$. $t$ is a single valued function and the unit normal to the hypersurfaces $n_{\alpha} \propto \partial_{\alpha} t$ is a future directed timelike vector field.
 \\ \\
 Consider a congruence of curves $\gamma$ intersecting $\Sigma_t$. We use $t$ as a parameter on the curves and the vector $t^{\alpha}$ is tangent to the congruence (so, $t^{\alpha} \partial_{\alpha}t = 1$).Install coordinates $y^a$ on $\Sigma_t$ and impose $y^a(P'') = y^a(P') = y^a(P)$, so $y^a$ is held constant on each member of the congruence. This construction defines a coordinate system $(t,y^a)$ in $\mathcal{V}$.\\
-\subsubsection{base vector}
-\[t^{\alpha} = \left( \frac{\partial x^{\alpha}}{\partial t}\right)_{y^a}, \ \ \ \ e_a^{\alpha} = \left(\frac{\partial x^{\alpha}}{\partial y^a} \right)_t, \ \ \ \ \mathcal{L}_t e_a^{\alpha} = 0.\]
-\subsubsection{Normal vector}
-\[n_{\alpha} = -N \partial_{\alpha}t, \ \ \ \ n_{\alpha} e_a^{\alpha} = 0.\]
-\subsubsection{Decomposition of $t^{\alpha}$}
+Base vectors of the frame $(t, y^a)$ are given by
+\[t^{\alpha} = \left( \frac{\partial x^{\alpha}}{\partial t}\right)_{y^a}, \quad e_a^{\alpha} = \left(\frac{\partial x^{\alpha}}{\partial y^a} \right)_t, \quad \mathscr{L}_t e_a^{\alpha} = 0.\]
+The normal vector of the hypersurface is
+\[n_{\alpha} = -N \partial_{\alpha}t, \quad n_{\alpha} e_a^{\alpha} = 0.\]
+The base vector $t^{\alpha}$ can be decomposed as
 \[t^{\alpha} = N n^{\alpha} + N^a e_a^{\alpha}.\]
-\subsubsection{Metric}
+The metric of the space is
 \begin{eqnarray}
 ds^2 &=& g_{\alpha \beta} dx^{\alpha} dx^{\beta} \nonumber \\
 &=& g_{\alpha \beta} (t^{\alpha} dt + e_a^{\alpha}dy^a) (t^{\beta} dt + e_b^{\beta}dy^{b}) \nonumber \\
@@ -1021,31 +1048,40 @@ ds^2 &=& g_{\alpha \beta} dx^{\alpha} dx^{\beta} \nonumber \\
 \end{eqnarray}
 
 \subsection{Field theory}
-\[\dot{q} = \frac{\partial q}{\partial t}, \ \ \ \ p=\frac{\partial}{\partial \dot{q}}(\sqrt{-g} \mathcal{L}).\]
-\[\mathcal{H}(p,q,q_a) = p\dot{q} - \sqrt{-g} \mathcal{L}.\]
+The canonical momentum of the kinetic coordinate $q$ is defined as
+\[\quad p \equiv \frac{\partial}{\partial \dot{q}}(\sqrt{-g} \mathcal{L}) \left( \dot{q} = \frac{\partial q}{\partial t} \right). \]
+The Hamiltonian density is defined by
+\[\mathcal{H}(p,q,q_a) \equiv p\dot{q} - \sqrt{-g} \mathcal{L}.\]
+So we can write the total Hamiltonian of the hypersurface $\Sigma_t$.
 \[H = \int_{\Sigma_t} \mathcal{H}(p,q,q_{,a})d^3y.\]
-\[S = \int_{t_1}^{t_2} dt \int_{\Sigma_t} (p \dot{q} - \mathcal{H} ) d^3 y.\]
-\[\delta S = 0 \Rightarrow \dot{p} = -\frac{\partial \mathcal{H}}{\partial q} + \left(\frac{\partial \mathcal{H}}{\partial q_{,a}}\right)_{,a}, \ \ \ \ \dot{q} = \frac{\partial \mathcal{H}}{\partial p}.\]
+Given the action
+\[S = \int_{t_1}^{t_2} dt \int_{\Sigma_t} (p \dot{q} - \mathcal{H} ) d^3 y,\]
+The variation principle gives the Hamilton equation:
+\[\delta S = 0 \Rightarrow \dot{p} = -\frac{\partial \mathcal{H}}{\partial q} + \left(\frac{\partial \mathcal{H}}{\partial q_{,a}}\right)_{,a}, \quad \dot{q} = \frac{\partial \mathcal{H}}{\partial p}.\]
 \begin{example}
-For electromagnetic field in 3+1 decomposition form, we define the electrical field by $E_a = F_{\alpha \beta} n^{\beta} e_a^{\alpha}$, the magnetic field by $\epsilon_{abc} B^c = F_{\alpha \beta} e_a^{\alpha} e_b^{\beta}$. 
-In this definition, the equation of motion of particles in electromagnetic field can be written as
+For electromagnetic field in 3+1 decomposition form, we define the electrical field by 
+$E_a \equiv F_{\alpha \beta} n^{\beta} e_a^{\alpha}$, 
+and the magnetic field by 
+$\epsilon_{abc} B^c \equiv F_{\alpha \beta} e_a^{\alpha} e_b^{\beta}$. 
+In this definition, the equation of motion of a particle in electromagnetic field can be written as
 \[m A_a = \gamma e [NE_a + \epsilon_{abc} (v^b+N^b) B^c].\]
-where $A_a \equiv u_{\alpha;\beta} u^{\beta} e_a^{\alpha}$, $u^{\nu} = \gamma [Nn^{\nu} + (v^b + N^b) e_{b}^{\nu}]$, and $\gamma \equiv [N^2-(N^b+v^b)(N_b+v_b)]^{-1/2}$.
+where $A_a \equiv u_{\alpha;\beta} u^{\beta} e_a^{\alpha}$, and $\gamma \equiv [N^2-(N^b+v^b)(N_b+v_b)]^{-1/2}$.
+Note the four velocity of the particle is $u^{\nu} = \gamma [Nn^{\nu} + (v^b + N^b) e_{b}^{\nu}]$.
 If we adopt the coordinates $(t,y^a)$, it is easy to verify that
-\[E^a = N F^{0a}, \ \ \ \ B^a = \frac{1}{2} \epsilon^{abc} F_{bc}.\]
+\[E^a = N F^{0a}, \quad B^a = \frac{1}{2} \epsilon^{abc} F_{bc}.\]
 We further define
-\[\mathcal{E}^a = \sqrt{h} E^a, \ \ \ \ \mathcal{B}^a = \sqrt{h} B^a, \ \ \ \ \phi = - A_0, \ \ \ \ \rho_{e} = -j^{\alpha} n_{\alpha} = N j^0.\]
-If we notice that
-\[F_{0a} = -h_{ab}N^2F^{0b} - F_{ab}N^b, \ \ \ \ \tilde{\epsilon}_{abc} \tilde{\epsilon}_{ijk} h^{ai} h^{bj} = \frac{2h_{ck}}{h}.\]
-It is easy to verify that
-\[ \sqrt{-g} \mathcal{L} = - \mathcal{E}^a \dot{A_a} + \phi \mathcal{E}^a_{,a} - \frac{1}{2} N h^{-\frac{1}{2}} h_{ab} (\mathcal{E}^a \mathcal{E}^b + \mathcal{B}^a \mathcal{B}^b) + \tilde{\epsilon}_{abc}N^a \mathcal{E}^b \mathcal{B}^c -\sqrt{h} \phi \rho_e + N \sqrt{h} A_a j^a.\]
-Therefore, $\pi^a = -\mathcal{E}^a$, and we can get the Hamilton density
-\[\mathcal{H} = \phi \pi^a_{,a} + \frac{1}{2} N h^{-\frac{1}{2}} h_{ab} (\pi^a \pi^b + \mathcal{B}^a \mathcal{B}^b) + \tilde{\epsilon}_{abc}N^a \pi^b \mathcal{B}^c +\sqrt{h} \phi \rho_e - N \sqrt{h} A_a j^a.\]
-Then, the Hamilton equation can be written as
-\[\dot{A}_a = -\phi_{,a} + N h^{-\frac{1}{2}} h_{ab}\pi^b + \tilde{\epsilon}_{abc}N^a \mathcal{B}^c;\]
-\[\dot{\pi}^a = - \tilde{\epsilon}^{jab}(Nh^{-\frac{1}{2}}h_{ij}\mathcal{B}^i)_{,b} - \tilde{\epsilon}^{cab}(\tilde{\epsilon}_{ijc}N^i \pi^j)_{,b} + N\sqrt{h}j^a .\]
-and also the constraint equation $\pi^a_{,a} + \sqrt{h}\rho_e = 0$.
-After simplification, the Maxwell equations are
+\[\mathscr{E}^a \equiv \sqrt{h} E^a, \quad \mathscr{B}^a \equiv \sqrt{h} B^a, \quad \phi \equiv - A_0, \quad \rho_{e} \equiv -j^{\alpha} n_{\alpha} = N j^0.\]
+Notice that
+\[F_{0a} = -h_{ab}N^2F^{0b} - F_{ab}N^b, \quad \tilde{\epsilon}_{abc} \tilde{\epsilon}_{ijk} h^{ai} h^{bj} = \frac{2h_{ck}}{h}.\]
+The Lagrangian density $\mathcal{L} = A_{\mu,\nu}F^{\mu\nu} + F^{\mu\nu}F_{\mu\nu}/4 + A_{\mu}j^{\mu} $ can be written as
+\[ \sqrt{-g} \mathcal{L} = - \mathscr{E}^a \dot{A_a} + \phi \mathscr{E}^a_{,a} - \frac{1}{2} N h^{-\frac{1}{2}} h_{ab} (\mathscr{E}^a \mathscr{E}^b + \mathscr{B}^a \mathscr{B}^b) + \tilde{\epsilon}_{abc}N^a \mathscr{E}^b \mathscr{B}^c -\sqrt{h} \phi \rho_e + N \sqrt{h} A_a j^a.\]
+As $\pi^a = -\mathscr{E}^a$, we can get the Hamiltonian density
+\[\mathcal{H} = \phi \pi^a_{,a} + \frac{1}{2} N h^{-\frac{1}{2}} h_{ab} (\pi^a \pi^b + \mathscr{B}^a \mathscr{B}^b) + \tilde{\epsilon}_{abc}N^a \pi^b \mathscr{B}^c +\sqrt{h} \phi \rho_e - N \sqrt{h} A_a j^a.\]
+Thus, we can derive the Hamilton equations
+\[\dot{A}_a = -\phi_{,a} + N h^{-\frac{1}{2}} h_{ab}\pi^b + \tilde{\epsilon}_{abc}N^a \mathscr{B}^c;\]
+\[\dot{\pi}^a = - \tilde{\epsilon}^{jab}(Nh^{-\frac{1}{2}}h_{ij}\mathscr{B}^i)_{,b} - \tilde{\epsilon}^{cab}(\tilde{\epsilon}_{ijc}N^i \pi^j)_{,b} + N\sqrt{h}j^a .\]
+The constraint equation $\pi^a_{,a} + \sqrt{h}\rho_e = 0$ can be obtained as well.
+After simplification, we can get the Maxwell equations in curved spacetime,
 \begin{eqnarray}
 \frac{1}{\sqrt{h}}\frac{\partial}{\partial t}(\sqrt{h} \bm{E}) &=& \nabla \times (N \bm{B} - \bm{N} \times \bm{E}) - N \bm{J}; \nonumber \\
 \frac{1}{\sqrt{h}}\frac{\partial}{\partial t}(\sqrt{h} \bm{B}) &=& -\nabla \times (N \bm{E} + \bm{N} \times \bm{B}) ;\nonumber \\
@@ -1054,44 +1090,49 @@ After simplification, the Maxwell equations are
 \end{eqnarray}
 \end{example}
 
-
 \subsection{General relativity}
+Using Gauss-Codazzi threom, the action of gravity can be written as
 \[S_G = \frac{1}{16 \pi} \int_{t_1}^{t_2} dt \left\{ \int_{\Sigma_t} \left(\tensor[^3]{R}{} + K^{ab}K_{ab} -K^2 \right) N \sqrt{h} d^3 y + 2\oint_{\Sigma_t}(k-k_0)N \sqrt{\sigma}d^2 \theta \right\} ,\]
-where $k_0 =$ extrinsic curvature of $S_t$ embedded in flat space. 
-
-\subsubsection{Gravitational Hamiltonian}
-\[\dot{h}_{ab} \equiv \mathcal{L}_t h_{ab} = \mathcal{L}_t (g_{\alpha \beta} e_a^{\alpha} e_b^{\beta}) =  2NK_{ab} + N_{a|b} + N_{b|a}).\]
+where $k_0$ is extrinsic curvature of $S_t$ embedded in flat space. 
+The time derivative of the metric on hypersurface is
+\[\dot{h}_{ab} \equiv \mathscr{L}_t h_{ab} = \mathscr{L}_t (g_{\alpha \beta} e_a^{\alpha} e_b^{\beta}) =  2NK_{ab} + N_{a|b} + N_{b|a},\]
+i.e.
 \[K_{ab} = \frac{1}{2N} (\dot{h}_{ab} - N_{a|b} - N_{b|a}).\]
-\[p^{ab} = \frac{\partial}{\partial \dot{h}_{ab}} (\sqrt{-g} \mathcal{L}_G) = \frac{\sqrt{h}}{16\pi} (K^{ab} - K h^{ab}).\]
-\[\sqrt{h}K^{ab} = 16\pi (p^{ab} - \frac{1}{2}ph^{ab}).\]
+The corresponding canonical momentums of $h_{ab}$s are  
+\[p^{ab} = \frac{\partial}{\partial \dot{h}_{ab}} (\sqrt{-g} \mathcal{L}_G) = \frac{\sqrt{h}}{16\pi} (K^{ab} - K h^{ab}),\]
+i.e.
+\[\sqrt{h}K^{ab} = 16\pi \left(p^{ab} - \frac{1}{2}ph^{ab}\right).\]
+Recall that
 \[\mathcal{H}_G = p^{ab}\dot{h}_{ab} - \sqrt{-g} \mathcal{L}_G.\]
+We can get the Hamiltonian on the hypersurface,
 \begin{eqnarray}
 16\pi H_G &=& \int_{\Sigma_t} \left[ N(K^{ab}K_{ab} - K^2 - \tensor[^3]{R}{}) - 2N_a(K^{ab} - Kh^{ab})_{|b} \right] \sqrt{h} d^3 y 
 \nonumber \\
 &\phantom{=}& -2\oint_{S_t} \left[ N(k-k_0) - N_a(K^{ab}-Kh^{ab})r_b \right] \sqrt{\sigma} d^2 \theta .\nonumber
 \end{eqnarray}
-
-\subsubsection{Variation of gravitational Hamiltonian}
+Given the boundary condition
 \[\delta N = \delta N^a = \delta h_{ab} = 0 \mbox{ on } S_t,\]
-\[\delta H_G = \int_{\Sigma_t} (\mathcal{P}^{ab} \delta h_{ab} + \mathcal{H}_{ab} \delta p^{ab} - \mathcal{C}\delta N - 2\mathcal{C}_a \delta N^a) d^3 y.\]
+the variation of gravitational Hamiltonian is
+\[\delta H_G = \int_{\Sigma_t} (\mathcal{P}^{ab} \delta h_{ab} + \mathcal{H}_{ab} \delta p^{ab} - \mathcal{C}\delta N - 2\mathcal{C}_a \delta N^a) d^3 y,\]
+where
 \begin{eqnarray}
-(16\pi)\mathcal{P}^{ab} &=&  N\sqrt{h}G^{ab} - \sqrt{h}(N^{|ab} - h^{ab} N^{|c}_{\phantom{|c}c}) \nonumber \\
-&\phantom{=}& +(16\pi)[2p^{c(a}N^{b)}_{\phantom{b)}|c} - \sqrt{h}(\frac{1}{\sqrt{h}}p^{ab}N^c)_{|c}] \nonumber \\
-&\phantom{=}& + (16\pi)^2 [\frac{2N}{\sqrt{h}} (p^a_c p^{bc} - \frac{1}{2} p p^{ab}) - \frac{N}{2\sqrt{h}}(p^{cd}p_{cd} - \frac{1}{2} p^2)h^{ab}]. \nonumber \\
-\mathcal{H}_{ab} &=& (16\pi) \frac{2N}{\sqrt{h}} (p_{ab} - \frac{1}{2}p h_{ab}) + 2N_{(a|b)} .\nonumber \\
-\mathcal{C} &=& \frac{\sqrt{h}}{16\pi} (\tensor[^3]{R}{} + K^2 - K^{ab}K_{ab}) .\nonumber \\
-\mathcal{C}^a &=& \frac{\sqrt{h}}{16\pi} (K_a^{\phantom{a}b} - K \delta_a^{\phantom{a}b})_{|b}. \nonumber 
+    16\pi\mathcal{P}^{ab} &=&  N\sqrt{h}G^{ab} - \sqrt{h}(N^{|ab} - h^{ab} \tensor{N}{^{|c}_{c}}) \nonumber \\
+    &\phantom{=}& +16\pi\left[2\tensor{p}{^{c(a}} \tensor{N}{^{b)}_{|c}} - \sqrt{h}\left(\frac{1}{\sqrt{h}}p^{ab}N^c
+    \right)_{|c}\right] \nonumber \\
+    &\phantom{=}& + (16\pi)^2 \left[\frac{2N}{\sqrt{h}} \left(p^a_c p^{bc} - \frac{1}{2} p p^{ab} \right) - \frac{N}{2\sqrt{h}}\left(p^{cd}p_{cd} - \frac{1}{2} p^2 \right)h^{ab}\right], \nonumber \\
+    \mathcal{H}_{ab} &=& \frac{32\pi N}{\sqrt{h}} \left(p_{ab} - \frac{1}{2}p h_{ab}\right) + 2N_{(a|b)} ,\nonumber \\
+    \mathcal{C} &=& \frac{\sqrt{h}}{16\pi} (\tensor[^3]{R}{} + K^2 - K^{ab}K_{ab}) ,\nonumber \\
+    \mathcal{C}^a &=& \frac{\sqrt{h}}{16\pi} (\tensor{K}{_a^{b}} - K \delta_a^{b})_{|b}. \nonumber 
 \end{eqnarray}
-
-\subsubsection{Variation of electromagnetic Hamiltonian}
-\[\delta H_E = \int_{\Sigma_t}(-\frac{1}{2}N\sqrt{h}\mathcal{I}^{ab} \delta h_{ab} + \sqrt{h} \rho \delta N - \sqrt{h} s_a \delta N^a).\]
+We can also get the variation of electromagnetic Hamiltonian,
+\[\delta H_E = \int_{\Sigma_t}\left(-\frac{1}{2}N\sqrt{h}\mathcal{I}^{ab} \delta h_{ab} + \sqrt{h} \rho \delta N - \sqrt{h} s_a \delta N^a\right) d^3 y,\]
+where
 \begin{eqnarray}
-\mathcal{I}^{ab} &=& \frac{1}{2}(E^c E_c + B^c B_c)h^{ab} - E^a E^b - B^a B^b. \nonumber \\
-\rho &=& \frac{1}{2}(E^c E_c + B^c B_c) .\nonumber \\
+\mathcal{I}^{ab} &=& \frac{1}{2}(E^c E_c + B^c B_c)h^{ab} - E^a E^b - B^a B^b, \nonumber \\
+\rho &=& \frac{1}{2}(E^c E_c + B^c B_c) ,\nonumber \\
 s_a &=& \epsilon_{abc} E^b B^c .\nonumber
 \end{eqnarray}
-
-\subsubsection{Hamilton's equations}
-\[\dot{h}_{ab} = \mathcal{H}_{ab}, \ \ \ \ \dot{p}^{ab} = -\mathcal{P}^{ab}+\frac{1}{2}N\sqrt{h}\mathcal{I}^{ab}.\]
+Finally, we can write down Hamilton equations and corresponding constraint equations for general relativity,
+\[\dot{h}_{ab} = \mathcal{H}_{ab}, \quad \dot{p}^{ab} = -\mathcal{P}^{ab}+\frac{1}{2}N\sqrt{h}\mathcal{I}^{ab}.\]
 \[\tensor[^3]{R}{} + K^2 - K^{ab}K_{ab} = 16 \pi \rho.\]
-\[(K_a^{\phantom{a}b} - K \delta_a^{\phantom{a}b})_{|b} = -8\pi s_a.\]
+\[(\tensor{K}{_a^{b}} - K \delta_a^{b})_{|b} = -8\pi s_a.\]

@@ -49,7 +49,7 @@ Integrating the continuity equation over a volume $V$, large enough to have no n
 where $Q = \int_{V} j^0 dV$. 
 Furthermore, we can prove that $Q$ is the generator of the infinitesimal transformation. i.e.
 \begin{equation}
-    U^{\dagger} \phi_a U = \phi_{a} + \delta_{a},
+    U^{\dagger} \phi_a U = \phi_{a} + \delta \phi_{a},
 \end{equation}
 where $U \equiv e^{iQ} = I + iQ$.
 \\ \\
@@ -872,64 +872,64 @@ the running coupling constant will tend to a fixed point as $\mu \to 0$.  The fi
 \subsection{Effective action}
 \[Z[J] = e^{-iE[J]} = \int \mathcal{D} \phi \exp\left[ i\int d^4x (\mathcal{L}[\phi] + J \phi) \right].\]
 Define 
-\[\phi_{\mathrm{cl}} (x) \equiv \langle \Omega | \phi(x) | \Omega \rangle_{J}.\]
+\[\phi_{\rm cl} (x) \equiv \langle \Omega | \phi(x) | \Omega \rangle_{J}.\]
 Therefore, we can derive
-\[\frac{\delta}{\delta J(x)} E[J] = - \phi_{\mathrm{cl}}(x).\]
+\[\frac{\delta}{\delta J(x)} E[J] = - \phi_{\rm cl}(x).\]
 Define effective action as
-\[\Gamma[\phi_{\mathrm{cl}}] \equiv -E[J] - \int d^4y J(y) \phi_{\mathrm{cl}}(y).\]
-Suppose $\mathcal{L}$ is invariant under transformation $U$, i.e. $\mathcal{L}(U\phi) = \mathcal{L}(\phi) $. Then we can prove that effective action $\Gamma$ is also invariant under transformation $U$, i.e. $\Gamma(U\phi_{\mathrm{cl}}) = \Gamma(\phi_{\mathrm{cl}}) $.
+\[\Gamma[\phi_{\rm cl}] \equiv -E[J] - \int d^4y J(y) \phi_{\rm cl}(y).\]
+Suppose $\mathcal{L}$ is invariant under transformation $U$, i.e. $\mathcal{L}(U\phi) = \mathcal{L}(\phi) $. Then we can prove that effective action $\Gamma$ is also invariant under transformation $U$, i.e. $\Gamma(U\phi_{\rm cl}) = \Gamma(\phi_{\rm cl}) $.
 
 \begin{newproof}
-\[ U\phi_{\mathrm{cl}}(x) = \langle \Omega | U\phi(x) | \Omega\rangle_{J} = \frac{\int \mathcal{D}\phi e^{i \int \mathcal{L}(\phi)+J\phi}U\phi(x)}{\int \mathcal{D}\phi e^{i \int \mathcal{L}(\phi)+J\phi}}.\]
+\[ U\phi_{\rm cl}(x) = \langle \Omega | U\phi(x) | \Omega\rangle_{J} = \frac{\int \mathcal{D}\phi e^{i \int \mathcal{L}(\phi)+J\phi}U\phi(x)}{\int \mathcal{D}\phi e^{i \int \mathcal{L}(\phi)+J\phi}}.\]
 Define $J' = \frac{J\phi}{U\phi}$,  and we suppose the measure of path integral is invariant under transformation $U$, then we have
-\[ U\phi_{\mathrm{cl}}(x) = \frac{\int \mathcal{D}U\phi e^{i \int \mathcal{L}(U\phi)+J'U\phi}U\phi(x)}{\int \mathcal{D}U\phi e^{i \int \mathcal{L}(U\phi)+J'U\phi}} =  \frac{\int \mathcal{D}\phi e^{i \int \mathcal{L}(\phi)+J'\phi}\phi(x)}{\int \mathcal{D}\phi e^{i \int \mathcal{L}(\phi)+J'\phi}} = \langle \Omega | \phi(x) | \Omega\rangle_{J'}.\]
+\[ U\phi_{\rm cl}(x) = \frac{\int \mathcal{D}U\phi e^{i \int \mathcal{L}(U\phi)+J'U\phi}U\phi(x)}{\int \mathcal{D}U\phi e^{i \int \mathcal{L}(U\phi)+J'U\phi}} =  \frac{\int \mathcal{D}\phi e^{i \int \mathcal{L}(\phi)+J'\phi}\phi(x)}{\int \mathcal{D}\phi e^{i \int \mathcal{L}(\phi)+J'\phi}} = \langle \Omega | \phi(x) | \Omega\rangle_{J'}.\]
 On the one hand, we have
-\[\Gamma[U\phi_{\mathrm{cl}}] = E[J'] - \int d^4y J'(y)U\phi_{\mathrm{cl}}(y) =  E[J'] - \int d^4y J(y)\phi_{\mathrm{cl}}(y).\]
+\[\Gamma[U\phi_{\rm cl}] = E[J'] - \int d^4y J'(y)U\phi_{\rm cl}(y) =  E[J'] - \int d^4y J(y)\phi_{\rm cl}(y).\]
 On the other hand, we have
 \begin{eqnarray}
 Z[J'] &=& \int \mathcal{D}\phi \exp \left[ i \int d^4x \mathcal{L}(\phi)+J'\phi \right] =  \int \mathcal{D}U\phi \exp \left[ i \int d^4x \mathcal{L}(U\phi)+J'U\phi \right] \nonumber
 \\
 &=& \int \mathcal{D}\phi \exp \left[ i \int d^4x \mathcal{L}(\phi)+J\phi \right] = Z[J] .\nonumber
 \end{eqnarray}
-Thus $\Gamma(U\phi_{\mathrm{cl}}) = \Gamma(\phi_{\mathrm{cl}})$.
+Thus $\Gamma(U\phi_{\rm cl}) = \Gamma(\phi_{\rm cl})$.
 \end{newproof}
 
 \noindent
 We can further verify that
-\[\frac{\delta}{\delta \phi_{\mathrm{cl}}(x)} \Gamma[\phi_{\mathrm{cl}}] = -J(x).\]
+\[\frac{\delta}{\delta \phi_{\rm cl}(x)} \Gamma[\phi_{\rm cl}] = -J(x).\]
 If the external source is set to zero, the effective action satisfy the equation
-\[\frac{\delta}{\delta \phi_{\mathrm{cl}}(x)} \Gamma[\phi_{\mathrm{cl}}] = 0.\]
-The solution to this equation are the values of $\langle \phi(x) \rangle$ in the stable quantum states of the theory. For a translational-invariant vacuum state, we will find a solution in which $\phi_{\mathrm{cl}}$ is independent of $x$. For simplicity, will assume the vacuum state in our following discussion are all translational-invariant. 
+\[\frac{\delta}{\delta \phi_{\rm cl}(x)} \Gamma[\phi_{\rm cl}] = 0.\]
+The solution to this equation are the values of $\langle \phi(x) \rangle$ in the stable quantum states of the theory. For a translational-invariant vacuum state, we will find a solution in which $\phi_{\rm cl}$ is independent of $x$. For simplicity, will assume the vacuum state in our following discussion are all translational-invariant. 
 Therefore, if $T$ is the time extent of the region and $V$ is its three dimensional volume, we can define the effective potential of the field by
-\[\Gamma[\phi_{\mathrm{cl}}] = -(VT) \cdot V_{\mathrm{eff}}(\phi_{\mathrm{cl}}).\]
-The condition that $\Gamma[\phi_{\mathrm{cl}}]$ has an extreme then reduces to the simple equation
-\[\frac{\partial}{\partial \phi_{\mathrm{cl}}} V_{\mathrm{eff}}(\phi_{\mathrm{cl}}) = 0.\] 
-A system with spontaneously broken symmetry will have several minimum of $V_{\mathrm{eff}}$, all with the same energy by virtue of the symmetry. The choice of one among these vacuum is the spontaneous symmetry breaking.
+\[\Gamma[\phi_{\rm cl}] = -(VT) \cdot V_{\rm eff}(\phi_{\rm cl}).\]
+The condition that $\Gamma[\phi_{\rm cl}]$ has an extreme then reduces to the simple equation
+\[\frac{\partial}{\partial \phi_{\rm cl}} V_{\rm eff}(\phi_{\rm cl}) = 0.\] 
+A system with spontaneously broken symmetry will have several minimum of $V_{\rm eff}$, all with the same energy by virtue of the symmetry. The choice of one among these vacuum is the spontaneous symmetry breaking.
 
 \subsection{Computation of the effective action}
 Decompose the Lagrangian into a piece depending on renormalized parameters and one containing the counter-terms
 \[\mathcal{L} = \mathcal{L}_1 + \delta \mathcal{L}.\]
 Define $J_1$ by
-\[\left. \frac{\delta \mathcal{L}_1}{\delta \phi} \right|_{\phi = \phi_{\mathrm{cl}}} + J_1(x) = 0.\]
+\[\left. \frac{\delta \mathcal{L}_1}{\delta \phi} \right|_{\phi = \phi_{\rm cl}} + J_1(x) = 0.\]
 Define $\delta J$ by
 \[J(x) = J_1(x) + \delta J(x).\]
 Thus we have
 \[e^{-iE[J]} = \int \mathcal{D}\phi e^{i\int d^4x (\mathcal{L}_1 + J_1\phi)} e^{i\int d^4x (\delta \mathcal{L} + \delta J \phi)}.\]
-Replace $\phi$ by $\phi_{\mathrm{cl}}+\eta$,
+Replace $\phi$ by $\phi_{\rm cl}+\eta$,
 \begin{eqnarray}
-\int d^4x \, (\mathcal{L}_1 + J_1\phi) &=& \int d^4x \, (\mathcal{L}_1[\phi_{\mathrm{cl}}] + J_1\phi_{\mathrm{cl}}) + \int d^4x \, \eta(x) \left( \frac{\delta \mathcal{L}_1}{\delta \phi} + J_1 \right) \nonumber \\
+\int d^4x \, (\mathcal{L}_1 + J_1\phi) &=& \int d^4x \, (\mathcal{L}_1[\phi_{\rm cl}] + J_1\phi_{\rm cl}) + \int d^4x \, \eta(x) \left( \frac{\delta \mathcal{L}_1}{\delta \phi} + J_1 \right) \nonumber \\
 &+& \frac{1}{2} \int d^4x \, d^4y \, \eta(x) \eta(y) \frac{\delta^2 \mathcal{L}_1}{\delta \phi(x) \delta \phi(y)} \nonumber \\
 &+& \frac{1}{3!} \int d^4x \, d^4y \, d^4z \, \eta(x) \eta(y) \eta(z) \frac{\delta^3 \mathcal{L}_1}{\delta \phi(x) \delta \phi(y) \delta \phi(z)} + \cdots \nonumber
 \end{eqnarray}
 The term linear in $\eta$ vanishes by definition of $J_1$. 
 Then, put back the effects of the counter-term Lagrangian,writing it as
-\[(\delta \mathcal{L}[\phi_{\mathrm{cl}}] + \delta J \phi_{\mathrm{cl}} ) + ( \delta \mathcal{L}[\phi_{\mathrm{cl}} + \eta] - \delta\mathcal{L} [\phi_{\mathrm{cl}}] + \delta J \eta).\]
+\[(\delta \mathcal{L}[\phi_{\rm cl}] + \delta J \phi_{\rm cl} ) + ( \delta \mathcal{L}[\phi_{\rm cl} + \eta] - \delta\mathcal{L} [\phi_{\rm cl}] + \delta J \eta).\]
 Define
-\[\mathcal{L}_2 = \left(\frac{1}{3!} \int d^4x \, d^4y \, d^4z \, \eta(x) \eta(y) \eta(z) \frac{\delta^3 \mathcal{L}_1}{\delta \phi(x) \delta \phi(y) \delta \phi(z)} + \cdots \right) + ( \delta \mathcal{L}[\phi_{\mathrm{cl}} + \eta] - \delta\mathcal{L} [\phi_{\mathrm{cl}}] + \delta J \eta).\]
+\[\mathcal{L}_2 = \left(\frac{1}{3!} \int d^4x \, d^4y \, d^4z \, \eta(x) \eta(y) \eta(z) \frac{\delta^3 \mathcal{L}_1}{\delta \phi(x) \delta \phi(y) \delta \phi(z)} + \cdots \right) + ( \delta \mathcal{L}[\phi_{\rm cl} + \eta] - \delta\mathcal{L} [\phi_{\rm cl}] + \delta J \eta).\]
 Thus
 \[e^{-iE[J]} = C_1 e^{i\int \mathcal{L}_2(\frac{1}{i} \frac{\delta}{\delta I})} \left. \int \mathcal{D}\eta e^{i\int \left(\frac{1}{2} \eta \frac{\delta^2 \mathcal{L}_1}{\delta \phi \delta \phi} \eta + I\eta \right)} \right|_{I=0},\]
 where
-\[C_1 \equiv \exp \left[ i \int ( \mathcal{L}_1 [\phi_{\mathrm{cl}}] + J_1\phi_{\mathrm{cl}} + \delta \mathcal{L}[\phi_{\mathrm{cl}}] + \delta J \phi_{\mathrm{cl}} )\right].\]
+\[C_1 \equiv \exp \left[ i \int ( \mathcal{L}_1 [\phi_{\rm cl}] + J_1\phi_{\rm cl} + \delta \mathcal{L}[\phi_{\rm cl}] + \delta J \phi_{\rm cl} )\right].\]
 If we define propagator $D_{\rm F}$ as
 \[D_{\rm F} \equiv i \left( \frac{\delta^2 \mathcal{L}_1}{\delta \phi \delta \phi}\right)^{-1}.\]
 We have
@@ -937,10 +937,10 @@ We have
 where
 \[Z_0[0] \equiv \int \mathcal{D}\eta e^{ \frac{i}{2}\int \eta \left( \frac{\delta^2 \mathcal{L}_1}{\delta \phi \delta \phi}\right) \eta }.\]
 Similar to the procedure in the perturbation theory for path integral quantization, we can get a perturbation expansion for $iE[J]$ using connected Feynman diagram,
-\[-iE[J] = i \int ( \mathcal{L}_1 [\phi_{\mathrm{cl}}] + J_1\phi_{\mathrm{cl}} + \delta \mathcal{L}[\phi_{\mathrm{cl}}] + \delta J \phi_{\mathrm{cl}} ) + \log(Z_0[0]) + \mbox{ connected diagrams }.\]
+\[-iE[J] = i \int ( \mathcal{L}_1 [\phi_{\rm cl}] + J_1\phi_{\rm cl} + \delta \mathcal{L}[\phi_{\rm cl}] + \delta J \phi_{\rm cl} ) + \log(Z_0[0]) + \mbox{ connected diagrams }.\]
 From this equation, $\Gamma$ follows directly:
-\[\Gamma[\phi_{\mathrm{cl}}] = \int d^4x \mathcal{L}_1[\phi_{\mathrm{cl}}] -i\log(Z_0[0]) -i \mbox{ connected diagrams} + \int d^4x \delta\mathcal{L}[\phi_{\mathrm{cl}}].\]
-Notice that there are no terms remaining that depend explicitly on $J$; thus, $\Gamma$ is expressed as a function of $\phi_{\mathrm{cl}}$ , as it should be. The Feynman diagrams contributing to $\Gamma[\phi_{\mathrm{cl}}]$ have no external lines, and the simplest ones turn out to have two loops. The lowest-order quantum correction to $\Gamma$ is given by the
+\[\Gamma[\phi_{\rm cl}] = \int d^4x \mathcal{L}_1[\phi_{\rm cl}] -i\log(Z_0[0]) -i \mbox{ connected diagrams} + \int d^4x \delta\mathcal{L}[\phi_{\rm cl}].\]
+Notice that there are no terms remaining that depend explicitly on $J$; thus, $\Gamma$ is expressed as a function of $\phi_{\rm cl}$ , as it should be. The Feynman diagrams contributing to $\Gamma[\phi_{\rm cl}]$ have no external lines, and the simplest ones turn out to have two loops. The lowest-order quantum correction to $\Gamma$ is given by the
 functional determinant.
 The last term provides a set of counter-terms that can be used to satisfy the renormalization conditions on $\Gamma$ and, in the process, to cancel divergences that appear in the evaluation of the functional determinant and the diagrams. 
 The renormalization conditions will determine all of the counter-terms in $\delta \mathcal{L}$. However, the formalism we have constructed contains a new counter-term $\delta J$. That coefficient is determined by  $\langle \eta \rangle = 0$. In practice, we will satisfy this condition by simply ignoring any one-particle-irreducible one-point diagram, since any such diagram will be cancelled by adjustment of $\delta J$.
@@ -948,12 +948,12 @@ The renormalization conditions will determine all of the counter-terms in $\delt
 \subsection{The effective action as a generating functional}
 $E[J]$ is called the generating of connected correlation functions,
 \[\frac{\delta^n E[J]}{\delta J(x_1) \cdots \delta J(x_n)} = i^{n+1} \langle \phi(x_1) \cdots \phi(x_n) \rangle_{\mbox{conn}}.\]
-The effective action $\Gamma[\phi_{\mathrm{cl}}]$ is the generating functional of one-particle-irreducible correlation functional,
-\[\frac{\delta \Gamma[\phi_{\mathrm{cl}}]}{\delta \phi_{\mathrm{cl}}(x)}  = 0,\]
-\[\frac{\delta^2 \Gamma[\phi_{\mathrm{cl}}]}{\delta \phi_{\mathrm{cl}}(x) \delta \phi_{\mathrm{cl}}(y)}  = iD^{-1}(x,y),\]
+The effective action $\Gamma[\phi_{\rm cl}]$ is the generating functional of one-particle-irreducible correlation functional,
+\[\frac{\delta \Gamma[\phi_{\rm cl}]}{\delta \phi_{\rm cl}(x)}  = 0,\]
+\[\frac{\delta^2 \Gamma[\phi_{\rm cl}]}{\delta \phi_{\rm cl}(x) \delta \phi_{\rm cl}(y)}  = iD^{-1}(x,y),\]
 where $D(x,y) = \langle \phi(x) \phi(y) \rangle_{\mbox{conn}}$. 
 When $n \geq 3$,
-\[\frac{\delta^n \Gamma[\phi_{\mathrm{cl}}]}{\delta \phi_{\mathrm{cl}}(x_1) \cdots \delta \phi_{\mathrm{cl}}(x_n)} = -i \langle \phi(x_1) \cdots \phi(x_n) \rangle_{\mbox{1PI}}.\]
+\[\frac{\delta^n \Gamma[\phi_{\rm cl}]}{\delta \phi_{\rm cl}(x_1) \cdots \delta \phi_{\rm cl}(x_n)} = -i \langle \phi(x_1) \cdots \phi(x_n) \rangle_{\mbox{1PI}}.\]
 The proof of statements above can be found in chapter 10.2 of \emph{An introduction to quantum field theory (M.E.Peskin \& D.V.Schroeder)}
 \\ \\
 The chapter 21 of \emph{Quantum field theory (M. Srednicki)} gives an constructive way to define the effective action.
@@ -964,16 +964,16 @@ The chapter 21 of \emph{Quantum field theory (M. Srednicki)} gives an constructi
 where $\tilde{\phi}(k) = \int d^dx e^{-ikx} \phi(x)$, and $iV_n(k_1,\cdots,k_n)$ equals the value of 1PI Feynman diagram in momentum space. The effective action has the property that the tree-level Feynman diagrams it generates give the complete scattering amplitude of the original theory. The author also proved that this definition is equivalent to the definition from \emph{An introduction to quantum field theory (M.E.Peskin \& D.V.Schroeder)}.
 
 \subsection{Renormalization and symmetry}
-Consider first the computation of the effective potential for constant classical fields, in a field theory with an arbitrary number of fields $\phi^i$. The effective potential has mass dimension $4$, so we expect that $V_{\mathrm{eff}}(\phi_{\mathrm{cl}})$ will have divergent terms up to $\Lambda^4$. To understand these divergences,
-expand $V_{\mathrm{eff}}(\phi_{\mathrm{cl}})$ in a Taylor series:
-\[V_{\mathrm{eff}}(\phi_{\mathrm{cl}}) = A_0 + A_2^{ij}\phi_{\mathrm{cl}}^i \phi_{\mathrm{cl}}^j + A_4^{ijkl} \phi_{\mathrm{cl}}^i \phi_{\mathrm{cl}}^j \phi_{\mathrm{cl}}^k \phi_{\mathrm{cl}}^l + \cdots\]
+Consider first the computation of the effective potential for constant classical fields, in a field theory with an arbitrary number of fields $\phi^i$. The effective potential has mass dimension $4$, so we expect that $V_{\rm eff}(\phi_{\rm cl})$ will have divergent terms up to $\Lambda^4$. To understand these divergences,
+expand $V_{\rm eff}(\phi_{\rm cl})$ in a Taylor series:
+\[V_{\rm eff}(\phi_{\rm cl}) = A_0 + A_2^{ij}\phi_{\rm cl}^i \phi_{\rm cl}^j + A_4^{ijkl} \phi_{\rm cl}^i \phi_{\rm cl}^j \phi_{\rm cl}^k \phi_{\rm cl}^l + \cdots\]
 In theories without a symmetry of $\phi \to -\phi$, there might also be terms linear and cubic in $\phi^i$; we omit these for simplicity. The coefficients $A_0$, $A_2$, $A_4$ have mass dimension, respectively, $4$, $2$, and $0$; thus we expect them to contain $\Lambda^4$, $\Lambda^2$, and $\log \Lambda$ divergences, respectively. The power-counting analysis predicts that all higher terms in the Taylor series expansion should be finite.
 \\ \\
-The constant term $A_0$ is independent of $\phi_{\mathrm{cl}}$; it has no physical significance. However, the divergences in $A_2$ and $A_4$ appear in physical quantities, since these coefficients enter the inverse propagator and the irreducible four-point function and therefore appear in the computation of S-matrix elements. There is one further coefficient in the effective action that has non-negative mass dimension by power counting; this is the coefficient of the term quadratic in $\partial_{\mu} \phi_{\mathrm{cl}}$, which appears when the effective action is evaluated for a non-constant background field:
-\[\Delta \Gamma [\phi_{\mathrm{cl}}] = \int d^4x B_2^{ij} \partial_{\mu} \phi_{\mathrm{cl}}^i \partial^{\mu} \phi_{\mathrm{cl}}^j.\]
-All other coefficients in the Taylor expansion of the effective action in powers of $\phi_{\mathrm{cl}}$ are finite by power counting.
+The constant term $A_0$ is independent of $\phi_{\rm cl}$; it has no physical significance. However, the divergences in $A_2$ and $A_4$ appear in physical quantities, since these coefficients enter the inverse propagator and the irreducible four-point function and therefore appear in the computation of S-matrix elements. There is one further coefficient in the effective action that has non-negative mass dimension by power counting; this is the coefficient of the term quadratic in $\partial_{\mu} \phi_{\rm cl}$, which appears when the effective action is evaluated for a non-constant background field:
+\[\Delta \Gamma [\phi_{\rm cl}] = \int d^4x B_2^{ij} \partial_{\mu} \phi_{\rm cl}^i \partial^{\mu} \phi_{\rm cl}^j.\]
+All other coefficients in the Taylor expansion of the effective action in powers of $\phi_{\rm cl}$ are finite by power counting.
 \\ \\
-We can now argue that the counter-terms of the original Lagrangian suffice to remove the divergences that might appear in the computation of $\Gamma[\phi_{\mathrm{cl}}]$. The argument proceeds in two steps. We first use the BPHZ theorem to argue that the divergences of Green's functions can be removed by adjusting a set of counter-terms corresponding to the possible operators that can be added to the Lagrangian with coefficients of mass dimension greater than or equal to zero. The coefficients of these counter-terms are in 1-to-1 correspondence with the coefficients $A_2$, $A_4$, and $B_2$ of the effective action. Next, we use the fact that the effective action is manifestly invariant to the original Symmetry group of the model. This is true even if the vacuum state of the model has spontaneous symmetry breaking, since the method we presented for computing the effective action is manifestly invariant to the original symmetry of the Lagrangian. Combining these two results, we conclude that the effective action can always be made finite by adjusting the set of counter-terms that are invariant to the original symmetry of the theory, even if this symmetry is spontaneously broken.
+We can now argue that the counter-terms of the original Lagrangian suffice to remove the divergences that might appear in the computation of $\Gamma[\phi_{\rm cl}]$. The argument proceeds in two steps. We first use the BPHZ theorem to argue that the divergences of Green's functions can be removed by adjusting a set of counter-terms corresponding to the possible operators that can be added to the Lagrangian with coefficients of mass dimension greater than or equal to zero. The coefficients of these counter-terms are in 1-to-1 correspondence with the coefficients $A_2$, $A_4$, and $B_2$ of the effective action. Next, we use the fact that the effective action is manifestly invariant to the original Symmetry group of the model. This is true even if the vacuum state of the model has spontaneous symmetry breaking, since the method we presented for computing the effective action is manifestly invariant to the original symmetry of the Lagrangian. Combining these two results, we conclude that the effective action can always be made finite by adjusting the set of counter-terms that are invariant to the original symmetry of the theory, even if this symmetry is spontaneously broken.
 
 \subsection{Goldstone's theorem}
 \begin{newthem}[Goldstone's theorem]
@@ -984,16 +984,16 @@ A general continuous symmetry transformation has the form
 \[\phi^a \to \phi^a + \alpha \Delta^a (\phi),\]
 where $\alpha$ is an infinitesimal parameter and $\Delta^a$ is some function of all the $\phi$'s. Specialize to constant fields; then the derivative terms in $\mathcal{L}$ vanish and the potential alone must be invariant. This condition can be written
 \[V(\phi^a) = V(\phi^a + \alpha \Delta^a (\phi)) , \quad \mbox{or} , \quad \Delta^a(\phi) \frac{\partial}{\partial \phi^a} V(\phi) = 0.\]
-The effective potential $V_{\mathrm{eff}}$ encapsulates the full solution to the theory, including all orders of quantum corrections. At the same time, it satisfies the general properties of the classical potential: It is invariant to the symmetries of the theory, and its minimum gives the vacuum expectation value of $\phi_{\mathrm{cl}}$. Thus
-\[\Delta^a(\phi) \frac{\partial}{\partial \phi^a} V_{\mathrm{eff}}(\phi) = 0.\]
-Now differentiate with respect to $\phi^b$, and set $\phi = \phi_{\mathrm{cl}}$
-\[0 = \left( \frac{\partial \Delta^a}{\partial \phi^b} \right)_{\phi_{\mathrm{cl}}} \left( \frac{\partial V_{\mathrm{eff}}}{\partial \phi^a}\right)_{\phi_{\mathrm{cl}}} + \Delta^a(\phi_{\mathrm{cl}}) \left( \frac{\partial^2}{\partial \phi^a \partial \phi^b}V_{\mathrm{eff}}\right)_{\phi_{\mathrm{cl}}}.\]
-The first term vanishes since $\phi_{\mathrm{cl}}$ is a minimum of $V_{\mathrm{eff}}$, so the second term must also vanish. If the transformation leaves $\phi_{\mathrm{cl}}$ unchanged (i.e., if the symmetry is respected by the ground state), then $\Delta^a(\phi_{\mathrm{cl}})=0$ and this relation is trivial. A spontaneously broken symmetry is precisely one for which $\Delta^a(\phi_{\mathrm{cl}}) \neq 0$; in this
-case $\Delta^a(\phi_{\mathrm{cl}})$ is the vector with eigenvalue zero.
+The effective potential $V_{\rm eff}$ encapsulates the full solution to the theory, including all orders of quantum corrections. At the same time, it satisfies the general properties of the classical potential: It is invariant to the symmetries of the theory, and its minimum gives the vacuum expectation value of $\phi_{\rm cl}$. Thus
+\[\Delta^a(\phi) \frac{\partial}{\partial \phi^a} V_{\rm eff}(\phi) = 0.\]
+Now differentiate with respect to $\phi^b$, and set $\phi = \phi_{\rm cl}$
+\[0 = \left( \frac{\partial \Delta^a}{\partial \phi^b} \right)_{\phi_{\rm cl}} \left( \frac{\partial V_{\rm eff}}{\partial \phi^a}\right)_{\phi_{\rm cl}} + \Delta^a(\phi_{\rm cl}) \left( \frac{\partial^2}{\partial \phi^a \partial \phi^b}V_{\rm eff}\right)_{\phi_{\rm cl}}.\]
+The first term vanishes since $\phi_{\rm cl}$ is a minimum of $V_{\rm eff}$, so the second term must also vanish. If the transformation leaves $\phi_{\rm cl}$ unchanged (i.e., if the symmetry is respected by the ground state), then $\Delta^a(\phi_{\rm cl})=0$ and this relation is trivial. A spontaneously broken symmetry is precisely one for which $\Delta^a(\phi_{\rm cl}) \neq 0$; in this
+case $\Delta^a(\phi_{\rm cl})$ is the vector with eigenvalue zero.
 We now argue that the presence of such a zero eigenvalue implies the existence of a massless scalar particle. Effective action's second functional derivative is the inverse propagator
 \[i\tilde{D}_{ij}^{-1}(p^2) = \int d^4x e^{-ip(x-y)} \left. \frac{\delta \Gamma}{\delta \phi^i \delta \phi^j}(x,y) \right|_{\phi = \phi_{\rm cl}}.\]
 A particle of mass $0$ corresponds to a zero eigenvalue of this matrix equation at $p^2 = 0$. Now set $p=0$. This implies $\frac{\delta \Gamma}{\delta \phi^i \delta \phi^j}(x,y)$ has a zero eigenvalue. This is equivalent to 
-\[\frac{\partial^2}{\partial \phi^i_{\mathrm{cl}} \partial \phi^j_{\mathrm{cl}}}V_{\mathrm{eff}}\]
+\[\frac{\partial^2}{\partial \phi^i_{\mathrm{cl}} \partial \phi^j_{\mathrm{cl}}}V_{\rm eff}\]
 has a zero eigenvalue. This completes the proof of Goldstone's theorem.
 \end{newproof}
 
@@ -1064,19 +1064,19 @@ One-loop corrections for linear sigma model has been calculated in section 11.2 
 \subsection{Effective action}
 We begin again with the Lagrangian
 \[\mathcal{L}_1 = -\frac{1}{2} \partial_{\mu} \phi^i \partial^{\mu}\phi^i + \frac{1}{2} \mu^2 (\phi^i)^2 - \frac{\lambda}{4} [(\phi^i)^2]^2.\]
-Expand about the classical field $\phi^i = \phi_{\mathrm{cl}}^i + \eta^i$, and we assume the vacuum is translational invariant. Then we have
-\[\mathcal{L}_1 = -\frac{1}{2}(\partial_{\mu}\eta)^2 + \frac{1}{2}\mu^2(\eta^i)^2 - \frac{\lambda}{2}[(\phi_{\mathrm{cl}}^2)(\eta^i)^2+ 2(\phi_{\mathrm{cl}}^i\eta^i)^2] + \cdots\]
+Expand about the classical field $\phi^i = \phi_{\rm cl}^i + \eta^i$, and we assume the vacuum is translational invariant. Then we have
+\[\mathcal{L}_1 = -\frac{1}{2}(\partial_{\mu}\eta)^2 + \frac{1}{2}\mu^2(\eta^i)^2 - \frac{\lambda}{2}[(\phi_{\rm cl}^2)(\eta^i)^2+ 2(\phi_{\rm cl}^i\eta^i)^2] + \cdots\]
 From the terms quadratic in $\eta$, we can read off
-\[\frac{\delta^2 \mathcal{L}_1}{\delta\phi^i\delta\phi^j} = \partial^2\delta_{ij} + \mu^2\delta_{ij} - \lambda[(\phi_{\mathrm{cl}}^k)^2\delta_{ij} + 2\phi_{\mathrm{cl}}^i \phi_{\mathrm{cl}}^j].\]
-We choose the vacuum state by demanding $\phi_{\mathrm{cl}}^i$ points in the $N$th direction
-\[\phi_{\mathrm{cl}}^i = (0,\cdots,\phi_{\mathrm{cl}}).\]
+\[\frac{\delta^2 \mathcal{L}_1}{\delta\phi^i\delta\phi^j} = \partial^2\delta_{ij} + \mu^2\delta_{ij} - \lambda[(\phi_{\rm cl}^k)^2\delta_{ij} + 2\phi_{\rm cl}^i \phi_{\rm cl}^j].\]
+We choose the vacuum state by demanding $\phi_{\rm cl}^i$ points in the $N$th direction
+\[\phi_{\rm cl}^i = (0,\cdots,\phi_{\rm cl}).\]
 Then the operator is just equal to the Klein-Gordon operator $(\partial^2-m_i^2)$, where
-\[m_i^2 = \begin{cases} \lambda\phi_{\mathrm{cl}}^2-\mu^2 , \quad i=1,\cdots,N-1 \\ 3\lambda\phi_{\mathrm{cl}}^2-\mu^2 , \quad i=N \end{cases}.\]
+\[m_i^2 = \begin{cases} \lambda\phi_{\rm cl}^2-\mu^2 , \quad i=1,\cdots,N-1 \\ 3\lambda\phi_{\rm cl}^2-\mu^2 , \quad i=N \end{cases}.\]
 We would perform the calculation of $\log Z_0[0]$ in the next subsection. Here, we just list the result:
 \[\log Z_0[0] = \frac{i}{2}\frac{\Gamma(-\frac{d}{2})}{(4\pi)^{d/2}}(m^2)^{\frac{d}{2}}VT.\]
 Therefore, up to one loop corrections, we can get
-\[V_{\mathrm{eff}} = -\frac{1}{2} \mu^2 \phi_{\mathrm{cl}}^2 + \frac{\lambda}{4} \phi_{\mathrm{cl}}^4 - \frac{1}{2}\frac{\Gamma(-\frac{d}{2})}{(4\pi)^{d/2}}[(N-1)(\lambda\phi_{\mathrm{cl}}^2-\mu^2)^{\frac{d}{2}} + (3\lambda\phi_{\mathrm{cl}}^2-\mu^2)^{\frac{d}{2}}] + \frac{1}{2}\delta_{\mu}\phi_{\mathrm{cl}}^2 + \frac{1}{4}\delta_{\lambda}\phi_{\mathrm{cl}}^4.\]
-And if we want $V_{\mathrm{eff}}$ is finite for terms involving $\phi_{\mathrm{cl}}$, we can get
+\[V_{\rm eff} = -\frac{1}{2} \mu^2 \phi_{\rm cl}^2 + \frac{\lambda}{4} \phi_{\rm cl}^4 - \frac{1}{2}\frac{\Gamma(-\frac{d}{2})}{(4\pi)^{d/2}}[(N-1)(\lambda\phi_{\rm cl}^2-\mu^2)^{\frac{d}{2}} + (3\lambda\phi_{\rm cl}^2-\mu^2)^{\frac{d}{2}}] + \frac{1}{2}\delta_{\mu}\phi_{\rm cl}^2 + \frac{1}{4}\delta_{\lambda}\phi_{\rm cl}^4.\]
+And if we want $V_{\rm eff}$ is finite for terms involving $\phi_{\rm cl}$, we can get
 \[\delta_{\lambda} = \frac{2\lambda^2(N+8)}{(4\pi)^2} \times \frac{1}{4-d} + \mbox{ finite terms },\]
 \[\delta_{\mu} = -\frac{2\lambda\mu^2(N+2)}{(4\pi)^2} \times \frac{1}{4-d} + \mbox{ finite terms }.\]
 It is the same result as that in previous section.
@@ -1118,7 +1118,7 @@ We can verify that
 \[M(x,z) = \int d^4y M_0(x-y)M_1(y-z).\]
 Thus
 \[\log \det M = \log \det M_0 + \log \det M_1 \to \log \det M_1.\]
-We drop out $\log \det M_0$ because it does not contain $m(\phi_{\mathrm{cl}})$. Furthermore, we have $M_1 = I - G$, where $I = \delta(x-y)$ is the identity matrix and $G = -im_i^2D_{\rm F}$. Thus
+We drop out $\log \det M_0$ because it does not contain $m(\phi_{\rm cl})$. Furthermore, we have $M_1 = I - G$, where $I = \delta(x-y)$ is the identity matrix and $G = -im_i^2D_{\rm F}$. Thus
 \[\log \det M_1 =  \mathrm{Tr} \log M_1 = \mathrm{Tr} \log(I-G) = -\frac{1}{n}\sum_{n=1}^{\infty} \mathrm{Tr} G^n.\]
 We can verify that
 \[C_n = \frac{1}{2n} \mathrm{Tr} G^n.\]

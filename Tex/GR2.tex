@@ -14,7 +14,7 @@ one finds the Einstein equations read
 Define
 \[\overline{h}_{\mu\nu} \equiv h_{\mu\nu} - \frac{1}{2}\eta_{\mu\nu}h.\]
 The linearized field equations become
-\[H^{\mu\alpha\nu\beta}_{\phantom{****},\alpha\beta} = 16\pi T_{\mu\nu},\]
+\[H^{\mu\alpha\nu\beta}_{\phantom{****},\alpha\beta} = 16\pi T^{\mu\nu},\]
 where
 \[-H^{\mu\alpha\nu\beta} \equiv \overline{h}^{\mu\nu}\eta^{\alpha\beta} + \overline{h}^{\alpha\beta}\eta^{\mu\nu} - \overline{h}^{\alpha\nu}\eta^{\mu\beta} - \overline{h}^{\mu\beta}\eta^{\alpha\nu} .\]
 \\
@@ -35,10 +35,10 @@ where $\xi^{\mu}$ are four arbitrary functions small enough to leave $|h_{\mu'\n
 whereas the functional forms of all other scalars, vectors, and tensors which is of order $O(h)$, such as $R_{\mu\nu}$, $T_{\mu\nu}$ and $R$, are unaltered, to within the precision of linearized theory. 
 \\ \\
 For any physical situation, one can specialize the gauge so that
-\[\overline{h}^{\mu\alpha}_{\phantom{**},\alpha} = 0,\] 
-called Lorentz gauge. 
+\[\tensor{\overline{h}}{^{\mu\alpha}_{,\alpha}} = 0,\] 
+called Lorentz gauge.
 The Lorentz gauge is not fixed uniquely. The gauge condition is left unaffected by any gauge transformation for which
-\[\Box \xi \equiv \xi^{\alpha,\beta}_{\phantom{**}\beta} = 0.\]
+\[\Box \xi \equiv \tensor{\xi}{^{\alpha,\beta}_{\beta}} = 0.\]
 The field equations then become
 \[\Box \overline{h}_{\mu\nu} = -16\pi T_{\mu\nu}.\]
 Once the gauge has been fixed by fiat for a given system, one can regard $h_{\mu\nu}$ as components of tensors in flat spacetime; and one can regard the field equations and the chosen gauge conditions as geometric, coordinate-independent equations in flat spacetime.
@@ -203,12 +203,12 @@ Consider an isolated system with gravity so weak that in calculating its structu
 \[\bar{\bar{h}}_{\mu\nu}(t,\bm{x}) \equiv h_{\mu\nu}(t,\bm{x}) = \int \frac{4\bar{T}_{\mu\nu}(t-R,\bm{x}')}{R} d^3x',\]
 produced by such a system. Restrict attention to the spacetime region far outside the system, and expand $h_{\mu\nu}$ in powers of $\bm{x}' / {r}$, we can get
 \begin{eqnarray}
-ds^2 &=& -\left[1-\frac{2M}{r} + O({1}/{r^3}) \right]dt^2 - \left[4\epsilon_{jkl}S^k \frac{x^l}{r^3} + O({1}/{r^3})  \right] dtdx^i  \nonumber \\
-&+& \left[(1+\frac{2M}{r})\delta_{jk} + \mbox{ gravitational radiation terms that die out as } O(1/r) \right]dx^j dx^k , \nonumber
+ds^2 &=& -\left[1-\frac{2M}{r} + O\left(\frac{1}{r^3}\right) \right]dt^2 - \left[4\epsilon_{jkl}S^k \frac{x^l}{r^3} + O\left(\frac{1}{r^3}\right)  \right] dtdx^j  \nonumber \\
+&+& \left[\left(1+\frac{2M}{r}\right)\delta_{jk} + \mbox{ gravitational radiation terms that die out as } O(1/r) \right]dx^j dx^k , \nonumber
 \end{eqnarray}
 where
 \[M \equiv \int T^{00}d^3x , \quad S_k \equiv \int \epsilon_{klm}x^l T^{m0} d^3x .\]
-It is plausible to say the mass of the system is $M$ and the angular momentum $\bm{S}$. With an appropriate choice of gauge, $g_{00}$ far from any weak source are time-independent and are determined uniquely by the source's mass $M$; $g_{0j}$ is time-independent and is fixed by the source's intrinsic angular momentum $S^j$; but $g_{jk}$ has time-dependent terms (gravitational waves) of $O(1/r)$.
+It is plausible to say the mass of the system is $M$ and the angular momentum $\bm{S}$. With an appropriate choice of gauge, $g_{00}$ far from any weak source are time-independent and determined uniquely by the source's mass $M$; $g_{0j}$ is time-independent and is fixed by the source's intrinsic angular momentum $S^j$; but $g_{jk}$ has time-dependent terms (gravitational waves) of $O(1/r)$.
 \\ \\
 The values of a system's mass and angular momentum can be measured by probing the imprint they leave in its external gravitational field. 
 Of all tools one might use to probe, the simplest is a test particle in a gravitationally bound orbit. 
@@ -228,8 +228,8 @@ Consider an isolated, gravitating system inside which spacetime may or may not b
 Expand $h_{\mu\nu}$ in multipole moments and powers of $1/r$; and adjust the gauge, the Lorentz frame, and the origin of coordinates to simplify the resulting metric.
 We have
 \begin{eqnarray}
-ds^2 &=& -\left[1-\frac{2M}{r} + \frac{2M^2}{r^2} + O({1}/{r^3}) \right]dt^2 - \left[4\epsilon_{jkl}S^k \frac{x^l}{r^3} + O({1}/{r^3})  \right] dtdx^i  \nonumber \\
-&+& \left[(1+\frac{2M}{r} + \frac{3M^2}{2r^2})\delta_{jk} + \mbox{ gravitational radiation terms that die out as } O({1}/{r}) ) \right]dx^j dx^k. \nonumber
+ds^2 &=& -\left[1-\frac{2M}{r} + \frac{2M^2}{r^2} + O\left(\frac{1}{r^3}\right) \right]dt^2 - \left[4\epsilon_{jkl}S^k \frac{x^l}{r^3} + O\left(\frac{1}{r^3}\right)  \right] dtdx^j  \nonumber \\
+&+& \left[\left(1+\frac{2M}{r} + \frac{3M^2}{2r^2}\right)\delta_{jk} + \mbox{ gravitational radiation terms that die out as } O({1}/{r}) \right]dx^j dx^k. \nonumber
 \end{eqnarray}
 However, $M$ and $\bm{S}$ is not a simple integration of $T^{00}$ and $\epsilon_{klm} x^l T^{0m}$ of the system as in the case of weakly gravitating sources.
 However, since this integration is impossible to measure in practice. We always determine the mass of the star by studying the orbits of planets in its external gravitational field. Therefore, one defines the ``total mass-energy'' $M$ of the sun or other body to be the constant that appears in the line element for its distant external spacetime geometry. Similarly, one defines the body's intrinsic angular momentum as the constant 3-vector $\bm{S}$ appearing in its line element.
@@ -477,7 +477,7 @@ signals all the time, we would simply see the signals reach us more and more slo
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[scale=0.3]{GR/BH2.eps}
+\includegraphics[scale=0.25]{GR/BH2.eps}
 \caption{A beacon falling freely into a black hole emits signals at intervals of constant proper time. An observer at fixed $r$ receives the signals at successively longer
 time intervals.}
 \end{figure}
@@ -486,11 +486,13 @@ time intervals.}
 The fact that we never see the infalling observer reach $r = 2M$ is a meaningful statement, but the fact that their trajectory in the $t-r$ plane never reaches there is not. 
 It is highly dependent on our coordinate system, and we would like to ask a more coordinate-independent question (such as, ``Does the observer reach this radius in a finite amount of their proper time?''). 
 The best way to do this is to change coordinates to a system that is better behaved at $r = 2M$. We omit the intermediate steps of coordinate transformation and move to Kruskal coordinates directly. The new coordinates is given by
-\[T = \left( \frac{r}{2M} -1 \right)^{1/2} e^{r/4M}\sinh \left( \frac{t}{4M}\right), \quad R = \left( \frac{r}{2M} -1 \right)^{1/2} e^{r/4M}\cosh\left( \frac{t}{4M}\right).\]
+\begin{eqnarray}
+    T &=& \left( \frac{r}{2M} -1 \right)^{1/2} e^{r/4M}\sinh \left( \frac{t}{4M}\right), \quad R = \pm\left( \frac{r}{2M} -1 \right)^{1/2} e^{r/4M}\cosh\left( \frac{t}{4M}\right), \quad r > 2M \nonumber \\
+    T &=& \pm \left(1 - \frac{r}{2M}\right)^{1/2} e^{r/4M}\cosh \left( \frac{t}{4M}\right), \quad R = \left(1 - \frac{r}{2M} \right)^{1/2} e^{r/4M}\sinh\left( \frac{t}{4M}\right), \quad r < 2M. \nonumber
+\end{eqnarray}
 The metric becomes
 \[ds^2 = \frac{32M^3}{r}e^{-r/2M}(-dT^2+dR^2) + r^2 d\Omega^2.\]
-We can now draw a spacetime diagram in the $T-R$ plane, known as a Kruskal diagram. This diagram represents the maximal extension of the Schwarzschild geometry; the coordinates cover what we should think of as
-the entire manifold described by this solution.
+We can now draw a spacetime diagram in the $T-R$ plane, known as a Kruskal diagram, representing the maximal extension of the Schwarzschild geometry.
 
 \begin{figure}[!htb]
 \centering
@@ -504,7 +506,7 @@ Finally, we can further transform the coordinates to bring them into a finite ra
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[scale=0.15]{GR/BH4.png}
+\includegraphics[scale=0.12]{GR/BH4.png}
 \caption{The Penrose diagram for the Schwarzschild spacetime.}
 \end{figure}
 
@@ -677,7 +679,7 @@ The surface area of the event horizon of a Kerr black hole is given by
 We can verify that
 \[\delta A = 8\pi \frac{a}{\Omega_{\rm H}\sqrt{M^2-a^2}}(\delta M - \Omega_{\rm H} \delta J).\]
 This can be manipulated to read
-\[\delta M = \frac{\delta \kappa}{8\pi G} \delta A + \Omega_{\rm H}\delta J,\]
+\[\delta M = \frac{\kappa}{8\pi G} \delta A + \Omega_{\rm H}\delta J,\]
 where
 \[\kappa = \frac{\sqrt{M^2-a^2}}{2M(M+\sqrt{M^2-a^2})}\]
 is the surface gravity. 
@@ -696,11 +698,11 @@ In that case, the radius of the stable circular orbit closest to the black hole 
 of interest in the astrophysics of accretion disks. 
 For the motion in the equatorial plane one can introduce an effective potential as in the case of the Schwarzschild
 metric along the following lines. Setting $\theta = \pi / 2$ into equations of motion will give equation for the radial motion,
-\[m^2 \left(\frac{dr}{d\tau} \right)^2 = \frac{[(r^2+a^2)E-aL]^2}{r^4} - \frac{\Delta[(aE-L)^2+m^2 r^2]}{r^4}.\]
+\[ m^2\left(\frac{dr}{d\tau} \right)^2 = \frac{[(r^2+a^2)E-aL]^2}{r^4} - \frac{\Delta[(aE-L)^2+ m^2r^2]}{r^4}.\]
 We can now define an effective $U(r)$ such that the right hand side of the above equation vanishes when $E=U$. 
 Hence the effective potential is the solution to the
 equation:
-\[[(r^2+a^2)U(r)-aL]^2 - \Delta[(aU(r)-L)^2+m^2 r^2] = 0.\]
+\[[(r^2+a^2)U(r)-aL]^2 - \Delta[(aU(r)-L)^2+ m^2 r^2] = 0.\]
 The radii of stable circular orbits are determined by the minima of $U(r)$; that is by the simultaneous solution to the equations $E = U(r)$, $U'(r) = 0$. 
 Among all the stable circular orbits, we are interested in the innermost one. 
 Fairly lengthy but straightforward calculation shows that this orbital radius is the solution to the quartic equation

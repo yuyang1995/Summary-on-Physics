@@ -139,15 +139,15 @@ where
 Actually, path integral of quantum mechanics can be obtained directly if we replace $\beta$ with $iT$ and change the integral variable from $\tau$ to $t$ by $\tau = it$ in the path integral  of statistical mechanics.
 \\ \\
 The path integral formulation can be generalize to the case of quantum field directly. For the system of bosons, we have
-\[\mathrm{Tr}e^{-\beta H} = \int \mathcal{D}\psi \mathcal{D}\psi^{\dagger} e^{-S_E},\]
+\[\mathrm{Tr}e^{-\beta (H-\mu N)} = \int \mathcal{D}\psi \mathcal{D}\psi^{\dagger} e^{-S_E},\]
 with constraint $\psi(\bm{x},0) = \psi(\bm{x},\beta)$,
 where
 \begin{eqnarray}
-S_E &=& \int_0^{\beta}d\tau \left[ \int d^3x \psi^{\dagger}(\bm{x},\tau) \left( \frac{\partial}{\partial \tau} - \frac{\nabla^2}{2m} \right) \psi(\bm{x},\tau) \right. \nonumber \\
-&+& \left. \frac{1}{2}\int d^3x d^3y\psi^{\dagger}(\bm{x},\tau)\psi^{\dagger}(\bm{y},\tau)V(\bm{x}-\bm{y})\psi(\bm{x},\tau)\psi(\bm{y},\tau) \right] .\nonumber
+S_E &=& \int_0^{\beta}d\tau \left[ \int d^3x \psi^{\dagger}(\bm{x},\tau) \left( \frac{\partial}{\partial \tau} - \frac{\nabla^2}{2m} -\mu \right) \psi(\bm{x},\tau) \right. \nonumber \\
+&+& \left. \frac{1}{2}\int d^3x d^3y\psi^{\dagger}(\bm{x},\tau)\psi^{\dagger}(\bm{y},\tau)V(\bm{x}-\bm{y})\psi(\bm{y},\tau)\psi(\bm{x},\tau) \right] .\nonumber
 \end{eqnarray}
 As for Fermions, we have
-\[\mathrm{Tr}e^{-\beta H} = \int \mathcal{D}\psi \mathcal{D}\psi^{\dagger} e^{-S_E},\]
+\[\mathrm{Tr}e^{-\beta (H-\mu N)} = \int \mathcal{D}\psi \mathcal{D}\psi^{\dagger} e^{-S_E},\]
 with constraint $\psi(\bm{x},0) = -\psi(\bm{x},\beta)$. 
 The value of $\psi(\bm{x},t)$ is Grassmann number rather than $c$ number, which has been discussed in the path integral formulation of Dirac field.
 
@@ -346,10 +346,15 @@ It is then natural to express the difference in the form of a generalized $\beta
 where the right-hand side is defined through the relation
 \[R(\bm{g}) = \lim_{l \to 0} l^{-1} (\tilde{R}(\bm{g}) - \bm{g}).\]
 \\
-Actually Gell-Mann-Low equation here is the same equation as the one in relativistic quantum field theory which describe the flow of coupling coefficient with the energy scale of the experiment. Suppose the cutoff of the theory is $\Lambda_0$, the energy scale of the experiment is $\mu$, and $\lambda_i$ is the coupling coefficient in the theory with dimension $[\mbox{energy}] ^{d_{i}}$. If the dimension of the physical quantity we want to measure is $d_Q$, then generally, we have
-\[\frac{Q}{\Lambda_0^{d_O}} = F(\frac{\mu}{\Lambda_0},\frac{\lambda_i}{\Lambda_0^{d_i}}).\]
-Then, we can integrate out the high frequency mode between $\mu$ and $\Lambda_0$ of the theory and rescale the energy and momentum to get the new coupling coefficient $\lambda(b)$, where $b = \Lambda_0 / \mu$. Therefore, in the new effective theory, we have
-\[\frac{Q}{\mu^{d_O}} = F(1,\frac{\lambda_i(\Lambda_0 / \mu)}{\mu^{d_i}}).\]
+Actually Gell-Mann-Low equation here is the same equation as the one in relativistic quantum field theory which describe the flow of coupling coefficient with the energy scale of the experiment. 
+Suppose the energy scale of the experiment is $\mu$, and $\lambda_i$ is the coupling coefficient in the theory. 
+If the dimension of the physical quantity we want to measure is $E^{d_Q}$, then generally, we have
+\[Q = F\left(\mu, \lambda_i\right).\]
+We can integrate out the high frequency mode between $\Lambda_0/b$ and $\Lambda_0$ of the theory and rescale the energy and momentum to get the new coupling coefficient $\lambda(b)$. 
+In the new effective theory, we have
+\[Q = F\left(\mu b, \lambda_i(b) \right)b^{-d_{Q}}.\]
+Let $b\mu = 1$ and we find
+\[Q = F\left(1, \lambda_i(1/\mu) \right)\mu^{d_{Q}}.\]
 The flow of coupling coefficient is given by
 \[\frac{d\lambda}{d\ln \mu} = - \frac{d\lambda}{d\ln b}.\]
 
@@ -418,21 +423,27 @@ The set of different exponents characterizing the relevant power laws occurring 
 In the following, let us briefly enumerate the list of the most relevant exponents, $\alpha$, $\beta$, $\gamma$, $\delta$, $\eta$ and $\nu$. 
 Although we shall again make use of the language of the magnetic transition, it is clear that the definitions of most exponents generalize to other systems.
 \begin{enumerate}
-\item In the vicinity of the critical temperature, the specific heat $C = -T\partial_T^2 F / L^d$ scales as $C \sim |t|^{-\alpha}$, where $t = (T-T_{\rm c})/T_{\rm c}$ measures the distance to the critical point.
-Note that, by virtue of this definition, a non-trivial statement has been made: although the phases above and below the transition are essentially different, the scaling exponents controlling the behaviour of C are identical. The same applies to most other exponents listed below.
-\item Approaching
-the transition temperature from below, the magnetization vanishes as
+\item In the vicinity of the critical temperature, the specific heat
+\[ C = \left. -\frac{T}{L^d} \frac{\partial^2 F }{\partial T^2} \right|_{h \searrow 0} \]
+scales as $C \sim |t|^{-\alpha}$, where $t = (T-T_{\rm c})/T_{\rm c}$.
+Note that a non-trivial statement has been made: 
+although the phases above and below the transition are essentially different, the scaling exponents controlling the behaviour of $C$ are identical. 
+The same applies to most other exponents listed below.
+\item Approaching the transition temperature from below, the magnetization vanishes as
 \[M \equiv -\left. \partial_H F \right|_{H \searrow 0} \sim (-t)^{\beta} .\]
 \item The magnetic susceptibility behaves as
 \[\chi \equiv -\left. \partial_h M \right|_{h \searrow 0} \sim (-t)^{-\gamma} .\]
 \item At the critical temperature, $t = 0$, the field dependence of the magnetization is given by $M \sim |h|^{1/\delta}$.
 \item Upon approaching the transition point, the correlation length diverges as $\xi \sim |t|^{-\nu}$.
 \item The correlation function,
-\[C(\bm{r}) \sim \begin{cases} \frac{1}{|\bm{r}|^{d-2+\eta}} , \quad |\bm{r}| \ll \xi \\ \exp[-|\bm{r}|/\xi] , \quad |\bm{r}| \gg \xi  \end{cases} ,\]
-crosses over from exponential to a power law scaling behaviour at the length scale $\xi$. 
-To motivate the power, one may notice that $C \sim \langle \phi \phi \rangle$ carries twice the dimension of the field $\phi$. 
-The engineering dimension of the latter follows from the requirement that the gradient operator $\sim \int d^dr (\nabla \phi)^2$ be dimensionless: $[\phi] = L^{(2-d)/2}$, according to which $C(r)$ has canonical dimension $L^{2-d}$ . 
-The exponent $\eta$, commonly referred to as the anomalous dimension of the correlation function, measures the mismatch between the observed and the canonical dimension.
+\[C(\bm{r}) \sim \begin{cases} r^{-(d-2+\eta)}, \quad r \ll \xi \\ \exp[-r/\xi] , \quad r \gg \xi  \end{cases} ,\]
+crosses over from exponential to a power law scaling behaviour at the length scale $\xi$.
+The engineering dimension of $\phi$ is $[\phi] = L^{(2-d)/2}$ and so $C(r)$ has canonical dimension $L^{2-d}$ . 
+The exponent $\eta$ is called the anomalous dimension of the correlation function.
+As the response functions can be obtained from integrating the connected correlation functions, we have
+\begin{equation}
+    \chi \sim \int d^dx C(\bm{x}) \sim \int_0^{\xi} \frac{d^dx}{r^{d-2+\eta}} \sim \xi^{2-\eta}.
+\end{equation}
 \end{enumerate}
 
 \subsubsection{Universality}
@@ -496,26 +507,47 @@ However, even below these threshold dimensions, operators of high powers in the 
 \item In contrast, the operator $\phi$ coupling to the magnetic field carries dimension $(1+d/2)$ and is therefore always strongly relevant.
 \end{itemize}
 
-\subsection{Landau mean-field theory}
-We can approximate $S[\phi]$ by its functional Taylor expansion about $\phi_0$, which, in turn, is defined by the condition $\delta S / \delta \phi = 0$. Thus
+\subsection{Landau mean field theory}
+We can approximate $S[\phi]$ by its functional Taylor expansion about $\phi_0$, which is defined by the condition $\delta S / \delta \phi = 0$:
 \[S[\phi] = S[\phi_0] + \frac{1}{2!} \int d^dx \int d^dy (\phi-\phi_0)_x (\phi-\phi_0)_y \left( \frac{\delta^2 S}{\delta \phi_x \delta \phi_y} \right)_{\phi_0}.\]
-First let us consider the classical approximation to the partition function $Z$. Approximating the functional integral by its saddle point we find
+If the fluctuation of the field around $\phi_0$ can be neglected, the path integral can be approximated by its saddle point value
 \[Z \approx e^{-S[\phi_0]}.\]
-On the other hand we have in the canonical ensemble
-\[Z = e^{-\beta F}.\]
-Thus we can identify the free energy of statistical mechanics with $S[\phi_0]$ of our field theory
+Note that $Z = e^{-\beta F}$ in the canonical ensemble.
+We can identify the free energy of statistical mechanics with $S[\phi_0]$ of our field theory:
 \[F = \frac{1}{\beta} S(\phi_0).\]
-Landau mean-field theory can be seen as the ``classical limit'' or saddle point approximation of full path integral.
+Now we recover the Landau mean field theory as the saddle point approximation of full path integral.
+\\ \\
+The relative fluctuation of the field in mean field theory can be quantified as
+\begin{equation}
+    R = \frac{\int_0^{\xi} d^dx \langle \phi(0)\phi(\bm{x}) \rangle }{\int_0^\xi d^dx \langle \phi \rangle^2} 
+\end{equation}
+Note that $\langle \phi(0)\phi(\bm{x})\rangle \sim r^{2-d}$, $\langle \phi \rangle \sim |T-T_c|^{1/2}$ and $\xi \sim |T-T_c|^{-1/2}$ in mean field theory.
+We can derive $R \sim |T-T_c|^{(d-4)/2}$.
+Thus mean field approximation is valid only when $d > 4$. 
 
 \subsection{Gaussian model}
-As a first improvement on the mean-field approximation, let us explore the effect of quadratic fluctuations around the constant field configuration $\bar{\phi}$. Approaching the transition point from above, we set $\bar{\phi} = 0$ and approximate the action through its quadratic expansion
-\[S[\phi] \approx \int d^dr \left[ \frac{r}{2}\phi^2 + \frac{1}{2}(\nabla\phi)^2- h\phi \right].\]
-We split our field into fast and slow degrees of freedom $\phi = \phi_{\rm s} + \phi_{\rm f}$ resulting in the fragmentation of the action $S[\phi_{\rm s},\phi_{\rm f}] = S_{\rm s}(\phi_{\rm s}) + S_{\rm f}[\phi_{\rm f}] + S_{\rm c}[\phi_{\rm s},\phi_{\rm f}]$. 
-However, the crucial simplification, characteristic of a Gaussian theory, is that the action $S_{\rm c}$ coupling fast and slow components vanishes, implying that the integration over the fast field merely leads to an inessential constant. 
-The effect of the RG step on the action is then entirely contained in the rescaling of the slow action. The scaling factors are determined by the engineering dimensions of the operators appearing in the action, i.e. $r \to b^2r$ and $h \to b^{1+d/2}h$. Using the fact that $r \sim t$ we can then readily write down the two relevant scaling dimensions of the problem, $y_t = 2$ and $y_h = d/2 + 1$. Finally, we have
+When $d > 4$, we can write
+\[S[\phi] \approx \int d^dx \left[ \frac{r}{2}\phi^2 + \frac{1}{2}(\nabla\phi)^2- h\phi \right],\]
+neglecting all irrelevant operators.
+We split our field into fast and slow degrees of freedom $\phi = \phi_{\rm s} + \phi_{\rm f}$, 
+resulting in the fragmentation of the action $S[\phi_{\rm s},\phi_{\rm f}] = S_{\rm s}(\phi_{\rm s}) + S_{\rm f}[\phi_{\rm f}] + S_{\rm c}[\phi_{\rm s},\phi_{\rm f}]$. 
+However, the action $S_{\rm c}$ coupling fast and slow components vanishes, implying that the integration over the fast field merely leads to an inessential constant. 
+The effect of the RG step on the action is then entirely contained in the rescaling of the slow action. 
+The scaling factors are determined by the engineering dimensions of the operators appearing in the action, i.e. $r \to b^2r$ and $h \to b^{1+d/2}h$.
+Using the fact that $r \sim t$ we can then readily write down the two relevant scaling dimensions of the problem, $y_t = 2$ and $y_h = d/2 + 1$. 
+Finally, we have
 \[\alpha = 2 - \frac{d}{2} , \quad \beta = \frac{d}{4} - \frac{1}{2} , \quad \gamma = 1 , \quad \delta = \frac{d+2}{d-2} , \quad \nu = \frac{1}{2} , \quad \eta = 0\]
-We note that the Gaussian model possesses only one fixed
-point, namely $r = h = 0$, which in the context of $\phi^4$-theory is called the Gaussian fixed point.
+We note that the Gaussian model possesses only one fixed point, namely $r = h = 0$, which in the context of $\phi^4$-theory is called the Gaussian fixed point.
+\\ \\
+One tricky issue is that the mean field exponents agree with the scaling analysis here only when $d = 4$.
+This results from the fact that the coefficient $b(T)$ of $M_z^4$ in mean field theory is assumed to be constant in the vicinity of $T=T_c$.
+For example, in mean field theory, we have $M_z = \sqrt{a_0(T_c-T)/b_0}$ and so $M_z \sim (-t)^{1/2}$.
+If we take into account the fact that $b_0$ scales as $t^{(4-d)/2}$ around Gaussian fixed point, we will find that $M_z \sim (-t)^{d/4-1/2}$, which is fully compatible with scaling analysis.
+\\ \\
+It is tempting to think that we can just neglect the irrelevant operators because their coefficients flow to zero as we approach the infra-red. 
+However, sometimes we will be interesting in quantities which have the irrelevant coupling constants sitting in the denominator.
+In this case, one cannot just blindly ignore these irrelevant couplings as they affect the scaling analysis. 
+When this happens, the irrelevant coupling is referred to as dangerously irrelevant.
 
 \subsection{Renormalization group analysis}
 Recall the  $\phi^4$ quantum field theory in $(d-1) + 1$-dimensional space-time. We have
@@ -526,7 +558,9 @@ If we replace $t$ by $-i\tau$, $Z$ will be exactly partition function of Ising m
 \[D(p) = \frac{1}{p^2+r}.\]
 Note in calculation of loop integrals in quantum field theory, the free propagator will be the same as that in statistical field theory after Wick rotation. We may infer the renormalization group equation will be the same in these two cases. 
 \\ \\
-The detailed calculation of flow equation in statistical field theory by the method of integrating out fast field can be found in section 8.4.4 of \emph{Condensed Matter Field Theory (Alexander Altland \& Ben Simons)}. The calculation in quantum field theory can be found in section 12.5 of \emph{An introduction to quantum field theory (M.E.Peskin \& D.V.Schroeder)}. Here, we list the final result:
+The detailed calculation of flow equation in statistical field theory by the method of integrating out fast field can be found in section 8.4.4 of \emph{Condensed Matter Field Theory (Alexander Altland \& Ben Simons)} or section 3.4 and 3.5 of \href{http://www.damtp.cam.ac.uk/user/tong/sft.html}{\emph{Statistical Field Theory (David Tong)}}.
+The calculation in quantum field theory can be found in section 12.5 of \emph{An introduction to quantum field theory (M.E.Peskin \& D.V.Schroeder)}. 
+Here, we list the final result:
 \begin{eqnarray}
 \frac{dr}{d\ln l} &=& 2r + \frac{\lambda}{16 \pi^2} - \frac{r\lambda}{16\pi^2} ,\nonumber \\
 \frac{d\lambda}{d\ln l} &=& \epsilon \lambda - \frac{3\lambda^2}{16\pi^2} ,\nonumber \\
@@ -537,14 +571,15 @@ These equations clearly illustrate the meaning of the $\epsilon$-expansion. Acco
 \\ \\
 Equating the right-hand sides of Gell-Mann-Low equations to zero (and temporarily ignoring the magnetic field), we indeed find that besides the Gaussian fixed point a non-trivial fixed point $(r_2^*, \lambda_2^*) = (-{\epsilon}/{6},{16\pi^2\epsilon}/{3})$ has appeared.
 Notice that the second fixed point is $\mathcal{O}(\epsilon)$ and coalesces with the Gaussian fixed point as $\epsilon$ is sent to zero. Plotting the $\beta$-function for the coupling constant $\lambda$, we further find that, for $\epsilon > 0$, $\lambda$ is relevant around the Gaussian fixed point but irrelevant at the non-trivial fixed point.
+\\ \\
+To understand the flow diagram of the system, one may linearize the $\beta$-function around both the Gaussian and the non-trivial fixed point. Denoting the linearized mappings by $W_{1,2}$ , we find
+\[W_1 = \begin{pmatrix} 2 & \frac{1}{16\pi^2} \\ 0 & \epsilon \end{pmatrix} , \quad W_2 = \begin{pmatrix} 2 - \frac{1}{3}\epsilon & \frac{1+ \frac{\epsilon}{6}}{16\pi^2}\\  0 & -\epsilon \end{pmatrix} .\]
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.2]{/SM/RG1.png}
 \caption{Beta function for $\lambda$}
 \end{figure}
 \\
-To understand the flow diagram of the system, one may linearize the $\beta$-function around both the Gaussian and the non-trivial fixed point. Denoting the linearized mappings by $W_{1,2}$ , we find
-\[W_1 = \begin{pmatrix} 2 & \frac{1}{16\pi^2} \\ 0 & \epsilon \end{pmatrix} , \quad W_2 = \begin{pmatrix} 2 - \frac{1}{3}\epsilon & \frac{1+ \frac{\epsilon}{6}}{16\pi^2}\\  0 & -\epsilon \end{pmatrix} .\]
 Figure below shows the flow in the vicinity of the two fixed points, as described by the matrices $W_{1,2}$ as well as the extrapolation to a global flow chart.
 Notice that the critical surface of the system - the straight line interpolating between the two fixed points - is tilted with respect to the $r \sim$ temperature axis of the phase diagram. 
 This implies that it is not the physical temperature alone that decides whether the system will eventually wind up in the paramagnetic or ferromagnetic sector of the phase diagram. 
